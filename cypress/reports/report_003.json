@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 1,
+    "pending": 0,
+    "failures": 5,
+    "start": "2021-09-20T07:04:25.213Z",
+    "end": "2021-09-20T07:05:53.585Z",
+    "duration": 88372,
+    "testsRegistered": 6,
+    "passPercent": 16.666666666666664,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7fbf8077-73a9-451e-9fa8-096b4558181c",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/07_Patient_Management.spec.js",
+      "file": "cypress/integration/Admin_Testcases/07_Patient_Management.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+          "title": "Patient management module test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a admin the user should be navigated on patients page by clicking on patients tab",
+              "fullTitle": "Patient management module test cases As a admin the user should be navigated on patients page by clicking on patients tab",
+              "timedOut": null,
+              "duration": 23832,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.group.rounded-md.px-3.py-2.flex.items-center.text-sm.font-medium.cursor-pointer.text-white.hover:text-black.hover:bg-gray-400.false.>' to have text 'Patients', but the text was 'Services'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.group.rounded-md.px-3.py-2.flex.items-center.text-sm.font-medium.cursor-pointer.text-white.hover:text-black.hover:bg-gray-400.false.>' to have text 'Patients', but the text was 'Services'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\07_Patient_Management.spec.js:103:63)",
+                "diff": "- 'Services'\n+ 'Patients'\n"
+              },
+              "uuid": "c6040959-5aa5-4594-9128-d6761c301d23",
+              "parentUUID": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At patients page each label and field should have proper label and validations",
+              "fullTitle": "Patient management module test cases At patients page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15313,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('have.text', 'Patients');\ncy.get('table>thead>tr>th:nth-child(1)').should('be.visible').should('have.text', 'Full Name');\ncy.get('table>thead>tr>th:nth-child(2)').should('be.visible').should('have.text', 'Email');\ncy.get('table>thead>tr>th:nth-child(3)').should('be.visible').should('have.text', 'Mobile Number');\ncy.get('table>thead>tr>th:nth-child(4)').should('be.visible').should('have.text', 'Joined On');\ncy.get('table>thead>tr>th:nth-child(5)').should('be.visible').should('have.text', 'Appointment');\ncy.get('table>thead>tr>th:nth-child(6)').scrollIntoView().should('be.visible').should('have.text', 'Action');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<th.px-5.py-3.border-b-2.border-gray-200.bg-gray-100.text-left.text-xs.font-semibold.text-gray-600.uppercase.tracking-wider>' to have text 'Appointment', but the text was 'Subscription'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<th.px-5.py-3.border-b-2.border-gray-200.bg-gray-100.text-left.text-xs.font-semibold.text-gray-600.uppercase.tracking-wider>' to have text 'Appointment', but the text was 'Subscription'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\07_Patient_Management.spec.js:112:67)",
+                "diff": "- 'Subscription'\n+ 'Appointment'\n"
+              },
+              "uuid": "30960e98-0e7b-4833-a126-aa0c6d632612",
+              "parentUUID": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated to the profile details page of any patient by clicking on eye symbol against that particular patient ",
+              "fullTitle": "Patient management module test cases As a admin the user should be navigated to the profile details page of any patient by clicking on eye symbol against that particular patient ",
+              "timedOut": null,
+              "duration": 240,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table>tbody>tr:nth-child(1)>td:nth-child(6)').should('be.visible').click();",
+              "err": {},
+              "uuid": "ad2c76c5-577c-46c8-947c-9e774f35fde5",
+              "parentUUID": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At profile deatils page of the patient each label and field should have proper label and validations",
+              "fullTitle": "Patient management module test cases At profile deatils page of the patient each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15231,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-4 > .font-bold').should('be.visible').should('have.text', 'Profile Details');\ncy.get('.border-b-2').should('be.visible').should('have.text', 'Address');\ncy.get('.mt-16>div>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 1');\ncy.get('.mt-16>div>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 2');\ncy.get('.mt-16>div>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Postal Code');\ncy.get('.mt-16>div>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'City');\ncy.get('.mt-16>div>div:nth-child(3)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'State');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-x-4 > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-x-4 > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\07_Patient_Management.spec.js:119:39)",
+                "diff": null
+              },
+              "uuid": "4f6df2a4-748e-4bfe-8746-1c2b79845de4",
+              "parentUUID": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated back to the patients page by clicking on back symbol on profile details page",
+              "fullTitle": "Patient management module test cases As a admin the user should be navigated back to the patients page by clicking on back symbol on profile details page",
+              "timedOut": null,
+              "duration": 15304,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.h-6 > path').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.h-6 > path`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.h-6 > path`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\07_Patient_Management.spec.js:128:27)",
+                "diff": null
+              },
+              "uuid": "2dc2015e-6885-46fe-8e2c-a3a9e2f47e0b",
+              "parentUUID": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should able to search any patient by his name or email",
+              "fullTitle": "Patient management module test cases As a admin the user should able to search any patient by his name or email",
+              "timedOut": null,
+              "duration": 15260,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.bg-white > .w-full').should('be.visible').type('pawan');\ncy.wait(2000);\ncy.get('.bg-white > .w-full').clear();\ncy.get('.bg-white > .w-full').should('be.visible').type('pavann@mailinator.com');\ncy.wait(2000);\ncy.get('.bg-white > .w-full').clear();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.bg-white > .w-full`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.bg-white > .w-full`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\07_Patient_Management.spec.js:131:35)",
+                "diff": null
+              },
+              "uuid": "419f75f8-d76c-46d5-8a2b-d759db353349",
+              "parentUUID": "20e3658a-67e9-4310-81bd-b6b28e2eba78",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ad2c76c5-577c-46c8-947c-9e774f35fde5"
+          ],
+          "failures": [
+            "c6040959-5aa5-4594-9128-d6761c301d23",
+            "30960e98-0e7b-4833-a126-aa0c6d632612",
+            "4f6df2a4-748e-4bfe-8746-1c2b79845de4",
+            "2dc2015e-6885-46fe-8e2c-a3a9e2f47e0b",
+            "419f75f8-d76c-46d5-8a2b-d759db353349"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 85180,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
