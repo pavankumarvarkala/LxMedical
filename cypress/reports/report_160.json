@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-29T05:05:42.939Z",
+    "end": "2021-09-29T05:06:06.835Z",
+    "duration": 23896,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "59a2080a-7501-4d3f-a751-54622a6091da",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "file": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "634ef3c7-be87-465e-9dc8-ec78dc751258",
+          "title": "Profile module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Admin Profile",
+              "fullTitle": "Profile module testcases As a Admin I should be able to navigate on Admin Profile",
+              "timedOut": null,
+              "duration": 8369,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('#headlessui-menu-button-1').click();\ncy.xpath(\"//div[@role='menuitem']//div[text()='Profile']\").should('be.visible').click();\ncy.url().should('include', '/admin/profile');",
+              "err": {},
+              "uuid": "9ccf8fe6-baf0-4a49-9640-bef27753c5d3",
+              "parentUUID": "634ef3c7-be87-465e-9dc8-ec78dc751258",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each label should be proper",
+              "fullTitle": "Profile module testcases At Profile page each label should be proper",
+              "timedOut": null,
+              "duration": 689,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').and('have.text', 'Profile Details');\ncy.xpath(\"//label//div\").eq(0).should('have.text', 'First Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(1).should('have.text', 'Last Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(2).should('have.text', 'Email').and('be.visible');\ncy.xpath(\"//label//div\").eq(3).should('have.text', 'Phone Number').and('be.visible');",
+              "err": {},
+              "uuid": "d207dae4-e55b-4965-8f4f-b2ed272fe231",
+              "parentUUID": "634ef3c7-be87-465e-9dc8-ec78dc751258",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each field should have proper validations",
+              "fullTitle": "Profile module testcases At Profile page each field should have proper validations",
+              "timedOut": null,
+              "duration": 1514,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.ml-2').click();\ncy.xpath(first_name).clear();\ncy.xpath(last_name).clear();\ncy.xpath(mobile_num).clear();\ncy.get('.flex-1').click();\ncy.get('.text-red-600 ').eq(0).contains('First Name is required');\ncy.get('.text-red-600 ').eq(1).contains('Last Name is required');\ncy.get('.text-red-600 ').eq(2).contains('Phone number required');",
+              "err": {},
+              "uuid": "c26a6a17-89c8-46fa-adac-34038c6679c8",
+              "parentUUID": "634ef3c7-be87-465e-9dc8-ec78dc751258",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to update my profile details except email",
+              "fullTitle": "Profile module testcases As a Admin I should be able to update my profile details except email",
+              "timedOut": null,
+              "duration": 6861,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const phone = _faker.default.phone.phoneNumber('##########');\ncy.xpath(first_name).clear().type('LXMedical');\ncy.xpath(last_name).clear().type('Admin');\ncy.xpath(mobile_num).clear().type(phone);\ncy.get('#update-profile').click();\ncy.contains(\"Profile updated sucessfully\");\ncy.logout();",
+              "err": {},
+              "uuid": "a67b3c15-dce9-4ba6-a246-dd86fb8402c7",
+              "parentUUID": "634ef3c7-be87-465e-9dc8-ec78dc751258",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9ccf8fe6-baf0-4a49-9640-bef27753c5d3",
+            "d207dae4-e55b-4965-8f4f-b2ed272fe231",
+            "c26a6a17-89c8-46fa-adac-34038c6679c8",
+            "a67b3c15-dce9-4ba6-a246-dd86fb8402c7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17433,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

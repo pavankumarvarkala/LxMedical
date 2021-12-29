@@ -35,7 +35,7 @@ describe('signin module test cases' ,()=>{
         cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('pp@mailinator.com')
         cy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('password')
         cy.get('.border-2').should('be.visible').should('have.text','Sign In').click()
-        cy.contains('Incorrect Email or Password')
+        cy.contains('Incorrect email or password')
 
     })
 

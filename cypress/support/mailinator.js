@@ -9,7 +9,7 @@ Cypress.Commands.add("getotp", (Email) => {
         cy.wrap(doc.find('div:nth-child(1) > div > div:nth-child(2) > h1')).then(($span) => {
             // capture what num is right now
             const num1 = $span.text()
-            cy.writeFile('cypress/integration/Patient_Testcases/text.txt', num1)
+            cy.writeFile('cypress/fixtures/text.txt', num1)
           })
         cy.wait(7000)
     })

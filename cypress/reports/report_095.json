@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-21T13:17:50.114Z",
+    "end": "2021-09-21T13:18:03.821Z",
+    "duration": 13707,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fa9d1ff5-7c44-4233-99f4-ae0c47d2ff4c",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/09_Charts.spec.js",
+      "file": "cypress/integration/Patient_Testcases/09_Charts.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "501c194e-b3ae-49e3-a429-8ea211cb3b48",
+          "title": "Charts Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user user should be navigated to the charts page by clicking on charts tab",
+              "fullTitle": "Charts Module Test Cases As a patient the user user should be navigated to the charts page by clicking on charts tab",
+              "timedOut": null,
+              "duration": 8032,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.get('[href=\"/charts\"]').should('be.visible').should('have.text', 'Charts').click();\ncy.url().should('contain', '/charts');",
+              "err": {},
+              "uuid": "199f76c4-33db-47d9-a3b3-d4377d8d2054",
+              "parentUUID": "501c194e-b3ae-49e3-a429-8ea211cb3b48",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Charts page each label and field should have proper label and validations",
+              "fullTitle": "Charts Module Test Cases At Charts page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 1486,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-medium > .inline').should('be.visible').should('have.text', 'Members');\ncy.get('.flex-wrap > .flex').should('be.visible').should('have.text', 'Add Another Member');\ncy.get(':nth-child(1) > .bg-white > .justify-between > .text-base').should('be.visible');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(1)').should('be.visible');\ncy.get(':nth-child(1) > .bg-white > .justify-between > .flex > .font-medium').should('be.visible').should('have.text', 'self');\ncy.get(':nth-child(1) > .bg-white > .justify-between > .flex > .px-1 > .w-4 > path').should('be.visible');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Gender');",
+              "err": {},
+              "uuid": "ec1f7142-9a6f-4563-a193-358043fd4e9e",
+              "parentUUID": "501c194e-b3ae-49e3-a429-8ea211cb3b48",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "199f76c4-33db-47d9-a3b3-d4377d8d2054",
+            "ec1f7142-9a6f-4563-a193-358043fd4e9e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9518,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

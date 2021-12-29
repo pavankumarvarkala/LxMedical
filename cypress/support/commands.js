@@ -54,7 +54,7 @@ Cypress.Commands.add('patientlogin', (email, password) => {
  });
 
  Cypress.Commands.add('patientlogout', () => {
-    cy.get('.justify-end > .flex').click()
+    cy.get('.p-1 > .h-7').click()
     cy.get('.space-y-8 > :nth-child(3)').should('be.visible').click()
     cy.url().should('contain','/settings')
     cy.get('.flex-wrap > :nth-child(2)').should('be.visible').click()

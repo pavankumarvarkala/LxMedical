@@ -1,0 +1,245 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-09-23T13:43:52.525Z",
+    "end": "2021-09-23T13:44:42.473Z",
+    "duration": 49948,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3a7987de-0bea-4ed2-9c52-6eed5670a2a6",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/04_forgotPassword.spec.js",
+      "file": "cypress/integration/Admin_Testcases/04_forgotPassword.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dd9711a6-391e-4278-abc4-b344203dcf62",
+          "title": "Forgot password module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Forgot password page",
+              "fullTitle": "Forgot password module testcases As a Admin I should be able to navigate on Forgot password page",
+              "timedOut": null,
+              "duration": 16644,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(data.qaUrl);\ncy.get('a > .text-primary').should('be.visible').click();\ncy.url().should('include', 'forgot-password');",
+              "err": {},
+              "uuid": "ae858e95-73e5-4bed-a56c-9c458c59896c",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Forgot password page each field should have proper lable and validation",
+              "fullTitle": "Forgot password module testcases At Forgot password page each field should have proper lable and validation",
+              "timedOut": null,
+              "duration": 2622,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-900').should('be.visible').and('have.text', 'Forgot Password? ');\ncy.get('.text-gray-500').should('be.visible').and('contain', 'A 6 digit verification code will be sent to your registered Email Address');\ncy.get(':nth-child(1) > .text-sm > div').should('be.visible').and('have.text', 'Email');\ncy.get('.appearance-none').should('be.visible');\ncy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.text-red-600').should('be.visible').and('contain.text', 'Required'); //invalid email case\ncy.get('.appearance-none').clear().type('ASd@ads@sd.com');\ncy.get('.text-red-600').should('be.visible').and('have.text', 'Please enter valid email');",
+              "err": {},
+              "uuid": "c0c89a65-a9ee-4cc3-a265-04eeb87da077",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OTP shouldn't send on invalid email",
+              "fullTitle": "Forgot password module testcases OTP shouldn't send on invalid email",
+              "timedOut": null,
+              "duration": 3318,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').clear().type('abc@gmail.com');\ncy.get('.mt-5 > .flex').click();\ncy.contains('User not found');",
+              "err": {},
+              "uuid": "9b0182c5-49f8-4c91-aacf-6700f7be52ee",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OTP should sent on Valid registerd email",
+              "fullTitle": "Forgot password module testcases OTP should sent on Valid registerd email",
+              "timedOut": null,
+              "duration": 3210,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const emailId = data.email;\ncy.get('.appearance-none').clear().type(emailId);\ncy.get('.mt-5 > .flex').click();\ncy.contains('OTP send to ' + emailId);",
+              "err": {},
+              "uuid": "49352c82-ddde-4ffb-8878-ce0eec38ed9b",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify each and evey label and title on varification screen",
+              "fullTitle": "Forgot password module testcases Verify each and evey label and title on varification screen",
+              "timedOut": null,
+              "duration": 16134,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-800').should('be.visible').and('have.text', 'Enter Verification Code');\ncy.get('.text-gray-500').should('be.visible').and('have.text', 'A 6 digit verification code has been sent to your email address');\ncy.get('.mt-3 > :nth-child(1)').should('be.visible').and('have.text', \"Haven't received the code?\");\ncy.get('.mt-5 > .flex').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.text-gray-500.text-xs.mb-2.font-bold>, 1 more... ]' to have text 'A 6 digit verification code has been sent to your email address', but the text was 'A 6 digit verification code has been sent to your email addressResend code in '",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.text-gray-500.text-xs.mb-2.font-bold>, 1 more... ]' to have text 'A 6 digit verification code has been sent to your email address', but the text was 'A 6 digit verification code has been sent to your email addressResend code in '\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:144:51)",
+                "diff": "- 'A 6 digit verification code has been sent to your email addressResend code in '\n+ 'A 6 digit verification code has been sent to your email address'\n"
+              },
+              "uuid": "98ca39f6-0310-4f3a-adb0-3d62510e7f7e",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "valdation should appear when user does not enter otp into the field",
+              "fullTitle": "Forgot password module testcases valdation should appear when user does not enter otp into the field",
+              "timedOut": null,
+              "duration": 399,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.my-4 > .text-xs').should('be.visible').and('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {},
+              "uuid": "5b15525d-c180-4173-bef3-3b3cc7e27d87",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validation should appear when user enter invalid OTP",
+              "fullTitle": "Forgot password module testcases validation should appear when user enter invalid OTP",
+              "timedOut": null,
+              "duration": 1363,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//div[@style='display: flex; margin: 0px 0px 0px -0.5rem;']\").type('336699');\ncy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.my-4 > .text-xs').should('be.visible').and('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {},
+              "uuid": "50dff3f5-69d3-47af-a73a-23bbb68cfcfc",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify resend button functionality ",
+              "fullTitle": "Forgot password module testcases verify resend button functionality ",
+              "timedOut": null,
+              "duration": 835,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-3 > .font-bold').should('be.visible').click();\nconst emailId = data.email;\ncy.contains('OTP send to ' + emailId);",
+              "err": {},
+              "uuid": "e512729e-6db5-49a6-97fc-559619f2707f",
+              "parentUUID": "dd9711a6-391e-4278-abc4-b344203dcf62",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ae858e95-73e5-4bed-a56c-9c458c59896c",
+            "c0c89a65-a9ee-4cc3-a265-04eeb87da077",
+            "9b0182c5-49f8-4c91-aacf-6700f7be52ee",
+            "49352c82-ddde-4ffb-8878-ce0eec38ed9b",
+            "5b15525d-c180-4173-bef3-3b3cc7e27d87",
+            "50dff3f5-69d3-47af-a73a-23bbb68cfcfc",
+            "e512729e-6db5-49a6-97fc-559619f2707f"
+          ],
+          "failures": [
+            "98ca39f6-0310-4f3a-adb0-3d62510e7f7e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 44525,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

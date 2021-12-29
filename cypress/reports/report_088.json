@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-21T13:12:12.132Z",
+    "end": "2021-09-21T13:12:24.480Z",
+    "duration": 12348,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "554eb537-2779-40b3-a836-3a516feec66e",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/02_Signin.spec.js",
+      "file": "cypress/integration/Patient_Testcases/02_Signin.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1b628b4a-de32-4338-82f9-0b06c25f741c",
+          "title": "signin module test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the sign in page after clicking signin/signup button on landing page",
+              "fullTitle": "signin module test cases As a patient the user should be navigated to the sign in page after clicking signin/signup button on landing page",
+              "timedOut": null,
+              "duration": 6227,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.url().should('eq', cred.PatientUrl);\ncy.get('#root > div:nth-child(2) > div > div:nth-child(1) > div > div>div:nth-child(2)').should('be.visible').should('have.text', 'Sign In / Sign Up').click();\ncy.url().should('contain', '/login');\ncy.get('[alt=logo]').should('be.visible');",
+              "err": {},
+              "uuid": "511c40a8-d2b2-4028-a82d-6b34d27ee061",
+              "parentUUID": "1b628b4a-de32-4338-82f9-0b06c25f741c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Sign In page each label and field should have proper label and validations",
+              "fullTitle": "signin module test cases At Sign In page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 333,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.p-10 > :nth-child(1) > img').should('be.visible');\ncy.get('.p-10 > :nth-child(1)').should('be.visible').should('have.text', 'LX Medical');\ncy.get('.text-2xl').should('be.visible').should('have.text', 'Sign In');\ncy.get('.grid > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Email');\ncy.get(':nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Password');\ncy.get('.ml-2 > div').should('be.visible').should('have.text', 'Remember me');\ncy.get(':nth-child(1) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.justify-between > a > .text-primary').should('be.visible').should('have.text', 'Forgot Password?');\ncy.get('[href=\"/signup\"] > .flex').should('be.visible').should('contain', 'Create');",
+              "err": {},
+              "uuid": "03511b10-932e-4c9e-8630-73699d474ac8",
+              "parentUUID": "1b628b4a-de32-4338-82f9-0b06c25f741c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should unable to login with no data",
+              "fullTitle": "signin module test cases As a patient the user should unable to login with no data",
+              "timedOut": null,
+              "duration": 260,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.get(':nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {},
+              "uuid": "da824ee4-bbb2-4d87-ab36-0f8c565ecc5c",
+              "parentUUID": "1b628b4a-de32-4338-82f9-0b06c25f741c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should unable to login with invalid credentials",
+              "fullTitle": "signin module test cases As a Patient the user should unable to login with invalid credentials",
+              "timedOut": null,
+              "duration": 1668,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('pp@mailinator.com');\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('password');\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.contains('Incorrect Email or Password');",
+              "err": {},
+              "uuid": "bf31ed17-d2ca-4ceb-946f-008045d29dba",
+              "parentUUID": "1b628b4a-de32-4338-82f9-0b06c25f741c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should able to login with credentials",
+              "fullTitle": "signin module test cases As a patient the user should able to login with credentials",
+              "timedOut": null,
+              "duration": 1719,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword);\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.url().should('contain', '/home');",
+              "err": {},
+              "uuid": "463c4238-db66-46f7-8c31-a551265ff5f4",
+              "parentUUID": "1b628b4a-de32-4338-82f9-0b06c25f741c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "511c40a8-d2b2-4028-a82d-6b34d27ee061",
+            "03511b10-932e-4c9e-8630-73699d474ac8",
+            "da824ee4-bbb2-4d87-ab36-0f8c565ecc5c",
+            "bf31ed17-d2ca-4ceb-946f-008045d29dba",
+            "463c4238-db66-46f7-8c31-a551265ff5f4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10207,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

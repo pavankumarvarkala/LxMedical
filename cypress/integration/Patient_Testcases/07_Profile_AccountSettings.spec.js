@@ -1,7 +1,4 @@
 ///<reference types='cypress'/>
-Cypress.on('uncaught:exception', (err, runnable) => {
-    return false;
-  });
 const cred=require('../../fixtures/cred.json')
  import faker from 'faker'
 
@@ -9,14 +6,9 @@ describe('Account settings Module Test Cases',()=>{
 
  
     it('As a patient the user should be navigated to the account settings page by clicking on account settings tab',()=>{
-        cy.visit(cred.PatientUrl)
-        cy.get('.bg-white > .mx-auto > .w-44').should('be.visible').click()
-        cy.url().should('contain','/login')
-        cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.pemail)
-        cy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword)
-        cy.get('.border-2').should('be.visible').should('have.text','Sign In').click()
+        cy.patientlogin(cred.pemail,cred.ppassword)
         cy.url().should('contain','/home')
-        cy.get('.justify-end > .flex').should('be.visible').click()
+        cy.get('.p-1 > .h-7').should('be.visible').click()
         cy.url().should('contain','/profile')
         cy.get('.space-y-8 > :nth-child(3)').should('be.visible').click()
         cy.url().should('contain','/settings')
@@ -48,7 +40,7 @@ describe('Account settings Module Test Cases',()=>{
         cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123')
         cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123')
         cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text','Change Password').click()
-        cy.contains('Incorrect Old Password')
+        cy.contains('Old password incorrect')
   
     })
     it('Error message should be displayed if current password and new password are same',()=>{
@@ -72,8 +64,11 @@ describe('Account settings Module Test Cases',()=>{
         cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234')
         cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text','Change Password').click()
         cy.contains('Password changed successfully')
-        cy.patientlogin()
-        cy.get('.justify-end > .flex').should('be.visible').click()
+        cy.get('.bg-white > .mx-auto > .w-44').click()
+        cy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.pemail)
+        cy.get(':nth-child(2) > .mt-1 > .appearance-none').type('Password@1234')
+        cy.get('.border-2').click()
+        cy.get('.p-1 > .h-7').should('be.visible').click()
         cy.get('.space-y-8 > :nth-child(3)').should('be.visible').click()
         cy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text','Change Password').click()
         cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@1234')

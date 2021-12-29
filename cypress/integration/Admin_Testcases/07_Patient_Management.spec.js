@@ -42,6 +42,7 @@ describe('Patient management module test cases', ()=>{
         cy.get('.bg-white > .w-full').should('be.visible').type('pavann@mailinator.com')
         cy.wait(2000)
         cy.get('.bg-white > .w-full').clear()
+        cy.logout()
 
     })
 })

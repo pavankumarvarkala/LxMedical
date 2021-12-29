@@ -8,7 +8,7 @@ describe('About Module Test Cases',()=>{
     it('As a patient the user should be navigated to the about page by clicking on about tab',()=>{
         cy.patientlogin(cred.pemail,cred.ppassword)
         cy.url().should('contain','/home')
-        cy.get('.justify-end > .flex').should('be.visible').click()
+        cy.get('.p-1 > .h-7').should('be.visible').click()
         cy.url().should('contain','/profile')
         cy.get('.space-y-8 > :nth-child(4)').should('be.visible').click()
         cy.url().should('contain','/about')
@@ -57,6 +57,6 @@ describe('About Module Test Cases',()=>{
         cy.get('.hidden > .flex > .font-bold').should('be.visible').should('have.text','Patient Consent to Treatment')
         cy.get('.hidden > .mt-6 > iframe').should('be.visible')
         cy.get('.hidden > .flex > .w-6 > path').should('be.visible').click()
-        cy.plogout()
+        cy.patientlogout()
     })
 })

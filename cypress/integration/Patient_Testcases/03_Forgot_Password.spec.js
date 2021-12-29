@@ -1,8 +1,6 @@
 ///<reference types='cypress'/>
 const cred = require('../../fixtures/cred.json')
-Cypress.on('uncaught:exception', (err) => {
-    return false
-  })
+ 
 
 describe('Forgot Password Module Test Cases',()=>{
     const getIframeBody = () => {
@@ -92,15 +90,12 @@ describe('Forgot Password Module Test Cases',()=>{
 
     })
     
-    it('Verify to Reset password from email', () => {
-        cy.getotp('pawankumar@mailinator.com')
-      })
-      it('Verify to Reset password from email', () => {
+    // it('Verify to Reset password from email', () => {
+    //     cy.getotp('pawankumar@mailinator.com')
+    //   })
+    //   it('Verify to Reset password from email', () => {
        // cy.visit('https://qa.rch.build-release.com/forgot-password')
-       cy.go('back')
-        cy.wait(2000)
-       cy.go('back')
-       cy.wait(2000)
+        
 
 
       //  cy.readFile('cypress/integration/Patient_Testcases/text.txt').then((data1) => {
@@ -114,5 +109,5 @@ describe('Forgot Password Module Test Cases',()=>{
 
            
           })
-  })
+  
   

@@ -7,10 +7,10 @@ import faker from 'faker'
     it('As a Admin the user should be navigated to the provider chat page of any patient by clicking on chats icon against that particular provider',()=>{
         cy.login(cred.email,cred.password)
         cy.url().should('contain','/patients')
-        cy.get('.space-y-4 > :nth-child(4)').should('be.visible').and('have.text','Providers').click()
+        cy.get('.space-y-4 > :nth-child(5)').should('be.visible').and('have.text','Providers').click()
         cy.get('.bg-white > .w-full').should('be.visible').type('p2@mailinator.com')
         cy.wait(2000)
-        cy.get('tr:nth-child(1) > td:nth-child(5) > div > svg:nth-child(2)').scrollIntoView().click()
+        cy.get('.flex > .relative > .ml-2').scrollIntoView().click()
         cy.url().should('contain','/chat')
 
     })
@@ -45,13 +45,14 @@ import faker from 'faker'
 
       })
       it('The Admin can see the full length image on a separate window by clicking on that particular image',()=>{
-         cy.get('div:nth-child(17) > div > div > div > a > div').scrollIntoView().should('be.visible').click()
+         cy.get('div:nth-child(11) > div > div > div > a > div').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
 
       })
       it('The Admin can open the document in a separate window by clicking on the particular document',()=>{
-         cy.get('div.pb-6 > div > div > div > a > div').should('be.visible').click()
+         cy.get('div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
+         cy.logout()
 
       })
 

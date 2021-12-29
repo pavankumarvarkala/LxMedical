@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-09-21T15:30:09.272Z",
+    "end": "2021-09-21T15:30:49.769Z",
+    "duration": 40497,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "673e87bc-7497-4fc0-960b-92119251db97",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/06_Profile_Personal-Information.spec.js",
+      "file": "cypress/integration/Patient_Testcases/06_Profile_Personal-Information.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e182a84-13b3-4143-9b00-b9723d12479a",
+          "title": "Personal Information Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the personal information page by clicking on profile icon",
+              "fullTitle": "Personal Information Module Test Cases As a patient the user should be navigated to the personal information page by clicking on profile icon",
+              "timedOut": null,
+              "duration": 10957,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');",
+              "err": {},
+              "uuid": "c03c1103-6319-4fbf-b471-14fcb80fcfa7",
+              "parentUUID": "1e182a84-13b3-4143-9b00-b9723d12479a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At personal information page each label and field should have proper label and validations",
+              "fullTitle": "Personal Information Module Test Cases At personal information page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15588,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-start > img').should('be.visible');\ncy.get('.justify-start > .m-auto').should('be.visible').should('have.text', 'LX MEDICAL');\ncy.get('[href=\"/appointments\"]').should('be.visible').should('have.text', 'Appointments');\ncy.get('.justify-start > .hidden > :nth-child(3)').should('be.visible').should('have.text', 'Charts');\ncy.get('.justify-start > .hidden > :nth-child(4)').should('be.visible').should('have.text', 'Chat');\ncy.get('.p-1 > .h-7').should('be.visible');\ncy.get('.relative > .text-gray-600').should('be.visible');\ncy.get('.h-7').should('be.visible');\ncy.get('.px-4 > :nth-child(1) > img').should('be.visible');\ncy.get('.px-4 > .font-bold').should('be.visible');\ncy.get('.shadow-corner').should('be.visible').should('contain', 'Personal Information');\ncy.get('.space-y-8 > :nth-child(2)').should('be.visible').should('contain', 'Manage Membership Plan');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('contain', 'Account Settings');\ncy.get('.space-y-8 > :nth-child(4)').should('be.visible').should('contain', 'About');\ncy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Personal Information');\ncy.get('.space-y-4 > :nth-child(2) > .text-gray-400').should('be.visible').should('have.text', 'Full Name');\ncy.get(':nth-child(3) > .text-gray-400').should('be.visible').should('have.text', 'Email Address');\ncy.get(':nth-child(4) > .text-gray-400').should('be.visible').should('have.text', 'Phone Number');\ncy.get(':nth-child(5) > .text-gray-400').should('be.visible').should('have.text', 'Date of Birth');\ncy.get(':nth-child(6) > .text-gray-400').should('be.visible').should('have.text', 'Gender');\ncy.get('.space-y-2 > .font-bold').should('be.visible').should('have.text', 'Address');\ncy.get(':nth-child(8) > .flex').should('be.visible').should('contain', 'Edit Details');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<a.lg:px-6.md:px-4.text-base.font-medium.hover:text-primary>' to have text 'Chat', but the text was 'Chat9'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<a.lg:px-6.md:px-4.text-base.font-medium.hover:text-primary>' to have text 'Chat', but the text was 'Chat9'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\06_Profile_Personal-Information.spec.js:147:77)",
+                "diff": "- 'Chat9'\n+ 'Chat'\n"
+              },
+              "uuid": "fae3d6cf-cad1-4bae-aed9-7be8b87e7b44",
+              "parentUUID": "1e182a84-13b3-4143-9b00-b9723d12479a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on edit details button the user should be navigated to edit details page",
+              "fullTitle": "Personal Information Module Test Cases By clicking on edit details button the user should be navigated to edit details page",
+              "timedOut": null,
+              "duration": 470,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(8) > .flex').should('be.visible').should('contain', 'Edit Details').click();\ncy.url().should('contain', '/personal');",
+              "err": {},
+              "uuid": "b3e68ed4-bcfb-49f1-8ba7-3546fdbdbeb6",
+              "parentUUID": "1e182a84-13b3-4143-9b00-b9723d12479a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Edit details page each label and field should have proper label and validations",
+              "fullTitle": "Personal Information Module Test Cases At Edit details page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 647,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.my-10 > :nth-child(1) > :nth-child(1) > .font-semibold').should('be.visible').should('have.text', 'Edit Details');\ncy.get('.my-10 > :nth-child(1) > :nth-child(1) > .h-6').should('be.visible');\ncy.get('.w-28 > img').should('be.visible');\ncy.get('.grid > .text-sm').should('be.visible').should('have.text', 'Change Profile Image');\ncy.get(':nth-child(2) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'First Name');\ncy.get(':nth-child(2) > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Last Name');\ncy.get(':nth-child(3) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Phone Number');\ncy.get(':nth-child(3) > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Email');\ncy.get(':nth-child(4) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get(':nth-child(4) > :nth-child(2) > .block').should('be.visible').should('have.text', 'Gender');\ncy.get(':nth-child(6) > .font-medium').should('be.visible').should('have.text', 'Your Address');\ncy.get(':nth-child(7) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Address Line 1');\ncy.get(':nth-child(7) > :nth-child(2) > .text-sm > div').should('be.visible').should('contain', 'Address Line 2');\ncy.get(':nth-child(8) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Postal Code');\ncy.get(':nth-child(8) > :nth-child(2) > .text-sm > div').should('have.text', 'City');\ncy.get(':nth-child(9) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'State');\ncy.get('.mt-2 > .flex').should('be.visible').should('have.text', 'Save Details');",
+              "err": {},
+              "uuid": "bbd11b4c-35ea-406c-9f15-3b1ba250e254",
+              "parentUUID": "1e182a84-13b3-4143-9b00-b9723d12479a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be able to update my profile details",
+              "fullTitle": "Personal Information Module Test Cases As a Patient the user should be able to update my profile details",
+              "timedOut": null,
+              "duration": 7006,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const fname = _faker.default.name.firstName();\nconst lname = _faker.default.name.lastName();\nconst phone = '8279556458';\nconst Address = 'plot33';\nconst Postal = '90001';\ncy.log(fname);\ncy.log(lname);\ncy.log(phone);\ncy.log(Address);\ncy.log(Postal);\ncy.get(':nth-child(2) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(fname);\ncy.get(':nth-child(2) > :nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(lname);\ncy.get(':nth-child(3) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(phone);\ncy.get(':nth-child(7) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(Address);\ncy.get(':nth-child(8) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(Postal);\ncy.get(':nth-child(7) > :nth-child(2) > .mt-1 > .appearance-none').type('park lane');\ncy.get('.mt-2 > .flex').click();\ncy.writeFile('../../fixtures/profile.json', {\n  fname: fname,\n  lname: lname,\n  phone: phone,\n  address: Address,\n  postal: Postal\n}); // verify profile\ncy.get(':nth-child(2) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible', fname);\ncy.get(':nth-child(2) > :nth-child(2) > .mt-1 > .appearance-none').should('be.visible', lname);\ncy.get(':nth-child(3) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible', phone);\ncy.get(':nth-child(7) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible', Address);\ncy.get(':nth-child(8) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible', Postal);\ncy.patientlogout();",
+              "err": {},
+              "uuid": "0518ef3e-2d3e-4599-8c6e-7b960d7950ec",
+              "parentUUID": "1e182a84-13b3-4143-9b00-b9723d12479a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c03c1103-6319-4fbf-b471-14fcb80fcfa7",
+            "b3e68ed4-bcfb-49f1-8ba7-3546fdbdbeb6",
+            "bbd11b4c-35ea-406c-9f15-3b1ba250e254",
+            "0518ef3e-2d3e-4599-8c6e-7b960d7950ec"
+          ],
+          "failures": [
+            "fae3d6cf-cad1-4bae-aed9-7be8b87e7b44"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 34668,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

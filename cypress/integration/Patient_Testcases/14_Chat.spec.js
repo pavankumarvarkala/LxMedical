@@ -17,7 +17,7 @@ const cred=require('../../fixtures/cred.json')
         cy.get('.w-full > .cursor-pointer').should('be.visible')
      })
      it('The user should able to see all the chats between the user and the Admin',()=>{
-        cy.get('div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-lightChatGray').scrollIntoView().should('be.visible').should('contain','Hello')
+        cy.get('div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white').scrollIntoView().should('be.visible').should('contain','hi')
         cy.get('div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible')
  
     })
@@ -41,12 +41,12 @@ const cred=require('../../fixtures/cred.json')
 
       })
       it('The patient can see the full length image on a separate window by clicking on that particular image',()=>{
-         cy.get('div:nth-child(45) > div > div > div > a > div').scrollIntoView().should('be.visible').click()
+         cy.get('div:nth-child(14) > div > div > div > a > div').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
 
       })
       it('The patient can open the document in a separate window by clicking on the particular document',()=>{
-         cy.get('div.pb-6 > div > div > div > a > div').should('be.visible').click()
+         cy.get('div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
 
       })

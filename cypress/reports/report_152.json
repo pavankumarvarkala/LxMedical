@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-27T08:03:05.609Z",
+    "end": "2021-09-27T08:03:42.820Z",
+    "duration": 37211,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a568ed04-4598-4ef6-9f59-6731ff65f157",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/05_provider.spec.js",
+      "file": "cypress/integration/Admin_Testcases/05_provider.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+          "title": "Provider module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be albe to navigate on invited provider listing page",
+              "fullTitle": "Provider module testcases As a Admin I should be albe to navigate on invited provider listing page",
+              "timedOut": null,
+              "duration": 9900,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(5)').should('be.visible').click();\ncy.url().should('include', '/invitation');",
+              "err": {},
+              "uuid": "447a7746-93f5-43af-97f1-a1449ce50a3a",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers page each label and field should have proper label and proper validations",
+              "fullTitle": "Provider module testcases At invited providers page each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 1885,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('thead > tr > :nth-child(1) > div').should('be.visible').and('have.text', 'Email/Phone');\ncy.get('tr > :nth-child(2) > div').should('be.visible').and('have.text', 'Invited On');\ncy.get('tr > :nth-child(3) > div').should('be.visible').and('have.text', 'Status');\ncy.get('tr > :nth-child(4) > div').should('be.visible').and('have.text', 'Action');\ncy.xpath(\"//button[@textid='provider.invite']\").should('have.text', 'Invite Provider');\ncy.get('.flex-wrap > .flex').should('be.visible').and('have.text', 'Invite Provider');",
+              "err": {},
+              "uuid": "cebd7bfa-386a-429f-b72f-4cc0b83841cd",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button",
+              "fullTitle": "Provider module testcases As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button",
+              "timedOut": null,
+              "duration": 430,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > .flex').should('be.visible').and('have.text', 'Invite Provider').click();\ncy.get('div.my-5.text-primary.text-base.font-bold').should('be.visible');",
+              "err": {},
+              "uuid": "16a25296-5642-4010-9b75-6fd742d928c1",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers pop up window each label and field should have proper label and proper validations",
+              "fullTitle": "Provider module testcases At invited providers pop up window each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 2559,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.my-5').should('be.visible').should('have.text', 'Invite Provider');\ncy.get('.w-5').should('be.visible');\ncy.xpath('//label').eq(0).should('be.visible').and('have.text', 'Phone');\ncy.xpath('//label').eq(1).should('be.visible').and('have.text', 'Email');\ncy.xpath('//label').eq(2).should('be.visible').and('have.text', 'Both');\ncy.xpath('//label').eq(3).should('be.visible').and('have.text', 'Email');\ncy.xpath(\"//input[@type='radio']\").should('be.checked');\ncy.get('.appearance-none').clear().type('sdada@dada@asd.com');\ncy.get('#update-profile').click();\ncy.get('.text-red-600').should('be.visible').and('have.text', 'Please enter valid email');",
+              "err": {},
+              "uuid": "611ab4cb-f751-42ae-bfe0-7c42cb0ad198",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I shoual be able to invite provider",
+              "fullTitle": "Provider module testcases As a Admin I shoual be able to invite provider",
+              "timedOut": null,
+              "duration": 2521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const email = _faker.default.name.firstName() + '@mailinator.com';\ncy.get('.appearance-none').clear().type(email);\ncy.get('#update-profile').click();\ncy.writeFile('cypress/fixtures/provider.json', {\n  email: email\n});\ncy.contains('Invitation sent successfully.');",
+              "err": {},
+              "uuid": "ea16ba24-fb3b-40fb-91c1-d78b47ae19c5",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to see invited provider into the provider list",
+              "fullTitle": "Provider module testcases As a Admin I should be able to see invited provider into the provider list",
+              "timedOut": null,
+              "duration": 322,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('cypress/fixtures/provider.json').then(provider => {\n  cy.get('.space-y-4 > .bg-white').click();\n  cy.get(':nth-child(1) > :nth-child(1) > div > .text-gray-900').should('be.visible').and('have.text', provider.email.toLowerCase());\n});",
+              "err": {},
+              "uuid": "df1d1171-afc2-469a-9e01-cdeaa2702c65",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to able to resend the password",
+              "fullTitle": "Provider module testcases As a Admin I should be able to able to resend the password",
+              "timedOut": null,
+              "duration": 9474,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//div[@textid='resend']\").first().click();\ncy.contains(\"Invitation sent successfully.\").should('be.visible');\ncy.logout();",
+              "err": {},
+              "uuid": "4d54da01-f81d-43d5-b180-baca0aef1940",
+              "parentUUID": "60d0bf43-da44-4240-82b7-91d224fbc1d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "447a7746-93f5-43af-97f1-a1449ce50a3a",
+            "cebd7bfa-386a-429f-b72f-4cc0b83841cd",
+            "16a25296-5642-4010-9b75-6fd742d928c1",
+            "611ab4cb-f751-42ae-bfe0-7c42cb0ad198",
+            "ea16ba24-fb3b-40fb-91c1-d78b47ae19c5",
+            "df1d1171-afc2-469a-9e01-cdeaa2702c65",
+            "4d54da01-f81d-43d5-b180-baca0aef1940"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27091,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

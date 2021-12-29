@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-09-21T15:26:41.785Z",
+    "end": "2021-09-21T15:27:11.622Z",
+    "duration": 29837,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "71490902-45b8-4bd9-a264-2c893c81fe68",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/02_Signin.spec.js",
+      "file": "cypress/integration/Patient_Testcases/02_Signin.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f8d93b2c-a739-4433-8cde-4fa634f5e37c",
+          "title": "signin module test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the sign in page after clicking signin/signup button on landing page",
+              "fullTitle": "signin module test cases As a patient the user should be navigated to the sign in page after clicking signin/signup button on landing page",
+              "timedOut": null,
+              "duration": 6814,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.url().should('eq', cred.PatientUrl);\ncy.get('#root > div:nth-child(2) > div > div:nth-child(1) > div > div>div:nth-child(2)').should('be.visible').should('have.text', 'Sign In / Sign Up').click();\ncy.url().should('contain', '/login');\ncy.get('[alt=logo]').should('be.visible');",
+              "err": {},
+              "uuid": "710e2a86-202e-4c0b-9ce2-066d1a6237b0",
+              "parentUUID": "f8d93b2c-a739-4433-8cde-4fa634f5e37c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Sign In page each label and field should have proper label and validations",
+              "fullTitle": "signin module test cases At Sign In page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 456,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.p-10 > :nth-child(1) > img').should('be.visible');\ncy.get('.p-10 > :nth-child(1)').should('be.visible').should('have.text', 'LX Medical');\ncy.get('.text-2xl').should('be.visible').should('have.text', 'Sign In');\ncy.get('.grid > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Email');\ncy.get(':nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Password');\ncy.get('.ml-2 > div').should('be.visible').should('have.text', 'Remember me');\ncy.get(':nth-child(1) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.justify-between > a > .text-primary').should('be.visible').should('have.text', 'Forgot Password?');\ncy.get('[href=\"/signup\"] > .flex').should('be.visible').should('contain', 'Create');",
+              "err": {},
+              "uuid": "f98f890c-774e-4804-a16b-4e6389746eb0",
+              "parentUUID": "f8d93b2c-a739-4433-8cde-4fa634f5e37c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should unable to login with no data",
+              "fullTitle": "signin module test cases As a patient the user should unable to login with no data",
+              "timedOut": null,
+              "duration": 362,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.get(':nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {},
+              "uuid": "324d5955-9994-415f-8a92-1f1564b66bad",
+              "parentUUID": "f8d93b2c-a739-4433-8cde-4fa634f5e37c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should unable to login with invalid credentials",
+              "fullTitle": "signin module test cases As a Patient the user should unable to login with invalid credentials",
+              "timedOut": null,
+              "duration": 16950,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('pp@mailinator.com');\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('password');\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.contains('Incorrect Email or Password');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Incorrect Email or Password' but never did.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Incorrect Email or Password' but never did.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\02_Signin.spec.js:141:8)",
+                "diff": null
+              },
+              "uuid": "fbf2f466-2905-4ff6-8a32-9a5a817879e6",
+              "parentUUID": "f8d93b2c-a739-4433-8cde-4fa634f5e37c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should able to login with credentials",
+              "fullTitle": "signin module test cases As a patient the user should able to login with credentials",
+              "timedOut": null,
+              "duration": 2573,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword);\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.url().should('contain', '/home');",
+              "err": {},
+              "uuid": "a4212b82-0631-4556-a50a-268ebed7b525",
+              "parentUUID": "f8d93b2c-a739-4433-8cde-4fa634f5e37c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "710e2a86-202e-4c0b-9ce2-066d1a6237b0",
+            "f98f890c-774e-4804-a16b-4e6389746eb0",
+            "324d5955-9994-415f-8a92-1f1564b66bad",
+            "a4212b82-0631-4556-a50a-268ebed7b525"
+          ],
+          "failures": [
+            "fbf2f466-2905-4ff6-8a32-9a5a817879e6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27155,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -63,6 +63,7 @@ describe('Forgot password module testcases', () => {
         cy.get('.mt-3 > .font-bold').should('be.visible').click();
         const emailId = data.email;
         cy.contains('OTP send to ' + emailId);
+        
     })
 
    

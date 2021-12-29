@@ -9,7 +9,7 @@ import faker from 'faker'
         cy.url().should('contain','/patients')
         cy.get('.bg-white > .w-full').should('be.visible').type('pawankumar@yopmail.com')
         cy.wait(2000)
-        cy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(2)').scrollIntoView().click()
+        cy.get('tr:nth-child(1) > td:nth-child(7) > div > div > svg > path').scrollIntoView().click({force:true})
         cy.url().should('contain','/chat')
 
     })
@@ -20,7 +20,7 @@ import faker from 'faker'
         cy.get('.w-full > .cursor-pointer').should('be.visible')
      })
      it('The user should able to see all the chats between the Admin and patients',()=>{
-      cy.get('div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white').scrollIntoView().should('be.visible').should('contain','Hello')
+      cy.get('div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-lightChatGray').scrollIntoView().should('be.visible').should('contain','hi')
       cy.get('div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible')
 
   })
@@ -44,14 +44,14 @@ import faker from 'faker'
 
       })
       it('The Admin can see the full length image on a separate window by clicking on that particular image',()=>{
-         cy.get('div:nth-child(39) > div > div > div > a > div').scrollIntoView().should('be.visible').click()
+         cy.get('div:nth-child(14) > div > div > div > a > div').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
 
       })
       it('The Admin can open the document in a separate window by clicking on the particular document',()=>{
-         cy.get('#chatList > div.pb-6 > div > div > div > a > div').should('be.visible').click()
+         cy.get('#chatList > div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
-
+         cy.logout()
       })
 
 })

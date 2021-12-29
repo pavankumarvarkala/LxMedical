@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-21T13:13:48.476Z",
+    "end": "2021-09-21T13:14:08.476Z",
+    "duration": 20000,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3bea5fdb-e24c-4374-9db2-249b29265cdd",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/04_Sign_out.spec.js",
+      "file": "cypress/integration/Patient_Testcases/04_Sign_out.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4e2ceb9c-4c23-4cd7-b62f-2b6e72cda862",
+          "title": "Sign Out Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should able to log out by clicking on log out tab under account setting tab",
+              "fullTitle": "Sign Out Module Test Cases As a Patient the user should able to log out by clicking on log out tab under account setting tab",
+              "timedOut": null,
+              "duration": 15583,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.get('.bg-white > .mx-auto > .w-44').should('be.visible').click();\ncy.url().should('contain', '/login');\ncy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword);\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('have.text', 'Account Settings').click();\ncy.url().should('contain', '/settings');",
+              "err": {},
+              "uuid": "d0c07f2b-56cf-489e-9e4e-53a507a991df",
+              "parentUUID": "4e2ceb9c-4c23-4cd7-b62f-2b6e72cda862",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on log out the user should able  to get  log out confirmation pop up",
+              "fullTitle": "Sign Out Module Test Cases By clicking on log out the user should able  to get  log out confirmation pop up",
+              "timedOut": null,
+              "duration": 718,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text', 'Logout').click();\ncy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Confirmation');\ncy.get('.hidden > :nth-child(2) > .items-center.mt-6 > .flex').should('be.visible').should('contain', 'Are you sure');\ncy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text', 'Logout');",
+              "err": {},
+              "uuid": "88432f2b-9061-4266-a520-48833537a34f",
+              "parentUUID": "4e2ceb9c-4c23-4cd7-b62f-2b6e72cda862",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on cross symbol on the log out confirmation pop out should disappear",
+              "fullTitle": "Sign Out Module Test Cases By clicking on cross symbol on the log out confirmation pop out should disappear",
+              "timedOut": null,
+              "duration": 193,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .justify-between > .w-6 > path').should('be.visible').click();\ncy.url().should('contain', '/settings');",
+              "err": {},
+              "uuid": "98ca871a-4dd1-4d46-8485-a6b782972300",
+              "parentUUID": "4e2ceb9c-4c23-4cd7-b62f-2b6e72cda862",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on logout button the user should be able to log out of the site",
+              "fullTitle": "Sign Out Module Test Cases By clicking on logout button the user should be able to log out of the site",
+              "timedOut": null,
+              "duration": 1021,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text', 'Logout').click();\ncy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Confirmation');\ncy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text', 'Logout').click();\ncy.url().should('eq', cred.PatientUrl);",
+              "err": {},
+              "uuid": "398cb5f5-23c5-479a-accb-1ec72bcd3971",
+              "parentUUID": "4e2ceb9c-4c23-4cd7-b62f-2b6e72cda862",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d0c07f2b-56cf-489e-9e4e-53a507a991df",
+            "88432f2b-9061-4266-a520-48833537a34f",
+            "98ca871a-4dd1-4d46-8485-a6b782972300",
+            "398cb5f5-23c5-479a-accb-1ec72bcd3971"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17515,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

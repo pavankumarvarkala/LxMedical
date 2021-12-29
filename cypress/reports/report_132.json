@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2021-09-23T13:40:31.338Z",
+    "end": "2021-09-23T13:43:45.697Z",
+    "duration": 194359,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "18312f54-a945-4b46-84f2-23069d33757b",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "file": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3e874946-2974-432a-a3f3-c3e47e25d961",
+          "title": "Profile module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Admin Profile",
+              "fullTitle": "Profile module testcases As a Admin I should be able to navigate on Admin Profile",
+              "timedOut": null,
+              "duration": 52529,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('#headlessui-menu-button-1').click();\ncy.xpath(\"//div[@role='menuitem']//div[text()='Profile']\").should('be.visible').click();\ncy.url().should('include', '/admin/profile');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "17dac510-132a-4b01-a8cc-a316533cd391",
+              "parentUUID": "3e874946-2974-432a-a3f3-c3e47e25d961",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each label should be proper",
+              "fullTitle": "Profile module testcases At Profile page each label should be proper",
+              "timedOut": null,
+              "duration": 45195,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').and('have.text', 'Profile Details');\ncy.xpath(\"//label//div\").eq(0).should('have.text', 'First Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(1).should('have.text', 'Last Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(2).should('have.text', 'Email').and('be.visible');\ncy.xpath(\"//label//div\").eq(3).should('have.text', 'Phone Number').and('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "7ee35311-fcd4-4f52-a43d-47e8867d56f6",
+              "parentUUID": "3e874946-2974-432a-a3f3-c3e47e25d961",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each field should have proper validations",
+              "fullTitle": "Profile module testcases At Profile page each field should have proper validations",
+              "timedOut": null,
+              "duration": 45358,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.ml-2').click();\ncy.xpath(first_name).clear();\ncy.xpath(last_name).clear();\ncy.xpath(mobile_num).clear();\ncy.get('.flex-1').click();\ncy.get('.text-red-600 ').eq(0).contains('First Name is required');\ncy.get('.text-red-600 ').eq(1).contains('Last Name is required');\ncy.get('.text-red-600 ').eq(2).contains('Phone number required');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "f260e4e5-bf3b-46cb-b5e5-2eac7c1beea0",
+              "parentUUID": "3e874946-2974-432a-a3f3-c3e47e25d961",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to update my profile details except email",
+              "fullTitle": "Profile module testcases As a Admin I should be able to update my profile details except email",
+              "timedOut": null,
+              "duration": 45152,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const phone = _faker.default.phone.phoneNumber('##########');\ncy.xpath(first_name).clear().type('LXMedical');\ncy.xpath(last_name).clear().type('Admin');\ncy.xpath(mobile_num).clear().type(phone);\ncy.get('#update-profile').click();\ncy.contains(\"Profile updated sucessfully\");\ncy.logout();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "86eab8e2-f841-4b30-96e9-b89de2952a41",
+              "parentUUID": "3e874946-2974-432a-a3f3-c3e47e25d961",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "17dac510-132a-4b01-a8cc-a316533cd391",
+            "7ee35311-fcd4-4f52-a43d-47e8867d56f6",
+            "f260e4e5-bf3b-46cb-b5e5-2eac7c1beea0",
+            "86eab8e2-f841-4b30-96e9-b89de2952a41"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 188234,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-21T15:29:34.310Z",
+    "end": "2021-09-21T15:29:50.678Z",
+    "duration": 16368,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3c2e1e0c-9950-496b-b9ac-137b1b0b2934",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/05_Profile.spec.js",
+      "file": "cypress/integration/Patient_Testcases/05_Profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "34335a85-18d8-40d8-a7dd-51d02459a4e5",
+          "title": "Profile Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should able to see his profile details by clicking on profile icon",
+              "fullTitle": "Profile Module Test Cases As a patient the user should able to see his profile details by clicking on profile icon",
+              "timedOut": null,
+              "duration": 10516,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');",
+              "err": {},
+              "uuid": "4d78feb9-3e9e-4dcc-b8d3-4d8cb5d528fb",
+              "parentUUID": "34335a85-18d8-40d8-a7dd-51d02459a4e5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At profile page each label and field should have proper label and validations",
+              "fullTitle": "Profile Module Test Cases At profile page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 3374,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-start > img').should('be.visible');\ncy.get('.justify-start > .m-auto').should('be.visible').should('have.text', 'LX MEDICAL');\ncy.get('[href=\"/appointments\"]').should('be.visible').should('have.text', 'Appointments');\ncy.get('.justify-start > .hidden > :nth-child(3)').should('be.visible').should('have.text', 'Charts');\ncy.get('.justify-start > .hidden > :nth-child(4)').should('be.visible').should('contain', 'Chat');\ncy.get('.p-1 > .h-7').should('be.visible');\ncy.get('.relative > .text-gray-600').should('be.visible');\ncy.get('.h-7').should('be.visible');\ncy.get('.px-4 > :nth-child(1) > img').should('be.visible');\ncy.get('.px-4 > .font-bold').should('be.visible');\ncy.get('.shadow-corner').should('be.visible').should('contain', 'Personal Information');\ncy.get('.space-y-8 > :nth-child(2)').should('be.visible').should('contain', 'Manage Membership Plan');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('contain', 'Account Settings');\ncy.get('.space-y-8 > :nth-child(4)').should('be.visible').should('contain', 'About');\ncy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Personal Information');\ncy.get('.space-y-4 > :nth-child(2) > .text-gray-400').should('be.visible').should('have.text', 'Full Name');\ncy.get(':nth-child(3) > .text-gray-400').should('be.visible').should('have.text', 'Email Address');\ncy.get(':nth-child(4) > .text-gray-400').should('be.visible').should('have.text', 'Phone Number');\ncy.get(':nth-child(5) > .text-gray-400').should('be.visible').should('have.text', 'Date of Birth');\ncy.get(':nth-child(6) > .text-gray-400').should('be.visible').should('have.text', 'Gender');\ncy.get('.space-y-2 > .font-bold').should('be.visible').should('have.text', 'Address');\ncy.get(':nth-child(8) > .flex').should('be.visible').should('contain', 'Edit Details');\ncy.patientlogout();",
+              "err": {},
+              "uuid": "2bf2b4bb-8cb1-41de-a7fd-71d2e8578505",
+              "parentUUID": "34335a85-18d8-40d8-a7dd-51d02459a4e5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4d78feb9-3e9e-4dcc-b8d3-4d8cb5d528fb",
+            "2bf2b4bb-8cb1-41de-a7fd-71d2e8578505"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13890,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2021-12-29T05:18:08.606Z",
+    "end": "2021-12-29T05:22:45.575Z",
+    "duration": 276969,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "92cb5dc2-1586-47c6-81d3-9ad1b33e8389",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/01_login.spec.js",
+      "file": "cypress/integration/Admin_Testcases/01_login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+          "title": "Login module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on login page",
+              "fullTitle": "Login module testcases As a Admin I should be able to navigate on login page",
+              "timedOut": null,
+              "duration": 152089,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.qaUrl);\ncy.xpath(\"//*[text()='Sign In']\").should('have.text', 'Sign In').and('be.visible');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `150000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `150000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `150000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `150000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:155054:72)\n    at https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:156091:16\n    at tryCatcher (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)\nFrom Your Spec Code:\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:115:8)",
+                "diff": null
+              },
+              "uuid": "a8c213b5-28c0-46af-b5b1-f603c614c8ab",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen each label and link should be proper",
+              "fullTitle": "Login module testcases At login screen each label and link should be proper",
+              "timedOut": null,
+              "duration": 16046,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-500').should('have.text', 'Please enter your credentials to sign in.');\ncy.get('[alt=\"logo\"]').invoke('attr', 'src').should('eq', '/static/media/logo2.9ba2ea85.png');\ncy.xpath(\"//label\").eq(0).should('have.text', 'Email');\ncy.xpath(\"//label\").eq(1).should('have.text', 'Password');\ncy.xpath(\"//button[@textid='submit']\").should('be.visible');\ncy.get('a').should('have.text', 'Forgot Password?');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-gray-500`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-gray-500`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:119:30)",
+                "diff": null
+              },
+              "uuid": "2048fba3-81e9-4c86-906c-75b07c69c1ba",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen each field should have proper validation",
+              "fullTitle": "Login module testcases At login screen each field should have proper validation",
+              "timedOut": null,
+              "duration": 16035,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='email']\").should('be.visible').clear().type('dasd@asda@').clear();\ncy.get('.py-20').click();\ncy.get('.text-red-600').eq(0).should('have.text', 'Required').and('be.visible');\ncy.xpath(\"//input[@name='email']\").should('be.visible').type('dasd@asda@');\ncy.get('.text-red-600').eq(0).should('have.text', 'Please enter valid email').and('be.visible');\ncy.xpath(\"//input[@name='email']\").clear();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:127:40)",
+                "diff": null
+              },
+              "uuid": "272a2922-48dd-4385-9695-97f3dff1ef3a",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen password field should have proper validation",
+              "fullTitle": "Login module testcases At login screen password field should have proper validation",
+              "timedOut": null,
+              "duration": 15924,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='password']\").should('be.visible').clear().type('dasd@asda@').clear();\ncy.get('.py-20').click();\ncy.get('.text-red-600').eq(1).should('have.text', 'Required').and('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='password']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='password']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:135:43)",
+                "diff": null
+              },
+              "uuid": "c39d62a7-37cc-494f-8c6a-086640dd8889",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen forgot password link text should be visible",
+              "fullTitle": "Login module testcases At login screen forgot password link text should be visible",
+              "timedOut": null,
+              "duration": 15636,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').should('be.visible').click();\ncy.get('.text-gray-900').should('have.text', 'Forgot Password? ').and('be.visible');\ncy.get('a > .text-primary').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `a`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `a`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:140:17)",
+                "diff": null
+              },
+              "uuid": "2e57e971-092a-4033-af51-0c1c5f4466a5",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should unable to login with invalid credential",
+              "fullTitle": "Login module testcases I should unable to login with invalid credential",
+              "timedOut": null,
+              "duration": 17474,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='email']\").type('alpha@gmail.com');\ncy.xpath(\"//input[@name='password']\").type('Password@321');\ncy.xpath(\"//button[@textid='submit']\").should('be.enabled').and('be.visible').click();\ncy.contains('Incorrect email or password');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:145:8)",
+                "diff": null
+              },
+              "uuid": "2e5c9df3-b3dc-455e-b6ad-2f837b5c8819",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to login with the valid credeantial",
+              "fullTitle": "Login module testcases I should be able to login with the valid credeantial",
+              "timedOut": null,
+              "duration": 15428,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='email']\").clear().type(cred.email);\ncy.xpath(\"//input[@name='password']\").clear().type(cred.password);\ncy.xpath(\"//button[@textid='submit']\").click();\ncy.get('.max-w-xs > img').should('be.visible'); // cy.url().should('include', '/dashboard')",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\01_login.spec.js:151:8)",
+                "diff": null
+              },
+              "uuid": "45d69cb9-842e-42f5-87a0-814a47b0d487",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to logout successfully",
+              "fullTitle": "Login module testcases As a Admin I should be able to logout successfully",
+              "timedOut": null,
+              "duration": 15376,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `#headlessui-menu-button-1`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `#headlessui-menu-button-1`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:257:39)",
+                "diff": null
+              },
+              "uuid": "2c59dae3-aa2a-47de-b5e7-b29558daed2c",
+              "parentUUID": "90a508d3-875f-4781-a35d-8739a55cb8fe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a8c213b5-28c0-46af-b5b1-f603c614c8ab",
+            "2048fba3-81e9-4c86-906c-75b07c69c1ba",
+            "272a2922-48dd-4385-9695-97f3dff1ef3a",
+            "c39d62a7-37cc-494f-8c6a-086640dd8889",
+            "2e57e971-092a-4033-af51-0c1c5f4466a5",
+            "2e5c9df3-b3dc-455e-b6ad-2f837b5c8819",
+            "45d69cb9-842e-42f5-87a0-814a47b0d487",
+            "2c59dae3-aa2a-47de-b5e7-b29558daed2c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 264008,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

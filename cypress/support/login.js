@@ -1,7 +1,7 @@
 const cred = require('../fixtures/cred.json')
 Cypress.Commands.add('login', () => {
   cy.visit(cred.qaUrl);
-  cy.xpath("//input[@name='email']").clear().type(cred.email);
+  cy.xpath("//input[@name='email']").type(cred.email);
   cy.xpath("//input[@name='password']").clear().type(cred.password);
   cy.xpath("//button[@textid='submit']").click();
   cy.get('.max-w-xs > img').should('be.visible');

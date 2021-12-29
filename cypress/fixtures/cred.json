@@ -1,8 +1,8 @@
 {
-  "email": "pavan.kumar@crownstack.com",
+  "email": "lxmedical@yopmail.com",
   "pemail":"pawankumar@yopmail.com",
   "ppassword":"Password@123",
   "password": "Password@123",
   "PatientUrl":"https://qa.rch.build-release.com/",
-  "qaUrl": "https://qa.rch.build-release.com/admin"
+  "qaUrl": "https://staging.rch.build-release.com/admin"
 }

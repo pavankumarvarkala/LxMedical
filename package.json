@@ -13,7 +13,7 @@
     "webpack": "^5.53.0"
   },
   "devDependencies": {
-    "mochawesome": "^6.2.2",
+    "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.0"
   },
   "scripts": {
@@ -26,7 +26,8 @@
     "changePassword": "./node_modules/.bin/cypress run --spec cypress/integration/Admin_Testcases/02_changePassword.spec.js --browser chrome",
     "Admin_Testcases": "./node_modules/.bin/cypress run --spec cypress/integration/Admin_Testcases/*js --browser chrome",
     "Patient_Testcases": "./node_modules/.bin/cypress run --spec cypress/integration?Patient_Testcases/*js --browser chrome",
-    "cy:dashboard": "cypress run --record --key 669148a5-f2a6-42af-bac8-506ed173c2fa"
+    "cy:dashboard": "cypress run --record --key 669148a5-f2a6-42af-bac8-506ed173c2fa",
+    "TestRun": "node_modules/.bin/cypress run"
   },
   "repository": {
     "type": "git",

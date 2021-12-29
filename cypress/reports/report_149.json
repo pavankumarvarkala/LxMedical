@@ -1,0 +1,245 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-09-27T07:55:46.652Z",
+    "end": "2021-09-27T07:58:49.934Z",
+    "duration": 183282,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0fafd348-2733-47f4-bd69-645dc82a7f4b",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/01_login.spec.js",
+      "file": "cypress/integration/Admin_Testcases/01_login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+          "title": "Login module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on login page",
+              "fullTitle": "Login module testcases As a Admin I should be able to navigate on login page",
+              "timedOut": null,
+              "duration": 18557,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.qaUrl);\ncy.xpath(\"//*[text()='Sign In']\").should('have.text', 'Sign In').and('be.visible');",
+              "err": {},
+              "uuid": "6e336064-aee6-4032-afc1-89a70f7be419",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen each label and link should be proper",
+              "fullTitle": "Login module testcases At login screen each label and link should be proper",
+              "timedOut": null,
+              "duration": 1102,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-500').should('have.text', 'Please enter your credentials to sign in.');\ncy.get('[alt=\"logo\"]').invoke('attr', 'src').should('eq', '/static/media/logo2.9ba2ea85.png');\ncy.xpath(\"//label\").eq(0).should('have.text', 'Email');\ncy.xpath(\"//label\").eq(1).should('have.text', 'Password');\ncy.xpath(\"//button[@textid='submit']\").should('be.visible');\ncy.get('a').should('have.text', 'Forgot Password?');",
+              "err": {},
+              "uuid": "166e5e39-a7a2-4d31-9269-9fd441678d48",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen each field should have proper validation",
+              "fullTitle": "Login module testcases At login screen each field should have proper validation",
+              "timedOut": null,
+              "duration": 28533,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='email']\").should('be.visible').clear().type('dasd@asda@').clear();\ncy.get('.py-20').click();\ncy.get('.text-red-600').eq(0).should('have.text', 'Required').and('be.visible');\ncy.xpath(\"//input[@name='email']\").should('be.visible').type('dasd@asda@');\ncy.get('.text-red-600').eq(0).should('have.text', 'Please enter valid email').and('be.visible');\ncy.xpath(\"//input[@name='email']\").clear();",
+              "err": {},
+              "uuid": "d683a771-86e2-4ddc-aec3-55c84d6ab815",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen password field should have proper validation",
+              "fullTitle": "Login module testcases At login screen password field should have proper validation",
+              "timedOut": null,
+              "duration": 6470,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='password']\").should('be.visible').clear().type('dasd@asda@').clear();\ncy.get('.py-20').click();\ncy.get('.text-red-600').eq(1).should('have.text', 'Required').and('be.visible');",
+              "err": {},
+              "uuid": "37ce4250-9e9e-431d-89e4-fad2845f5116",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen forgot password link text should be visible",
+              "fullTitle": "Login module testcases At login screen forgot password link text should be visible",
+              "timedOut": null,
+              "duration": 7958,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').should('be.visible').click();\ncy.get('.text-gray-900').should('have.text', 'Forgot Password? ').and('be.visible');\ncy.get('a > .text-primary').click();",
+              "err": {},
+              "uuid": "687e1a34-ce1f-4883-a378-42ed3724edbd",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should unable to login with invalid credential",
+              "fullTitle": "Login module testcases I should unable to login with invalid credential",
+              "timedOut": null,
+              "duration": 13853,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='email']\").type('alpha@gmail.com');\ncy.xpath(\"//input[@name='password']\").type('Password@321');\ncy.xpath(\"//button[@textid='submit']\").should('be.enabled').and('be.visible').click();\ncy.contains('Incorrect email or password');",
+              "err": {},
+              "uuid": "448c385d-e7f8-4287-86ff-fcfc26b2fe5f",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to login with the valid credeantial",
+              "fullTitle": "Login module testcases I should be able to login with the valid credeantial",
+              "timedOut": null,
+              "duration": 33701,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//input[@name='email']\").clear().type(cred.email);\ncy.xpath(\"//input[@name='password']\").clear().type(cred.password);\ncy.xpath(\"//button[@textid='submit']\").click();\ncy.get('.max-w-xs > img').should('be.visible'); // cy.url().should('include', '/dashboard')",
+              "err": {},
+              "uuid": "075e4e44-6002-4bc0-aedf-77ce08aff9f6",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to logout successfully",
+              "fullTitle": "Login module testcases As a Admin I should be able to logout successfully",
+              "timedOut": null,
+              "duration": 60626,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[text()='Sign In']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[text()='Sign In']`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:262:39)",
+                "diff": null
+              },
+              "uuid": "6d02b81f-f208-4c23-bc84-cfdd22a4c0f2",
+              "parentUUID": "4651ad2d-fe6c-498a-bd3f-828556e6fd73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6e336064-aee6-4032-afc1-89a70f7be419",
+            "166e5e39-a7a2-4d31-9269-9fd441678d48",
+            "d683a771-86e2-4ddc-aec3-55c84d6ab815",
+            "37ce4250-9e9e-431d-89e4-fad2845f5116",
+            "687e1a34-ce1f-4883-a378-42ed3724edbd",
+            "448c385d-e7f8-4287-86ff-fcfc26b2fe5f",
+            "075e4e44-6002-4bc0-aedf-77ce08aff9f6"
+          ],
+          "failures": [
+            "6d02b81f-f208-4c23-bc84-cfdd22a4c0f2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 170800,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

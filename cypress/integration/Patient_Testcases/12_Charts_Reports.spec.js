@@ -8,8 +8,9 @@ const cred=require('../../fixtures/cred.json')
         cy.patientlogin(cred.pemail,cred.ppassword)
         cy.get('[href="/charts"]').should('be.visible').should('have.text','Charts').click()
         cy.url().should('contain','/charts')
-        cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible').click()
-        cy.url().should('contain','/medical_history')
+        cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible').click({force:true})
+        cy.get(':nth-child(2) > .bg-white > .justify-between > .text-base').click()
+         cy.url().should('contain','/medical_history')
         cy.get('.border-transparent').should('be.visible').should('contain','Reports').click()
         cy.url().should('contain','/reports')
 
@@ -44,6 +45,7 @@ const cred=require('../../fixtures/cred.json')
          cy.get(':nth-child(2) > a > .justify-between').should('be.visible').click()
          
         cy.get(':nth-child(3) > a > .justify-between').should('be.visible').click()
+        cy.patientlogout()
          
     })
 

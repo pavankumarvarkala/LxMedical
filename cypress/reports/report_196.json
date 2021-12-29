@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2021-12-29T06:06:20.430Z",
+    "end": "2021-12-29T06:09:44.265Z",
+    "duration": 203835,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5e970b96-ff3a-4220-a1da-b1ce305c6c50",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "file": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d3806f11-8c52-4bc2-8484-32ffd0297490",
+          "title": "Profile module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Admin Profile",
+              "fullTitle": "Profile module testcases As a Admin I should be able to navigate on Admin Profile",
+              "timedOut": null,
+              "duration": 144671,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('#headlessui-menu-button-1').click();\ncy.xpath(\"//div[@role='menuitem']//div[text()='Profile']\").should('be.visible').click();\ncy.url().should('include', '/admin/profile');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='email']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:251:6)",
+                "diff": null
+              },
+              "uuid": "0181ee89-cdd8-4d8a-899e-9feddec1342e",
+              "parentUUID": "d3806f11-8c52-4bc2-8484-32ffd0297490",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each label should be proper",
+              "fullTitle": "Profile module testcases At Profile page each label should be proper",
+              "timedOut": null,
+              "duration": 15897,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').and('have.text', 'Profile Details');\ncy.xpath(\"//label//div\").eq(0).should('have.text', 'First Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(1).should('have.text', 'Last Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(2).should('have.text', 'Email').and('be.visible');\ncy.xpath(\"//label//div\").eq(3).should('have.text', 'Phone Number').and('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-xl`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-xl`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\03_profile.spec.js:133:24)",
+                "diff": null
+              },
+              "uuid": "23732ad7-49a9-4921-a80a-ea309f7505c1",
+              "parentUUID": "d3806f11-8c52-4bc2-8484-32ffd0297490",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each field should have proper validations",
+              "fullTitle": "Profile module testcases At Profile page each field should have proper validations",
+              "timedOut": null,
+              "duration": 15830,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.ml-2').click();\ncy.xpath(first_name).clear();\ncy.xpath(last_name).clear();\ncy.xpath(mobile_num).clear();\ncy.get('.flex-1').click();\ncy.get('.text-red-600 ').eq(0).contains('First Name is required');\ncy.get('.text-red-600 ').eq(1).contains('Last Name is required');\ncy.get('.text-red-600 ').eq(2).contains('Phone number required');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.ml-2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.ml-2`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\03_profile.spec.js:140:8)",
+                "diff": null
+              },
+              "uuid": "8d1a7ca6-5540-48f3-af3a-c7818d5ddb45",
+              "parentUUID": "d3806f11-8c52-4bc2-8484-32ffd0297490",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to update my profile details except email",
+              "fullTitle": "Profile module testcases As a Admin I should be able to update my profile details except email",
+              "timedOut": null,
+              "duration": 16480,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const phone = _faker.default.phone.phoneNumber('##########');\ncy.xpath(first_name).clear().type('LXMedical');\ncy.xpath(last_name).clear().type('Admin');\ncy.xpath(mobile_num).clear().type(phone);\ncy.get('#update-profile').click();\ncy.contains(\"Profile updated sucessfully\");\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='firstName']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='firstName']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\03_profile.spec.js:152:8)",
+                "diff": null
+              },
+              "uuid": "0d764c2c-7367-4ebb-836c-2026a28daa89",
+              "parentUUID": "d3806f11-8c52-4bc2-8484-32ffd0297490",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0181ee89-cdd8-4d8a-899e-9feddec1342e",
+            "23732ad7-49a9-4921-a80a-ea309f7505c1",
+            "8d1a7ca6-5540-48f3-af3a-c7818d5ddb45",
+            "0d764c2c-7367-4ebb-836c-2026a28daa89"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 192878,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

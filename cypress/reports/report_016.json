@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-21T11:25:38.733Z",
+    "end": "2021-09-21T11:25:59.951Z",
+    "duration": 21218,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a46e96a0-b67b-439b-9d45-2dbb4470d46f",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/07_Patient_Management.spec.js",
+      "file": "cypress/integration/Admin_Testcases/07_Patient_Management.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+          "title": "Patient management module test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a admin the user should be navigated on patients page by clicking on patients tab",
+              "fullTitle": "Patient management module test cases As a admin the user should be navigated on patients page by clicking on patients tab",
+              "timedOut": null,
+              "duration": 7718,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(3)').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients');",
+              "err": {},
+              "uuid": "526a06ed-20a8-4905-9a4e-8f1b3c26d35e",
+              "parentUUID": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At patients page each label and field should have proper label and validations",
+              "fullTitle": "Patient management module test cases At patients page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 1774,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('have.text', 'Patients');\ncy.get('table>thead>tr>th:nth-child(1)').should('be.visible').should('have.text', 'Full Name');\ncy.get('table>thead>tr>th:nth-child(2)').should('be.visible').should('have.text', 'Email');\ncy.get('table>thead>tr>th:nth-child(3)').should('be.visible').should('have.text', 'Mobile Number');\ncy.get('table>thead>tr>th:nth-child(4)').should('be.visible').should('have.text', 'Joined On');\ncy.get('table>thead>tr>th:nth-child(5)').should('be.visible').should('have.text', 'Subscription');\ncy.get('table>thead>tr>th:nth-child(6)').scrollIntoView().should('be.visible').should('have.text', 'Appointment');\ncy.get('table>thead>tr>th:nth-child(7)').scrollIntoView().should('be.visible').should('have.text', 'Action');",
+              "err": {},
+              "uuid": "c8843c9f-1694-4cb7-b7de-c0d563cd4a90",
+              "parentUUID": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated to the profile details page of any patient by clicking on eye symbol against that particular patient ",
+              "fullTitle": "Patient management module test cases As a admin the user should be navigated to the profile details page of any patient by clicking on eye symbol against that particular patient ",
+              "timedOut": null,
+              "duration": 122,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1) > path:nth-child(2)').scrollIntoView().should('be.visible').click({\n  force: true\n});",
+              "err": {},
+              "uuid": "2371f4ca-9956-4c1b-8355-73a37f605ea6",
+              "parentUUID": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At profile deatils page of the patient each label and field should have proper label and validations",
+              "fullTitle": "Patient management module test cases At profile deatils page of the patient each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 1910,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-4 > .font-bold').should('be.visible').should('have.text', 'Patient Details');\ncy.get('.border-primary').should('be.visible').should('have.text', 'Address');\ncy.get('div.space-y-4:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 1');\ncy.get('div.space-y-4:nth-child(1)>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 2');\ncy.get('div.space-y-4:nth-child(1)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Postal Code');\ncy.get('div.space-y-4:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'City');\ncy.get('div.space-y-4:nth-child(1)>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'State');",
+              "err": {},
+              "uuid": "6e78d0b4-3ce8-4aac-8701-0236d839df59",
+              "parentUUID": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated back to the patients page by clicking on back symbol on profile details page",
+              "fullTitle": "Patient management module test cases As a admin the user should be navigated back to the patients page by clicking on back symbol on profile details page",
+              "timedOut": null,
+              "duration": 192,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.h-6 > path').should('be.visible').click();",
+              "err": {},
+              "uuid": "be156cfb-ee4d-4890-84e6-7f7e59b3fd89",
+              "parentUUID": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should able to search any patient by his name or email",
+              "fullTitle": "Patient management module test cases As a admin the user should able to search any patient by his name or email",
+              "timedOut": null,
+              "duration": 6903,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.bg-white > .w-full').should('be.visible').type('pawan');\ncy.wait(2000);\ncy.get('.bg-white > .w-full').clear();\ncy.get('.bg-white > .w-full').should('be.visible').type('pavann@mailinator.com');\ncy.wait(2000);\ncy.get('.bg-white > .w-full').clear();\ncy.logout();",
+              "err": {},
+              "uuid": "0a678691-6580-4784-9aea-ae84158f14e6",
+              "parentUUID": "78e58018-26f0-4c36-b5ad-0f1eb26e09e9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "526a06ed-20a8-4905-9a4e-8f1b3c26d35e",
+            "c8843c9f-1694-4cb7-b7de-c0d563cd4a90",
+            "2371f4ca-9956-4c1b-8355-73a37f605ea6",
+            "6e78d0b4-3ce8-4aac-8701-0236d839df59",
+            "be156cfb-ee4d-4890-84e6-7f7e59b3fd89",
+            "0a678691-6580-4784-9aea-ae84158f14e6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18619,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -11,7 +11,7 @@ describe('Sign Out Module Test Cases',()=>{
         cy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword)
         cy.get('.border-2').should('be.visible').should('have.text','Sign In').click()
         cy.url().should('contain','/home')
-        cy.get('.justify-end > .flex').should('be.visible').click()
+        cy.get('.p-1 > .h-7').should('be.visible').click()
         cy.url().should('contain','/profile')
         cy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('have.text','Account Settings').click()
         cy.url().should('contain','/settings')
@@ -32,7 +32,7 @@ describe('Sign Out Module Test Cases',()=>{
         cy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text','Logout').click()
         cy.get('.justify-between > .font-bold').should('be.visible').should('have.text','Confirmation')
         cy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text','Logout').click()
-        cy.url().should('contain','/login')
+        cy.url().should('eq',cred.PatientUrl)
 
     })
   

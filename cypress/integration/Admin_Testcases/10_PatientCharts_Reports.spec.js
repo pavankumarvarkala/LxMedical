@@ -49,7 +49,7 @@ const cred=require('../../fixtures/cred.json')
          cy.get(':nth-child(2) > a > .justify-between').should('be.visible').click()
          
         cy.get(':nth-child(3) > a > .justify-between').should('be.visible').click()
-         
+        cy.logout()
     })
 
 })

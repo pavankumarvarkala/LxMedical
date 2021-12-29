@@ -7,7 +7,7 @@ describe('Personal Information Module Test Cases',()=>{
     it('As a patient the user should be navigated to the personal information page by clicking on profile icon',()=>{
         cy.patientlogin(cred.pemail,cred.ppassword)
         cy.url().should('contain','/home')
-        cy.get('.justify-end > .flex').should('be.visible').click()
+        cy.get('.p-1 > .h-7').should('be.visible').click()
         cy.url().should('contain','/profile')
 
     })
@@ -17,10 +17,9 @@ describe('Personal Information Module Test Cases',()=>{
         cy.get('[href="/appointments"]').should('be.visible').should('have.text','Appointments')
         cy.get('.justify-start > .hidden > :nth-child(3)').should('be.visible').should('have.text','Charts')
         cy.get('.justify-start > .hidden > :nth-child(4)').should('be.visible').should('have.text','Chat')
-        cy.get('.justify-end > .text-primary').should('be.visible')
-        cy.get('#root>div>div>div>div.flex>div:nth-child(3)>svg:nth-child(2)').should('be.visible')
+        cy.get('.p-1 > .h-7').should('be.visible')
+        cy.get('.relative > .text-gray-600').should('be.visible')
         cy.get('.h-7').should('be.visible')
-        cy.get('.justify-end > .flex > .m-auto').should('be.visible')
         cy.get('.px-4 > :nth-child(1) > img').should('be.visible')
         cy.get('.px-4 > .font-bold').should('be.visible')
         cy.get('.shadow-corner').should('be.visible').should('contain','Personal Information')

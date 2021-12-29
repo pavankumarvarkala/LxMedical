@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-21T12:30:54.777Z",
+    "end": "2021-09-21T12:31:25.940Z",
+    "duration": 31163,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e7108fca-13d6-44ff-8aef-b3a8889bd3e9",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/13_Home.spec.js",
+      "file": "cypress/integration/Patient_Testcases/13_Home.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+          "title": "Home module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should be navigated to the home page after log in successfully",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the home page after log in successfully",
+              "timedOut": null,
+              "duration": 9318,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');",
+              "err": {},
+              "uuid": "e4e591b9-1d19-4320-9168-cca1f40708a3",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Home page each label and field have proper lable and validations",
+              "fullTitle": "Home module testcases At Home page each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 420,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-col > .flex').should('be.visible').should('contain', 'Greetings');\ncy.get('.flex-col > .text-primary > div').should('be.visible').should('contain', 'How can we help');\ncy.get('[href=\"/appointments/book_appointment/Telemedicine\"] > .bg-white').should('be.visible').should('contain', 'Telemedicine');\ncy.get('[href=\"/appointments/book_appointment/In Home Urgent Care\"] > .bg-white').should('be.visible').should('contain', 'In Home Urgent Care');\ncy.get('[href=\"/appointments/book_appointment/In Home Covid Testing\"] > .bg-white').should('be.visible').should('contain', 'In Home Covid Testing');\ncy.get('[href=\"/appointments/book_appointment/In Home Wellness Infusions\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Infusions');\ncy.get('[href=\"/appointments/book_appointment/In Home Wellness Aesthetics\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Aesthetics');",
+              "err": {},
+              "uuid": "fb54934c-4968-4cad-9b56-77789c8782a6",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"Tele medicine\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"Tele medicine\" tab",
+              "timedOut": null,
+              "duration": 3459,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/Telemedicine\"] > .bg-white').should('be.visible').should('contain', 'Telemedicine').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {},
+              "uuid": "0b8eef7c-ed11-4a8b-864c-3663a09174a4",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Urgent Care\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Urgent Care\" tab",
+              "timedOut": null,
+              "duration": 3357,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Urgent Care\"] > .bg-white').should('be.visible').should('contain', 'In Home Urgent Care').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {},
+              "uuid": "a60d751f-d7bf-4026-993f-fbe6e5170084",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Covid Testing\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Covid Testing\" tab",
+              "timedOut": null,
+              "duration": 3423,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Covid Testing\"] > .bg-white').should('be.visible').should('contain', 'In Home Covid Testing').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {},
+              "uuid": "9bf2a629-c67f-4afe-b483-fb066864c4cb",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Infusions\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Infusions\" tab",
+              "timedOut": null,
+              "duration": 3363,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Wellness Infusions\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Infusions').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {},
+              "uuid": "c3f85b31-3b10-4c61-a240-57f05df0438f",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Aesthetics\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Aesthetics\" tab",
+              "timedOut": null,
+              "duration": 3400,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Wellness Aesthetics\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Aesthetics').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {},
+              "uuid": "89fbe7e5-1faf-418c-8173-84514bc2f1aa",
+              "parentUUID": "f55dba6c-b0ee-4400-ab0d-d9ce302f3c73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e4e591b9-1d19-4320-9168-cca1f40708a3",
+            "fb54934c-4968-4cad-9b56-77789c8782a6",
+            "0b8eef7c-ed11-4a8b-864c-3663a09174a4",
+            "a60d751f-d7bf-4026-993f-fbe6e5170084",
+            "9bf2a629-c67f-4afe-b483-fb066864c4cb",
+            "c3f85b31-3b10-4c61-a240-57f05df0438f",
+            "89fbe7e5-1faf-418c-8173-84514bc2f1aa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 26740,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

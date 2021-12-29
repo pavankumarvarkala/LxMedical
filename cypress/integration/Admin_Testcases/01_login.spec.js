@@ -39,7 +39,7 @@ describe('Login module testcases', () => {
         cy.xpath("//input[@name='email']").type('alpha@gmail.com');
         cy.xpath("//input[@name='password']").type('Password@321');
         cy.xpath("//button[@textid='submit']").should('be.enabled').and('be.visible').click();
-        cy.contains('Incorrect Email or Password')
+        cy.contains('Incorrect email or password')
     })
     it('I should be able to login with the valid credeantial', () => {
 

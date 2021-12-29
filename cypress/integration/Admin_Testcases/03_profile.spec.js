@@ -34,7 +34,7 @@ describe('Profile module testcases', () => {
     })
     it("As a Admin I should be able to update my profile details except email", () => {
 
-        const phone = '8279556458';
+        const phone =faker.phone.phoneNumber('##########')
 
          
         cy.xpath(first_name).clear().type('LXMedical')
