@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2021-12-29T06:47:17.606Z",
+    "end": "2021-12-29T06:50:55.159Z",
+    "duration": 217553,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c561578-ad0b-4ccf-b7bf-a6e7a288ea3d",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/04_forgotPassword.spec.js",
+      "file": "cypress/integration/Admin_Testcases/04_forgotPassword.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+          "title": "Forgot password module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Forgot password page",
+              "fullTitle": "Forgot password module testcases As a Admin I should be able to navigate on Forgot password page",
+              "timedOut": null,
+              "duration": 116820,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(data.qaUrl);\ncy.get('a > .text-primary').should('be.visible').click();\ncy.url().should('include', 'forgot-password');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `a > .text-primary`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `a > .text-primary`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:116:33)",
+                "diff": null
+              },
+              "uuid": "db09ac9c-99ef-4e72-bdea-5e92f76eb329",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Forgot password page each field should have proper lable and validation",
+              "fullTitle": "Forgot password module testcases At Forgot password page each field should have proper lable and validation",
+              "timedOut": null,
+              "duration": 15312,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-900').should('be.visible').and('have.text', 'Forgot Password? ');\ncy.get('.text-gray-500').should('be.visible').and('contain', 'A 6 digit verification code will be sent to your registered Email Address');\ncy.get(':nth-child(1) > .text-sm > div').should('be.visible').and('have.text', 'Email');\ncy.get('.appearance-none').should('be.visible');\ncy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.text-red-600').should('be.visible').and('contain.text', 'Required'); //invalid email case\ncy.get('.appearance-none').clear().type('ASd@ads@sd.com');\ncy.get('.text-red-600').should('be.visible').and('have.text', 'Please enter valid email');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-gray-900`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-gray-900`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:120:30)",
+                "diff": null
+              },
+              "uuid": "24112eeb-e487-44bd-ba7f-3971ee545f88",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OTP shouldn't send on invalid email",
+              "fullTitle": "Forgot password module testcases OTP shouldn't send on invalid email",
+              "timedOut": null,
+              "duration": 15215,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').clear().type('abc@gmail.com');\ncy.get('.mt-5 > .flex').click();\ncy.contains('User not found');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.appearance-none`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:131:8)",
+                "diff": null
+              },
+              "uuid": "b224a54d-8f84-4701-98f7-d82085b3e595",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OTP should sent on Valid registerd email",
+              "fullTitle": "Forgot password module testcases OTP should sent on Valid registerd email",
+              "timedOut": null,
+              "duration": 1397,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const emailId = data.email;\ncy.get('.appearance-none').clear().type(emailId);\ncy.get('.mt-5 > .flex').click();\ncy.contains('OTP send to ' + emailId);",
+              "err": {
+                "message": "CypressError: `cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type\n    at Context.type (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:151560:76)\n    at Context.<anonymous> (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:169833:23)\nFrom Your Spec Code:\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:137:40)",
+                "diff": null
+              },
+              "uuid": "26431c47-2c4e-49c4-9bd5-db188a9caa31",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify each and evey label and title on varification screen",
+              "fullTitle": "Forgot password module testcases Verify each and evey label and title on varification screen",
+              "timedOut": null,
+              "duration": 15288,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-800').should('be.visible').and('have.text', 'Enter Verification Code');\ncy.get('.text-gray-500').should('be.visible').and('have.text', 'A 6 digit verification code has been sent to your email address');\ncy.get('.mt-3 > :nth-child(1)').should('be.visible').and('have.text', \"Haven't received the code?\");\ncy.get('.mt-5 > .flex').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-gray-800`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-gray-800`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:143:30)",
+                "diff": null
+              },
+              "uuid": "69cc8528-1ccf-4b94-aed4-d5f8b20fc97d",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "valdation should appear when user does not enter otp into the field",
+              "fullTitle": "Forgot password module testcases valdation should appear when user does not enter otp into the field",
+              "timedOut": null,
+              "duration": 16857,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.my-4 > .text-xs').should('be.visible').and('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mt-5 > .flex`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mt-5 > .flex`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:149:29)",
+                "diff": null
+              },
+              "uuid": "1e750d36-ec3b-4185-aa0b-58189c4f26b0",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validation should appear when user enter invalid OTP",
+              "fullTitle": "Forgot password module testcases validation should appear when user enter invalid OTP",
+              "timedOut": null,
+              "duration": 15506,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//div[@style='display: flex; margin: 0px 0px 0px -0.5rem;']\").type('336699');\ncy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.my-4 > .text-xs').should('be.visible').and('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[@style='display: flex; margin: 0px 0px 0px -0.5rem;']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[@style='display: flex; margin: 0px 0px 0px -0.5rem;']`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:153:8)",
+                "diff": null
+              },
+              "uuid": "25051b18-b4e7-4639-b9f6-9d730ac18cf1",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify resend button functionality ",
+              "fullTitle": "Forgot password module testcases verify resend button functionality ",
+              "timedOut": null,
+              "duration": 15818,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-3 > .font-bold').should('be.visible').click();\nconst emailId = data.email;\ncy.contains('OTP send to ' + emailId);",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button type=\"submit\" textid=\"submit\" class=\"flex justify-center items-center  text-sm font-bold rounded-md shadow-sm text-white border-2 px-16 py-3 hover:font-bold focus:outline-none \n bg-gray-500 cursor-not-allowed hover:border-gray-400\" disabled=\"\">...</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button type=\"submit\" textid=\"submit\" class=\"flex justify-center items-center  text-sm font-bold rounded-md shadow-sm text-white border-2 px-16 py-3 hover:font-bold focus:outline-none \n bg-gray-500 cursor-not-allowed hover:border-gray-400\" disabled=\"\">...</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureNotDisabled (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:160457:85)\n    at runAllChecks (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:147820:14)\n    at retryActionability (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:147894:16)\n    at tryCatcher (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:10486:29)\n    at tryFn (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:165305:61)\n    at whenStable (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:165344:14)\n    at https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:164831:18\n    at tryCatcher (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11329:18)\n    at Promise._fulfill (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11273:18)\n    at https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:12887:46\nFrom Your Spec Code:\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\04_forgotPassword.spec.js:158:55)",
+                "diff": null
+              },
+              "uuid": "74ccdf35-0c85-4223-b5a5-d696beff217e",
+              "parentUUID": "e51f34c1-3dfd-4e9c-a550-d41f0f86d84f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "db09ac9c-99ef-4e72-bdea-5e92f76eb329",
+            "24112eeb-e487-44bd-ba7f-3971ee545f88",
+            "b224a54d-8f84-4701-98f7-d82085b3e595",
+            "26431c47-2c4e-49c4-9bd5-db188a9caa31",
+            "69cc8528-1ccf-4b94-aed4-d5f8b20fc97d",
+            "1e750d36-ec3b-4185-aa0b-58189c4f26b0",
+            "25051b18-b4e7-4639-b9f6-9d730ac18cf1",
+            "74ccdf35-0c85-4223-b5a5-d696beff217e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 212213,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

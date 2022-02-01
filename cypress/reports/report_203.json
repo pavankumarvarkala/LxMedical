@@ -1,0 +1,318 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 0,
+    "pending": 0,
+    "failures": 10,
+    "start": "2021-12-29T06:55:02.449Z",
+    "end": "2021-12-29T06:59:54.521Z",
+    "duration": 292072,
+    "testsRegistered": 10,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "89f373f5-b486-4b2b-a0d6-8962456b4b07",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/06_Provider-management.spec.js",
+      "file": "cypress/integration/Admin_Testcases/06_Provider-management.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f249452b-45a8-4378-86a8-cdb353883916",
+          "title": "provider management module test case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a admin the user should be navigated to the provides page by clicking on providers tab",
+              "fullTitle": "provider management module test case As a admin the user should be navigated to the provides page by clicking on providers tab",
+              "timedOut": null,
+              "duration": 150294,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(5)').should('be.visible').and('have.text', 'Invitation').click();\ncy.url().should('contain', '/invitation');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `150000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `150000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `150000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `150000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:155030:72)\n    at https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:156067:16\n    at tryCatcher (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://staging.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)\nFrom Your Spec Code:\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:250:6)",
+                "diff": null
+              },
+              "uuid": "362da680-ae30-421d-805b-34e907c0fcda",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers page each label and field should have proper label and proper validations",
+              "fullTitle": "provider management module test case At invited providers page each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 15261,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').should('contain', 'Invited Providers');\ncy.get('table>thead>tr>th:nth-child(1)>div').should('be.visible').should('have.text', 'Email/Phone');\ncy.get('table>thead>tr>th:nth-child(2)>div').should('be.visible').should('have.text', 'Invited On');\ncy.get('table>thead>tr>th:nth-child(3)>div').should('be.visible').should('have.text', 'Status');\ncy.get('table>thead>tr>th:nth-child(4)>div').should('be.visible').should('have.text', 'Action');\ncy.get('[type=search]').invoke('attr', 'placeholder').should('contain', 'Search for phone or email.');\ncy.get('.text-xl').should('be.visible').should('contain', 'Providers');\ncy.get('.flex-wrap > .flex').should('be.visible').should('contain', 'Invite Provider');\ncy.get('.flex-1 > .ml-3').should('be.visible').should('have.text', 'Next');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-xl`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-xl`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:107:24)",
+                "diff": null
+              },
+              "uuid": "28fae936-a34f-4508-bc75-7c9319440395",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to go the next page of the providers list by clicking on next button",
+              "fullTitle": "provider management module test case As a admin the user should be able to go the next page of the providers list by clicking on next button",
+              "timedOut": null,
+              "duration": 15235,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-1 > .ml-3').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-1 > .ml-3`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-1 > .ml-3`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:118:31)",
+                "diff": null
+              },
+              "uuid": "cd4779ed-195f-4e3c-a684-5bb97092fd93",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to go the previous page of the providers list by clicking on previous button",
+              "fullTitle": "provider management module test case As a admin the user should be able to go the previous page of the providers list by clicking on previous button",
+              "timedOut": null,
+              "duration": 15239,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.px-4 > .flex-1 > :nth-child(1)').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.px-4 > .flex-1 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.px-4 > .flex-1 > :nth-child(1)`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:121:47)",
+                "diff": null
+              },
+              "uuid": "b10e23b8-99dd-4e78-b842-185cb454c89f",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to search any invited prodvider with his phone number or email",
+              "fullTitle": "provider management module test case As a admin the user should be able to search any invited prodvider with his phone number or email",
+              "timedOut": null,
+              "duration": 15225,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[type=search]').should('be.visible').type('ricky@mailinator.com');\ncy.wait(5000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[type=search]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[type=search]`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:124:29)",
+                "diff": null
+              },
+              "uuid": "c1a7da61-6324-44b1-bf61-28348f90d984",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated to the existing providers page by clicking providers tab",
+              "fullTitle": "provider management module test case As a admin the user should be navigated to the existing providers page by clicking providers tab",
+              "timedOut": null,
+              "duration": 15220,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(4)').should('be.visible').and('have.text', 'Providers').click();\ncy.url().should('contain', '/providers');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(4)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(4)`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:128:42)",
+                "diff": null
+              },
+              "uuid": "6c7cac66-633e-460b-9d8d-cd5b42bd8752",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At onboarded providers page each label and field should have proper labe and proper validations",
+              "fullTitle": "provider management module test case At onboarded providers page each label and field should have proper labe and proper validations",
+              "timedOut": null,
+              "duration": 15257,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('have.text', 'Providers');\ncy.get('table>thead>tr>th:nth-child(1)').should('be.visible').should('have.text', 'Full Name');\ncy.get('table>thead>tr>th:nth-child(2)').should('be.visible').should('have.text', 'Email');\ncy.get('table>thead>tr>th:nth-child(3)').should('be.visible').should('have.text', 'Mobile Number');\ncy.get('table>thead>tr>th:nth-child(4)').should('be.visible').should('have.text', 'Joined On');\ncy.get('table>thead>tr>th:nth-child(5)').should('be.visible').should('have.text', 'Action');\ncy.get('[type=search]').invoke('attr', 'placeholder').should('contain', 'Search for name or email.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.font-bold`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:132:26)",
+                "diff": null
+              },
+              "uuid": "3faa4a3e-4c70-4292-9f0c-43814012a85b",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated to the profile details of any provider by clicking on eye button against that particular provider",
+              "fullTitle": "provider management module test case As a admin the user should be navigated to the profile details of any provider by clicking on eye button against that particular provider",
+              "timedOut": null,
+              "duration": 15250,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tr:nth-child(1) > td:nth-child(5) > div > svg:nth-child(1) > path:nth-child(1)').should('be.visible').click();\ncy.get('.py-8 > .font-bold').should('be.visible').should('contain', 'Provider Details');\ncy.get('.border-b-2').should('be.visible').should('contain', 'Address');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 1');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 2');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Postal Code');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'City');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'State');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(5) > div > svg:nth-child(1) > path:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(5) > div > svg:nth-child(1) > path:nth-child(1)`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:141:94)",
+                "diff": null
+              },
+              "uuid": "da388547-8a40-430d-bf35-6509ae34bd59",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigted back to the onboarded providers page by clicking on back arrow on profile details page",
+              "fullTitle": "provider management module test case As a admin the user should be navigted back to the onboarded providers page by clicking on back arrow on profile details page",
+              "timedOut": null,
+              "duration": 15256,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-8 > .h-6').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-8 > .h-6`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-8 > .h-6`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:151:28)",
+                "diff": null
+              },
+              "uuid": "46e7ed86-9a1f-4611-ace5-62df94379784",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to search any onboarded prodvider with his name or email",
+              "fullTitle": "provider management module test case As a admin the user should be able to search any onboarded prodvider with his name or email",
+              "timedOut": null,
+              "duration": 15269,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[type=search]').should('be.visible').type('ankit.jaiswal@crownstack.com');\ncy.wait(5000);\ncy.get('[type=search]').clear();\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').type('Nishant Mishra');\ncy.wait(2000);\ncy.get('[type=search]').clear();\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[type=search]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[type=search]`, but never found it.\n    at Context.eval (https://staging.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Provider-management.spec.js:154:29)",
+                "diff": null
+              },
+              "uuid": "b2b458cc-4a8c-4949-8eb9-998a25fcde2a",
+              "parentUUID": "f249452b-45a8-4378-86a8-cdb353883916",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "362da680-ae30-421d-805b-34e907c0fcda",
+            "28fae936-a34f-4508-bc75-7c9319440395",
+            "cd4779ed-195f-4e3c-a684-5bb97092fd93",
+            "b10e23b8-99dd-4e78-b842-185cb454c89f",
+            "c1a7da61-6324-44b1-bf61-28348f90d984",
+            "6c7cac66-633e-460b-9d8d-cd5b42bd8752",
+            "3faa4a3e-4c70-4292-9f0c-43814012a85b",
+            "da388547-8a40-430d-bf35-6509ae34bd59",
+            "46e7ed86-9a1f-4611-ace5-62df94379784",
+            "b2b458cc-4a8c-4949-8eb9-998a25fcde2a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 287506,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 0,
+    "pending": 0,
+    "failures": 6,
+    "start": "2022-01-31T05:28:48.544Z",
+    "end": "2022-01-31T05:30:49.455Z",
+    "duration": 120911,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a70231ba-1516-43f8-9968-ced57f9ab132",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/02_changePassword.spec.js",
+      "file": "cypress/integration/Admin_Testcases/02_changePassword.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+          "title": "Change password Testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on change password screen",
+              "fullTitle": "Change password Testcases As a Admin I should be able to navigate on change password screen",
+              "timedOut": null,
+              "duration": 42630,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.xpath(\"//nav//div[text()='Settings']\").should('be.visible').click();\ncy.url().should('include', '/password');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://qa.rch.build-release.com/admin\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 159.203.56.31:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://qa.rch.build-release.com/admin\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 159.203.56.31:443\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at http://localhost:49286/__cypress/runner/cypress_runner.js:156031:82\n    at visitFailedByErr (http://localhost:49286/__cypress/runner/cypress_runner.js:155390:12)\n    at http://localhost:49286/__cypress/runner/cypress_runner.js:156030:11\n    at tryCatcher (http://localhost:49286/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49286/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:49286/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:49286/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:49286/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:49286/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:49286/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49286/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:49286/__cypress/runner/cypress_runner.js:7798:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:49286/__cypress/tests?p=cypress\\support\\index.js:320:6)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT 159.203.56.31:443\n      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)\n  ",
+                "diff": null
+              },
+              "uuid": "6bce4683-052c-48e6-a1ab-59eac63afb5f",
+              "parentUUID": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Chnage Password page each page should have proper labels",
+              "fullTitle": "Change password Testcases At Chnage Password page each page should have proper labels",
+              "timedOut": null,
+              "duration": 15632,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').and('have.text', 'Change Password');\ncy.xpath(\"//label//div\").eq(0).should('be.visible').and('have.text', 'Old Password');\ncy.xpath(\"//label//div\").eq(1).should('be.visible').and('have.text', 'New Password');\ncy.xpath(\"//label//div\").eq(2).should('be.visible').and('have.text', 'Confirm Password');\ncy.xpath(\"//button//div[text()='Update']\").should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-xl`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.text-xl`, but never found it.\n    at Context.eval (http://localhost:49286/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\02_changePassword.spec.js:143:24)",
+                "diff": null
+              },
+              "uuid": "4f9f61a8-97ed-40e9-b672-0b1493cb84ce",
+              "parentUUID": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "in empty field proper validation should appear",
+              "fullTitle": "Change password Testcases in empty field proper validation should appear",
+              "timedOut": null,
+              "duration": 15475,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//empty case\ncy.xpath(\"//button//div[text()='Update']\").click();\ncy.contains(\"Old Password is required\").should('be.visible');\ncy.contains(\"New Password is required\").should('be.visible');\ncy.contains(\"New Password is required\").should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//button//div[text()='Update']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//button//div[text()='Update']`, but never found it.\n    at Context.eval (http://localhost:49286/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\02_changePassword.spec.js:151:8)",
+                "diff": null
+              },
+              "uuid": "cefa6c10-dd5d-4bfc-9d93-d6f359639892",
+              "parentUUID": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "wrong old password case should be handle proper",
+              "fullTitle": "Change password Testcases wrong old password case should be handle proper",
+              "timedOut": null,
+              "duration": 15486,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// wrong old password case \nconst password = _faker.default.name + \"@123456\";\ncy.xpath(old_password).type('123456@1235As');\ncy.xpath(new_password).type(password);\ncy.xpath(confirm_password).type(password);\ncy.xpath(\"//button//div[text()='Update']\").click();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='oldPassword']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='oldPassword']`, but never found it.\n    at Context.eval (http://localhost:49286/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\02_changePassword.spec.js:159:8)",
+                "diff": null
+              },
+              "uuid": "b90083d1-c83e-4515-814f-a80cb349edbb",
+              "parentUUID": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "password lenth validation should be proper",
+              "fullTitle": "Change password Testcases password lenth validation should be proper",
+              "timedOut": null,
+              "duration": 15452,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// password length validations\ncy.xpath(old_password).clear().type('1231');\ncy.xpath(new_password).clear().type('sada');\ncy.xpath(confirm_password).clear().type('d');\ncy.xpath(\"//label//div\").eq(2).click();\ncy.get('.text-red-600').eq(0).should('have.text', 'Password is too short - should be 8 chars minimum').and('be.visible');\ncy.get('.text-red-600').eq(1).should('have.text', 'Password should be atleast 8 characters and should contain combination of uppercase, lowercase & numbers').and('be.visible');\ncy.get('.text-red-600').eq(2).should('have.text', 'Both passwords need to be the same').and('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='oldPassword']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='oldPassword']`, but never found it.\n    at Context.eval (http://localhost:49286/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\02_changePassword.spec.js:167:8)",
+                "diff": null
+              },
+              "uuid": "c1ef0615-3756-4aed-819d-92a18bdd8f73",
+              "parentUUID": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to change password and admin should be able to login with new password",
+              "fullTitle": "Change password Testcases As a Admin I should be able to change password and admin should be able to login with new password",
+              "timedOut": null,
+              "duration": 15389,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const cred = __webpack_require__(/*! ../../fixtures/cred.json */ \"./cypress/fixtures/cred.json\");\ncy.xpath(old_password).clear().type(cred.password);\ncy.xpath(new_password).clear().type('Passcode@123');\ncy.xpath(confirm_password).clear().type('Passcode@123');\ncy.xpath(\"//button//div[text()='Update']\").click();\ncy.xpath(\"//div[text()='Sign In']\").should('be.visible');\ncy.contains('changed', {\n  matchCase: false\n});\ncy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.email);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').type('Passcode@123');\ncy.get('.mt-3 > .flex').click();\ncy.xpath(\"//nav//div[text()='Settings']\").should('be.visible').click();\ncy.xpath(old_password).clear().type('Passcode@123');\ncy.xpath(new_password).clear().type(cred.password);\ncy.xpath(confirm_password).clear().type(cred.password);\ncy.xpath(\"//button//div[text()='Update']\").click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='oldPassword']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//input[@name='oldPassword']`, but never found it.\n    at Context.eval (http://localhost:49286/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\02_changePassword.spec.js:178:8)",
+                "diff": null
+              },
+              "uuid": "04e44cf9-89e7-41ff-85ab-476acd8e0042",
+              "parentUUID": "982cbcfe-2e8e-424a-bbd1-90d39f905930",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6bce4683-052c-48e6-a1ab-59eac63afb5f",
+            "4f9f61a8-97ed-40e9-b672-0b1493cb84ce",
+            "cefa6c10-dd5d-4bfc-9d93-d6f359639892",
+            "b90083d1-c83e-4515-814f-a80cb349edbb",
+            "c1ef0615-3756-4aed-819d-92a18bdd8f73",
+            "04e44cf9-89e7-41ff-85ab-476acd8e0042"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 120064,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

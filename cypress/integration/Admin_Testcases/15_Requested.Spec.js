@@ -4,11 +4,7 @@ const cred=require('../../fixtures/cred.json')
 describe('Requested Appointment Details Test cases',()=>{
 
     it('As a Admin the user should be navigated to the Appointment Details page of Requested appointment by clicking on the eye icon against that appointment',()=>{
-        cy.visit('https://staging.rch.build-release.com/admin')
-        cy.url().should('eq',cred.qaUrl)
-        cy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.email)
-        cy.get(':nth-child(2) > .mt-1 > .appearance-none').type(cred.password)
-        cy.get('.mt-3 > .flex').click()
+        cy.login()
         cy.url().should('contain','/dashboard')
         cy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text','Patients').click()
         cy.url().should('contain','/patients')
@@ -16,7 +12,7 @@ describe('Requested Appointment Details Test cases',()=>{
         cy.get('.flex > .text-xs').should('be.visible').should('have.text','Book').click()
         cy.url().should('contain','/book_appointment')
         cy.get('.my-4>div:nth-child(2)>div>form>div>div:nth-child(1)>div:nth-child(1)>div>div').click()
-        cy.get('.react-datepicker>div>div:nth-child(2)>div:nth-child(5)>div.react-datepicker__day.react-datepicker__day--030').click()
+        cy.get('.react-datepicker__day--today').click()
         cy.get('.my-4>div:nth-child(2)>div>form>div>div:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div>input').should('be.visible').check()
         cy.get('.my-4>div:nth-child(2)>div>form>div>div:nth-child(3)').click()
         cy.get('form>.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div>div').type('Fever')

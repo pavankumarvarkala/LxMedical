@@ -4,19 +4,15 @@ const cred=require('../../fixtures/cred.json')
 describe('Accepted Appointment Details Test cases',()=>{
 
     it('As a Admin the user should be navigated to the Appointment Details page of Accepted appointment by clicking on the eye icon against that appointment',()=>{
-        cy.visit('https://staging.rch.build-release.com/admin')
-        cy.url().should('eq',cred.qaUrl)
-        cy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.email)
-        cy.get(':nth-child(2) > .mt-1 > .appearance-none').type(cred.password)
-        cy.get('.mt-3 > .flex').click()
+        cy.login()
         cy.url().should('contain','/dashboard')
-        cy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text','Patients').click()
+        cy.get('.space-y-4>div:nth-child(2)').should('be.visible').should('have.text','Patients').click()
         cy.url().should('contain','/patients')
-        cy.get('.bg-white > .w-full').type('pvnkumar80@gmail.com')
+        cy.get('input[type=search]').type('pvnkumar80@gmail.com')
         cy.get('.flex > .text-xs').should('be.visible').should('have.text','Book').click()
         cy.url().should('contain','/book_appointment')
         cy.get('.my-4>div:nth-child(2)>div>form>div>div:nth-child(1)>div:nth-child(1)>div>div').click()
-        cy.get('.react-datepicker>div>div:nth-child(2)>div:nth-child(5)>div.react-datepicker__day.react-datepicker__day--030').click()
+        cy.get('.react-datepicker__day--today').click()
         cy.get('.my-4>div:nth-child(2)>div>form>div>div:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div>input').should('be.visible').check()
         cy.get('.my-4>div:nth-child(2)>div>form>div>div:nth-child(3)').click()
         cy.get('form>.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div>div').type('Fever')
@@ -85,14 +81,17 @@ describe('Accepted Appointment Details Test cases',()=>{
         })
         it('As a Admin the user can add comments for the provider at the time of assigning the provider',()=>{
             cy.get('.hidden>div>form>div:nth-child(3)>div').should('be.visible').type('Priority customer')
+            cy.wait(5000)
  
         })
         it('After filling Assign provider form and clicking on "Assign" button the provider should be assigned and status should be changed to provider assigned',()=>{
-            cy.get('.hidden > .justify-between > .w-6').should('be.visible').click().select('Jack Phillips')
+            cy.get('.hidden>.mt-6>form>div:nth-child(1)>div:nth-child(2)').should('be.visible').click()
+            cy.wait(3000)
+            cy.get('#react-select-2-option-0').click()
             cy.get('.hidden>div>form>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').click()
-            cy.get(':nth-child(5) > .react-datepicker__day--030').should('be.visible').click()
+            cy.get('.react-datepicker__day--today').scrollIntoView().should('be.visible').click()
             cy.get('.hidden>div>form>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').click()
-            cy.get('.rc-time-picker-panel-select-active > ul > :nth-child(6)').should('be.visible').click()
+            cy.get('.rc-time-picker-panel-select-option-selected').should('be.visible').click({multiple:true})
             cy.get('.hidden>div>form>div:nth-child(4)>button').should('be.visible').should('have.text','Assign').click()
             cy.wait(5000)
             cy.get(':nth-child(3) > .font-semibold > .text-sm').should('be.visible').should('have.text','provider assigned')
@@ -100,7 +99,7 @@ describe('Accepted Appointment Details Test cases',()=>{
         })
         
     it('As a Admin the user can cancel the appointment after entering the cancellation reason by clicking on the cancel button',()=>{
-        cy.get('.min-h-screen>div:nth-child(2)>div:nth-child(5)>button').should('have.text','Cancel Appointment').click()
+        cy.get('[textid="cancel.appointment"]').should('have.text','Cancel Appointment').click()
         cy.get('.hidden > .mt-6 > form > .pt-2 > div.w-full > .mt-1 > .resize-y').should('be.visible').type('Provider not available')
         cy.get('.hidden>div:nth-child(2)>form>div:nth-child(2)>button').should('be.visible').should('have.text','Cancel Appointment').click()
         cy.wait(5000)

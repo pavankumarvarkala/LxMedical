@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-12-29T07:51:14.759Z",
+    "end": "2021-12-29T07:52:30.705Z",
+    "duration": 75946,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d7850ea-36df-4341-9dd8-cace4daf23bd",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/05_Profile.spec.js",
+      "file": "cypress/integration/Patient_Testcases/05_Profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f18a413c-fa1a-4947-bd33-c42c869e27b4",
+          "title": "Profile Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should able to see his profile details by clicking on profile icon",
+              "fullTitle": "Profile Module Test Cases As a patient the user should able to see his profile details by clicking on profile icon",
+              "timedOut": null,
+              "duration": 60644,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://qa.rch.build-release.com/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: ESOCKETTIMEDOUT\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://qa.rch.build-release.com/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: ESOCKETTIMEDOUT\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at http://localhost:65345/__cypress/runner/cypress_runner.js:156031:82\n    at visitFailedByErr (http://localhost:65345/__cypress/runner/cypress_runner.js:155390:12)\n    at http://localhost:65345/__cypress/runner/cypress_runner.js:156030:11\n    at tryCatcher (http://localhost:65345/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:65345/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:65345/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:65345/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:65345/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:65345/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:65345/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:65345/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:65345/__cypress/runner/cypress_runner.js:7798:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:65345/__cypress/tests?p=cypress\\support\\index.js:181:6)\n\nFrom Node.js Internals:\n  Error: ESOCKETTIMEDOUT\n      at ClientRequest.<anonymous> (C:\\Users\\www.abcom.in\\AppData\\Local\\Cypress\\Cache\\8.4.1\\Cypress\\resources\\app\\packages\\server\\node_modules\\@cypress\\request\\request.js:808:19)\n      at Object.onceWrapper (events.js:421:28)\n      at ClientRequest.emit (events.js:315:20)\n      at TLSSocket.emitRequestTimeout (_http_client.js:784:9)\n      at Object.onceWrapper (events.js:421:28)\n      at TLSSocket.emit (events.js:327:22)\n      at TLSSocket.Socket._onTimeout (net.js:483:8)\n      at listOnTimeout (internal/timers.js:554:17)\n      at processTimers (internal/timers.js:497:7)\n  ",
+                "diff": null
+              },
+              "uuid": "e17cd4ca-8754-40c5-88b9-e14f71796895",
+              "parentUUID": "f18a413c-fa1a-4947-bd33-c42c869e27b4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At profile page each label and field should have proper label and validations",
+              "fullTitle": "Profile Module Test Cases At profile page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15192,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-start > img').should('be.visible');\ncy.get('.justify-start > .m-auto').should('be.visible').should('have.text', 'LX MEDICAL');\ncy.get('[href=\"/appointments\"]').should('be.visible').should('have.text', 'Appointments');\ncy.get('.justify-start > .hidden > :nth-child(3)').should('be.visible').should('have.text', 'Charts');\ncy.get('.justify-start > .hidden > :nth-child(4)').should('be.visible').should('contain', 'Chat');\ncy.get('.p-1 > .h-7').should('be.visible');\ncy.get('.relative > .text-gray-600').should('be.visible');\ncy.get('.h-7').should('be.visible');\ncy.get('.px-4 > :nth-child(1) > img').should('be.visible');\ncy.get('.px-4 > .font-bold').should('be.visible');\ncy.get('.shadow-corner').should('be.visible').should('contain', 'Personal Information');\ncy.get('.space-y-8 > :nth-child(2)').should('be.visible').should('contain', 'Manage Membership Plan');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('contain', 'Account Settings');\ncy.get('.space-y-8 > :nth-child(4)').should('be.visible').should('contain', 'About');\ncy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Personal Information');\ncy.get('.space-y-4 > :nth-child(2) > .text-gray-400').should('be.visible').should('have.text', 'Full Name');\ncy.get(':nth-child(3) > .text-gray-400').should('be.visible').should('have.text', 'Email Address');\ncy.get(':nth-child(4) > .text-gray-400').should('be.visible').should('have.text', 'Phone Number');\ncy.get(':nth-child(5) > .text-gray-400').should('be.visible').should('have.text', 'Date of Birth');\ncy.get(':nth-child(6) > .text-gray-400').should('be.visible').should('have.text', 'Gender');\ncy.get('.space-y-2 > .font-bold').should('be.visible').should('have.text', 'Address');\ncy.get(':nth-child(8) > .flex').should('be.visible').should('contain', 'Edit Details');\ncy.patientlogout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.justify-start > img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.justify-start > img`, but never found it.\n    at Context.eval (http://localhost:65345/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\05_Profile.spec.js:121:36)",
+                "diff": null
+              },
+              "uuid": "f058c1f9-b7ef-48d3-8ab6-7f4a3dc8b963",
+              "parentUUID": "f18a413c-fa1a-4947-bd33-c42c869e27b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e17cd4ca-8754-40c5-88b9-e14f71796895",
+            "f058c1f9-b7ef-48d3-8ab6-7f4a3dc8b963"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 75836,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
