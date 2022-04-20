@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2022-02-09T13:30:24.631Z",
+    "end": "2022-02-09T13:31:40.776Z",
+    "duration": 76145,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a7a5176c-0c71-4179-ab1b-0a7e09627551",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/12_Charts_Reports.spec.js",
+      "file": "cypress/integration/Patient_Testcases/12_Charts_Reports.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "21659f3d-31b6-4a55-a673-eeb5efa30137",
+          "title": "Reports module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should navigated to the Reports page by clicking on \"Reports\" tab of particular member",
+              "fullTitle": "Reports module testcases As a Patient the user should navigated to the Reports page by clicking on \"Reports\" tab of particular member",
+              "timedOut": null,
+              "duration": 22558,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.get('[href=\"/charts\"]').should('be.visible').should('have.text', 'Charts').click();\ncy.url().should('contain', '/charts');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible').click({\n  force: true\n});\ncy.get(':nth-child(2) > .bg-white > .justify-between > .text-base').click();\ncy.url().should('contain', '/medical_history');\ncy.get('.border-transparent').should('be.visible').should('contain', 'Reports').click();\ncy.url().should('contain', '/reports');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:252:113)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "89ed6d1a-a4a0-428a-8283-9678919b8085",
+              "parentUUID": "21659f3d-31b6-4a55-a673-eeb5efa30137",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Reports\" page each label and field should have proper label and validations",
+              "fullTitle": "Reports module testcases At \"Reports\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15530,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('have.text', 'Showing 3 Reports');\ncy.get('.p-3').should('be.visible');\ncy.get(':nth-child(1) > a > .justify-between').should('be.visible');\ncy.get(':nth-child(1) > a > .justify-between > span.text-primary').should('be.visible').should('have.text', 'COVID RT-PCR');\ncy.get(':nth-child(1) > a > .justify-between > .flex > .text-gray-600').should('be.visible').should('have.text', 'Aug 18 2021');\ncy.get(':nth-child(1) > a > .justify-between > .flex > .bg-lightBlue').should('be.visible');\ncy.get(':nth-child(2) > a > .justify-between').should('be.visible');\ncy.get(':nth-child(2) > a > .justify-between > span.text-primary').should('be.visible').should('have.text', 'COVID RT-PCR');\ncy.get(':nth-child(2) > a > .justify-between > .flex > .text-gray-600').should('be.visible').should('have.text', 'Aug 18 2021');\ncy.get(':nth-child(2) > a > .justify-between > .flex > .bg-lightBlue').should('be.visible');\ncy.get(':nth-child(3) > a > .justify-between').should('be.visible');\ncy.get(':nth-child(3) > a > .justify-between > span.text-primary').should('be.visible').should('have.text', 'COVID RT-PCR');\ncy.get(':nth-child(3) > a > .justify-between > .flex > .text-gray-600').should('be.visible').should('have.text', 'Aug 18 2021');\ncy.get(':nth-child(3) > a > .justify-between > .flex > .bg-lightBlue').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.text-gray-500.text-xs.mb-8.font-bold>, 3 more... ]' to have text 'Showing 3 Reports', but the text was 'Please enter your credentials to sign in.Remember meSubmitForgot Password?'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.text-gray-500.text-xs.mb-8.font-bold>, 3 more... ]' to have text 'Showing 3 Reports', but the text was 'Please enter your credentials to sign in.Remember meSubmitForgot Password?'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\12_Charts_Reports.spec.js:149:47)",
+                "diff": "- 'Please enter your credentials to sign in.Remember meSubmitForgot Password?'\n+ 'Showing 3 Reports'\n"
+              },
+              "uuid": "a24e9d73-83b0-46eb-84dc-f3c754492ec2",
+              "parentUUID": "21659f3d-31b6-4a55-a673-eeb5efa30137",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should able to see all the reports",
+              "fullTitle": "Reports module testcases As a Patient the user should able to see all the reports",
+              "timedOut": null,
+              "duration": 15318,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > a > .justify-between').should('be.visible');\ncy.get(':nth-child(2) > a > .justify-between').should('be.visible');\ncy.get(':nth-child(3) > a > .justify-between').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > a > .justify-between`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > a > .justify-between`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\12_Charts_Reports.spec.js:165:52)",
+                "diff": null
+              },
+              "uuid": "621b401c-0b8a-4cba-a049-72b56efc601f",
+              "parentUUID": "21659f3d-31b6-4a55-a673-eeb5efa30137",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user able view any report by clicking on that report",
+              "fullTitle": "Reports module testcases The user able view any report by clicking on that report",
+              "timedOut": null,
+              "duration": 15306,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > a > .justify-between').should('be.visible').click();\ncy.get(':nth-child(2) > a > .justify-between').should('be.visible').click();\ncy.get(':nth-child(3) > a > .justify-between').should('be.visible').click();\ncy.patientlogout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > a > .justify-between`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > a > .justify-between`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\12_Charts_Reports.spec.js:170:52)",
+                "diff": null
+              },
+              "uuid": "bbc5c1fe-244a-4efc-855b-dfc2e249cbda",
+              "parentUUID": "21659f3d-31b6-4a55-a673-eeb5efa30137",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "89ed6d1a-a4a0-428a-8283-9678919b8085",
+            "a24e9d73-83b0-46eb-84dc-f3c754492ec2",
+            "621b401c-0b8a-4cba-a049-72b56efc601f",
+            "bbc5c1fe-244a-4efc-855b-dfc2e249cbda"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 68712,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

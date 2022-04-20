@@ -1,0 +1,203 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2022-02-09T12:56:36.622Z",
+    "end": "2022-02-09T12:58:04.139Z",
+    "duration": 87517,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c8518bc-bd2c-4351-81cd-c0001ba24e85",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/02_Signin.spec.js",
+      "file": "cypress/integration/Patient_Testcases/02_Signin.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "375f6d6a-397a-4e51-9b72-3640ed9f66bd",
+          "title": "signin module test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the sign in page after clicking signin/signup button on landing page",
+              "fullTitle": "signin module test cases As a patient the user should be navigated to the sign in page after clicking signin/signup button on landing page",
+              "timedOut": null,
+              "duration": 18792,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.url().should('eq', cred.PatientUrl);\ncy.get('#root > div:nth-child(2) > div > div:nth-child(1) > div > div>div:nth-child(2)').should('be.visible').should('have.text', 'Sign In / Sign Up').click();\ncy.url().should('contain', '/login');\ncy.get('[alt=logo]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\02_Signin.spec.js:117:115)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "28740401-11c7-4394-90ef-ecba752cdb68",
+              "parentUUID": "375f6d6a-397a-4e51-9b72-3640ed9f66bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Sign In page each label and field should have proper label and validations",
+              "fullTitle": "signin module test cases At Sign In page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15748,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.p-10 > :nth-child(1) > img').should('be.visible');\ncy.get('.p-10 > :nth-child(1)').should('be.visible').should('have.text', 'LX Medical');\ncy.get('.text-2xl').should('be.visible').should('have.text', 'Sign In');\ncy.get('.grid > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Email');\ncy.get(':nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Password');\ncy.get('.ml-2 > div').should('be.visible').should('have.text', 'Remember me');\ncy.get(':nth-child(1) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.justify-between > a > .text-primary').should('be.visible').should('have.text', 'Forgot Password?');\ncy.get('[href=\"/signup\"] > .flex').should('be.visible').should('contain', 'Create');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.p-10 > :nth-child(1) > img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.p-10 > :nth-child(1) > img`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\02_Signin.spec.js:122:43)",
+                "diff": null
+              },
+              "uuid": "53edb3ad-ebb9-48fc-82fc-d042912d2175",
+              "parentUUID": "375f6d6a-397a-4e51-9b72-3640ed9f66bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should unable to login with no data",
+              "fullTitle": "signin module test cases As a patient the user should unable to login with no data",
+              "timedOut": null,
+              "duration": 15410,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.get(':nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Sign In', but the text was 'Submit'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Sign In', but the text was 'Submit'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\02_Signin.spec.js:133:46)",
+                "diff": "- 'Submit'\n+ 'Sign In'\n"
+              },
+              "uuid": "3313a091-25d6-4e41-bff4-22db9695e3b3",
+              "parentUUID": "375f6d6a-397a-4e51-9b72-3640ed9f66bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should unable to login with invalid credentials",
+              "fullTitle": "signin module test cases As a Patient the user should unable to login with invalid credentials",
+              "timedOut": null,
+              "duration": 16376,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('pp@mailinator.com');\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('password');\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.contains('Incorrect email or password');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Sign In', but the text was 'Submit'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Sign In', but the text was 'Submit'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\02_Signin.spec.js:140:46)",
+                "diff": "- 'Submit'\n+ 'Sign In'\n"
+              },
+              "uuid": "c1ba60b9-5659-4906-a23b-c7532f481d5f",
+              "parentUUID": "375f6d6a-397a-4e51-9b72-3640ed9f66bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should able to login with credentials",
+              "fullTitle": "signin module test cases As a patient the user should able to login with credentials",
+              "timedOut": null,
+              "duration": 16781,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword);\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.url().should('contain', '/home');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Sign In', but the text was 'Submit'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Sign In', but the text was 'Submit'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\02_Signin.spec.js:146:46)",
+                "diff": "- 'Submit'\n+ 'Sign In'\n"
+              },
+              "uuid": "54b06f38-bd3f-4ae0-b242-118f0ced9439",
+              "parentUUID": "375f6d6a-397a-4e51-9b72-3640ed9f66bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "28740401-11c7-4394-90ef-ecba752cdb68",
+            "53edb3ad-ebb9-48fc-82fc-d042912d2175",
+            "3313a091-25d6-4e41-bff4-22db9695e3b3",
+            "c1ba60b9-5659-4906-a23b-c7532f481d5f",
+            "54b06f38-bd3f-4ae0-b242-118f0ced9439"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 83107,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

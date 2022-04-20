@@ -1,0 +1,249 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 0,
+    "pending": 0,
+    "failures": 7,
+    "start": "2022-02-09T10:06:13.333Z",
+    "end": "2022-02-09T10:08:31.913Z",
+    "duration": 138580,
+    "testsRegistered": 7,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b6a46d84-27ec-4eba-b548-dc7724a5aaa9",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/05_provider.spec.js",
+      "file": "cypress/integration/Admin_Testcases/05_provider.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+          "title": "Provider module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be albe to navigate on invited provider listing page",
+              "fullTitle": "Provider module testcases As a Admin I should be albe to navigate on invited provider listing page",
+              "timedOut": null,
+              "duration": 27618,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(5)').should('be.visible').click();\ncy.url().should('include', '/invitation');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://qa.rch.build-release.com/admin/services' to include '/invitation'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://qa.rch.build-release.com/admin/services' to include '/invitation'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:126:14)",
+                "diff": null
+              },
+              "uuid": "82c69d2c-da1e-4aa7-8d68-00e5bcca3127",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers page each label and field should have proper label and proper validations",
+              "fullTitle": "Provider module testcases At invited providers page each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 15640,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('thead > tr > :nth-child(1) > div').should('be.visible').and('have.text', 'Email/Phone');\ncy.get('tr > :nth-child(2) > div').should('be.visible').and('have.text', 'Invited On');\ncy.get('tr > :nth-child(3) > div').should('be.visible').and('have.text', 'Status');\ncy.get('tr > :nth-child(4) > div').should('be.visible').and('have.text', 'Action');\ncy.xpath(\"//button[@textid='provider.invite']\").should('have.text', 'Invite Provider');\ncy.get('.flex-wrap > .flex').should('be.visible').and('have.text', 'Invite Provider');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div>' to have text 'Email/Phone', but the text was 'Service Name'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div>' to have text 'Email/Phone', but the text was 'Service Name'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:129:69)",
+                "diff": "- 'Service Name'\n+ 'Email/Phone'\n"
+              },
+              "uuid": "c3f64245-be31-433a-aaec-50c5521a5870",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button",
+              "fullTitle": "Provider module testcases As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button",
+              "timedOut": null,
+              "duration": 15686,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > .flex').should('be.visible').and('have.text', 'Invite Provider').click();\ncy.get('div.my-5.text-primary.text-base.font-bold').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-4.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Invite Provider', but the text was 'Add Service'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-4.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Invite Provider', but the text was 'Add Service'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:137:55)",
+                "diff": "- 'Add Service'\n+ 'Invite Provider'\n"
+              },
+              "uuid": "93ba71d7-c786-4735-8d20-75935250d031",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers pop up window each label and field should have proper label and proper validations",
+              "fullTitle": "Provider module testcases At invited providers pop up window each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 15757,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.my-5').should('be.visible').should('have.text', 'Invite Provider');\ncy.get('.w-5').should('be.visible');\ncy.xpath('//label').eq(0).should('be.visible').and('have.text', 'Phone');\ncy.xpath('//label').eq(1).should('be.visible').and('have.text', 'Email');\ncy.xpath('//label').eq(2).should('be.visible').and('have.text', 'Both');\ncy.xpath('//label').eq(3).should('be.visible').and('have.text', 'Email');\ncy.xpath(\"//input[@type='radio']\").should('be.checked');\ncy.get('.appearance-none').clear().type('sdada@dada@asd.com');\ncy.get('#update-profile').click();\ncy.get('.text-red-600').should('be.visible').and('have.text', 'Please enter valid email');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.my-5`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.my-5`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:141:21)",
+                "diff": null
+              },
+              "uuid": "95868cfb-863e-485b-9168-6be2a76023c8",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I shoual be able to invite provider",
+              "fullTitle": "Provider module testcases As a Admin I shoual be able to invite provider",
+              "timedOut": null,
+              "duration": 15827,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const email = _faker.default.name.firstName() + '@mailinator.com';\ncy.get('.appearance-none').clear().type(email);\ncy.get('#update-profile').click();\ncy.writeFile('cypress/fixtures/provider.json', {\n  email: email\n});\ncy.contains('Invitation sent successfully.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:154:8)",
+                "diff": null
+              },
+              "uuid": "5316ef4a-7ca9-45ff-9621-5357e8b7437c",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to see invited provider into the provider list",
+              "fullTitle": "Provider module testcases As a Admin I should be able to see invited provider into the provider list",
+              "timedOut": null,
+              "duration": 16482,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('cypress/fixtures/provider.json').then(provider => {\n  cy.get('.space-y-4 > .bg-white').click();\n  cy.get(':nth-child(1) > :nth-child(1) > div > .text-gray-900').should('be.visible').and('have.text', provider.email.toLowerCase());\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<p.text-gray-900.whitespace-no-wrap>' to have text 'avery@mailinator.com', but the text was 'vaccination'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<p.text-gray-900.whitespace-no-wrap>' to have text 'avery@mailinator.com', but the text was 'vaccination'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:164:91)",
+                "diff": "- 'vaccination'\n+ 'avery@mailinator.com'\n"
+              },
+              "uuid": "46a318ae-7af4-4f21-8957-c57b2b292921",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to able to resend the password",
+              "fullTitle": "Provider module testcases As a Admin I should be able to able to resend the password",
+              "timedOut": null,
+              "duration": 16055,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//div[@textid='resend']\").first().click();\ncy.contains(\"Invitation sent successfully.\").should('be.visible');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[@textid='resend']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[@textid='resend']`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\05_provider.spec.js:168:8)",
+                "diff": null
+              },
+              "uuid": "ae353427-b11a-4e69-95c9-128249b450fd",
+              "parentUUID": "d6e5962c-60a9-4a5b-b947-de11237509e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "82c69d2c-da1e-4aa7-8d68-00e5bcca3127",
+            "c3f64245-be31-433a-aaec-50c5521a5870",
+            "93ba71d7-c786-4735-8d20-75935250d031",
+            "95868cfb-863e-485b-9168-6be2a76023c8",
+            "5316ef4a-7ca9-45ff-9621-5357e8b7437c",
+            "46a318ae-7af4-4f21-8957-c57b2b292921",
+            "ae353427-b11a-4e69-95c9-128249b450fd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 123065,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

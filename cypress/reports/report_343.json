@@ -1,0 +1,303 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 4,
+    "pending": 0,
+    "failures": 6,
+    "start": "2022-03-25T08:22:08.063Z",
+    "end": "2022-03-25T08:24:11.259Z",
+    "duration": 123196,
+    "testsRegistered": 10,
+    "passPercent": 40,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1bb0fdd5-4442-41aa-b285-a172b209f197",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/28_Appointments.spec.js",
+      "file": "cypress/integration/Admin_Testcases/28_Appointments.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1d10743c-785f-4e67-b42b-2a2353029932",
+          "title": "Appointments Module Test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Appointment page by clicking on the Appointments tab.",
+              "fullTitle": "Appointments Module Test cases As a Admin the user should be navigated to the Appointment page by clicking on the Appointments tab.",
+              "timedOut": null,
+              "duration": 15992,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.get('.py-6>nav>div:nth-child(4)').should('be.visible').should('have.text', 'Appointments').click();\ncy.url().should('contain', '/appointments');",
+              "err": {},
+              "uuid": "0c956af8-585b-452a-a44c-7c7ec7379497",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Appointments\" page each label and field should have proper label and validations",
+              "fullTitle": "Appointments Module Test cases At \"Appointments\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 2829,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.-mx-4>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Appointments');\ncy.get('[textid=\"admin.unVerified_payments\"]').should('be.visible').should('have.text', 'Unverified Payments');\ncy.get('[textid=\"admin.bml_payments\"]').should('be.visible').should('have.text', 'Bill Me Later Requests');\ncy.get('[type=search]').should('be.visible');\ncy.get('[type=text]').should('be.visible');\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter');\ncy.get('.mt-1:nth-child(2)').should('be.visible').should('have.text', 'Next');",
+              "err": {},
+              "uuid": "da9251b8-3223-448e-ac21-533afe512a11",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the \"unverified payments list\" page by clicking on the \"Unverified Payments\" button",
+              "fullTitle": "Appointments Module Test cases As a Admin the user should be navigated to the \"unverified payments list\" page by clicking on the \"Unverified Payments\" button",
+              "timedOut": null,
+              "duration": 1773,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[textid=\"admin.unVerified_payments\"]').should('be.visible').should('have.text', 'Unverified Payments').click();\ncy.get('.-mx-4>div:nth-child(1)>div:nth-child(2)').should('be.visible').should('have.text', 'Unverified Payments List');\ncy.get('.-mx-4>div:nth-child(1)>div:nth-child(1)').should('be.visible').click();",
+              "err": {},
+              "uuid": "21554a52-7e78-438c-a107-88fd6b4f3bf4",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the \"Appointment details\" page by clicking on eye icon against that particular Appointment",
+              "fullTitle": "Appointments Module Test cases As a Admin the user should be navigated to the \"Appointment details\" page by clicking on eye icon against that particular Appointment",
+              "timedOut": null,
+              "duration": 15369,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tbody>tr:nth-child(1)>td:nth-child(7)>div>svg').scrollIntoView().should('be.visible').click();\ncy.get('.space-x-4 > .font-semibold').should('be.visible').should('have.text', 'Appointment Details');\ncy.get('.w-7').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tbody>tr:nth-child(1)>td:nth-child(7)>div>svg`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tbody>tr:nth-child(1)>td:nth-child(7)>div>svg`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\28_Appointments.spec.js:135:8)",
+                "diff": null
+              },
+              "uuid": "b2b8aa27-a71c-4dbd-89ff-ef9569e06a27",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the \"Bill me later requests list\" page by clicking on the \"Bill me later requests\" button",
+              "fullTitle": "Appointments Module Test cases As a Admin the user should be navigated to the \"Bill me later requests list\" page by clicking on the \"Bill me later requests\" button",
+              "timedOut": null,
+              "duration": 3451,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[textid=\"admin.bml_payments\"]').should('be.visible').should('have.text', 'Bill Me Later Requests').click();\ncy.get('.-mx-4>div:nth-child(1)>div:nth-child(2)').should('be.visible').should('have.text', 'Bill Me Later Requests List');\ncy.get('.-mx-4>div:nth-child(1)>div:nth-child(1)').should('be.visible').click();",
+              "err": {},
+              "uuid": "50d670e9-3791-4649-99f3-bfb3bba43158",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can filter the Appointments based on the status of the Appointment like requested,accepted etc. by clicking on the filter button",
+              "fullTitle": "Appointments Module Test cases As a Admin the user can filter the Appointments based on the status of the Appointment like requested,accepted etc. by clicking on the filter button",
+              "timedOut": null,
+              "duration": 15503,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(2)>div:nth-child(10)').should('be.visible').should('have.text', 'completed').click();\ncy.wait(3000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-1:nth-child(2)>div:nth-child(10)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-1:nth-child(2)>div:nth-child(10)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\28_Appointments.spec.js:146:52)",
+                "diff": null
+              },
+              "uuid": "a5e7a7b9-e598-49c6-becc-8a11cd19ac43",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can filter the appointment between particular dates by clicking on the calendar icon",
+              "fullTitle": "Appointments Module Test cases As a Admin the user can filter the appointment between particular dates by clicking on the calendar icon",
+              "timedOut": null,
+              "duration": 18241,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[type=text]').should('be.visible').click();\ncy.get('.react-datepicker__day--today').should('be.visible').click();\ncy.get('.react-datepicker__day--010').should('be.visible').click();\ncy.wait(2000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>svg').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element:\n\n`<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" class=\"h-5 w-5 cursor-pointer text-gray-400 -ml-2 mr-3\">...</svg>`\n\nis being covered by another element:\n\n`<div class=\"react-datepicker__portal\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element:\n\n`<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" class=\"h-5 w-5 cursor-pointer text-gray-400 -ml-2 mr-3\">...</svg>`\n\nis being covered by another element:\n\n`<div class=\"react-datepicker__portal\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:160645:87)\n    at ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147543:8)\n    at ensureDescendentsAndScroll (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147550:14)\n    at ensureElIsNotCovered (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147684:5)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147871:52)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147894:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10486:29)\n    at tryFn (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:165305:61)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:165344:14)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:164831:18\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11329:18)\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\28_Appointments.spec.js:156:81)",
+                "diff": null
+              },
+              "uuid": "067ccebb-21d0-4b7d-a355-91ed038f7c9a",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can also filter the appointments based on the payment mode like cash,pos or bill me later etc.",
+              "fullTitle": "Appointments Module Test cases As a Admin the user can also filter the appointments based on the payment mode like cash,pos or bill me later etc.",
+              "timedOut": null,
+              "duration": 15336,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(1)>div:nth-child(2)').should('be.visible').should('have.text', 'CASH').click();\ncy.wait(2000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(1)>div:nth-child(3)').should('be.visible').should('have.text', 'POS').click();\ncy.wait(2000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(1)>div:nth-child(4)').should('be.visible').should('have.text', 'Bill Me Later').click();\ncy.wait(2000);\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.border-r-2.h-6.mr-4.border-gray-300>' to have text 'Add Filter', but the text was ''",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.border-r-2.h-6.mr-4.border-gray-300>' to have text 'Add Filter', but the text was ''\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\28_Appointments.spec.js:159:94)",
+                "diff": "+ 'Add Filter'\n"
+              },
+              "uuid": "3e33fc44-924e-4a9d-8140-c5a6f750db18",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can search any appointment with appointment id or patient name or provider name with the help of search bar",
+              "fullTitle": "Appointments Module Test cases As a Admin the user can search any appointment with appointment id or patient name or provider name with the help of search bar",
+              "timedOut": null,
+              "duration": 15475,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[type=search]').should('be.visible').type('LXMED021');\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').clear();\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').type('pvnkumar80@gmail.com');\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').clear();\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').type('Pavan Kumar');\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').clear();\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').type('Lxmedical Provider');\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').clear();\ncy.wait(2000);",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15000ms: `cy.type()` failed because this element:\n\n`<input class=\"w-full rounded pr-0.5 py-2 outline-none text-sm\" autocomplete=\"off\" placeholder=\"Search by appointment ID, patient or provider..\" type=\"search\" name=\"search\" value=\"\">`\n\nis being covered by another element:\n\n`<div class=\"react-datepicker__portal\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15000ms: `cy.type()` failed because this element:\n\n`<input class=\"w-full rounded pr-0.5 py-2 outline-none text-sm\" autocomplete=\"off\" placeholder=\"Search by appointment ID, patient or provider..\" type=\"search\" name=\"search\" value=\"\">`\n\nis being covered by another element:\n\n`<div class=\"react-datepicker__portal\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:160645:87)\n    at ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147543:8)\n    at ensureDescendentsAndScroll (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147550:14)\n    at ensureElIsNotCovered (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147684:5)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147871:52)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147894:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10486:29)\n    at tryFn (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:165305:61)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:165344:14)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:164831:18\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11329:18)\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\28_Appointments.spec.js:176:50)",
+                "diff": null
+              },
+              "uuid": "4288cd02-2f1a-43a3-9047-e0efb12cfd03",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can switch between pages using next and previous buttons.",
+              "fullTitle": "Appointments Module Test cases As a Admin the user can switch between pages using next and previous buttons.",
+              "timedOut": null,
+              "duration": 15520,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-1:nth-child(2)').should('be.visible').should('have.text', 'Next').click();\ncy.wait(2000);\ncy.get('.mt-1:nth-child(1)').should('be.visible').should('have.text', 'Previous').click();\ncy.wait(2000);",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because the center of this element is hidden from view:\n\n`<div class=\"mt-1 cursor-pointer ml-3 relative inline-flex items-center px-2.5 py-1.5 border border-gray-300 text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 false\">Next</div>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because the center of this element is hidden from view:\n\n`<div class=\"mt-1 cursor-pointer ml-3 relative inline-flex items-center px-2.5 py-1.5 border border-gray-300 text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 false\">Next</div>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:160661:85)\n    at ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147543:8)\n    at possiblyScrollMultipleTimes (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147652:22)\n    at scrollContainers (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147675:16)\n    at ensureDescendentsAndScroll (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147679:14)\n    at ensureElIsNotCovered (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147684:5)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147871:52)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147894:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10486:29)\n    at tryFn (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:165305:61)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:165344:14)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:164831:18\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\28_Appointments.spec.js:194:83)",
+                "diff": null
+              },
+              "uuid": "441f20c0-f56f-4238-9c4d-54c94dcbeafe",
+              "parentUUID": "1d10743c-785f-4e67-b42b-2a2353029932",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c956af8-585b-452a-a44c-7c7ec7379497",
+            "da9251b8-3223-448e-ac21-533afe512a11",
+            "21554a52-7e78-438c-a107-88fd6b4f3bf4",
+            "50d670e9-3791-4649-99f3-bfb3bba43158"
+          ],
+          "failures": [
+            "b2b8aa27-a71c-4dbd-89ff-ef9569e06a27",
+            "a5e7a7b9-e598-49c6-becc-8a11cd19ac43",
+            "067ccebb-21d0-4b7d-a355-91ed038f7c9a",
+            "3e33fc44-924e-4a9d-8140-c5a6f750db18",
+            "4288cd02-2f1a-43a3-9047-e0efb12cfd03",
+            "441f20c0-f56f-4238-9c4d-54c94dcbeafe"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 119489,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

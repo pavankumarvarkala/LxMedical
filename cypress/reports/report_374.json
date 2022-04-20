@@ -1,0 +1,269 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 1,
+    "pending": 0,
+    "failures": 7,
+    "start": "2022-03-28T07:06:24.192Z",
+    "end": "2022-03-28T07:11:38.633Z",
+    "duration": 314441,
+    "testsRegistered": 8,
+    "passPercent": 12.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e7c371f6-1876-471b-ac2e-b5fdcd02fb71",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/01_Signup.spec.js",
+      "file": "cypress/integration/Patient_Testcases/01_Signup.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "38369532-ff74-478d-96a3-16c7604c5c61",
+          "title": "Sign Up module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the landing page after entering the url",
+              "fullTitle": "Sign Up module testcases As a patient the user should be navigated to the landing page after entering the url",
+              "timedOut": null,
+              "duration": 3786,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.url().should('eq', cred.PatientUrl);",
+              "err": {},
+              "uuid": "e379ff1f-1545-4910-ac22-a2a88a58e6a5",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should be navigated to the create account page by clicking create account button in login page",
+              "fullTitle": "Sign Up module testcases As a patient the user should be navigated to the create account page by clicking create account button in login page",
+              "timedOut": null,
+              "duration": 45151,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.bg-white > .mx-auto > .w-44').should('be.visible').click();\ncy.url().should('contain', '/login');\ncy.get('[href=\"/signup\"] > .flex').should('be.visible').should('contain', 'Create').click();\ncy.url().should('contain', '/signup');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "b30569d8-89fd-4323-918d-a4024af97fbf",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At create an account page each label and field should have properblabel and validations",
+              "fullTitle": "Sign Up module testcases At create an account page each label and field should have properblabel and validations",
+              "timedOut": null,
+              "duration": 45279,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[alt=logo]').should('be.visible');\ncy.get('.p-10 > :nth-child(1)').should('be.visible').should('have.text', 'LX Medical');\ncy.get('.font-semibold').should('be.visible').should('contain', 'Create An Account');\ncy.get('.h-6').should('be.visible');\ncy.get('.gap-4 > :nth-child(1) > :nth-child(1)').should('be.visible').should('have.text', 'First Name');\ncy.get('.gap-4 > :nth-child(1) > :nth-child(2)').should('be.visible').should('have.text', 'Last Name');\ncy.get('.gap-4 > :nth-child(2) > :nth-child(1)').should('be.visible').should('contain', 'Phone Number');\ncy.get('.gap-4 > :nth-child(2) > :nth-child(2)').should('be.visible').should('have.text', 'Email');\ncy.get(':nth-child(3) > div.w-full').should('be.visible').should('have.text', 'Date of Birth');\ncy.get(':nth-child(3) > :nth-child(2)').should('be.visible').should('contain', 'Gender');\ncy.get(':nth-child(5) > .font-medium').should('be.visible').should('have.text', 'Your Address');\ncy.get(':nth-child(6) > :nth-child(1)').should('be.visible').should('have.text', 'Address Line 1');\ncy.get(':nth-child(6) > :nth-child(2)').should('be.visible').should('contain', 'Address Line 2');\ncy.get(':nth-child(7) > :nth-child(1)').should('be.visible').should('contain', 'Postal Code');\ncy.get(':nth-child(7) > :nth-child(2)').should('be.visible').should('contain', 'City');\ncy.get('#patientSignup>form>div:nth-child(8)').should('be.visible').should('contain', 'State');\ncy.get('.h-4').should('be.visible').should('not.be.checked');\ncy.get('.gap-x-1 > :nth-child(3)').should('be.visible').should('contain', 'Terms');\ncy.get('.gap-x-1 > :nth-child(5)').should('be.visible').should('contain', 'Privacy');\ncy.get('.justify-center').should('be.visible').should('contain', 'Continue');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "b8bc474b-e47c-4c9f-a124-0bd1fa604909",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should get all the validation error if proceeds to next page with no data",
+              "fullTitle": "Sign Up module testcases As a patient the user should get all the validation error if proceeds to next page with no data",
+              "timedOut": null,
+              "duration": 30197,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-center').should('be.visible').click();\ncy.get(':nth-child(1) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(1) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(3) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(3) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(6) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(7) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(7) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(8) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "67a08c43-b65f-44c5-b5db-6314a29fcebc",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should be able to navigated to the Disclosure page after filling all details with valid data",
+              "fullTitle": "Sign Up module testcases As a patient the user should be able to navigated to the Disclosure page after filling all details with valid data",
+              "timedOut": null,
+              "duration": 45120,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').type('pawan');\ncy.get(':nth-child(1) > :nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('kumar');\ncy.get(':nth-child(2) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('7799552341');\ncy.get(':nth-child(2) > :nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('pawan@mailinator.com');\ncy.get('.css-tlfecz-indicatorContainer').click();\ncy.wait(5000);\ncy.get('.text-red-600').should('be.visible').should('contain', 'already exists');\ncy.get(':nth-child(2) > :nth-child(2) > .relative > .appearance-none').clear();\ncy.get(':nth-child(2) > :nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type(email);\ncy.get('.react-datepicker__input-container > .appearance-none').should('be.visible').click();\ncy.get('.react-datepicker__year-select').should('be.visible').select('1991');\ncy.get('.react-datepicker__day--019').should('be.visible').click();\ncy.get('.css-1hwfws3').click();\ncy.get('#patientSignup > form > div:nth-child(3) > div:nth-child(2) > div.text-sm.font-bold.text-primary.css-2b097c-container > div').contains('Male').click();\ncy.get(':nth-child(6) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('plot no 99');\ncy.get(':nth-child(6) > :nth-child(2) > .mt-1 > .appearance-none').should('be.visible').type('park street');\ncy.get(':nth-child(7) > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').type('35242');\ncy.get('.justify-center').should('be.visible').click();\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Please accept Terms of Use & Privacy Policy');\ncy.get('.h-4').should('be.visible').should('not.be.checked').check();\ncy.get('.gap-x-1 > :nth-child(3)').should('be.visible').click();\ncy.get('.my-5').should('be.visible').should('have.text', 'Terms & conditions');\ncy.get('.w-5').should('be.visible').click();\ncy.get('.gap-x-1 > :nth-child(5)').should('be.visible').should('have.text', 'Privacy Policies').click();\ncy.get('.gap-x-1 > :nth-child(5)').should('be.visible').should('have.text', 'Privacy Policies');\ncy.get('.w-5 > path').should('be.visible').click();\ncy.get('.justify-center').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "c831b9ca-0728-4fe5-a5dc-aa99e9696185",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should be navigated to the patient consent page after accepting disclosure conditions",
+              "fullTitle": "Sign Up module testcases As a patient the user should be navigated to the patient consent page after accepting disclosure conditions",
+              "timedOut": null,
+              "duration": 45129,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-800').should('be.visible').should('have.text', 'Disclosure of Out of Network');\ncy.get('.justify-center').should('be.visible').should('contain', 'Continue').click();\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Please accept to continue');\ncy.get('.ml-2 > div').should('be.visible').should('have.text', 'I accept the above conditions');\ncy.get('.h-4').should('be.visible').should('not.be.checked').check();\ncy.get('.justify-center').should('be.visible').should('contain', 'Continue').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "c54752e8-4284-47d2-8770-9d5404d062fa",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should be navigated to the email verification page after accepting patient consent conditions",
+              "fullTitle": "Sign Up module testcases As a patient the user should be navigated to the email verification page after accepting patient consent conditions",
+              "timedOut": null,
+              "duration": 45141,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-800').should('be.visible').should('have.text', 'Patient Consent to Treatment');\ncy.get('.justify-center').should('be.visible').should('contain', 'Continue').click();\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Please accept to continue');\ncy.get('.ml-2 > div').should('be.visible').should('have.text', 'I accept the above conditions');\ncy.get('.h-4').should('be.visible').should('not.be.checked').check();\ncy.get('.justify-center').should('be.visible').should('contain', 'Continue').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "2151de13-c098-4fe6-b89f-e76e2d5fc3c5",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a patient the user should be navigated to the create password page after verifying email",
+              "fullTitle": "Sign Up module testcases As a patient the user should be navigated to the create password page after verifying email",
+              "timedOut": null,
+              "duration": 45115,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.Toastify__toast-body').should('be.visible').should('contain', 'Otp sent');\ncy.get('.text-gray-600').should('be.visible').should('have.text', email);\ncy.get('.text-gray-800').should('be.visible').should('have.text', 'Enter Verification Code');\ncy.get('.text-gray-500').should('be.visible').should('contain', 'A 6 digit');\ncy.get('.font-medium').should('be.visible').should('contain', 'received');\ncy.get('.mt-3 > .font-bold').should('be.visible').should('contain', 'Resend');\ncy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Submit').click();\ncy.get('.my-4 > .text-xs').should('be.visible').should('contain', 'not valid');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "b4c293d1-d419-44bc-9cdf-d3d95ab4c10d",
+              "parentUUID": "38369532-ff74-478d-96a3-16c7604c5c61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e379ff1f-1545-4910-ac22-a2a88a58e6a5"
+          ],
+          "failures": [
+            "b30569d8-89fd-4323-918d-a4024af97fbf",
+            "b8bc474b-e47c-4c9f-a124-0bd1fa604909",
+            "67a08c43-b65f-44c5-b5db-6314a29fcebc",
+            "c831b9ca-0728-4fe5-a5dc-aa99e9696185",
+            "c54752e8-4284-47d2-8770-9d5404d062fa",
+            "2151de13-c098-4fe6-b89f-e76e2d5fc3c5",
+            "b4c293d1-d419-44bc-9cdf-d3d95ab4c10d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 304918,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

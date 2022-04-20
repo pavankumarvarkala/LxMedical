@@ -1,0 +1,295 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 0,
+    "pending": 0,
+    "failures": 9,
+    "start": "2022-03-28T07:18:33.304Z",
+    "end": "2022-03-28T07:24:44.436Z",
+    "duration": 371132,
+    "testsRegistered": 9,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a820f3d5-2185-4c6c-b03b-298fba0a256e",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/03_Forgot_Password.spec.js",
+      "file": "cypress/integration/Patient_Testcases/03_Forgot_Password.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+          "title": "Forgot Password Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should be redirected to forgot password page by clicking on forgot password  link in sign in page",
+              "fullTitle": "Forgot Password Module Test Cases As a Patient the user should be redirected to forgot password page by clicking on forgot password  link in sign in page",
+              "timedOut": null,
+              "duration": 49019,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.url().should('eq', cred.PatientUrl);\ncy.get('.bg-white > .mx-auto > .w-44').should('be.visible').click();\ncy.url().should('contain', '/login');\ncy.get('.justify-between > a > .text-primary').should('be.visible').should('have.text', 'Forgot Password?').click();\ncy.url().should('contain', '/forgot-password');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "38e5522a-8458-4ddf-be32-59466cdd65ba",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At forgot password page each label and field should have proper label and validations",
+              "fullTitle": "Forgot Password Module Test Cases At forgot password page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45169,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-900').should('be.visible').should('contain', 'Forgot Password?');\ncy.get('a > .text-primary').should('be.visible');\ncy.get('.text-gray-500').should('be.visible').should('contain', 'A 6 digit');\ncy.get('div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Email');\ncy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Continue');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "a6d77ab1-72e4-44e1-8769-258d46d5c804",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should get error if no email is entered",
+              "fullTitle": "Forgot Password Module Test Cases The user should get error if no email is entered",
+              "timedOut": null,
+              "duration": 45219,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Continue').click();\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "c7b516d1-0c5f-4176-b310-26b79c8bc279",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should get error if invalid email is entered",
+              "fullTitle": "Forgot Password Module Test Cases The user should get error if invalid email is entered",
+              "timedOut": null,
+              "duration": 30406,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').should('be.visible').type('pp@mailinator.com');\ncy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Continue').click();\ncy.contains('User not found');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "adf22ae6-8ab5-42f0-b8f1-0a13a9bfd604",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient by entering valid registered email id and clicking on continue button the user should be redirected to the Enter verification code page",
+              "fullTitle": "Forgot Password Module Test Cases As a Patient by entering valid registered email id and clicking on continue button the user should be redirected to the Enter verification code page",
+              "timedOut": null,
+              "duration": 30910,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').should('be.visible').clear().type(cred.pemail);\ncy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Continue').click();\ncy.contains('OTP send to');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "0e190a2c-ff4e-464d-a5e7-afafcda31d1b",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Enter verification code page each label and field should have proper label and validations",
+              "fullTitle": "Forgot Password Module Test Cases At Enter verification code page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45174,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-800').should('be.visible').should('have.text', 'Enter Verification Code');\ncy.get('.mr-2').should('be.visible');\ncy.get('.mt-5.mb-2').should('be.visible');\ncy.get('.text-gray-500').should('be.visible').should('contain', 'A 6 digit');\ncy.get('.text-gray-600').should('be.visible').should('have.text', cred.pemail);\ncy.get(':nth-child(1) > input').should('be.visible');\ncy.get(':nth-child(2) > input').should('be.visible');\ncy.get(':nth-child(3) > input').should('be.visible');\ncy.get(':nth-child(4) > input').should('be.visible');\ncy.get(':nth-child(5) > input').should('be.visible');\ncy.get(':nth-child(6) > input').should('be.visible');\ncy.get('.font-medium').should('be.visible');\ncy.get('.mt-3 > .font-bold').should('be.visible').should('have.text', 'Resend Code');\ncy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Submit');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "4f404aa2-6ea1-4458-8ec4-184fd598d320",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should able to resend verification code by clicking resend link",
+              "fullTitle": "Forgot Password Module Test Cases As a Patient the user should able to resend verification code by clicking resend link",
+              "timedOut": null,
+              "duration": 45219,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-3 > .font-bold').should('be.visible').should('have.text', 'Resend Code').click();\ncy.contains('OTP send to');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "d972a50c-f314-4fe9-bc8f-b105c77793a9",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should get an error if no data is entered",
+              "fullTitle": "Forgot Password Module Test Cases The user should get an error if no data is entered",
+              "timedOut": null,
+              "duration": 45206,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Submit').click();\ncy.get('.my-4 > .text-xs').should('be.visible').should('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "f9d909e5-fa22-4d5b-9b7b-bbe8af5e3f13",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should get an error if invalid data is entered",
+              "fullTitle": "Forgot Password Module Test Cases The user should get an error if invalid data is entered",
+              "timedOut": null,
+              "duration": 30614,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > input').should('be.visible').type('1');\ncy.get(':nth-child(2) > input').should('be.visible').type('2');\ncy.get(':nth-child(3) > input').should('be.visible').type('3');\ncy.get(':nth-child(4) > input').should('be.visible').type('4');\ncy.get(':nth-child(5) > input').should('be.visible').type('5');\ncy.get(':nth-child(6) > input').should('be.visible').type('6');\ncy.get('.mt-5 > .flex').should('be.visible').should('have.text', 'Submit').click();\ncy.get('.my-4 > .text-xs').should('be.visible').should('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "84b4d659-dfd5-4521-b17a-bc5fd60be675",
+              "parentUUID": "fc8c0881-1c5c-43c3-a408-8ff3e7b7c3dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "38e5522a-8458-4ddf-be32-59466cdd65ba",
+            "a6d77ab1-72e4-44e1-8769-258d46d5c804",
+            "c7b516d1-0c5f-4176-b310-26b79c8bc279",
+            "adf22ae6-8ab5-42f0-b8f1-0a13a9bfd604",
+            "0e190a2c-ff4e-464d-a5e7-afafcda31d1b",
+            "4f404aa2-6ea1-4458-8ec4-184fd598d320",
+            "d972a50c-f314-4fe9-bc8f-b105c77793a9",
+            "f9d909e5-fa22-4d5b-9b7b-bbe8af5e3f13",
+            "84b4d659-dfd5-4521-b17a-bc5fd60be675"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 366936,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

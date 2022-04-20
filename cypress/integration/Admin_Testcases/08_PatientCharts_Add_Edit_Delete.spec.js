@@ -5,12 +5,14 @@ const cred=require('../../fixtures/cred.json')
  describe('Add/edit/delete family member testcases',()=>{
      it('As a Admin the should be navigated to the patient charts section by clicking on charts tab on patient profile of particular patient.',()=>{
         cy.login(cred.email,cred.password)
+        cy.url().should('contain','/dashboard')
+        cy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text','Patients').click()
         cy.url().should('contain','/patients')
-        cy.get('.bg-white > .w-full').should('be.visible').type('pawankumar@yopmail.com')
+        cy.get('[type=search]').should('be.visible').type('pawan@yopmail.com')
         cy.wait(2000)
-        cy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click()
+        cy.get('tr:nth-child(1) > td:nth-child(8) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click()
         cy.url().should('contain','/address')
-        cy.get('.border-transparent').should('be.visible').should('contain','Charts').click()
+        cy.get('nav.flex.flex-wrap>div:nth-child(2)>div').should('be.visible').should('contain','Charts').click()
         cy.url().should('contain','/charts')
     })
 
@@ -64,22 +66,24 @@ const cred=require('../../fixtures/cred.json')
     })
 
     it('The added family member should refelect under charts section',()=>{
-        cy.get(':nth-child(3) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text','shiva teja')
-        cy.get('.h-screen>div:nth-child(2)>div:nth-child(3)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text','Female')
+        cy.get(':nth-child(2) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text','shiva teja')
+        cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text','Female')
         cy.logout()
      })
     //Edit Family Member
     it('As a Admin the user can edit the details of the family member by clicking on edit icon against the particular member',()=>{
         cy.login(cred.email,cred.password)
+        cy.url().should('contain','/dashboard')
+        cy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text','Patients').click()
         cy.url().should('contain','/patients')
-        cy.get('.bg-white > .w-full').should('be.visible').type('pawankumar@yopmail.com')
+        cy.get('[type=search]').should('be.visible').type('pawan@yopmail.com')
         cy.wait(2000)
-        cy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click()
+        cy.get('tr:nth-child(1) > td:nth-child(8) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click()
         cy.url().should('contain','/address')
-        cy.get('.border-transparent').should('be.visible').should('contain','Charts').click()
+        cy.get('nav.flex.flex-wrap>div:nth-child(2)>div').should('be.visible').should('contain','Charts').click()
         cy.url().should('contain','/charts')
-        cy.get('.h-screen>div:nth-child(2)>div:nth-child(3)').should('be.visible')
-        cy.get(':nth-child(3) > .bg-white > .justify-between > .flex > :nth-child(3)').should('be.visible').click()
+        cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible')
+        cy.get(':nth-child(2) > .bg-white > .justify-between > .flex > :nth-child(3)').should('be.visible').click()
 
     })
     it('At Edit family member window each label and field have proper lable and validations',()=>{
@@ -108,14 +112,14 @@ const cred=require('../../fixtures/cred.json')
     })
 
     it('The edited details should be refelected under charts section',()=>{
-        cy.get(':nth-child(3) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text','nanda kishore')
-        cy.get('.h-screen>div:nth-child(2)>div:nth-child(3)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text','Male')
+        cy.get(':nth-child(2) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text','nanda kishore')
+        cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text','Male')
  
     })
     //Delete Family Member
     it('As a Admin the user can able to delete a family member by clicking on delete icon on particular member',()=>{
-        cy.get('.h-screen>div:nth-child(2)>div:nth-child(3)').should('be.visible')
-        cy.get(':nth-child(3) > .bg-white > .justify-between > .flex > :nth-child(2)').should('be.visible').click()
+        cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible')
+        cy.get(':nth-child(2) > .bg-white > .justify-between > .flex > :nth-child(2)').should('be.visible').click()
 
     })
 
@@ -139,7 +143,7 @@ const cred=require('../../fixtures/cred.json')
     })
 
     it('The deleted member should not reflect under charts section',()=>{
-        cy.get('.flex-wrap > .font-medium').should('be.visible').should('have.text','2 Members')
+        cy.get('.flex-wrap > .font-medium').should('be.visible').should('have.text','1 Members')
         cy.logout()        
     })
 

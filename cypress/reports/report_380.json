@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2022-03-28T07:33:46.423Z",
+    "end": "2022-03-28T09:00:19.813Z",
+    "duration": 5193390,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "825d1eba-f10f-4177-b135-2a25c2f256de",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/07_Profile_AccountSettings.spec.js",
+      "file": "cypress/integration/Patient_Testcases/07_Profile_AccountSettings.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+          "title": "Account settings Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the account settings page by clicking on account settings tab",
+              "fullTitle": "Account settings Module Test Cases As a patient the user should be navigated to the account settings page by clicking on account settings tab",
+              "timedOut": null,
+              "duration": 35432,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').click();\ncy.url().should('contain', '/settings');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "e8630fd9-66a8-44ba-86e9-2cb805786e83",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Account settings page each label and field should have proper label and validations",
+              "fullTitle": "Account settings Module Test Cases At Account settings page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45198,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text', 'Change Password');\ncy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text', 'Logout');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "dc8c78c4-0ece-4267-968e-fe52a8cd844b",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should geta a popup window to the change password page by clicking on change password tab",
+              "fullTitle": "Account settings Module Test Cases The user should geta a popup window to the change password page by clicking on change password tab",
+              "timedOut": null,
+              "duration": 45180,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text', 'Change Password').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "ce7fb6f1-1253-4661-a666-b12a73c629c6",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At change password page each label and field should have proper label and validations",
+              "fullTitle": "Account settings Module Test Cases At change password page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45191,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Change Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Old Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'New Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Confirm Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "0c39a8a1-6d84-4613-807f-bdaff766d2b4",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error message should be displayed if clicked on continue by entering wrong data or with no data entered in change password page",
+              "fullTitle": "Account settings Module Test Cases Error message should be displayed if clicked on continue by entering wrong data or with no data entered in change password page",
+              "timedOut": null,
+              "duration": 45177,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.get(':nth-child(1) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'Old Password is required');\ncy.get(':nth-child(2) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'New Password is required');\ncy.get(':nth-child(3) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'Confirm Password is required');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Pavan@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.contains('Old password incorrect');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "366b20a6-bc16-4181-99a1-a24df3275252",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error message should be displayed if current password and new password are same",
+              "fullTitle": "Account settings Module Test Cases Error message should be displayed if current password and new password are same",
+              "timedOut": null,
+              "duration": 45165,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Old and new password can not be the same');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "d10fb5f2-1d0e-46ef-bdb0-f6b3eb592c77",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error message should be displayed if both new password and retype password are not matching",
+              "fullTitle": "Account settings Module Test Cases Error message should be displayed if both new password and retype password are not matching",
+              "timedOut": null,
+              "duration": 4852677,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@12345');\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Both passwords need to be the same');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "b593ae5f-8efc-4d51-b71e-711368337d5e",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should geta a popup window to the change password page by clicking on change password tab",
+              "fullTitle": "Account settings Module Test Cases The user should geta a popup window to the change password page by clicking on change password tab",
+              "timedOut": null,
+              "duration": 77943,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.contains('Password changed successfully');\ncy.get('.bg-white > .mx-auto > .w-44').click();\ncy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').type('Password@1234');\ncy.get('.border-2').click();\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').click();\ncy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text', 'Change Password').click();\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "8021b4e5-934b-4cad-a85c-107422bf7ec0",
+              "parentUUID": "19ab5d21-eb6f-49f1-9508-c6d24889e90e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e8630fd9-66a8-44ba-86e9-2cb805786e83",
+            "dc8c78c4-0ece-4267-968e-fe52a8cd844b",
+            "ce7fb6f1-1253-4661-a666-b12a73c629c6",
+            "0c39a8a1-6d84-4613-807f-bdaff766d2b4",
+            "366b20a6-bc16-4181-99a1-a24df3275252",
+            "d10fb5f2-1d0e-46ef-bdb0-f6b3eb592c77",
+            "b593ae5f-8efc-4d51-b71e-711368337d5e",
+            "8021b4e5-934b-4cad-a85c-107422bf7ec0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5191963,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

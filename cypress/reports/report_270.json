@@ -1,0 +1,249 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 0,
+    "pending": 0,
+    "failures": 7,
+    "start": "2022-02-09T13:32:22.053Z",
+    "end": "2022-02-09T13:34:25.796Z",
+    "duration": 123743,
+    "testsRegistered": 7,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dd9efae2-fa0d-4578-b9cb-14e9223186f7",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/13_Home.spec.js",
+      "file": "cypress/integration/Patient_Testcases/13_Home.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+          "title": "Home module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should be navigated to the home page after log in successfully",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the home page after log in successfully",
+              "timedOut": null,
+              "duration": 22329,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:252:113)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "c446717c-3741-458b-a2eb-e124ec81650e",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Home page each label and field have proper lable and validations",
+              "fullTitle": "Home module testcases At Home page each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 15395,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-col > .flex').should('be.visible').should('contain', 'Greetings');\ncy.get('.flex-col > .text-primary > div').should('be.visible').should('contain', 'How can we help');\ncy.get('[href=\"/appointments/book_appointment/Telemedicine\"] > .bg-white').should('be.visible').should('contain', 'Telemedicine');\ncy.get('[href=\"/appointments/book_appointment/In Home Urgent Care\"] > .bg-white').should('be.visible').should('contain', 'In Home Urgent Care');\ncy.get('[href=\"/appointments/book_appointment/In Home Covid Testing\"] > .bg-white').should('be.visible').should('contain', 'In Home Covid Testing');\ncy.get('[href=\"/appointments/book_appointment/In Home Wellness Infusions\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Infusions');\ncy.get('[href=\"/appointments/book_appointment/In Home Wellness Aesthetics\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Aesthetics');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-col > .flex`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-col > .flex`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\13_Home.spec.js:141:33)",
+                "diff": null
+              },
+              "uuid": "863a7d94-fa0c-412e-b9af-24988e28cfdb",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"Tele medicine\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"Tele medicine\" tab",
+              "timedOut": null,
+              "duration": 15411,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/Telemedicine\"] > .bg-white').should('be.visible').should('contain', 'Telemedicine').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/Telemedicine\"] > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/Telemedicine\"] > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\13_Home.spec.js:150:80)",
+                "diff": null
+              },
+              "uuid": "29dba073-8705-499a-a9a4-58f2718df8b0",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Urgent Care\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Urgent Care\" tab",
+              "timedOut": null,
+              "duration": 15714,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Urgent Care\"] > .bg-white').should('be.visible').should('contain', 'In Home Urgent Care').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Urgent Care\"] > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Urgent Care\"] > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\13_Home.spec.js:156:87)",
+                "diff": null
+              },
+              "uuid": "4d712057-1949-413e-a05e-a92dfaac8301",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Covid Testing\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Covid Testing\" tab",
+              "timedOut": null,
+              "duration": 16199,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Covid Testing\"] > .bg-white').should('be.visible').should('contain', 'In Home Covid Testing').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Covid Testing\"] > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Covid Testing\"] > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\13_Home.spec.js:162:89)",
+                "diff": null
+              },
+              "uuid": "996b1abd-ff25-4353-9a7a-256e040851b9",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Infusions\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Infusions\" tab",
+              "timedOut": null,
+              "duration": 15657,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Wellness Infusions\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Infusions').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Wellness Infusions\"] > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Wellness Infusions\"] > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\13_Home.spec.js:168:94)",
+                "diff": null
+              },
+              "uuid": "8556fd06-4118-4fae-a08f-527e9835f442",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Aesthetics\" tab",
+              "fullTitle": "Home module testcases As a Patient the user should be navigated to the Book appointment page by cliking on \"In Home Wellness Aesthetics\" tab",
+              "timedOut": null,
+              "duration": 15563,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"/appointments/book_appointment/In Home Wellness Aesthetics\"] > .bg-white').should('be.visible').should('contain', 'In Home Wellness Aesthetics').click();\ncy.url().should('contain', '/appointments');\ncy.wait(3000);\ncy.get('[href=\"/home\"]').should('be.visible').should('have.text', 'Home').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Wellness Aesthetics\"] > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[href=\"/appointments/book_appointment/In Home Wellness Aesthetics\"] > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\13_Home.spec.js:174:95)",
+                "diff": null
+              },
+              "uuid": "cd834b85-61c3-4f02-b416-5409bd62a468",
+              "parentUUID": "1ce3a446-bc16-401b-b466-1ccc14967abb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c446717c-3741-458b-a2eb-e124ec81650e",
+            "863a7d94-fa0c-412e-b9af-24988e28cfdb",
+            "29dba073-8705-499a-a9a4-58f2718df8b0",
+            "4d712057-1949-413e-a05e-a92dfaac8301",
+            "996b1abd-ff25-4353-9a7a-256e040851b9",
+            "8556fd06-4118-4fae-a08f-527e9835f442",
+            "cd834b85-61c3-4f02-b416-5409bd62a468"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 116268,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

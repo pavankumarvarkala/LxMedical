@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2022-02-09T12:17:11.730Z",
+    "end": "2022-02-09T12:19:42.917Z",
+    "duration": 151187,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0985425a-9c8d-4739-bdda-3fc4ae0d1847",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/13_ProviderChat.spec.js",
+      "file": "cypress/integration/Admin_Testcases/13_ProviderChat.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+          "title": "Provider Chat module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the provider chat page of any patient by clicking on chats icon against that particular provider",
+              "fullTitle": "Provider Chat module testcases As a Admin the user should be navigated to the provider chat page of any patient by clicking on chats icon against that particular provider",
+              "timedOut": null,
+              "duration": 31570,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/patients');\ncy.get('.space-y-4 > :nth-child(5)').should('be.visible').and('have.text', 'Providers').click();\ncy.get('.bg-white > .w-full').should('be.visible').type('p2@mailinator.com');\ncy.wait(2000);\ncy.get('.flex > .relative > .ml-2').scrollIntoView().click();\ncy.url().should('contain', '/chat');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://qa.rch.build-release.com/admin/dashboard' to include '/patients'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://qa.rch.build-release.com/admin/dashboard' to include '/patients'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:138:14)",
+                "diff": null
+              },
+              "uuid": "e7599891-660d-4171-89ce-8c9aa34d6749",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Chats\" page each label and field should have proper label and validations",
+              "fullTitle": "Provider Chat module testcases At \"Chats\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15718,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('have.text', 'Chat');\ncy.get('.flex-wrap > .h-6').should('be.visible');\ncy.get('.rounded-3xl').should('be.visible');\ncy.get('.w-full > .cursor-pointer').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.font-bold.text-xl.text-primary.pb-2>' to have text 'Chat', but the text was 'Dashboard'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.font-bold.text-xl.text-primary.pb-2>' to have text 'Chat', but the text was 'Dashboard'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:146:47)",
+                "diff": "- 'Dashboard'\n+ 'Chat'\n"
+              },
+              "uuid": "64952e66-6455-432e-8d98-30f9412f68d1",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should able to see all the chats between the Admin and provider",
+              "fullTitle": "Provider Chat module testcases The user should able to see all the chats between the Admin and provider",
+              "timedOut": null,
+              "duration": 15470,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white').scrollIntoView().should('be.visible').should('contain', 'hi');\ncy.get('div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div:nth-child(1) > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:152:8)",
+                "diff": null
+              },
+              "uuid": "80e48bca-98cf-49dd-be1b-6002dc3bb5be",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should able to send message to the provider",
+              "fullTitle": "Provider Chat module testcases As a Admin the user should able to send message to the provider",
+              "timedOut": null,
+              "duration": 16111,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.w-full > .bg-white').should('be.visible').type('hi');\ncy.wait(2000);\ncy.get('.w-full > .cursor-pointer').should('be.visible').click();\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.w-full > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.w-full > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:156:35)",
+                "diff": null
+              },
+              "uuid": "28dd8878-f29b-49fb-a469-ebbc88eba983",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The message sent by Admin should be received by the Provider",
+              "fullTitle": "Provider Chat module testcases The message sent by Admin should be received by the Provider",
+              "timedOut": null,
+              "duration": 15552,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.pb-6 > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white').should('be.visible').should('contain', 'hi');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div.pb-6 > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div.pb-6 > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:162:94)",
+                "diff": null
+              },
+              "uuid": "93a1f6d1-b5bc-4fec-8796-0f9d280069f6",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to send the documents and images by clicking on attachments icon",
+              "fullTitle": "Provider Chat module testcases As a Admin the user can able to send the documents and images by clicking on attachments icon",
+              "timedOut": null,
+              "duration": 15620,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.opacity-0').attachFile('faf.jpg');\ncy.wait(2000);\ncy.get('.w-60 > img').should('be.visible');\ncy.get('.opacity-0').attachFile('file.pdf');\ncy.wait(2000);\ncy.get('.w-60 > :nth-child(1) > img').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.opacity-0`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.opacity-0`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:165:8)",
+                "diff": null
+              },
+              "uuid": "ae919649-3d4a-442d-807a-c30ee62f3f43",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Admin can see the full length image on a separate window by clicking on that particular image",
+              "fullTitle": "Provider Chat module testcases The Admin can see the full length image on a separate window by clicking on that particular image",
+              "timedOut": null,
+              "duration": 15512,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div:nth-child(11) > div > div > div > a > div').scrollIntoView().should('be.visible').click();\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div:nth-child(11) > div > div > div > a > div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div:nth-child(11) > div > div > div > a > div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:173:8)",
+                "diff": null
+              },
+              "uuid": "2c35dda5-7eb9-42a6-ad1e-0128847a6dad",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Admin can open the document in a separate window by clicking on the particular document",
+              "fullTitle": "Provider Chat module testcases The Admin can open the document in a separate window by clicking on the particular document",
+              "timedOut": null,
+              "duration": 15658,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.pb-6 > div > div > div > a > div').scrollIntoView().should('be.visible').click();\ncy.wait(3000);\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div.pb-6 > div > div > div > a > div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div.pb-6 > div > div > div > a > div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\13_ProviderChat.spec.js:177:8)",
+                "diff": null
+              },
+              "uuid": "6b50ba62-cc6b-4e90-b896-ce3502e1cb6e",
+              "parentUUID": "0cfa3452-9cbc-4808-bb5e-389df14addc2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e7599891-660d-4171-89ce-8c9aa34d6749",
+            "64952e66-6455-432e-8d98-30f9412f68d1",
+            "80e48bca-98cf-49dd-be1b-6002dc3bb5be",
+            "28dd8878-f29b-49fb-a469-ebbc88eba983",
+            "93a1f6d1-b5bc-4fec-8796-0f9d280069f6",
+            "ae919649-3d4a-442d-807a-c30ee62f3f43",
+            "2c35dda5-7eb9-42a6-ad1e-0128847a6dad",
+            "6b50ba62-cc6b-4e90-b896-ce3502e1cb6e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 141211,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

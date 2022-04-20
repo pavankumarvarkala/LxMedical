@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2022-02-09T13:06:44.989Z",
+    "end": "2022-02-09T13:09:03.537Z",
+    "duration": 138548,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8ad6e884-5b8c-4d36-9b64-1919020ea38c",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/07_Profile_AccountSettings.spec.js",
+      "file": "cypress/integration/Patient_Testcases/07_Profile_AccountSettings.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "422629cc-d040-49ff-8db8-d0a655995b43",
+          "title": "Account settings Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the account settings page by clicking on account settings tab",
+              "fullTitle": "Account settings Module Test Cases As a patient the user should be navigated to the account settings page by clicking on account settings tab",
+              "timedOut": null,
+              "duration": 18479,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').click();\ncy.url().should('contain', '/settings');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:252:113)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "81878bbc-7bf3-4623-9e19-3a1f685f775f",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Account settings page each label and field should have proper label and validations",
+              "fullTitle": "Account settings Module Test Cases At Account settings page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15421,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text', 'Change Password');\ncy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text', 'Logout');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:145:42)",
+                "diff": null
+              },
+              "uuid": "fa5a2967-0793-4bf0-9e34-d566b753c60d",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should geta a popup window to the change password page by clicking on change password tab",
+              "fullTitle": "Account settings Module Test Cases The user should geta a popup window to the change password page by clicking on change password tab",
+              "timedOut": null,
+              "duration": 15355,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text', 'Change Password').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:149:42)",
+                "diff": null
+              },
+              "uuid": "0eaaa1d0-d7e8-4ae3-895a-03a2d0c1b622",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At change password page each label and field should have proper label and validations",
+              "fullTitle": "Account settings Module Test Cases At change password page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15669,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Change Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Old Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'New Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Confirm Password');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Change Password', but the text was 'Submit'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<button.flex.justify-center.items-center.text-sm.font-bold.rounded-md.shadow-sm.text-white.border-2.px-16.py-3.hover:font-bold.focus:outline-none.bg-primary.cursor-pointer.hover:border-primary>' to have text 'Change Password', but the text was 'Submit'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:152:66)",
+                "diff": "- 'Submit'\n+ 'Change Password'\n"
+              },
+              "uuid": "e3d2b154-904c-4fc9-a71d-92b4e6f3a084",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error message should be displayed if clicked on continue by entering wrong data or with no data entered in change password page",
+              "fullTitle": "Account settings Module Test Cases Error message should be displayed if clicked on continue by entering wrong data or with no data entered in change password page",
+              "timedOut": null,
+              "duration": 15617,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.get(':nth-child(1) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'Old Password is required');\ncy.get(':nth-child(2) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'New Password is required');\ncy.get(':nth-child(3) > div.w-full > .text-red-600').should('be.visible').should('have.text', 'Confirm Password is required');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Pavan@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.contains('Old password incorrect');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:159:95)",
+                "diff": null
+              },
+              "uuid": "3f48cd79-6a66-429a-b0a6-347850137086",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error message should be displayed if current password and new password are same",
+              "fullTitle": "Account settings Module Test Cases Error message should be displayed if current password and new password are same",
+              "timedOut": null,
+              "duration": 15309,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Old and new password can not be the same');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:170:128)",
+                "diff": null
+              },
+              "uuid": "a161c0f2-602e-4f2e-9ffb-18c03b9f805a",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error message should be displayed if both new password and retype password are not matching",
+              "fullTitle": "Account settings Module Test Cases Error message should be displayed if both new password and retype password are not matching",
+              "timedOut": null,
+              "duration": 15430,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@12345');\ncy.get('.text-red-600').should('be.visible').should('have.text', 'Both passwords need to be the same');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:177:128)",
+                "diff": null
+              },
+              "uuid": "86c1ed7a-a5fa-4ec1-88ba-cce4b9dcc96c",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user should geta a popup window to the change password page by clicking on change password tab",
+              "fullTitle": "Account settings Module Test Cases The user should geta a popup window to the change password page by clicking on change password tab",
+              "timedOut": null,
+              "duration": 15646,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').clear().type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();\ncy.contains('Password changed successfully');\ncy.get('.bg-white > .mx-auto > .w-44').click();\ncy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').type('Password@1234');\ncy.get('.border-2').click();\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').click();\ncy.get('.flex-wrap > :nth-child(1)').should('be.visible').should('have.text', 'Change Password').click();\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@1234');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(2) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(3) > div.w-full > .relative > .appearance-none').should('be.visible').type('Password@123');\ncy.get('.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > .pt-5 > #update-password').should('be.visible').should('have.text', 'Change Password').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > :nth-child(1) > .px-6 > .space-y-6 > :nth-child(1) > div.w-full > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\07_Profile_AccountSettings.spec.js:183:128)",
+                "diff": null
+              },
+              "uuid": "8319aca8-186d-44a1-a053-661a4023dbfd",
+              "parentUUID": "422629cc-d040-49ff-8db8-d0a655995b43",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "81878bbc-7bf3-4623-9e19-3a1f685f775f",
+            "fa5a2967-0793-4bf0-9e34-d566b753c60d",
+            "0eaaa1d0-d7e8-4ae3-895a-03a2d0c1b622",
+            "e3d2b154-904c-4fc9-a71d-92b4e6f3a084",
+            "3f48cd79-6a66-429a-b0a6-347850137086",
+            "a161c0f2-602e-4f2e-9ffb-18c03b9f805a",
+            "86c1ed7a-a5fa-4ec1-88ba-cce4b9dcc96c",
+            "8319aca8-186d-44a1-a053-661a4023dbfd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 126926,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

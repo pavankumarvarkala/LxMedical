@@ -10,7 +10,7 @@ describe('Login module testcases', () => {
 
     it('At login screen each label and link should be proper', () => {
         cy.get('.text-gray-500').should('have.text', 'Please enter your credentials to sign in.');
-        cy.get('[alt="logo"]').invoke('attr', 'src').should('eq', '/static/media/logo2.9ba2ea85.png');
+        cy.get('[alt="logo"]').invoke('attr', 'src').should('eq', '/static/media/Favicon-Light-20211230.aab62f3c.png');
         cy.xpath("//label").eq(0).should('have.text', 'Email');
         cy.xpath("//label").eq(1).should('have.text', 'Password');
         cy.xpath("//button[@textid='submit']").should('be.visible');

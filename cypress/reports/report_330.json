@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2022-03-25T07:40:56.731Z",
+    "end": "2022-03-25T07:43:16.335Z",
+    "duration": 139604,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "67cc2893-699a-4266-b3da-93c4d4af3ef9",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/14_BookAppointmet.spec.js",
+      "file": "cypress/integration/Admin_Testcases/14_BookAppointmet.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c51864c3-8b36-44b5-851d-93da81319fb5",
+          "title": "Book Appointment module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Book appointment page by clicking on \"Book\" button against the paticular patient.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should be navigated to the Book appointment page by clicking on \"Book\" button against the paticular patient.",
+              "timedOut": null,
+              "duration": 27912,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.get(':nth-child(1) > :nth-child(5) > .flex > .text-xs').should('be.visible').should('have.text', 'Book').click();\ncy.url().should('contain', '/book_appointment');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > :nth-child(5) > .flex > .text-xs`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > :nth-child(5) > .flex > .text-xs`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:116:64)",
+                "diff": null
+              },
+              "uuid": "77ea3cd6-364c-4d0c-9864-81e6825e5c4f",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Book An Appointment\" page each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Book An Appointment\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15338,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-8 > .font-semibold').should('be.visible').should('have.text', 'Book Appointment');\ncy.get('.cursor-pointer > .w-8').should('be.visible');\ncy.get('.border-b-2.py-2 > .flex > .text-primary').should('be.visible').should('have.text', 'Select Patient');\ncy.get('.px-8>div:nth-child(1)>div:nth-child(1)>div>label').should('be.visible').should('have.text', 'Preferred Appointment Date');\ncy.get('.appearance-none').should('be.visible');\ncy.get('.flex-col > .text-gray-600').should('be.visible').should('have.text', 'Preferred Time Slot');\ncy.get('.flex-col > :nth-child(2) > .flex > .ml-2 > div').should('be.visible').should('have.text', 'Morning');\ncy.get('.flex-col > :nth-child(3) > .flex > .ml-2 > div').should('be.visible').should('have.text', 'Afternoon');\ncy.get('.flex-col > :nth-child(4) > .flex > .ml-2 > div').should('be.visible').should('have.text', 'Evening');\ncy.get('.flex-col > :nth-child(2) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.flex-col > :nth-child(3) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.flex-col > :nth-child(4) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.pb-6 > .justify-between > :nth-child(1)').should('be.visible').should('have.text', 'Service Address');\ncy.get('.pb-6 > .border').should('be.visible');\ncy.get('.justify-between > .flex > .w-4').should('be.visible');\ncy.get('.justify-between > .flex > .ml-2').should('be.visible').should('have.text', 'Edit');\ncy.get(':nth-child(3) > .justify-between > .gap-x-3 > .font-medium').should('be.visible').should('have.text', 'self');\ncy.get(':nth-child(3) > .justify-between > .gap-x-3 > :nth-child(2) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Gender');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>label').should('contain', 'Please describe');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible');\ncy.get('.mt-6 > .flex').should('be.visible').should('have.text', 'Add Another Family Member');\ncy.get('.my-8 > .flex').should('be.visible').should('have.text', 'Continue');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-x-8 > .font-semibold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-x-8 > .font-semibold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:120:43)",
+                "diff": null
+              },
+              "uuid": "24ef51dc-7a80-49af-ae0a-47050c82083b",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address",
+              "timedOut": null,
+              "duration": 15378,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-between > .flex > .w-4').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.justify-between > .flex > .w-4`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.justify-between > .flex > .w-4`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:146:47)",
+                "diff": null
+              },
+              "uuid": "11a4d315-9309-4c93-ab3f-69d0fe8cd95a",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Service Address\" Edit window each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Service Address\" Edit window each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15387,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Edit Address');\ncy.get('.hidden > .mt-6 > .mt-4 > :nth-child(1) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Address Line 1');\ncy.get('.hidden > .mt-6 > .mt-4 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('contain', 'Address Line 2');\ncy.get('.hidden > .mt-6 > .mt-4 > .grid-cols-2 > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Postal Code');\ncy.get('.hidden > .mt-6 > .mt-4 > .grid-cols-2 > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'City');\ncy.get('body > div:nth-child(7) > div > div>div:nth-child(1)>div:nth-child(2)>form>div:nth-child(4)>div>label').should('be.visible').should('have.text', 'State');\ncy.get('.hidden > .mt-6 > .mt-4 > .mt-2 > .flex').should('be.visible').should('have.text', 'Save Address');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.font-bold.text-xl.text-primary.pb-2>' to have text 'Edit Address', but the text was 'Dashboard'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.font-bold.text-xl.text-primary.pb-2>' to have text 'Edit Address', but the text was 'Dashboard'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:149:66)",
+                "diff": "- 'Dashboard'\n+ 'Edit Address'\n"
+              },
+              "uuid": "517d7d7c-5323-4a7e-96e5-a85498c6db98",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After editing the address and clicking on save address button the user should able to save the service address",
+              "fullTitle": "Book Appointment module testcases After editing the address and clicking on save address button the user should able to save the service address",
+              "timedOut": null,
+              "duration": 15396,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > .mt-4 > :nth-child(1) > div.w-full > .mt-1 > .appearance-none').should('be.visible').clear().type('plot no 75');\ncy.get('.hidden > .mt-6 > .mt-4 > .grid-cols-2 > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type('35242');\ncy.get('.hidden > .mt-6 > .mt-4 > :nth-child(2) > div.w-full > .mt-1 > .appearance-none').should('be.visible').clear().type('park lane');\ncy.wait(2000);\ncy.get('.hidden > .mt-6 > .mt-4 > .mt-2 > .flex').should('be.visible').should('have.text', 'Save Address').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .mt-4 > :nth-child(1) > div.w-full > .mt-1 > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .mt-4 > :nth-child(1) > div.w-full > .mt-1 > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:158:95)",
+                "diff": null
+              },
+              "uuid": "79721194-32ee-4b4d-b157-7d78e1bc1eec",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able select the appointment date by clicking on calendar icon against the preferred appointment date field.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able select the appointment date by clicking on calendar icon against the preferred appointment date field.",
+              "timedOut": null,
+              "duration": 15354,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').should('be.visible').click();\ncy.get(':nth-child(5) > .react-datepicker__day--030').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:165:32)",
+                "diff": null
+              },
+              "uuid": "b62502d4-6ec8-46e9-bfcf-75dafa68de27",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to select the appointment time by checking the check boxes in preferred time slot.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able to select the appointment time by checking the check boxes in preferred time slot.",
+              "timedOut": null,
+              "duration": 15361,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-col > :nth-child(2) > .flex > .h-4').should('be.visible').should('not.be.checked').click();\ncy.get('.flex-col > :nth-child(2) > .flex > .h-4').should('be.visible').should('be.checked');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-col > :nth-child(2) > .flex > .h-4`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-col > :nth-child(2) > .flex > .h-4`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:169:56)",
+                "diff": null
+              },
+              "uuid": "8107b6ac-ae53-4fe8-a3a3-7e7b4d602a10",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can add additional family members as per his membership plan by clicking on \"Add another member\" button.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can add additional family members as per his membership plan by clicking on \"Add another member\" button.",
+              "timedOut": null,
+              "duration": 15400,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-6 > .flex').should('be.visible').should('have.text', 'Add Another Family Member').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mt-6 > .flex`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mt-6 > .flex`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\14_BookAppointmet.spec.js:173:29)",
+                "diff": null
+              },
+              "uuid": "ad18b53f-5710-4038-ac2e-43c7bb9609dd",
+              "parentUUID": "c51864c3-8b36-44b5-851d-93da81319fb5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "77ea3cd6-364c-4d0c-9864-81e6825e5c4f",
+            "24ef51dc-7a80-49af-ae0a-47050c82083b",
+            "11a4d315-9309-4c93-ab3f-69d0fe8cd95a",
+            "517d7d7c-5323-4a7e-96e5-a85498c6db98",
+            "79721194-32ee-4b4d-b157-7d78e1bc1eec",
+            "b62502d4-6ec8-46e9-bfcf-75dafa68de27",
+            "8107b6ac-ae53-4fe8-a3a3-7e7b4d602a10",
+            "ad18b53f-5710-4038-ac2e-43c7bb9609dd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 135526,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

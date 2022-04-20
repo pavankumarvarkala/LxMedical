@@ -1,0 +1,364 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 12,
+    "passes": 0,
+    "pending": 0,
+    "failures": 12,
+    "start": "2022-03-25T07:27:44.539Z",
+    "end": "2022-03-25T07:31:08.665Z",
+    "duration": 204126,
+    "testsRegistered": 12,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "83f2857f-04c8-4b6d-b292-331c8f8b7477",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/11_Services.spec.js",
+      "file": "cypress/integration/Admin_Testcases/11_Services.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+          "title": "Services module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the services page by clicking \"Services\" tab.",
+              "fullTitle": "Services module testcases As a Admin the user should be navigated to the services page by clicking \"Services\" tab.",
+              "timedOut": null,
+              "duration": 28083,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/patients');\ncy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('contain', 'Services').click();\ncy.url().should('contain', '/services');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://qa.rch.build-release.com/admin/dashboard' to include '/patients'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://qa.rch.build-release.com/admin/dashboard' to include '/patients'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:116:14)",
+                "diff": null
+              },
+              "uuid": "6146c6ce-b25a-4d56-b42e-5c5701e70f5d",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Services page each label and field should have proper label and validations",
+              "fullTitle": "Services module testcases At Services page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15464,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').should('have.text', 'Services List');\ncy.get('form > .bg-white').should('be.visible');\ncy.get('.bg-white > .w-full').should('be.visible');\ncy.get('.ml-2 > .text-primary').should('be.visible');\ncy.get('.flex-wrap > .flex').should('be.visible').should('have.text', 'Add Service');\ncy.get('thead > tr > .text-left').should('be.visible').should('have.text', 'Service Name');\ncy.get('thead > tr > :nth-child(2)').should('be.visible').should('have.text', 'Service Description');\ncy.get('thead > tr > :nth-child(3)').should('be.visible').should('have.text', 'Service Category');\ncy.get('thead > tr > :nth-child(4)').should('be.visible').should('have.text', 'Service Type');\ncy.get('thead > tr > :nth-child(5)').should('be.visible').should('have.text', 'Service Rate');\ncy.get('thead > tr > :nth-child(6)').scrollIntoView().should('be.visible').should('have.text', 'Action');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.font-bold.text-xl.text-primary.pb-2>' to have text 'Services List', but the text was 'Dashboard'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.font-bold.text-xl.text-primary.pb-2>' to have text 'Services List', but the text was 'Dashboard'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:121:45)",
+                "diff": "- 'Dashboard'\n+ 'Services List'\n"
+              },
+              "uuid": "09db6273-ee5f-4a7b-be28-452f023d8499",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should get add service pop up window by clicking on \"Add Service\" button",
+              "fullTitle": "Services module testcases As a Admin the user should get add service pop up window by clicking on \"Add Service\" button",
+              "timedOut": null,
+              "duration": 15492,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > .flex').should('be.visible').should('have.text', 'Add Service').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > .flex`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > .flex`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:134:34)",
+                "diff": null
+              },
+              "uuid": "a84a6074-d981-4c5f-990b-1a4f7d65f683",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Add Service pop up window each label and field should have proper label and validations",
+              "fullTitle": "Services module testcases At Add Service pop up window each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15489,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text', 'Add Service');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>label').should('be.visible').should('have.text', 'Service Name');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>label').should('be.visible').should('have.text', 'Service Rate');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Service Type');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'Service Category');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(3)>div>label').should('be.visible').should('have.text', 'Service Description');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(3)>div>div').should('be.visible');\ncy.get('.hidden > .mt-6 > .px-4 > .flex').should('be.visible').should('have.text', 'Save Details').click();\ncy.get(':nth-child(1) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:137:55)",
+                "diff": null
+              },
+              "uuid": "b471bd3b-7318-4618-afa6-da88c65e1a44",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After filling Add services form and by clicking save details button the user should able to add the service",
+              "fullTitle": "Services module testcases After filling Add services form and by clicking save details button the user should able to add the service",
+              "timedOut": null,
+              "duration": 15549,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').type('Covid Vaccine');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .relative > .appearance-none').should('be.visible').type('$199');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)').should('be.visible').click();\ncy.get('.css-11unzgr>div:nth-child(1)').click();\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.get('.css-11unzgr>div:nth-child(1)').click();\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > div.w-full > .mt-1 > .resize-y').should('be.visible').type('Covid Vaccination Program');\ncy.get('.hidden > .mt-6 > .px-4 > .flex').should('be.visible').should('have.text', 'Save Details').click();\ncy.contains('Service Added successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:154:102)",
+                "diff": null
+              },
+              "uuid": "5a9621c7-b371-4211-acc6-3bf85b630483",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The added service should reflect instantly under services page",
+              "fullTitle": "Services module testcases The added service should reflect instantly under services page",
+              "timedOut": null,
+              "duration": 15488,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .text-left > div > .text-gray-900').should('be.visible').should('have.text', 'Covid Vaccine');\ncy.get('tr:nth-child(1) > td:nth-child(2)').should('be.visible').should('have.text', 'Covid Vaccination Program');\ncy.get('tr:nth-child(1) > td:nth-child(3) > p').should('be.visible').should('have.text', 'Telemedicine');\ncy.get('tr:nth-child(1) > td:nth-child(4) > p').should('be.visible').should('have.text', 'MULTIPLE');\ncy.get('tr:nth-child(1) > td:nth-child(5)').should('be.visible').should('have.text', '$199');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > .text-left > div > .text-gray-900`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > .text-left > div > .text-gray-900`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:165:65)",
+                "diff": null
+              },
+              "uuid": "887c149f-a020-4535-b10c-570386b10a33",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should get edit service pop up window by clicking on edit icon against the particular service",
+              "fullTitle": "Services module testcases As a Admin the user should get edit service pop up window by clicking on edit icon against the particular service",
+              "timedOut": null,
+              "duration": 15556,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tr:nth-child(1) > td:nth-child(6)>div').scrollIntoView().should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(6)>div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(6)>div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:172:8)",
+                "diff": null
+              },
+              "uuid": "83d5aa4b-f7f9-4e16-bbb9-b42ecfab8711",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Edit Service pop up window each label and field should have proper label and validations",
+              "fullTitle": "Services module testcases At Edit Service pop up window each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15492,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>label').should('be.visible').should('have.text', 'Service Name');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>label').should('be.visible').should('have.text', 'Service Rate');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Service Type');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'Service Category');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(3)>div>label').should('be.visible').should('have.text', 'Service Description');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(3)>div>div').should('be.visible');\ncy.get('.hidden > .mt-6 > .px-4 > .flex').should('be.visible').should('have.text', 'Save Details');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>label`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div:nth-child(1)>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>label`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:175:94)",
+                "diff": null
+              },
+              "uuid": "077e22ca-a7a6-4098-812e-9cd0b5615459",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After doing necessary edits on the edit service form and by clicking save details button the user should able to update the service",
+              "fullTitle": "Services module testcases After doing necessary edits on the edit service form and by clicking save details button the user should able to update the service",
+              "timedOut": null,
+              "duration": 15679,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').clear().type('Covid Vaccine Pfizer');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .relative > .appearance-none').should('be.visible').clear().type('$299');\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)').should('be.visible').click();\ncy.get('.css-11unzgr>div:nth-child(2)').click();\ncy.get('div:nth-child(1)>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.get('.css-11unzgr>div:nth-child(3)').click();\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > div.w-full > .mt-1 > .resize-y').should('be.visible').clear().type('New Covid Vaccination Program');\ncy.get('.hidden > .mt-6 > .px-4 > .flex').should('be.visible').should('have.text', 'Save Details').click();\ncy.contains('Service Updated successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:188:102)",
+                "diff": null
+              },
+              "uuid": "6da91dea-1c45-49d1-a928-98afccbda424",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The edited details should reflect instantly under services page",
+              "fullTitle": "Services module testcases The edited details should reflect instantly under services page",
+              "timedOut": null,
+              "duration": 15578,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .text-left > div > .text-gray-900').should('be.visible').should('have.text', 'Covid Vaccine Pfizer');\ncy.get('tr:nth-child(1) > td:nth-child(2)').should('be.visible').should('have.text', 'New Covid Vaccination Program');\ncy.get('tr:nth-child(1) > td:nth-child(3) > p').should('be.visible').should('have.text', 'In Home Covid Testing');\ncy.get('tr:nth-child(1) > td:nth-child(4) > p').should('be.visible').should('have.text', 'SINGLE');\ncy.get('tr:nth-child(1) > td:nth-child(5)').should('be.visible').should('have.text', '$299');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > .text-left > div > .text-gray-900`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(1) > .text-left > div > .text-gray-900`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:199:65)",
+                "diff": null
+              },
+              "uuid": "664c04cb-d01e-4f8d-b77d-534b194f3301",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to switch between the  services pages by using next or previous buttons",
+              "fullTitle": "Services module testcases As a Admin the user can able to switch between the  services pages by using next or previous buttons",
+              "timedOut": null,
+              "duration": 15626,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-1 > .ml-3').should('be.visible').should('be.visible').should('have.text', 'Next').click();\ncy.wait(2000);\ncy.get('.px-4 > .flex-1 > :nth-child(1)').should('be.visible').should('have.text', 'Previous').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-1 > .ml-3`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-1 > .ml-3`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:206:31)",
+                "diff": null
+              },
+              "uuid": "57bb2538-ff97-42ca-a142-2a0a0e54e6fa",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to search a particular service through search box",
+              "fullTitle": "Services module testcases As a Admin the user can able to search a particular service through search box",
+              "timedOut": null,
+              "duration": 15550,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.bg-white > .w-full').should('be.visible').type('Executive Physical');\ncy.wait(2000);\ncy.get(':nth-child(1) > .text-left > div > .text-gray-900').should('be.visible').should('have.text', 'Executive Physical');\ncy.get('tr:nth-child(1) > td:nth-child(2)').should('be.visible').should('contain', 'Identify risk factors and prevent future illness');\ncy.get('tr:nth-child(1) > td:nth-child(3) > p').should('be.visible').should('have.text', 'In Home Urgent Care');\ncy.get('tr:nth-child(1) > td:nth-child(4) > p').should('be.visible').should('have.text', 'SINGLE');\ncy.get('tr:nth-child(1) > td:nth-child(5)').should('be.visible').should('have.text', '$1800');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.bg-white > .w-full`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.bg-white > .w-full`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\11_Services.spec.js:211:35)",
+                "diff": null
+              },
+              "uuid": "d0004303-9c43-4ce1-b886-66cc18f2d8a9",
+              "parentUUID": "f7637cda-eedd-4f73-8fb8-53ea33187c85",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6146c6ce-b25a-4d56-b42e-5c5701e70f5d",
+            "09db6273-ee5f-4a7b-be28-452f023d8499",
+            "a84a6074-d981-4c5f-990b-1a4f7d65f683",
+            "b471bd3b-7318-4618-afa6-da88c65e1a44",
+            "5a9621c7-b371-4211-acc6-3bf85b630483",
+            "887c149f-a020-4535-b10c-570386b10a33",
+            "83d5aa4b-f7f9-4e16-bbb9-b42ecfab8711",
+            "077e22ca-a7a6-4098-812e-9cd0b5615459",
+            "6da91dea-1c45-49d1-a928-98afccbda424",
+            "664c04cb-d01e-4f8d-b77d-534b194f3301",
+            "57bb2538-ff97-42ca-a142-2a0a0e54e6fa",
+            "d0004303-9c43-4ce1-b886-66cc18f2d8a9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 199046,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

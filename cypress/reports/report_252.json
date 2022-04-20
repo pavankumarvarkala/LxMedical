@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-09T12:49:46.934Z",
+    "end": "2022-02-09T12:50:11.815Z",
+    "duration": 24881,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7bdd9819-4e36-4c19-950b-dd25993e5d7d",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/23_Cancelled.spec.js",
+      "file": "cypress/integration/Admin_Testcases/23_Cancelled.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+          "title": "Cancelled Appointment Details Test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Appointment Details page of \"Cancelled\" appointment by clicking on the eye icon against that appointment",
+              "fullTitle": "Cancelled Appointment Details Test cases As a Admin the user should be navigated to the Appointment Details page of \"Cancelled\" appointment by clicking on the eye icon against that appointment",
+              "timedOut": null,
+              "duration": 17647,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(4)').should('be.visible').should('have.text', 'Appointments').click();\ncy.url().should('contain', '/appointments');\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(2)>div:nth-child(9)').should('be.visible').should('have.text', 'cancelled').click();\ncy.wait(3000);\ncy.get('tbody>tr:nth-child(1)>td:nth-child(7)>div>svg').scrollIntoView().should('be.visible').click();\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>span').should('be.visible').should('contain', 'cancelled');",
+              "err": {},
+              "uuid": "9f576e38-2f36-4415-91ab-1d161f9921f5",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Appointment details\" page each label and field should have proper label and validations",
+              "fullTitle": "Cancelled Appointment Details Test cases At \"Appointment details\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 317,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-4 > .font-semibold').should('be.visible').should('have.text', 'Appointment Details');\ncy.get('.w-7').should('be.visible');\ncy.get('.border-b.py-3 > .text-primary').should('be.visible');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Appointment ID');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Requested For');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text', 'Status');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text', 'Patients');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(1)>div>div>div:nth-child(1)').should('be.visible').should('have.text', 'Cancellation Reason');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text', 'Services Requested');",
+              "err": {},
+              "uuid": "45ed9a62-d0a0-4537-ac8c-ca9dc6ce3a72",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The unique appointment id should be displayed",
+              "fullTitle": "Cancelled Appointment Details Test cases The unique appointment id should be displayed",
+              "timedOut": null,
+              "duration": 62,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Appointment ID');",
+              "err": {},
+              "uuid": "a698a875-91a9-421b-9754-da2fe92645d4",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The date requested by the patient should be displayed",
+              "fullTitle": "Cancelled Appointment Details Test cases The date requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 63,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Requested For');",
+              "err": {},
+              "uuid": "a5b8a83a-53c3-47fb-b885-000cc8761c23",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "fullTitle": "Cancelled Appointment Details Test cases As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "timedOut": null,
+              "duration": 2693,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.break-all > .justify-between > .flex > .w-6').click();\ncy.url().should('contain', '/medical_history');\ncy.get('.py-8 > .h-6').should('be.visible').click();",
+              "err": {},
+              "uuid": "ccbe53e6-80e2-4650-a250-57072e00f75b",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The list of services requested by the patient should be displayed",
+              "fullTitle": "Cancelled Appointment Details Test cases The list of services requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 341,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text', 'Services Requested');",
+              "err": {},
+              "uuid": "4e959ffc-9f5d-416f-8aa6-21b1863a3af0",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The cancellation reason added by admin/patient should be reflected",
+              "fullTitle": "Cancelled Appointment Details Test cases The cancellation reason added by admin/patient should be reflected",
+              "timedOut": null,
+              "duration": 151,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(1)>div>div>div:nth-child(1)').should('be.visible').should('have.text', 'Cancellation Reason');",
+              "err": {},
+              "uuid": "4a0c9351-420a-4c7c-9d46-35c6112f40bc",
+              "parentUUID": "f25ea82a-faad-43c7-8f76-85dd48d37e2b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f576e38-2f36-4415-91ab-1d161f9921f5",
+            "45ed9a62-d0a0-4537-ac8c-ca9dc6ce3a72",
+            "a698a875-91a9-421b-9754-da2fe92645d4",
+            "a5b8a83a-53c3-47fb-b885-000cc8761c23",
+            "ccbe53e6-80e2-4650-a250-57072e00f75b",
+            "4e959ffc-9f5d-416f-8aa6-21b1863a3af0",
+            "4a0c9351-420a-4c7c-9d46-35c6112f40bc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21274,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

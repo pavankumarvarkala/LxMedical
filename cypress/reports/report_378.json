@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-03-28T07:28:06.989Z",
+    "end": "2022-03-28T07:29:45.209Z",
+    "duration": 98220,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "395893d7-4d91-44fe-9236-d773276573eb",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/05_Profile.spec.js",
+      "file": "cypress/integration/Patient_Testcases/05_Profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "144026a9-df87-4338-9d27-18ab90415514",
+          "title": "Profile Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should able to see his profile details by clicking on profile icon",
+              "fullTitle": "Profile Module Test Cases As a patient the user should able to see his profile details by clicking on profile icon",
+              "timedOut": null,
+              "duration": 48870,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "211f4f3e-45b3-45e2-8870-a0650ff01596",
+              "parentUUID": "144026a9-df87-4338-9d27-18ab90415514",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At profile page each label and field should have proper label and validations",
+              "fullTitle": "Profile Module Test Cases At profile page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45168,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-start > img').should('be.visible');\ncy.get('.justify-start > .m-auto').should('be.visible').should('have.text', 'LX MEDICAL');\ncy.get('[href=\"/appointments\"]').should('be.visible').should('have.text', 'Appointments');\ncy.get('.justify-start > .hidden > :nth-child(3)').should('be.visible').should('have.text', 'Charts');\ncy.get('.justify-start > .hidden > :nth-child(4)').should('be.visible').should('contain', 'Chat');\ncy.get('.p-1 > .h-7').should('be.visible');\ncy.get('.relative > .text-gray-600').should('be.visible');\ncy.get('.h-7').should('be.visible');\ncy.get('.px-4 > :nth-child(1) > img').should('be.visible');\ncy.get('.px-4 > .font-bold').should('be.visible');\ncy.get('.shadow-corner').should('be.visible').should('contain', 'Personal Information');\ncy.get('.space-y-8 > :nth-child(2)').should('be.visible').should('contain', 'Manage Membership Plan');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('contain', 'Account Settings');\ncy.get('.space-y-8 > :nth-child(4)').should('be.visible').should('contain', 'About');\ncy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Personal Information');\ncy.get('.space-y-4 > :nth-child(2) > .text-gray-400').should('be.visible').should('have.text', 'Full Name');\ncy.get(':nth-child(3) > .text-gray-400').should('be.visible').should('have.text', 'Email Address');\ncy.get(':nth-child(4) > .text-gray-400').should('be.visible').should('have.text', 'Phone Number');\ncy.get(':nth-child(5) > .text-gray-400').should('be.visible').should('have.text', 'Date of Birth');\ncy.get(':nth-child(6) > .text-gray-400').should('be.visible').should('have.text', 'Gender');\ncy.get('.space-y-2 > .font-bold').should('be.visible').should('have.text', 'Address');\ncy.get(':nth-child(8) > .flex').should('be.visible').should('contain', 'Edit Details');\ncy.patientlogout();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "5a1ff9c5-9a16-4acb-bf69-6f17b26a9dde",
+              "parentUUID": "144026a9-df87-4338-9d27-18ab90415514",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "211f4f3e-45b3-45e2-8870-a0650ff01596",
+            "5a1ff9c5-9a16-4acb-bf69-6f17b26a9dde"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 94038,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

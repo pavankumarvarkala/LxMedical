@@ -1,0 +1,387 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 13,
+    "passes": 0,
+    "pending": 0,
+    "failures": 13,
+    "start": "2022-03-28T06:50:02.206Z",
+    "end": "2022-03-28T06:54:27.473Z",
+    "duration": 265267,
+    "testsRegistered": 13,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "665c457e-f08f-4a3b-b34f-b8b113869515",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/22_Completed.spec.js",
+      "file": "cypress/integration/Admin_Testcases/22_Completed.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+          "title": "completed Appointment Details Test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Appointment Details page of completed appointment by clicking on the eye icon against that particular appointment",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user should be navigated to the Appointment Details page of completed appointment by clicking on the eye icon against that particular appointment",
+              "timedOut": null,
+              "duration": 59805,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(4)').should('be.visible').should('have.text', 'Appointments').click();\ncy.url().should('contain', '/appointments');\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(2)>div:nth-child(10)').should('be.visible').should('have.text', 'completed').click();\ncy.wait(3000);\ncy.get('tbody>tr:nth-child(1)>td:nth-child(7)>div>svg').scrollIntoView().should('be.visible').click();\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>span').should('be.visible').should('contain', 'completed');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "1671b1cd-ed3b-465e-8de7-9d9f31a76b25",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Appointment details\" page each label and field should have proper label and validations",
+              "fullTitle": "completed Appointment Details Test cases At \"Appointment details\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 28812,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-4 > .font-semibold').should('be.visible').should('have.text', 'Appointment Details');\ncy.get('[textid=\"admin.appointment.add.report\"]').should('be.visible').should('have.text', 'Add Report');\ncy.get('.w-7').should('be.visible');\ncy.get('.border-b.py-3 > .text-primary').should('be.visible');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Appointment ID');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Requested For');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text', 'Status');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Completed On');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text', 'Test Results');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text', 'Patients');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text', 'Services Requested');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(7)>div:nth-child(1)').should('be.visible').should('have.text', 'Provider Details');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(8)>div:nth-child(1)').should('be.visible').should('have.text', 'Payment Details');\ncy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)').should('be.visible');\ncy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('contain', 'Chat between Patient and Provider');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(8)>div:nth-child(2)>div:nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text', 'Total Paid');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(8)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text', 'Payment Mode');\ncy.get('[textid=\"download.invoice\"]').should('be.visible').should('have.text', 'Download Invoice');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-x-4 > .font-semibold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-x-4 > .font-semibold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:126:43)",
+                "diff": null
+              },
+              "uuid": "618837ca-b33e-4012-8503-67df8b544e8a",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The unique appointment id should be displayed",
+              "fullTitle": "completed Appointment Details Test cases The unique appointment id should be displayed",
+              "timedOut": null,
+              "duration": 15510,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Appointment ID');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:146:97)",
+                "diff": null
+              },
+              "uuid": "b68751f3-0b5c-440e-8ee7-b7e7fee12193",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The date requested by the patient should be displayed",
+              "fullTitle": "completed Appointment Details Test cases The date requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 15613,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Requested For');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:149:97)",
+                "diff": null
+              },
+              "uuid": "53bc3aa1-9f0c-470c-b22d-e368435b65fe",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "timedOut": null,
+              "duration": 15728,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(2)>div>div>div:nth-child(1)>div').should('be.visible').click();\ncy.url().should('contain', '/medical_history');\ncy.get('.py-8 > .h-6').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(2)>div>div>div:nth-child(1)>div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(2)>div>div>div:nth-child(1)>div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:152:122)",
+                "diff": null
+              },
+              "uuid": "f92ae17f-7e0e-414b-aed8-2783d28d958a",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The list of services requested by the patient should be displayed",
+              "fullTitle": "completed Appointment Details Test cases The list of services requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 15539,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text', 'Services Requested');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:157:93)",
+                "diff": null
+              },
+              "uuid": "50ef9ad9-8cbf-44ad-846c-ee2546fced48",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Appointment completed date and time should be displayed",
+              "fullTitle": "completed Appointment Details Test cases The Appointment completed date and time should be displayed",
+              "timedOut": null,
+              "duration": 15714,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-6:nth-child(3)>div>span').should('be.visible');\ncy.wait(5000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-6:nth-child(3)>div>span`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-6:nth-child(3)>div>span`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:160:43)",
+                "diff": null
+              },
+              "uuid": "dfd6fbe4-10ea-4662-bb95-4ed5a646d210",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the Profile details page of provider by clicking on name card of the provider",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user should be navigated to the Profile details page of provider by clicking on name card of the provider",
+              "timedOut": null,
+              "duration": 15545,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)').should('be.visible').click();\ncy.url().should('contain', '/providers');\ncy.get('.col-span-12 > div:nth-child(1) > div').should('be.visible');\ncy.get('.space-x-4.text-primary > svg').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:164:68)",
+                "diff": null
+              },
+              "uuid": "9248c03d-928c-4fe2-b1d1-bf8b7c19ef70",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can chat with provider by clicking on chat icon against the provider",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user can chat with provider by clicking on chat icon against the provider",
+              "timedOut": null,
+              "duration": 15623,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)').should('be.visible').click();\ncy.url().should('contain', '/chat');\ncy.get('.space-x-4.text-primary > svg').should('be.visible').click();\ncy.wait(5000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:170:89)",
+                "diff": null
+              },
+              "uuid": "e8bf65d7-575a-4939-803a-31e8d79199d6",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can view the chat between the patient and provider",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user can view the chat between the patient and provider",
+              "timedOut": null,
+              "duration": 15927,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.url().should('contain', '/chat_view');\ncy.get('.pl-5 > div.font-semibold.capitalize').should('be.visible').should('have.text', 'Chat between Patient and Provider');\ncy.get('.min-h-screen>div>div:nth-child(2)>div>div:nth-child(1)>div:nth-child(1)>svg').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:176:68)",
+                "diff": null
+              },
+              "uuid": "835f5056-971e-4d34-bc4b-862d397f10d6",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can add reports by clicking on the Add Report button",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user can add reports by clicking on the Add Report button",
+              "timedOut": null,
+              "duration": 15673,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[textid=\"admin.appointment.add.report\"]').should('be.visible').should('have.text', 'Add Report').click();\ncy.get('.hidden:nth-child(1)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Add Report');\ncy.get('.hidden:nth-child(1)>div:nth-child(1)>svg').should('be.visible');\ncy.get('.hidden:nth-child(1)>div>form>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Select Patient');\ncy.get('.hidden:nth-child(1)>div>form>div:nth-child(1)>div:nth-child(2)').should('be.visible').click();\ncy.get('.css-1n7v3ny-option').should('be.visible').click();\ncy.get('.hidden:nth-child(1)>div>form>div:nth-child(2)>label').should('be.visible').should('have.text', 'Report Name');\ncy.get('.hidden:nth-child(1)>div>form>div:nth-child(2)>div').should('be.visible').type('Report');\ncy.get('.hidden:nth-child(1)>div>form>div:nth-child(3)>input').attachFile('file.pdf');\ncy.wait(10000);\ncy.get('.hidden:nth-child(1)>div>form>div:nth-child(4)>button').should('be.visible').should('have.text', 'Submit').click();\ncy.wait(3000);\ncy.contains('Report Added successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[textid=\"admin.appointment.add.report\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[textid=\"admin.appointment.add.report\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:182:55)",
+                "diff": null
+              },
+              "uuid": "5d09b338-7add-4bb3-8fcd-8deabc81f2fc",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can download the invoice by clicking \"Download Invoice\" button",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user can download the invoice by clicking \"Download Invoice\" button",
+              "timedOut": null,
+              "duration": 15596,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[textid=\"download.invoice\"]').should('be.visible').should('have.text', 'Download Invoice').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[textid=\"download.invoice\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[textid=\"download.invoice\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:197:43)",
+                "diff": null
+              },
+              "uuid": "8a48676a-0170-4018-9889-b115867a8e5c",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can click on the \"View Results\" button to view the report added",
+              "fullTitle": "completed Appointment Details Test cases As a Admin the user can click on the \"View Results\" button to view the report added",
+              "timedOut": null,
+              "duration": 15584,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(2)>div:nth-child(1)>a>div>div:nth-child(2)').should('be.visible').should('have.text', 'View Results').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(2)>div:nth-child(1)>a>div>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(2)>div:nth-child(1)>a>div>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\22_Completed.spec.js:200:133)",
+                "diff": null
+              },
+              "uuid": "9c048dd9-dd2a-4f41-8424-e2e3f4d072b3",
+              "parentUUID": "ffd9970a-88b8-47ad-a230-9f6aa39a1857",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1671b1cd-ed3b-465e-8de7-9d9f31a76b25",
+            "618837ca-b33e-4012-8503-67df8b544e8a",
+            "b68751f3-0b5c-440e-8ee7-b7e7fee12193",
+            "53bc3aa1-9f0c-470c-b22d-e368435b65fe",
+            "f92ae17f-7e0e-414b-aed8-2783d28d958a",
+            "50ef9ad9-8cbf-44ad-846c-ee2546fced48",
+            "dfd6fbe4-10ea-4662-bb95-4ed5a646d210",
+            "9248c03d-928c-4fe2-b1d1-bf8b7c19ef70",
+            "e8bf65d7-575a-4939-803a-31e8d79199d6",
+            "835f5056-971e-4d34-bc4b-862d397f10d6",
+            "5d09b338-7add-4bb3-8fcd-8deabc81f2fc",
+            "8a48676a-0170-4018-9889-b115867a8e5c",
+            "9c048dd9-dd2a-4f41-8424-e2e3f4d072b3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 260669,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

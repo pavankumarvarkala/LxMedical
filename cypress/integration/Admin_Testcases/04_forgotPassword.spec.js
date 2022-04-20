@@ -38,7 +38,7 @@ describe('Forgot password module testcases', () => {
     it("Verify each and evey label and title on varification screen",() => {
 
         cy.get('.text-gray-800').should('be.visible').and('have.text','Enter Verification Code');
-        cy.get('.text-gray-500').should('be.visible').and('have.text','A 6 digit verification code has been sent to your email address');
+        cy.get('.text-gray-500').should('be.visible').and('have.text','A 6 digit verification code has been sent to your email address and phone number.');
         cy.get('.mt-3 > :nth-child(1)').should('be.visible').and('have.text',"Haven't received the code?");
         cy.get('.mt-5 > .flex').should('be.visible');
 
@@ -53,7 +53,7 @@ describe('Forgot password module testcases', () => {
     })
 
     it("validation should appear when user enter invalid OTP",() => {
-        cy.xpath("//div[@style='display: flex; margin: 0px 0px 0px -0.5rem;']").type('336699');
+        cy.get('.my-4>div:nth-child(1)').type('336699');
         cy.get('.mt-5 > .flex').should('be.visible').click();
         cy.get('.my-4 > .text-xs').should('be.visible').and('have.text','Verfication Code is not valid, please re-enter or resend Verfication code')
     })

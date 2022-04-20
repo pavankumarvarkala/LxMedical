@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2022-02-09T13:01:23.068Z",
+    "end": "2022-02-09T13:02:32.527Z",
+    "duration": 69459,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6666147c-b9cf-4bd2-a1ff-97216e793fa0",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/04_Sign_out.spec.js",
+      "file": "cypress/integration/Patient_Testcases/04_Sign_out.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "604dc986-205a-4176-af48-eaecf5466cce",
+          "title": "Sign Out Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should able to log out by clicking on log out tab under account setting tab",
+              "fullTitle": "Sign Out Module Test Cases As a Patient the user should able to log out by clicking on log out tab under account setting tab",
+              "timedOut": null,
+              "duration": 18831,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(cred.PatientUrl);\ncy.get('.bg-white > .mx-auto > .w-44').should('be.visible').click();\ncy.url().should('contain', '/login');\ncy.get(':nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.pemail);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').should('be.visible').clear().type(cred.ppassword);\ncy.get('.border-2').should('be.visible').should('have.text', 'Sign In').click();\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');\ncy.get('.space-y-8 > :nth-child(3)').should('be.visible').should('have.text', 'Account Settings').click();\ncy.url().should('contain', '/settings');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.bg-white > .mx-auto > .w-44`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.bg-white > .mx-auto > .w-44`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\04_Sign_out.spec.js:116:44)",
+                "diff": null
+              },
+              "uuid": "7aa1548d-6edc-4ef4-b169-bc1fe13d504c",
+              "parentUUID": "604dc986-205a-4176-af48-eaecf5466cce",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on log out the user should able  to get  log out confirmation pop up",
+              "fullTitle": "Sign Out Module Test Cases By clicking on log out the user should able  to get  log out confirmation pop up",
+              "timedOut": null,
+              "duration": 15317,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text', 'Logout').click();\ncy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Confirmation');\ncy.get('.hidden > :nth-child(2) > .items-center.mt-6 > .flex').should('be.visible').should('contain', 'Are you sure');\ncy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text', 'Logout');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\04_Sign_out.spec.js:128:42)",
+                "diff": null
+              },
+              "uuid": "b1164cc0-2e21-4134-9c73-12f978bc9ee1",
+              "parentUUID": "604dc986-205a-4176-af48-eaecf5466cce",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on cross symbol on the log out confirmation pop out should disappear",
+              "fullTitle": "Sign Out Module Test Cases By clicking on cross symbol on the log out confirmation pop out should disappear",
+              "timedOut": null,
+              "duration": 15456,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .justify-between > .w-6 > path').should('be.visible').click();\ncy.url().should('contain', '/settings');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .w-6 > path`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .w-6 > path`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\04_Sign_out.spec.js:134:56)",
+                "diff": null
+              },
+              "uuid": "409f538f-84ba-4026-bf8f-902e10fa73a7",
+              "parentUUID": "604dc986-205a-4176-af48-eaecf5466cce",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on logout button the user should be able to log out of the site",
+              "fullTitle": "Sign Out Module Test Cases By clicking on logout button the user should be able to log out of the site",
+              "timedOut": null,
+              "duration": 15390,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > :nth-child(2)').should('be.visible').should('have.text', 'Logout').click();\ncy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Confirmation');\ncy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text', 'Logout').click();\ncy.url().should('eq', cred.PatientUrl);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > :nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\04_Sign_out.spec.js:138:42)",
+                "diff": null
+              },
+              "uuid": "978b2612-e5bc-4c35-b59d-ee736107f892",
+              "parentUUID": "604dc986-205a-4176-af48-eaecf5466cce",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7aa1548d-6edc-4ef4-b169-bc1fe13d504c",
+            "b1164cc0-2e21-4134-9c73-12f978bc9ee1",
+            "409f538f-84ba-4026-bf8f-902e10fa73a7",
+            "978b2612-e5bc-4c35-b59d-ee736107f892"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 64994,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

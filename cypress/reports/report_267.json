@@ -1,0 +1,364 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 12,
+    "passes": 0,
+    "pending": 0,
+    "failures": 12,
+    "start": "2022-02-09T13:17:40.653Z",
+    "end": "2022-02-09T13:21:11.826Z",
+    "duration": 211173,
+    "testsRegistered": 12,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dbf391d2-f7ce-4f44-8656-bbe532b94120",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/10_Charts_Add_Edit_DeleteFamilyMember.spec.js",
+      "file": "cypress/integration/Patient_Testcases/10_Charts_Add_Edit_DeleteFamilyMember.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+          "title": "Add/edit/delete family member testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Patient the user should able to get a pop up window of add family member by clicking on \"add another member\" button on charts page",
+              "fullTitle": "Add/edit/delete family member testcases As a Patient the user should able to get a pop up window of add family member by clicking on \"add another member\" button on charts page",
+              "timedOut": null,
+              "duration": 27949,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.get('[href=\"/charts\"]').should('be.visible').should('have.text', 'Charts').click();\ncy.url().should('contain', '/charts');\ncy.get('.flex-wrap > .flex').should('be.visible').should('have.text', 'Add Another Member').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:252:113)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "5b2b161c-853c-4282-b84a-d79160271147",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At add family member page each label and field have proper lable and validations",
+              "fullTitle": "Add/edit/delete family member testcases At add family member page each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 15532,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text', 'Add Family Member');\ncy.get('.hidden > .justify-between > .w-6').should('be.visible');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'First Name');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Last Name');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .block').should('be.visible').should('have.text', 'Relationship');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .block').should('be.visible').should('have.text', 'Gender');\ncy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text', 'Add Member').click();\ncy.get(':nth-child(1) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(1) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(2) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text', 'Required');\ncy.get(':nth-child(3) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text', 'Required');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:144:55)",
+                "diff": null
+              },
+              "uuid": "d802ae7f-a2bc-4147-9b8d-2e8ccad93ab8",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By filling add family member form and cliking on add member button the family member should be added",
+              "fullTitle": "Add/edit/delete family member testcases By filling add family member form and cliking on add member button the family member should be added",
+              "timedOut": null,
+              "duration": 16131,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').type('shiva');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .relative > .appearance-none').should('be.visible').type('Teja');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .relative > .react-datepicker-wrapper > .react-datepicker__input-container > .appearance-none').should('be.visible').click();\ncy.get('.react-datepicker__day--012').should('be.visible').click();\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .font-bold > .css-yk16xz-control').should('be.visible').click();\ncy.get('#react-select-2-option-1').click();\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .font-bold > .css-yk16xz-control > .css-1hwfws3').should('be.visible').click();\ncy.get('#react-select-3-option-1').click();\ncy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text', 'Add Member').click();\ncy.contains('Family Member Added successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:159:102)",
+                "diff": null
+              },
+              "uuid": "1924b510-5c04-4586-bdf6-6ce349221414",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The added family member should refelect under charts section",
+              "fullTitle": "Add/edit/delete family member testcases The added family member should refelect under charts section",
+              "timedOut": null,
+              "duration": 15717,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(3) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text', 'shiva teja');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(3)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text', 'Female');\ncy.patientlogout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(3) > .bg-white > .justify-between > .text-base`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(3) > .bg-white > .justify-between > .text-base`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:171:73)",
+                "diff": null
+              },
+              "uuid": "427d9c51-27f9-4d8a-8023-04d9a6b8b768",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should able to get a pop up window of edit family member by clicking on edit icon against the particular member",
+              "fullTitle": "Add/edit/delete family member testcases As a Patient the user should able to get a pop up window of edit family member by clicking on edit icon against the particular member",
+              "timedOut": null,
+              "duration": 18314,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.get('[href=\"/charts\"]').should('be.visible').should('have.text', 'Charts').click();\ncy.url().should('contain', '/charts');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(3)').should('be.visible');\ncy.get(':nth-child(3) > .bg-white > .justify-between > .flex > :nth-child(3)').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:252:113)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "6f221526-cca3-4067-a7f9-c39d65172e05",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Edit family member window each label and field have proper lable and validations",
+              "fullTitle": "Add/edit/delete family member testcases At Edit family member window each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 15413,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text', 'Edit Family Member');\ncy.get('.hidden > .justify-between > .w-6').should('be.visible');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'First Name');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'Last Name');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .block').should('be.visible').should('have.text', 'Relationship');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .block').should('be.visible').should('have.text', 'Gender');\ncy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text', 'Save Details');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .justify-between > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:184:55)",
+                "diff": null
+              },
+              "uuid": "b8dfd2d1-4069-4afa-9f82-face4f3aa7f5",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After editing the family member details the user can save details by clicking save details button",
+              "fullTitle": "Add/edit/delete family member testcases After editing the family member details the user can save details by clicking save details button",
+              "timedOut": null,
+              "duration": 15452,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').clear().type('Nanda');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .relative > .appearance-none').should('be.visible').clear().type('Kishore');\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .relative > .react-datepicker-wrapper > .react-datepicker__input-container > .appearance-none').should('be.visible').click();\ncy.get('.react-datepicker__day--018').should('be.visible').click();\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .font-bold > .css-yk16xz-control').should('be.visible').click();\ncy.xpath('//*[@id=\"react-select-2-option-0\"]').click();\ncy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .font-bold > .css-yk16xz-control > .css-1hwfws3').should('be.visible').click();\ncy.get('#react-select-3-option-0').click();\ncy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text', 'Save Details').click();\ncy.contains('Family Member Updated Successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:194:102)",
+                "diff": null
+              },
+              "uuid": "5b95540c-973c-4be5-8748-ac219a9f0d32",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The edited details should be refelected under charts section",
+              "fullTitle": "Add/edit/delete family member testcases The edited details should be refelected under charts section",
+              "timedOut": null,
+              "duration": 15425,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(3) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text', 'nanda kishore');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(3)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text', 'Male');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(3) > .bg-white > .justify-between > .text-base`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(3) > .bg-white > .justify-between > .text-base`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:206:73)",
+                "diff": null
+              },
+              "uuid": "5b216913-3173-4e52-9771-609cfad8b196",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Patient the user should able to get a pop up window of family member delete confirmation by clicking on edit icon against the particular member",
+              "fullTitle": "Add/edit/delete family member testcases As a Patient the user should able to get a pop up window of family member delete confirmation by clicking on edit icon against the particular member",
+              "timedOut": null,
+              "duration": 15466,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.h-screen>div:nth-child(2)>div:nth-child(3)').should('be.visible');\ncy.get(':nth-child(3) > .bg-white > .justify-between > .flex > :nth-child(2)').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.h-screen>div:nth-child(2)>div:nth-child(3)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.h-screen>div:nth-child(2)>div:nth-child(3)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:211:59)",
+                "diff": null
+              },
+              "uuid": "f0a81962-c698-4fd7-b90d-933b74a0884c",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At delete member confirmation window each label and field have proper lable and validations",
+              "fullTitle": "Add/edit/delete family member testcases At delete member confirmation window each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 15500,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mb-4 > .font-bold').should('be.visible').should('have.text', 'Confirmation');\ncy.get('.hidden > .mb-4 > .w-6').should('be.visible');\ncy.get('.hidden > :nth-child(2) > .shadow-corner > .bg-white > .justify-between > .text-primary').should('be.visible').should('have.text', 'nanda kishore');\ncy.get('.hidden > :nth-child(2) > .shadow-corner > .bg-white > .justify-between > .flex > .font-medium').should('be.visible').should('have.text', 'son');\ncy.get('body > div:nth-child(7)>div>div>div:nth-child(1)>div>div:nth-child(1)>div>div>div:nth-child(1)>div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get('body > div:nth-child(7)>div>div>div:nth-child(1)>div>div:nth-child(1)>div>div>div:nth-child(2)>div').should('be.visible').should('have.text', 'Gender');\ncy.get('body > div:nth-child(7)>div>div>div:nth-child(1)>div>div:nth-child(1)>div>div>div:nth-child(2)>span:nth-child(2)').should('be.visible').should('have.text', 'Male');\ncy.get('.hidden > :nth-child(2) > .items-center.mt-6 > .flex').should('be.visible').should('have.text', 'Are you sure, you want to remove this member?');\ncy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text', 'Remove');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-4 > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-4 > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:215:34)",
+                "diff": null
+              },
+              "uuid": "14bc9d73-9d76-421e-9483-aadabfbcadf2",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on remove button on confirmation window the family member should be deleted",
+              "fullTitle": "Add/edit/delete family member testcases By clicking on remove button on confirmation window the family member should be deleted",
+              "timedOut": null,
+              "duration": 15439,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text', 'Remove').click();\ncy.contains('Family Member Deleted Successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > :nth-child(2) > .mb-3 > .flex`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > :nth-child(2) > .mb-3 > .flex`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:226:55)",
+                "diff": null
+              },
+              "uuid": "d258f258-fbf2-4757-bff7-0c60825290d7",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The deleted member should not reflect under charts section",
+              "fullTitle": "Add/edit/delete family member testcases The deleted member should not reflect under charts section",
+              "timedOut": null,
+              "duration": 15423,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > .font-medium').should('be.visible').should('have.text', '2 Members');\ncy.patientlogout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > .font-medium`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.flex-wrap > .font-medium`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\10_Charts_Add_Edit_DeleteFamilyMember.spec.js:230:41)",
+                "diff": null
+              },
+              "uuid": "5bcdafc4-3c13-4ba5-a701-19577eeb775e",
+              "parentUUID": "7686a2a6-8516-4584-852e-a42f0938bf9d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5b2b161c-853c-4282-b84a-d79160271147",
+            "d802ae7f-a2bc-4147-9b8d-2e8ccad93ab8",
+            "1924b510-5c04-4586-bdf6-6ce349221414",
+            "427d9c51-27f9-4d8a-8023-04d9a6b8b768",
+            "6f221526-cca3-4067-a7f9-c39d65172e05",
+            "b8dfd2d1-4069-4afa-9f82-face4f3aa7f5",
+            "5b95540c-973c-4be5-8748-ac219a9f0d32",
+            "5b216913-3173-4e52-9771-609cfad8b196",
+            "f0a81962-c698-4fd7-b90d-933b74a0884c",
+            "14bc9d73-9d76-421e-9483-aadabfbcadf2",
+            "d258f258-fbf2-4757-bff7-0c60825290d7",
+            "5bcdafc4-3c13-4ba5-a701-19577eeb775e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 201761,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2022-03-28T06:00:24.165Z",
+    "end": "2022-03-28T06:06:42.238Z",
+    "duration": 378073,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d0f8aabe-ae42-48ca-bf3c-aede1a143dd9",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/14_BookAppointmet.spec.js",
+      "file": "cypress/integration/Admin_Testcases/14_BookAppointmet.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+          "title": "Book Appointment module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Book appointment page by clicking on \"Book\" button against the paticular patient.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should be navigated to the Book appointment page by clicking on \"Book\" button against the paticular patient.",
+              "timedOut": null,
+              "duration": 57704,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.get(':nth-child(1) > :nth-child(5) > .flex > .text-xs').should('be.visible').should('have.text', 'Book').click();\ncy.url().should('contain', '/book_appointment');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "b1588cf4-6225-4217-bd96-cda4b028839a",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Book An Appointment\" page each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Book An Appointment\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45173,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-8 > .font-semibold').should('be.visible').should('have.text', 'Book Appointment');\ncy.get('.cursor-pointer > .w-8').should('be.visible');\ncy.get('.border-b-2.py-2 > .flex > .text-primary').should('be.visible').should('have.text', 'Select Patient');\ncy.get('.px-8>div:nth-child(1)>div:nth-child(1)>div>label').should('be.visible').should('have.text', 'Preferred Appointment Date');\ncy.get('.appearance-none').should('be.visible');\ncy.get('.flex-col > .text-gray-600').should('be.visible').should('have.text', 'Preferred Time Slot');\ncy.get('.flex-col > :nth-child(2) > .flex > .ml-2 > div').should('be.visible').should('have.text', 'Morning');\ncy.get('.flex-col > :nth-child(3) > .flex > .ml-2 > div').should('be.visible').should('have.text', 'Afternoon');\ncy.get('.flex-col > :nth-child(4) > .flex > .ml-2 > div').should('be.visible').should('have.text', 'Evening');\ncy.get('.flex-col > :nth-child(2) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.flex-col > :nth-child(3) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.flex-col > :nth-child(4) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.pb-6 > .justify-between > :nth-child(1)').should('be.visible').should('have.text', 'Service Address');\ncy.get('.pb-6 > .border').should('be.visible');\ncy.get('.justify-between > .flex > .w-4').should('be.visible');\ncy.get('.justify-between > .flex > .ml-2').should('be.visible').should('have.text', 'Edit');\ncy.get(':nth-child(3) > .justify-between > .gap-x-3 > .font-medium').should('be.visible').should('have.text', 'self');\ncy.get(':nth-child(3) > .justify-between > .gap-x-3 > :nth-child(2) > .flex > .h-4').should('be.visible').should('not.be.checked');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Date of Birth');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Gender');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>label').should('contain', 'Please describe');\ncy.get('.px-8>div:nth-child(3)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible');\ncy.get('.mt-6 > .flex').should('be.visible').should('have.text', 'Add Another Family Member');\ncy.get('.my-8 > .flex').should('be.visible').should('have.text', 'Continue');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "3cc5a276-aa71-426b-aa52-bce065e07a27",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address",
+              "timedOut": null,
+              "duration": 45127,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-between > .flex > .w-4').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "909383c6-154b-46fc-88d6-429970c47da8",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Service Address\" Edit window each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Service Address\" Edit window each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45182,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.justify-between > .font-bold').should('be.visible').should('have.text', 'Edit Address');\ncy.get('.hidden > .mt-6 > .mt-4 > :nth-child(1) > div.w-full > .text-sm > div').should('be.visible').should('have.text', 'Address Line 1');\ncy.get('.hidden > .mt-6 > .mt-4 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('contain', 'Address Line 2');\ncy.get('.hidden > .mt-6 > .mt-4 > .grid-cols-2 > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text', 'Postal Code');\ncy.get('.hidden > .mt-6 > .mt-4 > .grid-cols-2 > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text', 'City');\ncy.get('body > div:nth-child(7) > div > div>div:nth-child(1)>div:nth-child(2)>form>div:nth-child(4)>div>label').should('be.visible').should('have.text', 'State');\ncy.get('.hidden > .mt-6 > .mt-4 > .mt-2 > .flex').should('be.visible').should('have.text', 'Save Address');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "b40d4c37-c22e-45d2-9414-d5c1eb16e28f",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After editing the address and clicking on save address button the user should able to save the service address",
+              "fullTitle": "Book Appointment module testcases After editing the address and clicking on save address button the user should able to save the service address",
+              "timedOut": null,
+              "duration": 45160,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .mt-6 > .mt-4 > :nth-child(1) > div.w-full > .mt-1 > .appearance-none').should('be.visible').clear().type('plot no 75');\ncy.get('.hidden > .mt-6 > .mt-4 > .grid-cols-2 > :nth-child(1) > .mt-1 > .appearance-none').should('be.visible').clear().type('35242');\ncy.get('.hidden > .mt-6 > .mt-4 > :nth-child(2) > div.w-full > .mt-1 > .appearance-none').should('be.visible').clear().type('park lane');\ncy.wait(2000);\ncy.get('.hidden > .mt-6 > .mt-4 > .mt-2 > .flex').should('be.visible').should('have.text', 'Save Address').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "accc3e06-de29-4658-a967-b6cd9b472a13",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able select the appointment date by clicking on calendar icon against the preferred appointment date field.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able select the appointment date by clicking on calendar icon against the preferred appointment date field.",
+              "timedOut": null,
+              "duration": 45169,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').should('be.visible').click();\ncy.get(':nth-child(5) > .react-datepicker__day--030').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "111246d3-a485-4a02-a856-20d6c417cd5a",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to select the appointment time by checking the check boxes in preferred time slot.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able to select the appointment time by checking the check boxes in preferred time slot.",
+              "timedOut": null,
+              "duration": 45189,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-col > :nth-child(2) > .flex > .h-4').should('be.visible').should('not.be.checked').click();\ncy.get('.flex-col > :nth-child(2) > .flex > .h-4').should('be.visible').should('be.checked');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "e0c1271e-5a92-4fe1-bb2f-f6db4f9bc9d5",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can add additional family members as per his membership plan by clicking on \"Add another member\" button.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can add additional family members as per his membership plan by clicking on \"Add another member\" button.",
+              "timedOut": null,
+              "duration": 45148,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-6 > .flex').should('be.visible').should('have.text', 'Add Another Family Member').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "f0f75eff-68ef-458f-ba65-652020eaff80",
+              "parentUUID": "e14d96e4-9394-4cfb-a86c-713fd2fa3f88",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b1588cf4-6225-4217-bd96-cda4b028839a",
+            "3cc5a276-aa71-426b-aa52-bce065e07a27",
+            "909383c6-154b-46fc-88d6-429970c47da8",
+            "b40d4c37-c22e-45d2-9414-d5c1eb16e28f",
+            "accc3e06-de29-4658-a967-b6cd9b472a13",
+            "111246d3-a485-4a02-a856-20d6c417cd5a",
+            "e0c1271e-5a92-4fe1-bb2f-f6db4f9bc9d5",
+            "f0f75eff-68ef-458f-ba65-652020eaff80"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 373852,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

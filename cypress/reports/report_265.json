@@ -1,0 +1,318 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 0,
+    "pending": 0,
+    "failures": 10,
+    "start": "2022-02-09T13:10:14.537Z",
+    "end": "2022-02-09T13:13:04.442Z",
+    "duration": 169905,
+    "testsRegistered": 10,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e5d180f0-17b0-4384-bba1-5dd69136ddb0",
+      "title": "",
+      "fullFile": "cypress/integration/Patient_Testcases/08_Profile_About.spec.js",
+      "file": "cypress/integration/Patient_Testcases/08_Profile_About.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c01871b9-5656-4a99-9824-562be5aba553",
+          "title": "About Module Test Cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a patient the user should be navigated to the about page by clicking on about tab",
+              "fullTitle": "About Module Test Cases As a patient the user should be navigated to the about page by clicking on about tab",
+              "timedOut": null,
+              "duration": 23270,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.patientlogin(cred.pemail, cred.ppassword);\ncy.url().should('contain', '/home');\ncy.get('.p-1 > .h-7').should('be.visible').click();\ncy.url().should('contain', '/profile');\ncy.get('.space-y-8 > :nth-child(4)').should('be.visible').click();\ncy.url().should('contain', '/about');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.text-gray-500.text-xs.mb-8.font-bold>' to have text 'Sign In / Sign Up', but the text was 'Please enter your credentials to sign in.'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\index.js:252:113)",
+                "diff": "- 'Please enter your credentials to sign in.'\n+ 'Sign In / Sign Up'\n"
+              },
+              "uuid": "10fb140a-e509-4e2f-921e-73ebd6444873",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At About page each label and field should have proper label and validations",
+              "fullTitle": "About Module Test Cases At About page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15316,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mb-7 > :nth-child(1)').should('be.visible').should('have.text', 'Privacy Policy');\ncy.get('.mb-7 > :nth-child(2)').should('be.visible').should('have.text', 'Terms & conditions');\ncy.get('.my-10 > :nth-child(2) > :nth-child(1)').should('be.visible').should('have.text', 'Disclosure of Out of Network');\ncy.get('.my-10 > :nth-child(2) > :nth-child(2)').should('be.visible').should('have.text', 'Patient Consent to Treatment');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-7 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-7 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:145:37)",
+                "diff": null
+              },
+              "uuid": "b47649cc-ea23-4c7c-a3f1-96bd1e8308b7",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on privacy tab the user should be able to get a pop up window of privacy tab where the content of privacy will be displayed",
+              "fullTitle": "About Module Test Cases By clicking on privacy tab the user should be able to get a pop up window of privacy tab where the content of privacy will be displayed",
+              "timedOut": null,
+              "duration": 15384,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mb-7 > :nth-child(1)').should('be.visible').should('have.text', 'Privacy Policy').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-7 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-7 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:151:37)",
+                "diff": null
+              },
+              "uuid": "a8917afa-dde4-4d71-b2d1-78167be1ff2b",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At privacy policy pop up each label and field should have proper label and validations",
+              "fullTitle": "About Module Test Cases At privacy policy pop up each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15542,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .flex > .font-bold').should('be.visible').should('have.text', 'Privacy Policy');\ncy.get('.hidden > .mt-6 > iframe').should('be.visible');\ncy.get('.hidden > .flex > .w-6 > path').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:154:44)",
+                "diff": null
+              },
+              "uuid": "3341bc65-717c-4154-9bd9-679c7419820e",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on terms&conditions tab the user should be able to get a pop up window where the content of terms&conditions will be displayed",
+              "fullTitle": "About Module Test Cases By clicking on terms&conditions tab the user should be able to get a pop up window where the content of terms&conditions will be displayed",
+              "timedOut": null,
+              "duration": 15880,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mb-7 > :nth-child(2)').should('be.visible').should('have.text', 'Terms & conditions').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-7 > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mb-7 > :nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:159:37)",
+                "diff": null
+              },
+              "uuid": "602b143e-a081-4202-86e5-f64c38d91cff",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Terms&conditions pop up each label and field should have proper label and validations",
+              "fullTitle": "About Module Test Cases At Terms&conditions pop up each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15581,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .flex > .font-bold').should('be.visible').should('have.text', 'Terms & conditions');\ncy.get('.hidden > .mt-6 > iframe').should('be.visible');\ncy.get('.hidden > .flex > .w-6 > path').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:162:44)",
+                "diff": null
+              },
+              "uuid": "1b4098f8-aea9-4490-a0b5-cd9cc49f264f",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on Disclosure of out of network tab the user should be able to get a pop up window where the content of disclosure of out of network will be displayed",
+              "fullTitle": "About Module Test Cases By clicking on Disclosure of out of network tab the user should be able to get a pop up window where the content of disclosure of out of network will be displayed",
+              "timedOut": null,
+              "duration": 15408,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.my-10 > :nth-child(2) > :nth-child(1)').should('have.text', 'Disclosure of Out of Network').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.my-10 > :nth-child(2) > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.my-10 > :nth-child(2) > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:167:54)",
+                "diff": null
+              },
+              "uuid": "7c9e4892-c482-4002-a629-82706632e9c6",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Disclosure of out of network pop up each label and field should have proper label and validations",
+              "fullTitle": "About Module Test Cases At Disclosure of out of network pop up each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15436,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .flex > .font-bold').should('be.visible').should('have.text', 'Disclosure of Out of Network');\ncy.get('.hidden > .mt-6 > iframe').should('be.visible');\ncy.get('.hidden > .flex > .w-6 > path').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:170:44)",
+                "diff": null
+              },
+              "uuid": "73a1cec3-fd49-4c05-a671-d4972000e503",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on patient consent to treatment tab the user should be able to get a pop up window where the content of patient consent to treatment will be displayed",
+              "fullTitle": "About Module Test Cases By clicking on patient consent to treatment tab the user should be able to get a pop up window where the content of patient consent to treatment will be displayed",
+              "timedOut": null,
+              "duration": 15383,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.my-10 > :nth-child(2) > :nth-child(2)').should('have.text', 'Patient Consent to Treatment').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.my-10 > :nth-child(2) > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.my-10 > :nth-child(2) > :nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:175:54)",
+                "diff": null
+              },
+              "uuid": "de182933-8957-41fc-9ee4-240aae4783e7",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At patient consent to treatment pop up each label and field should have proper label and validations",
+              "fullTitle": "About Module Test Cases At patient consent to treatment pop up each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15510,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.hidden > .flex > .font-bold').should('be.visible').should('have.text', 'Patient Consent to Treatment');\ncy.get('.hidden > .mt-6 > iframe').should('be.visible');\ncy.get('.hidden > .flex > .w-6 > path').should('be.visible').click();\ncy.patientlogout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.hidden > .flex > .font-bold`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Patient_Testcases\\08_Profile_About.spec.js:178:44)",
+                "diff": null
+              },
+              "uuid": "309c8399-47ee-46ca-ad42-f5c386c99def",
+              "parentUUID": "c01871b9-5656-4a99-9824-562be5aba553",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "10fb140a-e509-4e2f-921e-73ebd6444873",
+            "b47649cc-ea23-4c7c-a3f1-96bd1e8308b7",
+            "a8917afa-dde4-4d71-b2d1-78167be1ff2b",
+            "3341bc65-717c-4154-9bd9-679c7419820e",
+            "602b143e-a081-4202-86e5-f64c38d91cff",
+            "1b4098f8-aea9-4490-a0b5-cd9cc49f264f",
+            "7c9e4892-c482-4002-a629-82706632e9c6",
+            "73a1cec3-fd49-4c05-a671-d4972000e503",
+            "de182933-8957-41fc-9ee4-240aae4783e7",
+            "309c8399-47ee-46ca-ad42-f5c386c99def"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 162710,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

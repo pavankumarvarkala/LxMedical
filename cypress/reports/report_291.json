@@ -1,0 +1,257 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 4,
+    "pending": 0,
+    "failures": 4,
+    "start": "2022-02-16T07:35:58.355Z",
+    "end": "2022-02-16T07:39:00.650Z",
+    "duration": 182295,
+    "testsRegistered": 8,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "478eb56a-e8de-4d42-a5b9-802b0e2a69b4",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/04_forgotPassword.spec.js",
+      "file": "cypress/integration/Admin_Testcases/04_forgotPassword.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+          "title": "Forgot password module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Forgot password page",
+              "fullTitle": "Forgot password module testcases As a Admin I should be able to navigate on Forgot password page",
+              "timedOut": null,
+              "duration": 6127,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(data.qaUrl);\ncy.get('a > .text-primary').should('be.visible').click();\ncy.url().should('include', 'forgot-password');",
+              "err": {},
+              "uuid": "148d9358-4f18-4b93-9ade-2cd77057f5bb",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Forgot password page each field should have proper lable and validation",
+              "fullTitle": "Forgot password module testcases At Forgot password page each field should have proper lable and validation",
+              "timedOut": null,
+              "duration": 3141,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-900').should('be.visible').and('have.text', 'Forgot Password? ');\ncy.get('.text-gray-500').should('be.visible').and('contain', 'A 6 digit verification code will be sent to your registered Email Address');\ncy.get(':nth-child(1) > .text-sm > div').should('be.visible').and('have.text', 'Email');\ncy.get('.appearance-none').should('be.visible');\ncy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.text-red-600').should('be.visible').and('contain.text', 'Required'); //invalid email case\ncy.get('.appearance-none').clear().type('ASd@ads@sd.com');\ncy.get('.text-red-600').should('be.visible').and('have.text', 'Please enter valid email');",
+              "err": {},
+              "uuid": "653c0b9d-bed3-489c-bb4c-aae41075e5dc",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OTP shouldn't send on invalid email",
+              "fullTitle": "Forgot password module testcases OTP shouldn't send on invalid email",
+              "timedOut": null,
+              "duration": 2101,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.appearance-none').clear().type('abc@gmail.com');\ncy.get('.mt-5 > .flex').click();\ncy.contains('User not found');",
+              "err": {},
+              "uuid": "4b08b7d0-fb96-4465-beeb-2ae3ce572062",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "OTP should sent on Valid registerd email",
+              "fullTitle": "Forgot password module testcases OTP should sent on Valid registerd email",
+              "timedOut": null,
+              "duration": 46216,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const emailId = data.email;\ncy.get('.appearance-none').clear().type(emailId);\ncy.get('.mt-5 > .flex').click();\ncy.contains('OTP send to ' + emailId);",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "2b9d33b5-685c-4bb4-8866-229e422fe4d5",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify each and evey label and title on varification screen",
+              "fullTitle": "Forgot password module testcases Verify each and evey label and title on varification screen",
+              "timedOut": null,
+              "duration": 45279,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-gray-800').should('be.visible').and('have.text', 'Enter Verification Code');\ncy.get('.text-gray-500').should('be.visible').and('have.text', 'A 6 digit verification code has been sent to your email address');\ncy.get('.mt-3 > :nth-child(1)').should('be.visible').and('have.text', \"Haven't received the code?\");\ncy.get('.mt-5 > .flex').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "fd8b604c-2aac-4332-88aa-4bae4af59132",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "valdation should appear when user does not enter otp into the field",
+              "fullTitle": "Forgot password module testcases valdation should appear when user does not enter otp into the field",
+              "timedOut": null,
+              "duration": 251,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.my-4 > .text-xs').should('be.visible').and('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {},
+              "uuid": "86114c03-1db4-4874-ba44-f205e45d3018",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validation should appear when user enter invalid OTP",
+              "fullTitle": "Forgot password module testcases validation should appear when user enter invalid OTP",
+              "timedOut": null,
+              "duration": 30125,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//div[@style='display: flex; margin: 0px 0px 0px -0.5rem;']\").type('336699');\ncy.get('.mt-5 > .flex').should('be.visible').click();\ncy.get('.my-4 > .text-xs').should('be.visible').and('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "4002edea-a170-4426-b799-05d610e8c4cb",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify resend button functionality ",
+              "fullTitle": "Forgot password module testcases verify resend button functionality ",
+              "timedOut": null,
+              "duration": 45324,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-3 > .font-bold').should('be.visible').click();\nconst emailId = data.email;\ncy.contains('OTP send to ' + emailId);",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "66ebc3e1-fe4d-41a3-bf37-f05b3bb29201",
+              "parentUUID": "9fa12a2e-b0b1-46be-b3f2-198b3b8cb08d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "148d9358-4f18-4b93-9ade-2cd77057f5bb",
+            "653c0b9d-bed3-489c-bb4c-aae41075e5dc",
+            "4b08b7d0-fb96-4465-beeb-2ae3ce572062",
+            "86114c03-1db4-4874-ba44-f205e45d3018"
+          ],
+          "failures": [
+            "2b9d33b5-685c-4bb4-8866-229e422fe4d5",
+            "fd8b604c-2aac-4332-88aa-4bae4af59132",
+            "4002edea-a170-4426-b799-05d610e8c4cb",
+            "66ebc3e1-fe4d-41a3-bf37-f05b3bb29201"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 178564,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

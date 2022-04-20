@@ -1,0 +1,318 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 0,
+    "pending": 0,
+    "failures": 10,
+    "start": "2022-03-28T06:38:30.165Z",
+    "end": "2022-03-28T06:45:21.042Z",
+    "duration": 410877,
+    "testsRegistered": 10,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "76069a85-680e-40d4-a4f8-b179dfc45b4a",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/20_AwaitingPayment.spec.js",
+      "file": "cypress/integration/Admin_Testcases/20_AwaitingPayment.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+          "title": "Awaiting Payment Appointment Details Test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Appointment Details page of Awaiting Payment appointment by clicking on the eye icon against that particular appointment",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases As a Admin the user should be navigated to the Appointment Details page of Awaiting Payment appointment by clicking on the eye icon against that particular appointment",
+              "timedOut": null,
+              "duration": 35160,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(4)').should('be.visible').should('have.text', 'Appointments').click();\ncy.url().should('contain', '/appointments');\ncy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text', 'Add Filter').click();\ncy.get('.py-1:nth-child(2)>div:nth-child(6)').should('be.visible').should('have.text', 'awaiting payment').click();\ncy.wait(3000);\ncy.get('tbody>tr:nth-child(1)>td:nth-child(7)>div>svg').scrollIntoView().should('be.visible').click();\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>span').should('be.visible').should('contain', 'awaiting payment');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "1a165632-da68-4809-8224-a6794a7358dc",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Appointment details\" page each label and field should have proper label and validations",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases At \"Appointment details\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 45128,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-x-4 > .font-semibold').should('be.visible').should('have.text', 'Appointment Details');\ncy.get('.w-7').should('be.visible');\ncy.get('.border-b.py-3 > .text-primary').should('be.visible');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Appointment ID');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Requested For');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text', 'Status');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Scheduled On');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text', 'Patients');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text', 'Services Requested');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text', 'Provider Details');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(7)>div:nth-child(1)').should('be.visible').should('have.text', 'Payment Details');\ncy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)').should('be.visible');\ncy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('contain', 'Chat between Patient and Provider');\ncy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(7)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text', 'Total Payable');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "53e800cd-436e-45d6-8ff1-09f8ea31e5cd",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The unique appointment id should be displayed",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases The unique appointment id should be displayed",
+              "timedOut": null,
+              "duration": 45149,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text', 'Appointment ID');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "8536ddb6-aa9f-409a-863f-b8645d200d29",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The date requested by the patient should be displayed",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases The date requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 45155,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text', 'Requested For');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "0e5740d9-76ec-4a65-912c-3cd2194757af",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "timedOut": null,
+              "duration": 45102,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(2)>div>div>div:nth-child(1)>div').should('be.visible').click();\ncy.url().should('contain', '/medical_history');\ncy.get('.py-8 > .h-6').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "0c3d3d7e-01d2-41de-803f-948c6842a19f",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The list of services requested by the patient should be displayed",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases The list of services requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 45148,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text', 'Services Requested');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "09661c5f-76b5-4137-94fb-e6837db92fa4",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Appointment scheduled date and time should be displayed",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases The Appointment scheduled date and time should be displayed",
+              "timedOut": null,
+              "duration": 45133,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-6:nth-child(3)>div>span').should('be.visible');\ncy.wait(5000);",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "e2f1a304-d0b4-46e0-9f7f-bc9cc096d53b",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the Profile details page of provider by clicking on name card of the provider",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases As a Admin the user should be navigated to the Profile details page of provider by clicking on name card of the provider",
+              "timedOut": null,
+              "duration": 45070,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)').should('be.visible').click();\ncy.url().should('contain', '/providers');\ncy.get('.col-span-12 > div:nth-child(1) > div').should('be.visible');\ncy.get('.space-x-4.text-primary > svg').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:157422:81\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at http://localhost:61327/__cypress/runner/cypress_runner.js:8334:41\n    at tryCatcher (http://localhost:61327/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:61327/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:61327/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:61327/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:61327/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:61327/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:61327/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:61327/__cypress/runner/cypress_runner.js:7798:14)",
+                "diff": null
+              },
+              "uuid": "5a8a7d6c-2e9f-48af-bd5e-fe4aee33d6f6",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can chat with provider by clicking on chat icon against the provider",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases As a Admin the user can chat with provider by clicking on chat icon against the provider",
+              "timedOut": null,
+              "duration": 43629,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)').should('be.visible').click();\ncy.url().should('contain', '/chat');\ncy.get('.space-x-4.text-primary > svg').should('be.visible').click();\ncy.wait(5000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)`, but never found it.\n    at Context.eval (http://localhost:61327/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\20_AwaitingPayment.spec.js:166:89)",
+                "diff": null
+              },
+              "uuid": "e4d46aca-9f04-4163-9af7-381f85b67afc",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can view the chat between the patient and provider",
+              "fullTitle": "Awaiting Payment Appointment Details Test cases As a Admin the user can view the chat between the patient and provider",
+              "timedOut": null,
+              "duration": 15693,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.url().should('contain', '/chat_view');\ncy.get('.pl-5 > div.font-semibold.capitalize').should('be.visible').should('have.text', 'Chat between Patient and Provider');\ncy.get('.min-h-screen>div>div:nth-child(2)>div>div:nth-child(1)>div:nth-child(1)>svg').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(2)`, but never found it.\n    at Context.eval (http://localhost:61327/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\20_AwaitingPayment.spec.js:172:68)",
+                "diff": null
+              },
+              "uuid": "7c19cfe6-1b9b-4ec3-9988-e5a1d925e6d8",
+              "parentUUID": "75a26233-3e86-45e9-a45a-f6bd8db5eeb3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1a165632-da68-4809-8224-a6794a7358dc",
+            "53e800cd-436e-45d6-8ff1-09f8ea31e5cd",
+            "8536ddb6-aa9f-409a-863f-b8645d200d29",
+            "0e5740d9-76ec-4a65-912c-3cd2194757af",
+            "0c3d3d7e-01d2-41de-803f-948c6842a19f",
+            "09661c5f-76b5-4137-94fb-e6837db92fa4",
+            "e2f1a304-d0b4-46e0-9f7f-bc9cc096d53b",
+            "5a8a7d6c-2e9f-48af-bd5e-fe4aee33d6f6",
+            "e4d46aca-9f04-4163-9af7-381f85b67afc",
+            "7c19cfe6-1b9b-4ec3-9988-e5a1d925e6d8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 410367,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
