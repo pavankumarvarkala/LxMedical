@@ -43,7 +43,6 @@ describe('Profile module testcases', () => {
         cy.xpath(mobile_num).clear().type(phone); 
         cy.get('#update-profile').click();
         cy.contains("Profile updated sucessfully");
-        cy.logout();
     })
     /*
     it("As a Admin I should be able to update my profile image", () => {

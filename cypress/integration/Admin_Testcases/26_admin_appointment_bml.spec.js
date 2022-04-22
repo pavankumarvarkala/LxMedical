@@ -67,7 +67,7 @@ describe('bill me later request testcases',  function() {
 
        })
     it('As a Admin the user can accept or deny the Bill me later request  by clicking on the "Confirm/Deny" button against that particular request', function() {
-        cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').should('be.visible').should('have.text','Confirm / Deny').click()
+        cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').scrollIntoView().should('be.visible').should('have.text','Confirm / Deny').click()
         cy.wait(2000)
         cy.get('.ReactModal__Content>.hidden>.flex>div').should('be.visible').should('have.text','Confirmation')
 
@@ -77,7 +77,7 @@ describe('bill me later request testcases',  function() {
         cy.get('.ReactModal__Content>.hidden>.flex>svg').should('be.visible')
         cy.get('.ReactModal__Content>.hidden>.mt-6>.flex>div').should('be.visible').should('have.text','Please Confirm Payment Status For - ')
         cy.get('.ReactModal__Content>.hidden>.mt-6>.py-4>.font-semibold').should('be.visible').should('have.text','Payment Details')
-        cy.get('.hidden>.mt-6>.py-4>.text-sm>.flex:nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text','Total Payable')
+        cy.get('.hidden>.mt-6>.py-4>.text-sm>.mr-2>div:nth-child(1)').should('be.visible').should('have.text','Total Payable')
         cy.get('.hidden>.mt-6>:nth-child(3)>button:nth-child(1)').should('be.visible').should('have.text','Deny')
         cy.get('.hidden>.mt-6>:nth-child(3)>button:nth-child(2)').should('be.visible').should('have.text','Confirm')
 
@@ -88,7 +88,7 @@ describe('bill me later request testcases',  function() {
         cy.wait(3000)
     })
     it('By clicking on the Confirm button the admin can approve the BML request', function() {
-        cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').should('be.visible').should('have.text','Confirm / Deny').click()
+        cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').scrollIntoView().should('be.visible').should('have.text','Confirm / Deny').click()
         cy.wait(2000)
         cy.get('.ReactModal__Content>.hidden>.flex>div').should('be.visible').should('have.text','Confirmation')
         cy.get('.hidden>.mt-6>:nth-child(3)>button:nth-child(2)').should('be.visible').should('have.text','Confirm').click()

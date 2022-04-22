@@ -3,7 +3,7 @@ import faker from 'faker'
 describe('Patient management module test cases', ()=>{
 
     it('As a admin the user should be navigated on patients page by clicking on patients tab', ()=>{
-        cy.login() 
+        cy.login()
         cy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text','Patients').click()
         cy.url().should('contain','/patients')
     })
@@ -153,7 +153,7 @@ describe('Patient management module test cases', ()=>{
         cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click({force:true})
         cy.wait(4000)
         cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
-        cy.wait(4000)
+        cy.wait(4000) 
         
      })
 
@@ -187,9 +187,9 @@ describe('Patient management module test cases', ()=>{
     })
 
     it('As a Admin the user can change the view of the patients listing by using filter on full name which make the patients list in alphabetical order from a-z or Z-a',()=>{
-        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(1)').should('be.visible').click()
+        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(1)').should('be.visible').click({force:true})
         cy.wait(2000)
-        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(2)').should('be.visible').click()
+        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(2)').should('be.visible').click({force:true})
         cy.wait(2000)
      })
 

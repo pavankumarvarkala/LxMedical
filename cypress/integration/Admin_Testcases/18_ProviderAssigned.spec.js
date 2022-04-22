@@ -121,14 +121,14 @@ describe('Provider Assigned Appointment Details Test cases',()=>{
     })
     it('After Selecting Appointment date, Appointment time and by clicking on Rescheduled button the Appointment should be rescheduled',()=>{
         cy.get('.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div').should('be.visible').click()
-        cy.get('.react-datepicker__day--020').scrollIntoView().should('be.visible').click()
+        cy.get('.react-datepicker__day--025').scrollIntoView().should('be.visible').click()
         cy.get('.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div').should('be.visible').click()
         cy.get('.rc-time-picker-panel-select:nth-child(1)>ul>li:nth-child(2)').scrollIntoView().should('be.visible').click()
         cy.get('.rc-time-picker-panel-select:nth-child(3)>ul>li:nth-child(1)').should('be.visible').click()
         cy.get('.hidden>div:nth-child(2)>form>div:nth-child(2)>button').should('be.visible').should('have.text','Reschedule').click({force:true})
     })
     it('The Rescheduled date and time should reflect instantly under appointment details',()=>{
-        cy.get('.py-6:nth-child(3)>div:nth-child(1)>span').should('be.visible').should('contain','20 202')
+        cy.get('.py-6:nth-child(3)>div:nth-child(1)>span').should('be.visible').should('contain','25 202')
          
     })
     it('As a Admin the user can change the provider assigned by clicking on the change provider button',()=>{

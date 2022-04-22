@@ -50,12 +50,14 @@ describe('unverified payment testcases',  function() {
 
     })
     it('As a Admin the user can filter the unverified appointments by using the filter on the top right corner of the list  by the payment mode cash or pos etc.', function() {
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','Add Filter')
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','Add Filter').click()
+        cy.wait(2000)
         cy.get('.py-1>div:nth-child(1)').should('be.visible').should('have.text','CASH').click()
         cy.wait(2000)
         cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','Add Filter')
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','Add Filter').click()
+        cy.wait(2000)
         cy.get('.py-1>div:nth-child(2)').should('be.visible').should('have.text','POS').click()
         cy.wait(2000)
         cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
@@ -77,14 +79,14 @@ describe('unverified payment testcases',  function() {
        })
 
     it('As a Admin the user can verify payment of any appointment by clicking on the verify button against that appointment and user will get verification confirmation window', function() {
-        cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').should('be.visible').should('have.text','Verify').click()
+        cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').scrollIntoView().should('be.visible').should('have.text','Verify').click()
         cy.wait(2000)
         cy.get('.ReactModal__Content>.hidden>.flex>div').should('be.visible').should('have.text','Confirmation')
     })
     it('By clicking on the "Verify" button a confirmation modal will open.', function() {
         cy.get('.ReactModal__Content>.hidden>.flex>div').should('be.visible').should('have.text','Confirmation')
         cy.get('.ReactModal__Content>.hidden>.flex>svg').should('be.visible')
-        cy.get('.ReactModal__Content>.hidden>.mt-6>.flex>div').should('be.visible').should('have.text','Please Verify Payment For -  ')
+        cy.get('.ReactModal__Content>.hidden>.mt-6>.flex>div').should('be.visible').should('contain','Please Verify Payment For -  ')
         cy.get('.hidden>.mt-6>.py-4>.font-semibold').should('be.visible').should('have.text','Payment Details')
         cy.get('.hidden>.mt-6>.py-4>.text-sm>.flex:nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text','Total Paid')
         cy.get('.hidden>.mt-6>:nth-child(3)>button').should('be.visible').should('have.text','Verify')

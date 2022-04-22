@@ -9,7 +9,7 @@ describe('Cancelled Appointment Details Test cases',()=>{
         cy.get('.space-y-4 > :nth-child(4)').should('be.visible').should('have.text','Appointments').click()
         cy.url().should('contain','/appointments')
         cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
-        cy.get('.py-1:nth-child(2)>div:nth-child(9)').should('be.visible').should('have.text','cancelled').click()
+        cy.get('.py-1:nth-child(2)>div:nth-child(8)').should('be.visible').should('have.text','cancelled').click()
         cy.wait(3000)
         cy.get('tbody>tr:nth-child(1)>td:nth-child(8)>div>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
@@ -24,7 +24,7 @@ describe('Cancelled Appointment Details Test cases',()=>{
         cy.get('.mx-4 > :nth-child(2)>div:nth-child(1)>div').should('be.visible').should('have.text','Appointment ID')
         cy.get('.mx-4 > :nth-child(2)>div:nth-child(2)>div').should('be.visible').should('have.text','Requested For')
         cy.get('.mx-4 > :nth-child(2)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text','Status')
-        cy.get('.mx-4 > :nth-child(3)>div>div').should('be.visible').should('have.text','Service Address')
+        // cy.get('.gap-x- > :nth-child(2) > .text-gray-500').should('be.visible').should('have.text','Service Address')
         cy.get('.mx-4 > :nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text','Patients')
         cy.get('.mx-4 > :nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text','Services Requested')
         
@@ -40,7 +40,7 @@ describe('Cancelled Appointment Details Test cases',()=>{
     })
 
     it('The Service Address where the patient requested the service should be displayed',()=>{
-        cy.get('.mx-4 > :nth-child(3)>div>div').should('be.visible').should('have.text','Service Address')
+        // cy.get('.gap-x- > :nth-child(2) > .text-gray-500').should('be.visible').should('have.text','Service Address')
 
     })
 

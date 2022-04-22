@@ -9,7 +9,7 @@ describe('completed Appointment Details Test cases',()=>{
         cy.get('.space-y-4 > :nth-child(4)').should('be.visible').should('have.text','Appointments').click()
         cy.url().should('contain','/appointments')
         cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
-        cy.get('.py-1:nth-child(2)>div:nth-child(10)').should('be.visible').should('have.text','completed').click()
+        cy.get('.py-1:nth-child(2)>div:nth-child(9)').should('be.visible').should('have.text','completed').click()
         cy.wait(3000)
         cy.get('tbody>tr:nth-child(1)>td:nth-child(8)>div>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
@@ -26,12 +26,13 @@ describe('completed Appointment Details Test cases',()=>{
         cy.get('.mx-4 > :nth-child(2)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text','Status')
         cy.get('.mx-4 > :nth-child(3)>div:nth-child(2)>div').should('be.visible').should('have.text','Service Address')
         cy.get('.mx-4 > :nth-child(3)>div:nth-child(1)>div').should('be.visible').should('have.text','Completed On')
-        cy.get('.mx-4 > :nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text','Patients')
-        cy.get('.mx-4 > :nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text','Services Requested')
-        cy.get('.mx-4 > :nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text','Provider Details')
-        cy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)').should('be.visible')
-        cy.get('.mx-4 > :nth-child(7)>div:nth-child(1)').should('be.visible').should('have.text','Payment Details')
-        cy.get('.mx-4 > :nth-child(7)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text','Payment Mode')
+        cy.get('.mx-4 > :nth-child(4)>div:nth-child(1)').should('be.visible').should('have.text','Test Results')
+        cy.get('.mx-4 > :nth-child(5)>div:nth-child(1)').should('be.visible').should('have.text','Patients')
+        cy.get('.mx-4 > :nth-child(6)>div:nth-child(1)').should('be.visible').should('have.text','Services Requested')
+        cy.get('.mx-4 > :nth-child(7)>div:nth-child(1)').should('be.visible').should('have.text','Provider Details')
+        cy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)').should('be.visible')
+        cy.get('.mx-4 > :nth-child(8)>div:nth-child(1)').should('be.visible').should('have.text','Payment Details')
+        cy.get('.mx-4 > :nth-child(8)>div:nth-child(3)>div:nth-child(1)').should('be.visible').should('have.text','Payment Mode')
         cy.get('[textid="download.invoice"]').should('be.visible').should('have.text','Download Invoice')  
  
  
@@ -57,7 +58,7 @@ describe('completed Appointment Details Test cases',()=>{
 
     })
     it('The list of services requested by the patient should be displayed',()=>{
-        cy.get('.mx-4 > :nth-child(5)>div:nth-child(1)').should('have.text','Services Requested')
+        cy.get('.mx-4 > :nth-child(6)>div:nth-child(1)').should('have.text','Services Requested')
 
     })
     it('The Appointment Completed date and time should be displayed',()=>{
@@ -65,7 +66,7 @@ describe('completed Appointment Details Test cases',()=>{
         cy.wait(5000)
     })
     it('As a Admin the user should be navigated to the Profile details page of provider by clicking on name card of the provider',()=>{
-        cy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)').should('be.visible').click()
+        cy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)').should('be.visible').click()
         cy.wait(5000)
         cy.url().should('contain','/providers')
         cy.get('.col-span-12 > div:nth-child(1) > div').should('be.visible')
@@ -74,7 +75,7 @@ describe('completed Appointment Details Test cases',()=>{
 
         })
     it('As a Admin the user can chat with provider by clicking on chat icon against the provider',()=>{
-        cy.get('.py-4:nth-child(6)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)').should('be.visible').click()
+        cy.get('.py-4:nth-child(7)>div:nth-child(2)>div:nth-child(1)>div>div:nth-child(2)').should('be.visible').click()
         cy.wait(5000)
         cy.url().should('contain','/chat')
         cy.get('.space-x-4.text-primary > svg').should('be.visible').click()
@@ -98,12 +99,13 @@ describe('completed Appointment Details Test cases',()=>{
         })
         it('As a Admin the user can download the invoice by clicking "Download Invoice" button',()=>{
             cy.get('[textid="download.invoice"]').should('be.visible').should('have.text','Download Invoice').click()
-            cy.logout()
 
         })
         it('As a Admin the user can click on the "View Results" button to view the report added',()=>{
             cy.get('.min-h-screen:nth-child(1)>div:nth-child(2)>div:nth-child(4)>div:nth-child(2)>div:nth-child(1)>a>div>div:nth-child(2)').should('be.visible').should('have.text','View Results').click()
-    
+            cy.wait(3000)
+            cy.logout()
+
         })
         
 })

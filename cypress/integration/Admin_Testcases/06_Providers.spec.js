@@ -97,9 +97,9 @@ describe('providers module test case', ()=>{
      })
 
      it('As a Admin the user can change the view of the providers by using filter on full name which make the provider list in alphabetical order from a-z or Z-a',()=>{
-        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(1)').should('be.visible').click()
+        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(1)').should('be.visible').click({force:true})
         cy.wait(2000)
-        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(2)').should('be.visible').click()
+        cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(2)').should('be.visible').click({force:true})
         cy.wait(2000)
      })
 

@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-21T07:39:05.423Z",
+    "end": "2022-04-21T07:39:34.374Z",
+    "duration": 28951,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7de612b4-3f9f-4c1e-aa74-02d23c368e8f",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/10_PatientCharts_Reports.spec.js",
+      "file": "cypress/integration/Admin_Testcases/10_PatientCharts_Reports.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "350669dd-1879-449f-8482-4a245bb0b9b6",
+          "title": "Reports module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should navigated to the Reports page by clicking on \"Reports\" tab",
+              "fullTitle": "Reports module testcases As a Admin the user should navigated to the Reports page by clicking on \"Reports\" tab",
+              "timedOut": null,
+              "duration": 15694,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients');\ncy.get('[type=search]').should('be.visible').type('pawan@yopmail.com');\ncy.wait(2000);\ncy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address');\ncy.get('nav.flex.flex-wrap>div:nth-child(2)>div').should('be.visible').should('contain', 'Charts').click();\ncy.url().should('contain', '/charts');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(1)').should('be.visible').click();\ncy.url().should('contain', '/medical_history');\ncy.get('div.py-4.pb-0>div>div:nth-child(2)>div>nav>div:nth-child(2)>').should('be.visible').should('contain', 'Reports').click();\ncy.url().should('contain', '/reports');",
+              "err": {},
+              "uuid": "a1d0817a-395d-4260-b5ae-ba9d63fdf795",
+              "parentUUID": "350669dd-1879-449f-8482-4a245bb0b9b6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Reports\" page each label and field should have proper label and validations",
+              "fullTitle": "Reports module testcases At \"Reports\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 353,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('contain', 'Showing 0 Reports');\ncy.get('div.flex.items-center > div > div:nth-child(1) > div > input').should('be.visible').invoke('attr', 'placeholder').should('contain', 'Filter by Date Range..');",
+              "err": {},
+              "uuid": "585959f6-4bcc-4db7-86af-cfd4893df4ac",
+              "parentUUID": "350669dd-1879-449f-8482-4a245bb0b9b6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should able to see all the reports uploaded by him for the particular patient",
+              "fullTitle": "Reports module testcases As a Admin the user should able to see all the reports uploaded by him for the particular patient",
+              "timedOut": null,
+              "duration": 19,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get(':nth-child(1) > a > .justify-between').should('be.visible')\n    // cy.get(':nth-child(2) > a > .justify-between').should('be.visible')\n    // cy.get(':nth-child(3) > a > .justify-between').should('be.visible')",
+              "err": {},
+              "uuid": "5598e8e0-0f31-45e5-8323-71ca8c104fb8",
+              "parentUUID": "350669dd-1879-449f-8482-4a245bb0b9b6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user able view any report by clicking on that report",
+              "fullTitle": "Reports module testcases The user able view any report by clicking on that report",
+              "timedOut": null,
+              "duration": 5488,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get(':nth-child(1) > a > .justify-between').should('be.visible').click()\n//  cy.get(':nth-child(2) > a > .justify-between').should('be.visible').click()\n// cy.get(':nth-child(3) > a > .justify-between').should('be.visible').click()\ncy.logout();",
+              "err": {},
+              "uuid": "2206db1d-3c36-4e06-ad6c-75cf85fdd207",
+              "parentUUID": "350669dd-1879-449f-8482-4a245bb0b9b6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a1d0817a-395d-4260-b5ae-ba9d63fdf795",
+            "585959f6-4bcc-4db7-86af-cfd4893df4ac",
+            "5598e8e0-0f31-45e5-8323-71ca8c104fb8",
+            "2206db1d-3c36-4e06-ad6c-75cf85fdd207"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21554,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

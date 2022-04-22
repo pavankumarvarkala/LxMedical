@@ -14,7 +14,7 @@ Cypress.Commands.add('logout', () => {
   cy.get('.border > div').should('be.visible');
   cy.xpath("//button//div[text()='Confirm']").should('be.visible').click();
   cy.wait(5000)
-  cy.xpath("//div[text()='Sign In']").should('be.visible');
+  // cy.xpath("//div[text()='Sign In']").should('be.visible');
 })
 Cypress.Commands.add('AddPatient', () => {
   const email = faker.name.firstName()+'@mailinator.com';

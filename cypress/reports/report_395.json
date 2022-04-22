@@ -1,0 +1,241 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-20T06:20:23.287Z",
+    "end": "2022-04-20T06:21:15.502Z",
+    "duration": 52215,
+    "testsRegistered": 8,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "bdc7b9cc-1dc2-44ae-842d-0bde05d62eb0",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "file": "cypress/integration/Admin_Testcases/03_profile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+          "title": "Profile module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on Admin Profile",
+              "fullTitle": "Profile module testcases As a Admin I should be able to navigate on Admin Profile",
+              "timedOut": null,
+              "duration": 11007,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.get('span.hidden').click();\ncy.get(\".ml-3>div:nth-child(2)>div:nth-child(1)\").should('be.visible').should('have.text', 'Profile').click();\ncy.url().should('include', '/admin/profile');",
+              "err": {},
+              "uuid": "403566b8-b66e-4ac8-aade-af1a11e451d6",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each label should be proper",
+              "fullTitle": "Profile module testcases At Profile page each label should be proper",
+              "timedOut": null,
+              "duration": 1835,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').and('have.text', 'Profile Details');\ncy.xpath(\"//label//div\").eq(0).should('have.text', 'First Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(1).should('have.text', 'Last Name').and('be.visible');\ncy.xpath(\"//label//div\").eq(2).should('have.text', 'Email').and('be.visible');\ncy.xpath(\"//label//div\").eq(3).should('have.text', 'Phone Number').and('be.visible');",
+              "err": {},
+              "uuid": "a822c880-a5d9-460d-b201-78075241f43b",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Profile page each field should have proper validations",
+              "fullTitle": "Profile module testcases At Profile page each field should have proper validations",
+              "timedOut": null,
+              "duration": 1550,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.ml-2').click();\ncy.xpath(first_name).clear();\ncy.xpath(last_name).clear();\ncy.xpath(mobile_num).clear();\ncy.get('.flex-1').click();\ncy.get('.text-red-600 ').eq(0).contains('First Name is required');\ncy.get('.text-red-600 ').eq(1).contains('Last Name is required');\ncy.get('.text-red-600 ').eq(2).contains('Phone number required');",
+              "err": {},
+              "uuid": "9b468c4d-3cc8-45eb-a9ef-78e70e84f619",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to update my profile details except email",
+              "fullTitle": "Profile module testcases As a Admin I should be able to update my profile details except email",
+              "timedOut": null,
+              "duration": 13550,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const phone = _faker.default.phone.phoneNumber('##########');\ncy.xpath(first_name).clear().type('LXMedical');\ncy.xpath(last_name).clear().type('Admin');\ncy.xpath(mobile_num).clear().type(phone);\ncy.get('#update-profile').click();\ncy.contains(\"Profile updated sucessfully\");\ncy.logout();",
+              "err": {},
+              "uuid": "4841e15d-784b-4675-99f1-c2907c6e3553",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should able to log out by cliking on logout link via profile icon",
+              "fullTitle": "Profile module testcases As a Admin the user should able to log out by cliking on logout link via profile icon",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('span.hidden').click();\ncy.get(\".ml-3>div:nth-child(2)>div:nth-child(2)\").should('be.visible').should('have.text', 'Sign Out').click();",
+              "err": {},
+              "uuid": "3ed4b028-57b2-4c1e-af0c-b39b014960b9",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "By clicking on log out the user should able to get log out confirmation pop up.",
+              "fullTitle": "Profile module testcases By clicking on log out the user should able to get log out confirmation pop up.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".mt-3>.mt-2\").should('be.visible').should('have.text', 'Are you sure, you want to sign out?');\ncy.get(\"svg.h-6.w-6\").should('be.visible');\ncy.get(\".mt-5>button:nth-child(2)\").should('be.visible').should('have.text', 'Cancel');\ncy.get(\".mt-5>button:nth-child(1)\").should('be.visible').should('have.text', 'Confirm');",
+              "err": {},
+              "uuid": "5ef83563-2f4f-49a6-9b2c-0185e746ad93",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "By clicking on on cancel button the log out confirmation pop out should be closed.",
+              "fullTitle": "Profile module testcases By clicking on on cancel button the log out confirmation pop out should be closed.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".mt-5>button:nth-child(2)\").should('be.visible').should('have.text', 'Cancel').click();\ncy.wait(2000);\ncy.get('span.hidden').click();\ncy.get(\".ml-3>div:nth-child(2)>div:nth-child(2)\").should('be.visible').should('have.text', 'Sign Out').click();\ncy.wait(2000);",
+              "err": {},
+              "uuid": "71c133a5-8124-462a-bccc-4611ed1e05ca",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "By clicking on confirm button the user should be able to log out of the site.",
+              "fullTitle": "Profile module testcases By clicking on confirm button the user should be able to log out of the site.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".mt-5>button:nth-child(1)\").should('be.visible').should('have.text', 'Confirm').click();\ncy.wait(2000);",
+              "err": {},
+              "uuid": "9a03f161-4063-4665-a8d4-177e688e5e64",
+              "parentUUID": "57795676-c71f-46a2-8553-4d1ab52cbb5d",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "403566b8-b66e-4ac8-aade-af1a11e451d6",
+            "a822c880-a5d9-460d-b201-78075241f43b",
+            "9b468c4d-3cc8-45eb-a9ef-78e70e84f619",
+            "4841e15d-784b-4675-99f1-c2907c6e3553"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "3ed4b028-57b2-4c1e-af0c-b39b014960b9",
+            "5ef83563-2f4f-49a6-9b2c-0185e746ad93",
+            "71c133a5-8124-462a-bccc-4611ed1e05ca",
+            "9a03f161-4063-4665-a8d4-177e688e5e64"
+          ],
+          "duration": 27942,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
