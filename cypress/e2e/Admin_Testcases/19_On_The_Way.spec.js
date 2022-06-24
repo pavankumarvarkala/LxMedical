@@ -1,0 +1,116 @@
+///<reference types='cypress'/>
+const cred=require('../../fixtures/cred.json')
+
+describe('On The Way Appointment Details Test cases',()=>{
+
+    it('As a Admin the user should be navigated to the Appointment Details page of "On The Way" appointment by clicking on the eye icon against that appointment',()=>{
+        cy.login(cred.email,cred.password)
+        cy.url().should('contain','/dashboard')
+        //Click patient tab on the left side tray
+
+        cy.xpath('//nav/div[4]/div[2]').should('be.visible').should('have.text','Appointments').click()
+        cy.url().should('contain','/appointments')
+        cy.xpath('//div[contains(text(),"Ad")]').should('be.visible').should('have.text','Add Filter').click()
+        cy.wait(3000)
+        cy.xpath('//div[contains(text(),"on the")]').should('be.visible').should('have.text','on the way').click()
+        cy.wait(4000)
+        cy.xpath('//tr[1]/td[8]/div[1]').scrollIntoView().should('be.visible').click()
+        cy.wait(4000)
+        cy.xpath('//span[contains(text(),"on the")]').should('be.visible').should('contain','on the way')
+
+        
+    })
+    it('At "Appointment details" page each label and field should have proper label and validations',()=>{
+        
+        cy.xpath('//div[contains(text(),"Appointment D")]').should('be.visible').should('have.text','Appointment Details')
+        cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/*[1]').should('be.visible')
+        cy.xpath('//*[@id="root"]/div[2]/div/div[2]/div/div[2]/div[1]/div').should('be.visible')
+
+        cy.xpath('//div[contains(text(),"Appointment I")]').should('have.text','Appointment ID')
+        cy.xpath('//div[contains(text(),"Requested F")]').should('be.visible').should('have.text','Requested For')
+        cy.xpath('//div[contains(text(),"St")]').should('be.visible').should('have.text','Status')
+
+        cy.xpath('//div[contains(text(),"Service A")]').should('be.visible').should('have.text','Service Address')
+        cy.xpath('//div[contains(text(),"Sc")]').should('be.visible').should('have.text','Scheduled On')
+        cy.xpath('//div[2]/div[4]/div[1]').should('be.visible').should('have.text','Patients')
+
+        cy.xpath('//div[contains(text(),"Services R")]').should('be.visible').should('have.text','Services Requested')
+        cy.xpath('//div[contains(text(),"Provider D")]').should('be.visible').should('have.text','Provider Details')
+        cy.xpath('//div[6]/div[2]/div/div').should('be.visible')
+
+        cy.xpath('//button[@textid="cancel.appointment"]').should('have.text','Cancel Appointment')
+ 
+    })
+    it('The unique appointment id should be displayed',()=>{
+        cy.xpath('//div[contains(text(),"Appointment I")]').should('have.text','Appointment ID')
+
+    })
+    it('The date requested by the patient should be displayed',()=>{
+        cy.xpath('//div[contains(text(),"Requested F")]').should('be.visible').should('have.text','Requested For')
+
+    })
+
+    it('The Service Address where the patient requested the service should be displayed',()=>{
+        cy.xpath('//div[contains(text(),"Service A")]').should('be.visible').should('have.text','Service Address')
+
+    })
+
+    it('As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient',()=>{
+        cy.xpath('//div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/*[2]').should('be.visible').click()
+        cy.wait(4000)
+        cy.url().should('contain','/medical_history')
+
+        cy.xpath('//div[2]/div/nav/div[1]/div').should('be.visible').should('have.text','Medical History')
+        cy.xpath('//div[@id="root"]/div[2]/div[1]/div[2]/div[1]/div[1]/*[1]').scrollIntoView().should('be.visible').click()
+        cy.wait(4000)
+
+        cy.url().should('contain','/appointments')
+
+    })
+    it('The list of services requested by the patient should be displayed',()=>{
+        cy.xpath('//div[contains(text(),"Services R")]').should('have.text','Services Requested')
+
+    })
+    it('The Appointment scheduled date and time should be displayed',()=>{
+        cy.xpath('//div[contains(text(),"Sc")]').should('have.text','Scheduled On')
+
+        cy.xpath('//div[3]/div[1]/span').should('be.visible')
+        cy.wait(5000)
+    })
+    it('As a Admin the user should be navigated to the Profile details page of provider by clicking on name card of the provider',()=>{
+        cy.xpath('//div[6]/div[2]/div/div').should('be.visible').click()
+        cy.wait(5000)
+        cy.url().should('contain','/providers')
+        cy.xpath('//div[contains(text(),"Provider D")]').scrollIntoView().should('be.visible').should('have.text','Provider Details')
+        cy.xpath('//div[@id="root"]/div[2]/div[1]/div[2]/div[1]/div[1]/*[1]').scrollIntoView().should('be.visible').click()
+        cy.wait(5000)
+
+        })
+    it('As a Admin the user can chat with provider by clicking on chat icon against the provider',()=>{
+        cy.xpath('//div[6]/div[2]/div/div/div[2]/img').should('be.visible').click()
+        cy.wait(5000)
+        cy.url().should('contain','/chat')
+
+        cy.xpath('//div[2]/div[1]/div[2]/div[1]/div[1]').should('be.visible').should('have.text','Chat')
+        cy.xpath('//div[2]/div[1]/div[2]/div[1]/*[1]').should('be.visible').click()
+        cy.wait(5000)
+
+ 
+        })
+        
+        it('As a Admin the user can cancel the appointment after entering the cancellation reason by clicking on the cancel button',()=>{
+            cy.xpath('//button[@textid="cancel.appointment"]').should('have.text','Cancel Appointment').click()
+            cy.wait(3000)
+            cy.xpath('//div[3]/div/div/div[1]/div[1]/div').should('be.visible').should('have.text','Confirmation')
+            cy.xpath('//div[3]/div[1]/div[1]/div[1]/div[1]/*[1]').should('be.visible')
+            cy.xpath('//div[3]/div/div/div[1]/div[2]/div').should('be.visible').should('have.text','Are you sure, want to cancel this appointment.')
+            cy.xpath('//div[1]/div[2]/form/div[1]/div/label/div').should('be.visible').should('have.text','Reason For Cancellation')
+            cy.xpath('//div[1]/div[2]/form/div[1]/div/div/textarea').should('be.visible')
+            cy.xpath('//div[1]/div[2]/form/div[1]/div/div/textarea').should('be.visible').type('Provider not available')
+            cy.xpath('//div[1]/div[2]/form/div[2]/button').should('be.visible').should('have.text','Cancel Appointment').click()
+            cy.wait(5000)
+            cy.xpath('//span[contains(text(),"can")]').should('be.visible').should('have.text','cancelled')
+            
+            cy.logout()
+        })
+})

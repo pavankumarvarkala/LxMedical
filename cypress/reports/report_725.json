@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-23T15:55:22.746Z",
+    "end": "2022-06-23T15:56:10.733Z",
+    "duration": 47987,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "19d74199-5543-4155-b239-69d4147ed118",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\30_Notifications.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\30_Notifications.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "53e35a52-80ba-4082-8bf6-9229d18c92b5",
+          "title": "Notifications module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the notifications page by clicking on notifications tab",
+              "fullTitle": "Notifications module testcases As a Admin the user should be navigated to the notifications page by clicking on notifications tab",
+              "timedOut": null,
+              "duration": 21764,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(8)').should('be.visible').should('have.text', 'Notifications').click();\ncy.url().should('contain', '/notification');",
+              "err": {},
+              "uuid": "be7f312c-e5da-4d5f-9553-e8ab9c1a61bd",
+              "parentUUID": "53e35a52-80ba-4082-8bf6-9229d18c92b5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Notifications\" page each label and field should have proper label and validations",
+              "fullTitle": "Notifications module testcases At \"Notifications\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 3144,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('contain', 'Notifications');\ncy.get('.mt-7').should('be.visible');",
+              "err": {},
+              "uuid": "eedae098-ed8b-42ec-9773-9e728a1b9899",
+              "parentUUID": "53e35a52-80ba-4082-8bf6-9229d18c92b5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Admin the user can able to see all the notifications under notifications page",
+              "fullTitle": "Notifications module testcases The Admin the user can able to see all the notifications under notifications page",
+              "timedOut": null,
+              "duration": 6160,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-7').should('be.visible');\ncy.get('.mt-7>div:nth-child(1)').should('be.visible');\ncy.get('.mt-7>div:nth-child(2)').should('be.visible');\ncy.logout();",
+              "err": {},
+              "uuid": "f96db864-3cd5-4116-abc7-8c34b28dc971",
+              "parentUUID": "53e35a52-80ba-4082-8bf6-9229d18c92b5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "be7f312c-e5da-4d5f-9553-e8ab9c1a61bd",
+            "eedae098-ed8b-42ec-9773-9e728a1b9899",
+            "f96db864-3cd5-4116-abc7-8c34b28dc971"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31068,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

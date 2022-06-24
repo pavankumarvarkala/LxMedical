@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
-    "cypress": "^8.4.1",
+    "cypress": "^10.1.0",
     "cypress-file-upload": "^5.0.8",
     "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.0"

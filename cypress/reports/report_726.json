@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-23T15:57:09.856Z",
+    "end": "2022-06-23T15:58:33.655Z",
+    "duration": 83799,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aaf37c0b-e827-482d-bcbc-3905c497f17e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f048e5bb-ac64-428d-9039-db240fa9a924",
+          "title": "Patient Notifications module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be \"Patient Notifications\" section of any patient by clicking on \"Notifications\" tab under patients details page.",
+              "fullTitle": "Patient Notifications module testcases As a Admin the user should be \"Patient Notifications\" section of any patient by clicking on \"Notifications\" tab under patients details page.",
+              "timedOut": null,
+              "duration": 65456,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.xpath('//nav/div[2]/div[2]').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.xpath('//input[@type=\"search\"]').should('be.visible').type(provider.email.toLowerCase()); //Checking email is present in the list\n  cy.xpath('//tr[1]/td[2]').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Click on eye icon against patient \ncy.xpath('//tr[1]/td[7]/div[1]/*[1]').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address'); //Click on Notifications tab in patient profile\ncy.xpath('//div[3]/div[1]/nav[1]/div[4]/div[1]').should('be.visible').should('contain', 'Notifications').click();\ncy.url().should('contain', '/notification');",
+              "err": {},
+              "uuid": "5973d6bc-7dc7-4704-8baa-653adfdeaccc",
+              "parentUUID": "f048e5bb-ac64-428d-9039-db240fa9a924",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Patient Notifications\" page each label and field should have proper label and validations",
+              "fullTitle": "Patient Notifications module testcases At \"Patient Notifications\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 278,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//validating all fields and labels\ncy.xpath('//div[contains(text(),\"E\")]').should('be.visible').should('contain', 'Email Notifications');\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').should('be.enabled');\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('contain', 'Text Notifications');\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').should('be.enabled');",
+              "err": {},
+              "uuid": "fcdb67d4-e46f-4aee-9e4b-dcdaefcdce29",
+              "parentUUID": "f048e5bb-ac64-428d-9039-db240fa9a924",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can switch ON/OFF the Email Notifications using the toggle button against it.",
+              "fullTitle": "Patient Notifications module testcases As a Admin the user can switch ON/OFF the Email Notifications using the toggle button against it.",
+              "timedOut": null,
+              "duration": 987,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Validating toggle button against email notifications\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').should('be.enabled').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').should('be.enabled');",
+              "err": {},
+              "uuid": "55c28a63-883b-477f-8522-f5ef02d5cc72",
+              "parentUUID": "f048e5bb-ac64-428d-9039-db240fa9a924",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can switch ON/OFF the Text Notifications using the toggle button against it.",
+              "fullTitle": "Patient Notifications module testcases As a Admin the user can switch ON/OFF the Text Notifications using the toggle button against it.",
+              "timedOut": null,
+              "duration": 612,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Validating toggle button against Text notifications\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').should('be.enabled').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').should('be.enabled');",
+              "err": {},
+              "uuid": "cf954a6f-f5ee-4883-8916-aa6f017eae0a",
+              "parentUUID": "f048e5bb-ac64-428d-9039-db240fa9a924",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5973d6bc-7dc7-4704-8baa-653adfdeaccc",
+            "fcdb67d4-e46f-4aee-9e4b-dcdaefcdce29",
+            "55c28a63-883b-477f-8522-f5ef02d5cc72",
+            "cf954a6f-f5ee-4883-8916-aa6f017eae0a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 67333,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

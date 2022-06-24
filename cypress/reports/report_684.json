@@ -1,0 +1,295 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 6,
+    "pending": 0,
+    "failures": 4,
+    "start": "2022-06-23T13:30:27.834Z",
+    "end": "2022-06-23T13:32:20.624Z",
+    "duration": 112790,
+    "testsRegistered": 10,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d4772714-db6e-4b76-882e-8054d6a07ee9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\05_invite_providers.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\05_invite_providers.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+          "title": "Provider module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be albe to navigate on invited provider listing page",
+              "fullTitle": "Provider module testcases As a Admin I should be albe to navigate on invited provider listing page",
+              "timedOut": null,
+              "duration": 18317,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(3)').should('be.visible').should('have.text', 'Providers').click();\ncy.url().should('include', '/providers');\ncy.get('div.space-x-4.flex > button:nth-child(1)').should('be.visible').should('have.text', 'Pending Invitations').click();\ncy.url().should('include', '/invitation');",
+              "err": {},
+              "uuid": "12c6061d-d568-4944-bd09-3d84b736fd3b",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers page each label and field should have proper label and proper validations",
+              "fullTitle": "Provider module testcases At invited providers page each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 4034,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('thead > tr > :nth-child(1) > div').should('be.visible').and('have.text', 'Email');\ncy.get('thead > tr > :nth-child(2) > div').should('be.visible').should('contain', 'Phone Number');\ncy.get('thead > tr > :nth-child(3) > div').should('be.visible').and('have.text', 'Invited On');\ncy.get('thead > tr > :nth-child(4) > div').should('be.visible').and('have.text', 'Status');\ncy.get('thead > tr > :nth-child(5) > div').should('be.visible').and('contain', 'Action');\ncy.xpath(\"//button[@textid='provider.invite']\").should('be.visible').should('have.text', 'Invite Provider');\ncy.get('div.flex.flex-wrap>div:nth-child(1)>div').should('be.visible').and('contain', 'Invited Providers');",
+              "err": {},
+              "uuid": "9de8a0ee-c470-423a-876e-cca67441c1d2",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to go the next page of the pending invitations list by clicking on next button",
+              "fullTitle": "Provider module testcases As a admin the user should be able to go the next page of the pending invitations list by clicking on next button",
+              "timedOut": null,
+              "duration": 667,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-1:nth-child(2)').should('be.visible').should('have.text', 'Next').click();",
+              "err": {},
+              "uuid": "b2c053f0-b074-4029-b203-104581268dd6",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to go the previous page of the pending invitations list by clicking on previous button",
+              "fullTitle": "Provider module testcases As a admin the user should be able to go the previous page of the pending invitations list by clicking on previous button",
+              "timedOut": null,
+              "duration": 833,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-1:nth-child(1)').should('be.visible').should('have.text', 'Previous').click();",
+              "err": {},
+              "uuid": "def1ea27-d314-482a-b905-bbed4bdb1b32",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button",
+              "fullTitle": "Provider module testcases As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button",
+              "timedOut": null,
+              "duration": 373,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//button[@textid='provider.invite']\").should('have.text', 'Invite Provider').click();\ncy.get('div.my-5.text-primary.text-base.font-bold').should('be.visible');",
+              "err": {},
+              "uuid": "9136ebaa-f406-4232-b8f9-48c2c3153371",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At invited providers pop up window each label and field should have proper label and proper validations",
+              "fullTitle": "Provider module testcases At invited providers pop up window each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 2334,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.my-5').should('be.visible').should('have.text', 'Invite Provider');\ncy.get('.w-5').should('be.visible');\ncy.get('form>div:nth-child(1)>label').should('be.visible').and('have.text', 'Email');\ncy.get('form>div:nth-child(1)>div').should('be.visible');\ncy.get('form>div:nth-child(2)>label').should('be.visible').and('contain', 'Phone Number');\ncy.get('form>div:nth-child(2)>div').should('be.visible');\ncy.get('form>div:nth-child(3)>button:nth-child(1)').should('be.visible').and('have.text', 'Cancel');\ncy.get('form>div:nth-child(3)>button:nth-child(2)').should('be.visible').and('have.text', 'Invite');\ncy.get('form>div:nth-child(1)>div').clear().type('sdada@dada@asd.com');\ncy.get('#update-profile').click();\ncy.get('.text-red-600').should('be.visible').and('have.text', 'Email is not valid');",
+              "err": {},
+              "uuid": "a7849e55-1cb7-46fe-b1f2-cd2e5ef56dd3",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I shoual be able to invite provider",
+              "fullTitle": "Provider module testcases As a Admin I shoual be able to invite provider",
+              "timedOut": null,
+              "duration": 18500,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const email = _faker.default.name.firstName() + '@mailinator.com';\nconst phone = _faker.default.phone.phoneNumber('(###)-###-####');\ncy.get('form>div:nth-child(1)>div>input').clear().type(email);\ncy.get('form>div:nth-child(2)>div>input').clear().type(phone);\ncy.get('#update-profile').click();\ncy.writeFile('cypress/fixtures/provider.json', {\n  email: email,\n  phone: phone\n});\ncy.contains('Invitation sent successfully.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Invitation sent successfully.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Invitation sent successfully.' but never did.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\05_invite_providers.spec.js:173:8)",
+                "diff": null
+              },
+              "uuid": "9d7c5a6f-ef0e-4b73-9457-f69b0ad4af56",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to see invited provider into the provider list",
+              "fullTitle": "Provider module testcases As a Admin I should be able to see invited provider into the provider list",
+              "timedOut": null,
+              "duration": 15738,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('cypress/fixtures/provider.json').then(provider => {\n  cy.get(':nth-child(1) > :nth-child(1) > div > .text-gray-900').should('be.visible').and('have.text', provider.email.toLowerCase());\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<p.text-gray-900.whitespace-no-wrap>' to have text 'amie@mailinator.com', but the text was 'sonia@mailinator.com'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<p.text-gray-900.whitespace-no-wrap>' to have text 'amie@mailinator.com', but the text was 'sonia@mailinator.com'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\05_invite_providers.spec.js:177:91)",
+                "diff": "- 'sonia@mailinator.com'\n+ 'amie@mailinator.com'\n"
+              },
+              "uuid": "7c7dc5d4-1a83-4420-a42a-17121fe0ec05",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to search any prodvider with his name or email",
+              "fullTitle": "Provider module testcases As a admin the user should be able to search any prodvider with his name or email",
+              "timedOut": null,
+              "duration": 16010,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('cypress/fixtures/provider.json').then(provider => {\n  cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase());\n  cy.wait(5000);\n  cy.get('tr:nth-child(1)>td:nth-child(1)').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(2000);\n  cy.get('[type=search]').should('be.visible').clear().type(provider.phone);\n  cy.get('tr:nth-child(1)>td:nth-child(2)').should('be.visible').should('contain', provider.phone);\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15000ms: `cy.type()` failed because this element:\n\n`<input class=\"w-full rounded pr-0.5 py-2 outline-none text-sm\" autocomplete=\"off\" placeholder=\"Search for phone or email.\" type=\"search\" name=\"search\" value=\"\">`\n\nis being covered by another element:\n\n`<div class=\"ReactModal__Overlay ReactModal__Overlay--after-open\" style=\"position: fixed; inset: 0px; background: rgba(25, 31, 41, 0.51); z-index: 100;\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15000ms: `cy.type()` failed because this element:\n\n`<input class=\"w-full rounded pr-0.5 py-2 outline-none text-sm\" autocomplete=\"off\" placeholder=\"Search for phone or email.\" type=\"search\" name=\"search\" value=\"\">`\n\nis being covered by another element:\n\n`<div class=\"ReactModal__Overlay ReactModal__Overlay--after-open\" style=\"position: fixed; inset: 0px; background: rgba(25, 31, 41, 0.51); z-index: 100;\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:162000:78)\n    at ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147392:8)\n    at ensureDescendentsAndScroll (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147399:14)\n    at ensureElIsNotCovered (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147531:5)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147721:52)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147745:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10286:29)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166930:65)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166385:14\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11129:18)\n    at Promise._fulfill (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11073:18)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:12687:46\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\05_invite_providers.spec.js:182:52)",
+                "diff": null
+              },
+              "uuid": "604f6f9e-8fb3-4ff4-b508-26bb41bb2cbe",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to able to resend the invitation code.",
+              "fullTitle": "Provider module testcases As a Admin I should be able to able to resend the invitation code.",
+              "timedOut": null,
+              "duration": 16233,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//tr[1]/td[5]/div/div/div\").first().click();\ncy.contains(\"Invitation sent successfully.\");\ncy.logout();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element:\n\n`<div>Resend</div>`\n\nis being covered by another element:\n\n`<div class=\"ReactModal__Overlay ReactModal__Overlay--after-open\" style=\"position: fixed; inset: 0px; background: rgba(25, 31, 41, 0.51); z-index: 100;\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element:\n\n`<div>Resend</div>`\n\nis being covered by another element:\n\n`<div class=\"ReactModal__Overlay ReactModal__Overlay--after-open\" style=\"position: fixed; inset: 0px; background: rgba(25, 31, 41, 0.51); z-index: 100;\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:162000:78)\n    at ensureDescendents (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147392:8)\n    at ensureDescendentsAndScroll (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147399:14)\n    at ensureElIsNotCovered (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147531:5)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147721:52)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147745:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10286:29)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166930:65)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166385:14\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11129:18)\n    at Promise._fulfill (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11073:18)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:12687:46\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\05_invite_providers.spec.js:191:51)",
+                "diff": null
+              },
+              "uuid": "07fd9db4-1f1f-4239-81f2-34f31ba32c49",
+              "parentUUID": "9ac3f1a8-fc09-4b80-89ca-dfe8f6e9655f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "12c6061d-d568-4944-bd09-3d84b736fd3b",
+            "9de8a0ee-c470-423a-876e-cca67441c1d2",
+            "b2c053f0-b074-4029-b203-104581268dd6",
+            "def1ea27-d314-482a-b905-bbed4bdb1b32",
+            "9136ebaa-f406-4232-b8f9-48c2c3153371",
+            "a7849e55-1cb7-46fe-b1f2-cd2e5ef56dd3"
+          ],
+          "failures": [
+            "9d7c5a6f-ef0e-4b73-9457-f69b0ad4af56",
+            "7c7dc5d4-1a83-4420-a42a-17121fe0ec05",
+            "604f6f9e-8fb3-4ff4-b508-26bb41bb2cbe",
+            "07fd9db4-1f1f-4239-81f2-34f31ba32c49"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 93039,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

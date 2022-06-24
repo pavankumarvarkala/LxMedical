@@ -1,0 +1,368 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 13,
+    "passes": 5,
+    "pending": 0,
+    "failures": 8,
+    "start": "2022-05-19T05:00:37.713Z",
+    "end": "2022-05-19T05:04:30.413Z",
+    "duration": 232700,
+    "testsRegistered": 13,
+    "passPercent": 38.46153846153847,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df69b412-77ea-4f3a-9213-50981811a469",
+      "title": "",
+      "fullFile": "cypress/integration/Admin_Testcases/06_Providers.spec.js",
+      "file": "cypress/integration/Admin_Testcases/06_Providers.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "62288706-b076-44d6-bc97-b81e89861e57",
+          "title": "providers module test case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a admin the user should be navigated to the provides page by clicking on providers tab",
+              "fullTitle": "providers module test case As a admin the user should be navigated to the provides page by clicking on providers tab",
+              "timedOut": null,
+              "duration": 8961,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.get('.space-y-4 > :nth-child(3)').should('be.visible').and('have.text', 'Providers').click();\ncy.url().should('contain', '/providers');",
+              "err": {},
+              "uuid": "219ca1a9-513f-4180-b773-8f8d037cd81e",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At providers page each label and field should have proper label and proper validations",
+              "fullTitle": "providers module test case At providers page each label and field should have proper label and proper validations",
+              "timedOut": null,
+              "duration": 17680,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.font-bold').should('be.visible').should('contain', 'Providers');\ncy.get('table>thead>tr>th:nth-child(1)>div').should('be.visible').should('have.text', 'Full Name');\ncy.get('table>thead>tr>th:nth-child(2)>div').should('be.visible').should('have.text', 'Email');\ncy.get('table>thead>tr>th:nth-child(3)>div').should('be.visible').should('have.text', 'Mobile Number');\ncy.get('table>thead>tr>th:nth-child(4)>div').should('be.visible').should('have.text', 'Provider Type');\ncy.get('table>thead>tr>th:nth-child(5)>div').should('be.visible').should('have.text', 'Joined On');\ncy.get('table>thead>tr>th:nth-child(6)>div').should('be.visible').should('have.text', 'Status');\ncy.get('table>thead>tr>th:nth-child(7)>div').should('be.visible').should('have.text', 'Action');\ncy.get('[type=search]').invoke('attr', 'placeholder').should('contain', 'Search for name or email.');\ncy.get('#headlessui-menu-button-4').should('be.visible').should('contain', 'Add Filter');\ncy.xpath(\"//button[@textid='provider.invite']\").should('be.visible').should('have.text', 'Invite Provider');\ncy.xpath(\"//button[@textid='admin.pending.invites']\").should('be.visible').should('have.text', 'Pending Invitations');\ncy.get('.mt-1:nth-child(2)').should('be.visible').should('have.text', 'Next');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>' to be 'visible'\n\nThis element `<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>` is not visible because it has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>' to be 'visible'\n\nThis element `<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>` is not visible because it has CSS property: `display: none`\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:119:34)",
+                "diff": null
+              },
+              "uuid": "68a256e4-5a6e-4ef5-8422-0e8827e5341a",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to go the next page of the providers list by clicking on next button",
+              "fullTitle": "providers module test case As a admin the user should be able to go the next page of the providers list by clicking on next button",
+              "timedOut": null,
+              "duration": 15443,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-1:nth-child(2)').should('be.visible').should('have.text', 'Next').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>' to be 'visible'\n\nThis element `<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>` is not visible because it has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>' to be 'visible'\n\nThis element `<div.mt-1.cursor-pointer.ml-3.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>` is not visible because it has CSS property: `display: none`\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:122:34)",
+                "diff": null
+              },
+              "uuid": "4862c8fb-fc8d-4e19-8790-7fe2255d9d8a",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to go the previous page of the providers list by clicking on previous button",
+              "fullTitle": "providers module test case As a admin the user should be able to go the previous page of the providers list by clicking on previous button",
+              "timedOut": null,
+              "duration": 15452,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-1:nth-child(1)').should('be.visible').should('have.text', 'Previous').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '<div.mt-1.cursor-pointer.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>' to be 'visible'\n\nThis element `<div.mt-1.cursor-pointer.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>` is not visible because it has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '<div.mt-1.cursor-pointer.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>' to be 'visible'\n\nThis element `<div.mt-1.cursor-pointer.relative.inline-flex.items-center.px-2.5.py-1.5.border.border-gray-300.text-xs.font-medium.rounded-md.text-gray-700.bg-white.hover:bg-gray-50.hidden>` is not visible because it has CSS property: `display: none`\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:125:34)",
+                "diff": null
+              },
+              "uuid": "78f5212a-142f-4172-bfe1-fcd89a283f8a",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be able to search any prodvider with his name or email",
+              "fullTitle": "providers module test case As a admin the user should be able to search any prodvider with his name or email",
+              "timedOut": null,
+              "duration": 21274,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[type=search]').should('be.visible').type('varkala.pavankumar@gmail.com');\ncy.wait(5000);\ncy.get('tr:nth-child(1)>td:nth-child(2)').should('be.visible').should('have.text', 'varkala.pavankumar@gmail.com');\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').clear().type('Dadas Providerrrrrrrrrrrrrrrrrr');\ncy.wait(2000);\ncy.get('tr:nth-child(1)>td:nth-child(1)').should('be.visible').should('have.text', 'Dadas Providerrrrrrrrrrrrrrrrrr');\ncy.wait(2000);\ncy.get('[type=search]').should('be.visible').clear();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1)>td:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1)>td:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:130:47)",
+                "diff": null
+              },
+              "uuid": "a845c689-dff9-494e-bffc-2ae1c332fdb6",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated to the pending invitations page by clicking on \"Pending Invitations\" button.",
+              "fullTitle": "providers module test case As a admin the user should be navigated to the pending invitations page by clicking on \"Pending Invitations\" button.",
+              "timedOut": null,
+              "duration": 3266,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//button[@textid='admin.pending.invites']\").should('be.visible').should('have.text', 'Pending Invitations').click();\ncy.url().should('contain', '/invitation');\ncy.wait(2000);\ncy.get('div.flex.flex-wrap>svg').should('be.visible').click();\ncy.url().should('contain', '/providers');",
+              "err": {},
+              "uuid": "95f1506c-324c-4015-aa9d-f261495ce2ad",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigated to the profile details of any provider by clicking on eye button against that particular provider",
+              "fullTitle": "providers module test case As a admin the user should be navigated to the profile details of any provider by clicking on eye button against that particular provider",
+              "timedOut": null,
+              "duration": 15503,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1)').scrollIntoView().should('be.visible').click({\n  force: true\n});\ncy.get('.py-8 > .font-bold').should('be.visible').should('contain', 'Provider Details');\ncy.get('.border-b-2').should('be.visible').should('contain', 'Address');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 1');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(1)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'Address Line 2');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'Postal Code');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text', 'City');\ncy.get('div.col-span-12.mt-4 > div.mt-4.space-y-4>div:nth-child(3)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text', 'State');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:147:8)",
+                "diff": null
+              },
+              "uuid": "a006b622-fad7-4a92-bf77-5e5c04a31d72",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user should be navigted back to the providers page by clicking on back arrow on profile details page",
+              "fullTitle": "providers module test case As a admin the user should be navigted back to the providers page by clicking on back arrow on profile details page",
+              "timedOut": null,
+              "duration": 15617,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.py-8 > .h-6').should('be.visible').click();\ncy.url().should('contain', '/providers');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-8 > .h-6`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.py-8 > .h-6`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:159:28)",
+                "diff": null
+              },
+              "uuid": "a90a6fd2-9503-475e-a21e-1835f9ce9771",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should get a pop up of invite provider by Clicking on the \"Invite Provider\" button.",
+              "fullTitle": "providers module test case As a Admin the user should get a pop up of invite provider by Clicking on the \"Invite Provider\" button.",
+              "timedOut": null,
+              "duration": 2851,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath(\"//button[@textid='provider.invite']\").should('be.visible').should('have.text', 'Invite Provider').click();\ncy.wait(2000);\ncy.get('div:nth-child(9) > div > div>svg').should('be.visible').click();",
+              "err": {},
+              "uuid": "6a6b6bac-9f54-4d6e-9b3d-a27068c5cd3f",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can chat with provider by clicking on the chat icon against that provider",
+              "fullTitle": "providers module test case As a Admin the user can chat with provider by clicking on the chat icon against that provider",
+              "timedOut": null,
+              "duration": 15512,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tr:nth-child(1) > td:nth-child(7) > div>div>img').scrollIntoView().should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('div.flex.flex-wrap>svg').click();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(7) > div>div>img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1) > td:nth-child(7) > div>div>img`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:168:8)",
+                "diff": null
+              },
+              "uuid": "e57a8a53-a2e6-42d4-bd9d-f27bc5243d0c",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can enable or disable any provider with the help of toggle icon under status",
+              "fullTitle": "providers module test case As a Admin the user can enable or disable any provider with the help of toggle icon under status",
+              "timedOut": null,
+              "duration": 15538,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click();\ncy.wait(2000);\ncy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1)>td:nth-child(6)>button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `tr:nth-child(1)>td:nth-child(6)>button`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\integration\\Admin_Testcases\\06_Providers.spec.js:176:8)",
+                "diff": null
+              },
+              "uuid": "e5450526-983f-402d-a22d-faea237de9ed",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can change the view of the providers by using filter on full name which make the provider list in alphabetical order from a-z or Z-a",
+              "fullTitle": "providers module test case As a Admin the user can change the view of the providers by using filter on full name which make the provider list in alphabetical order from a-z or Z-a",
+              "timedOut": null,
+              "duration": 4538,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(1)').should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('table>thead>tr>th:nth-child(1)>span>svg:nth-child(2)').should('be.visible').click({\n  force: true\n});\ncy.wait(2000);",
+              "err": {},
+              "uuid": "fbae07a6-7626-4b60-a7c7-c5552abb7751",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a admin the user can filter the providers based on the provider type like Md,Do etc.",
+              "fullTitle": "providers module test case As a admin the user can filter the providers based on the provider type like Md,Do etc.",
+              "timedOut": null,
+              "duration": 72622,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(1)').should('be.visible').should('contain', 'md').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(2)').should('be.visible').should('contain', 'do').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(3)').should('be.visible').should('contain', 'pa-c').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(4)').should('be.visible').should('contain', 'np').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(5)').should('be.visible').should('contain', 'crna').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(6)').should('be.visible').should('contain', 'nurse').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(7)').should('be.visible').should('contain', 'paramedic').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(2000);\ncy.get('div.py-1>div:nth-child(8)').should('be.visible').should('contain', 'emt').click();\ncy.wait(2000);\ncy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click();\ncy.wait(2000);\ncy.logout();",
+              "err": {},
+              "uuid": "92165c07-c05b-475f-bc45-dfd1ffd2f7ff",
+              "parentUUID": "62288706-b076-44d6-bc97-b81e89861e57",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "219ca1a9-513f-4180-b773-8f8d037cd81e",
+            "95f1506c-324c-4015-aa9d-f261495ce2ad",
+            "6a6b6bac-9f54-4d6e-9b3d-a27068c5cd3f",
+            "fbae07a6-7626-4b60-a7c7-c5552abb7751",
+            "92165c07-c05b-475f-bc45-dfd1ffd2f7ff"
+          ],
+          "failures": [
+            "68a256e4-5a6e-4ef5-8422-0e8827e5341a",
+            "4862c8fb-fc8d-4e19-8790-7fe2255d9d8a",
+            "78f5212a-142f-4172-bfe1-fcd89a283f8a",
+            "a845c689-dff9-494e-bffc-2ae1c332fdb6",
+            "a006b622-fad7-4a92-bf77-5e5c04a31d72",
+            "a90a6fd2-9503-475e-a21e-1835f9ce9771",
+            "e57a8a53-a2e6-42d4-bd9d-f27bc5243d0c",
+            "e5450526-983f-402d-a22d-faea237de9ed"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 224257,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
