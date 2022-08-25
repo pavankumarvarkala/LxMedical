@@ -49,53 +49,68 @@ describe('Appointments Module Test cases',()=>{
         })
 
         it('As a Admin the user can filter the Appointments based on the status of the Appointment like requested,accepted etc. by clicking on the filter button',()=>{
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','pending approval').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(2)').scrollIntoView().should('be.visible').should('have.text','pending approval').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','awaiting time').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(3)').scrollIntoView().should('be.visible').should('have.text','awaiting time').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(4)').should('be.visible').should('have.text','scheduled').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(4)').scrollIntoView().should('be.visible').should('have.text','scheduled').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(5)').should('be.visible').should('have.text','on the way').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(5)').scrollIntoView().should('be.visible').should('have.text','on the way').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(6)').should('be.visible').should('have.text','awaiting payment').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(6)').scrollIntoView().should('be.visible').should('have.text','awaiting payment').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(7)').should('be.visible').should('have.text','paid').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(7)').scrollIntoView().should('be.visible').should('have.text','paid').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(8)').should('be.visible').should('have.text','completed').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(8)').scrollIntoView().should('be.visible').should('have.text','completed').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()   
         cy.wait(2000)
-        cy.get('.py-1:nth-child(2)>div:nth-child(9)').should('be.visible').should('have.text','cancelled').click()
+
+        cy.get('.py-1:nth-child(2)>div:nth-child(9)').scrollIntoView().should('be.visible').should('have.text','cancelled').click()
         cy.wait(3000)
-        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>.flex>div.py-1>svg').scrollIntoView().should('be.visible').click()
         cy.wait(3000)
    
         })
@@ -110,20 +125,44 @@ describe('Appointments Module Test cases',()=>{
         })
 
         it('As a Admin the user can also filter the appointments based on the payment mode like cash,pos or bill me later etc.',()=>{
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
-        cy.get('.py-1:nth-child(1)>div:nth-child(2)').should('be.visible').should('have.text','CASH').click()
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click()
+
+        cy.get('.py-1:nth-child(1)>div:nth-child(2)').scrollIntoView().should('be.visible').should('have.text','CASH').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
-        cy.get('.py-1:nth-child(1)>div:nth-child(3)').should('be.visible').should('have.text','POS').click()
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click()
+        
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)').should('be.visible').should('have.text','Add Filter').click()
-        cy.get('.py-1:nth-child(1)>div:nth-child(4)').should('be.visible').should('have.text','BML').click({force:true})
+
+        cy.get('.py-1:nth-child(1)>div:nth-child(3)').scrollIntoView().should('be.visible').should('have.text','Square POS').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').should('be.visible').click()
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').scrollIntoView().should('be.visible').click()
+        cy.wait(2000)
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()
+        cy.wait(2000)
+
+        cy.get('.py-1:nth-child(1)>div:nth-child(4)').scrollIntoView().should('be.visible').should('have.text','BML').click({force:true})
+        cy.wait(2000)
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').scrollIntoView().should('be.visible').click()
+        cy.wait(2000)
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()
+        cy.wait(2000)
+        
+        cy.get('.py-1:nth-child(1)>div:nth-child(5)').scrollIntoView().should('be.visible').should('have.text','ONLINE').click({force:true})
+        cy.wait(2000)
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').scrollIntoView().should('be.visible').click()
+        cy.wait(2000)
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').scrollIntoView().should('be.visible').click()
+        cy.wait(2000)
+        
+        cy.get('.py-1:nth-child(1)>div:nth-child(6)').scrollIntoView().should('be.visible').should('have.text','CARD ON FILE').click({force:true})
+        cy.wait(2000)
+        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>svg').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
    
         })

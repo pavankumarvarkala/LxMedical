@@ -55,12 +55,12 @@ import faker from 'faker'
    
      })
       it('The Admin can see the full length image on a separate window by clicking on that particular image',()=>{
-         cy.get('#chatList>div:nth-child(3)>div>div>div>a>div>img').scrollIntoView().should('be.visible').click()
+         cy.xpath('//div[2]/div[1]/div[1]/div[1]/a[1]/div[1]/img[1]').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
 
       })
       it('The Admin can open the document in a separate window by clicking on the particular document',()=>{
-         cy.get('#chatList>div:nth-child(5)>div>div>div>a>div>div>img').scrollIntoView().should('be.visible').click()
+         cy.xpath('//div[3]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]/img[1]').scrollIntoView().should('be.visible').click()
          cy.wait(3000)
          cy.logout()
 

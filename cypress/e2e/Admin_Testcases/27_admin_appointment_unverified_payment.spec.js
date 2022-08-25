@@ -15,6 +15,7 @@ describe('unverified payment testcases',  function() {
     it('At "Unverified Payments" page each label and field should have proper label and validations', function() {
         cy.get('.-mx-4>div:nth-child(1)>div:nth-child(2)').should('be.visible').should('have.text','Unverified Payments List')
        cy.get('.-mx-4>div:nth-child(1)>div:nth-child(1)').should('be.visible')
+
        cy.get('[type=search]').should('be.visible')
        cy.get('table>thead>tr>th:nth-child(1)').should('be.visible').should('have.text','Test Name')
        cy.get('table>thead>tr>th:nth-child(2)').should('be.visible').should('have.text','Appointment ID')
@@ -50,17 +51,22 @@ describe('unverified payment testcases',  function() {
 
     })
     it('As a Admin the user can filter the unverified appointments by using the filter on the top right corner of the list  by the payment mode cash or pos etc.', function() {
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','Add Filter').click()
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
+
         cy.get('.py-1>div:nth-child(1)').should('be.visible').should('have.text','CASH').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+
+        cy.get('.-mx-4>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)').should('be.visible').should('have.text','Add Filter').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
-        cy.get('.py-1>div:nth-child(2)').should('be.visible').should('have.text','POS').click()
+
+        cy.get('.py-1>div:nth-child(2)').should('be.visible').should('have.text','Square POS').click()
         cy.wait(2000)
-        cy.get('.-mx-4>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+
+        cy.get('.-mx-4>div:nth-child(3)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
     })
 
@@ -81,20 +87,27 @@ describe('unverified payment testcases',  function() {
     it('As a Admin the user can verify payment of any appointment by clicking on the verify button against that appointment and user will get verification confirmation window', function() {
         cy.get('tr:nth-child(1) > td:nth-child(7)>div>div').scrollIntoView().should('be.visible').should('have.text','Verify').click()
         cy.wait(2000)
-        cy.get('.ReactModal__Content>.hidden>.flex>div').should('be.visible').should('have.text','Confirmation')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Confirmation')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+    
     })
+
     it('By clicking on the "Verify" button a confirmation modal will open.', function() {
-        cy.get('.ReactModal__Content>.hidden>.flex>div').should('be.visible').should('have.text','Confirmation')
-        cy.get('.ReactModal__Content>.hidden>.flex>svg').should('be.visible')
-        cy.xpath('//div[3]/div/div/div[1]/div[2]/div[1]/div').should('be.visible').should('contain','Please Verify Payment For - ')
-        cy.xpath('//div[3]/div/div/div[1]/div[2]/div[2]/div[1]').should('have.text','Payment Details')
-        cy.xpath('//div[3]/div/div/div[1]/div[2]/div[2]/div[2]/div[4]/div[1]').should('be.visible').should('have.text','Total Paid')
-        cy.get('.hidden>.mt-6>:nth-child(3)>button').should('be.visible').should('have.text','Verify')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Confirmation')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+
+        cy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]').should('be.visible').should('contain','Please Verify Payment For - ')
+
+        cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]').should('have.text','Payment Details')
+
+        cy.xpath('//div[1]/div[1]/div[1]/div[2]/div[2]/div[5]/div[1]').should('be.visible').should('have.text','Total Paid')
+
+        cy.xpath('//div[1]/div[1]/div[1]/div[3]/button').should('be.visible').should('have.text','Verify')
 
     })
 
     it('As a Admin the user can click on the verify button on the confirmation to verify the payment', function() {
-        cy.get('.hidden>.mt-6>:nth-child(3)>button').should('be.visible').should('have.text','Verify').click()
+        cy.xpath('//div[1]/div[1]/div[1]/div[3]/button').should('be.visible').should('have.text','Verify').click()
         cy.contains('Payment Verified successfully ');
         cy.wait(2000)
         cy.logout()

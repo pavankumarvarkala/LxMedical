@@ -12,16 +12,17 @@ const cred=require('../../fixtures/cred.json')
  
      })
      it('At "Chat" page each label and field should have proper label and validations',()=>{
-        cy.xpath('//*[@id="root"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[1]/span[1]').should('be.visible').should('have.text','Patients')
-        cy.xpath('//*[@id="root"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]').should('be.visible').should('have.text','Providers')
+        cy.xpath('//a[1]/span[1]').should('be.visible').should('have.text','Patients')
+        cy.xpath('//a[2]/span[1]').should('be.visible').should('have.text','Providers')
         cy.get('img.h-60').should('be.visible')
 
      })
 
      it('As a Admin the user can switch between the patient and provider chat tabs.',()=>{
-        cy.xpath('//*[@id="root"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]').should('be.visible').should('have.text','Providers').click()
+        cy.xpath('//a[1]/span[1]').should('be.visible').should('have.text','Patients').click()
         cy.wait(3000)
-        cy.xpath('//*[@id="root"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[1]/span[1]').should('be.visible').should('have.text','Patients').click()
+
+        cy.xpath('//a[2]/span[1]').should('be.visible').should('have.text','Providers').click()
         cy.wait(3000)
      })
 
@@ -39,9 +40,9 @@ const cred=require('../../fixtures/cred.json')
         cy.wait(3000)
         cy.get('div.pb-6 > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white').should('be.visible').should('contain','hi')
         cy.get('.opacity-0').scrollIntoView().attachFile('faf.jpg')
-        cy.wait(2000)
+        cy.wait(10000)
         cy.get('.opacity-0').attachFile('file.pdf')
-        cy.wait(2000)
+        cy.wait(10000)
      })
 
      it('As a Admin the user can see the chats of all the patients in the list.',()=>{
@@ -49,7 +50,7 @@ const cred=require('../../fixtures/cred.json')
         cy.wait(3000)
         cy.get('div.font-bold.text-lg').should('be.visible')
         cy.wait(3000)
-        cy.get('.col-span-4>:nth-child(2)>div:nth-child(3)').should('be.visible').click()
+        cy.get('.col-span-4>:nth-child(2)>div:nth-child(1)').should('be.visible').click()
         cy.wait(3000)
         cy.get('div.font-bold.text-lg').should('be.visible')
         cy.wait(3000)
@@ -72,9 +73,9 @@ const cred=require('../../fixtures/cred.json')
         cy.get('.w-full > .cursor-pointer').should('be.visible').click()
         cy.wait(3000)
         cy.get('.opacity-0').scrollIntoView().attachFile('faf.jpg')
-        cy.wait(2000)
+        cy.wait(10000)
         cy.get('.opacity-0').attachFile('file.pdf')
-        cy.wait(2000)
+        cy.wait(10000)
      })
 
      it('As a Admin the user can see the chats of all the providers in the list.',()=>{

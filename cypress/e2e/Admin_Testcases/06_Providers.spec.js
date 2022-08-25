@@ -18,7 +18,7 @@ describe('providers module test case', ()=>{
         cy.get('table>thead>tr>th:nth-child(6)>div').should('be.visible').should('have.text','Status')
         cy.get('table>thead>tr>th:nth-child(7)>div').should('be.visible').should('have.text','Action')
         cy.get('[type=search]').invoke('attr','placeholder').should('contain','Search for name or email.')
-        cy.get('#headlessui-menu-button-4').should('be.visible').should('contain','Add Filter')
+        cy.xpath('//div[contains(text(),"Ad")]').should('be.visible').should('contain','Add Filter')
         cy.xpath("//button[@textid='provider.invite']").should('be.visible').should('have.text','Invite Provider')
         cy.xpath("//button[@textid='admin.pending.invites']").should('be.visible').should('have.text','Pending Invitations')
         // cy.get('.mt-1:nth-child(2)').should('be.visible').should('have.text','Next')
@@ -73,25 +73,25 @@ describe('providers module test case', ()=>{
     it('As a Admin the user should get a pop up of invite provider by Clicking on the "Invite Provider" button.',()=>{
         cy.xpath("//button[@textid='provider.invite']").should('be.visible').should('have.text','Invite Provider').click()
         cy.wait(2000)
-        cy.get('div:nth-child(9) > div > div>svg').should('be.visible').click()
+        cy.get('div.hidden>h3>div>svg').should('be.visible').click()
 
     })
 
     it('As a Admin the user can chat with provider by clicking on the chat icon against that provider',()=>{
         cy.get('tr:nth-child(1) > td:nth-child(7) > div>div>img').scrollIntoView().should('be.visible').click({force:true})
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap>svg').click()
+        cy.get('div.flex.flex-wrap>svg').scrollIntoView().click()
         cy.wait(2000)
     })
 
     it('As a Admin the user can enable or disable any provider with the help of toggle icon under status',()=>{
         cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click({force:true})
         cy.wait(2000)
-        cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
+        cy.xpath('//div[1]/div[2]/button[1]').click()
         cy.wait(2000)
         cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click({force:true})
         cy.wait(2000)
-        cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
+        cy.xpath('//div[1]/div[2]/button[1]').click()
         cy.wait(2000)
      })
 
@@ -104,54 +104,62 @@ describe('providers module test case', ()=>{
 
 
     it('As a admin the user can filter the providers based on the provider type like Md,Do etc.',()=>{
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(1)').should('be.visible').should('contain','md').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(2)').should('be.visible').should('contain','do').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(3)').should('be.visible').should('contain','pa-c').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(4)').should('be.visible').should('contain','np').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(5)').should('be.visible').should('contain','crna').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(6)').should('be.visible').should('contain','nurse').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(7)').should('be.visible').should('contain','paramedic').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[contains(text(),"Add Filter")]').should('be.visible').click()
         cy.wait(2000)
         cy.get('div.py-1>div:nth-child(8)').should('be.visible').should('contain','emt').click()
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(2)>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.flex.flex-wrap>div:nth-child(2)>div:nth-child(1)>svg').should('be.visible').click()
         cy.wait(2000)
+        
         cy.logout();
 
     })

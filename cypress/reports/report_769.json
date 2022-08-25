@@ -1,0 +1,295 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 0,
+    "pending": 0,
+    "failures": 9,
+    "start": "2022-08-08T07:33:49.831Z",
+    "end": "2022-08-08T07:36:28.237Z",
+    "duration": 158406,
+    "testsRegistered": 9,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bbf7ab02-6b85-4236-9ea8-ae42e8ff1050",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+          "title": "lx medical-chat functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the \"chat\" page by clicking on the \"Chat with LXMedical\" tab.",
+              "fullTitle": "lx medical-chat functionality As a Admin the user should be navigated to the \"chat\" page by clicking on the \"Chat with LXMedical\" tab.",
+              "timedOut": null,
+              "duration": 24415,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(5)').should('be.visible').should('have.text', 'Chat with LxMedical').click();\ncy.url().should('contain', '/inbox');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.max-w-xs > img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.max-w-xs > img`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:345:29)",
+                "diff": null
+              },
+              "uuid": "a4d2d9f1-7675-4ac2-9f72-507edbf20dd7",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Chat\" page each label and field should have proper label and validations",
+              "fullTitle": "lx medical-chat functionality At \"Chat\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15532,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[1]/span[1]').should('be.visible').should('have.text', 'Patients');\ncy.xpath('//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]').should('be.visible').should('have.text', 'Providers');\ncy.get('img.h-60').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[1]/span[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[1]/span[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:110:86)",
+                "diff": null
+              },
+              "uuid": "18770cdd-9c2a-4a66-9464-19ad270247eb",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can switch between the patient and provider chat tabs.",
+              "fullTitle": "lx medical-chat functionality As a Admin the user can switch between the patient and provider chat tabs.",
+              "timedOut": null,
+              "duration": 15429,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]').should('be.visible').should('have.text', 'Providers').click();\ncy.wait(3000);\ncy.xpath('//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[1]/span[1]').should('be.visible').should('have.text', 'Patients').click();\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:115:86)",
+                "diff": null
+              },
+              "uuid": "db998545-566b-4202-89ee-b490ebd015ed",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on the Any patient the chat of that patient should be opened on the right side panel.",
+              "fullTitle": "lx medical-chat functionality By clicking on the Any patient the chat of that patient should be opened on the right side panel.",
+              "timedOut": null,
+              "duration": 15561,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.col-span-4>:nth-child(2)>div:nth-child(1)').should('be.visible').click();\ncy.wait(3000);\ncy.get('div.font-bold.text-lg').should('be.visible');\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.col-span-4>:nth-child(2)>div:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.col-span-4>:nth-child(2)>div:nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:121:58)",
+                "diff": null
+              },
+              "uuid": "438cbbf9-9fdd-4706-bf6e-abd3e7c4f881",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can send text,image and pdf files to the patient.",
+              "fullTitle": "lx medical-chat functionality As a Admin the user can send text,image and pdf files to the patient.",
+              "timedOut": null,
+              "duration": 15541,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.w-full > .bg-white').should('be.visible').type('hi');\ncy.wait(2000);\ncy.get('.w-full > .cursor-pointer').should('be.visible').click();\ncy.wait(3000);\ncy.get('div.pb-6 > div > div > div > div.p-3.rounded-lg.relative.bg-primary.text-white').should('be.visible').should('contain', 'hi');\ncy.get('.opacity-0').scrollIntoView().attachFile('faf.jpg');\ncy.wait(2000);\ncy.get('.opacity-0').attachFile('file.pdf');\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.w-full > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.w-full > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:127:35)",
+                "diff": null
+              },
+              "uuid": "d1e36dd9-28c6-4331-83cd-fa24d354ea98",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see the chats of all the patients in the list.",
+              "fullTitle": "lx medical-chat functionality As a Admin the user can see the chats of all the patients in the list.",
+              "timedOut": null,
+              "duration": 15473,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.col-span-4>:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(3000);\ncy.get('div.font-bold.text-lg').should('be.visible');\ncy.wait(3000);\ncy.get('.col-span-4>:nth-child(2)>div:nth-child(3)').should('be.visible').click();\ncy.wait(3000);\ncy.get('div.font-bold.text-lg').should('be.visible');\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.col-span-4>:nth-child(2)>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.col-span-4>:nth-child(2)>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:138:58)",
+                "diff": null
+              },
+              "uuid": "3b45cc64-1290-4f4b-aa5c-56d742b53a45",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on the Any provider the chat of that provider should be opened on the right side panel.",
+              "fullTitle": "lx medical-chat functionality By clicking on the Any provider the chat of that provider should be opened on the right side panel.",
+              "timedOut": null,
+              "duration": 15589,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]').should('be.visible').should('have.text', 'Providers').click();\ncy.wait(3000);\ncy.get('.col-span-4>:nth-child(2)>div:nth-child(1)').should('be.visible').click();\ncy.wait(3000);\ncy.get('div.font-bold.text-lg').should('be.visible');\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//*[@id=\"root\"]/div[2]/div/div[2]/div/div[1]/div[1]/nav/a[2]/span[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:148:86)",
+                "diff": null
+              },
+              "uuid": "b4920267-5d09-49ad-b472-21d6f6075f51",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can send text,image and pdf files to the provider.",
+              "fullTitle": "lx medical-chat functionality As a Admin the user can send text,image and pdf files to the provider.",
+              "timedOut": null,
+              "duration": 15459,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.w-full > .bg-white').should('be.visible').type('hi');\ncy.wait(2000);\ncy.get('.w-full > .cursor-pointer').should('be.visible').click();\ncy.wait(3000);\ncy.get('.opacity-0').scrollIntoView().attachFile('faf.jpg');\ncy.wait(2000);\ncy.get('.opacity-0').attachFile('file.pdf');\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.w-full > .bg-white`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.w-full > .bg-white`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:156:35)",
+                "diff": null
+              },
+              "uuid": "1eac03fa-8c80-4e5a-898c-55bc1785112c",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see the chats of all the providers in the list.",
+              "fullTitle": "lx medical-chat functionality As a Admin the user can see the chats of all the providers in the list.",
+              "timedOut": null,
+              "duration": 15678,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.col-span-4>:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.wait(5000);\ncy.get('div.font-bold.text-lg').should('be.visible');\ncy.wait(3000);\ncy.get('.col-span-4>:nth-child(2)>div:nth-child(1)').should('be.visible').click();\ncy.wait(5000);\ncy.get('div.font-bold.text-lg').should('be.visible');\ncy.wait(10000);\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.col-span-4>:nth-child(2)>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.col-span-4>:nth-child(2)>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\28_ChatWithLXMedical.spec.js:166:58)",
+                "diff": null
+              },
+              "uuid": "18493d21-4e74-4770-89e8-8d7f9494e841",
+              "parentUUID": "32af4270-2bfe-4232-be3b-781ba6bcea0a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a4d2d9f1-7675-4ac2-9f72-507edbf20dd7",
+            "18770cdd-9c2a-4a66-9464-19ad270247eb",
+            "db998545-566b-4202-89ee-b490ebd015ed",
+            "438cbbf9-9fdd-4706-bf6e-abd3e7c4f881",
+            "d1e36dd9-28c6-4331-83cd-fa24d354ea98",
+            "3b45cc64-1290-4f4b-aa5c-56d742b53a45",
+            "b4920267-5d09-49ad-b472-21d6f6075f51",
+            "1eac03fa-8c80-4e5a-898c-55bc1785112c",
+            "18493d21-4e74-4770-89e8-8d7f9494e841"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 148677,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

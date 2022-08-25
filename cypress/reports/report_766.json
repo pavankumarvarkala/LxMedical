@@ -1,0 +1,387 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 13,
+    "passes": 0,
+    "pending": 0,
+    "failures": 13,
+    "start": "2022-08-08T07:22:11.344Z",
+    "end": "2022-08-08T07:25:51.768Z",
+    "duration": 220424,
+    "testsRegistered": 13,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "95f7ac82-cdff-4556-b04c-16dc8a2898d2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+          "title": "dashboard testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the dashboard page by clicking on the dashboard tab",
+              "fullTitle": "dashboard testcases As a Admin the user should be navigated to the dashboard page by clicking on the dashboard tab",
+              "timedOut": null,
+              "duration": 24723,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.max-w-xs > img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.max-w-xs > img`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:345:29)",
+                "diff": null
+              },
+              "uuid": "f7f85f72-81b7-416f-ab36-d039ab8bc70d",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Dashboard\" page each label and field should have proper label and validations",
+              "fullTitle": "dashboard testcases At \"Dashboard\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15629,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.-mx-4>div:nth-child(1)>div').should('be.visible').should('have.text', 'Dashboard');\ncy.get(':nth-child(2)>:nth-child(1)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total number of Patients');\ncy.get(':nth-child(2)>:nth-child(1)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(2)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total number of Providers');\ncy.get(':nth-child(2)>:nth-child(2)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(3)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total Appointments');\ncy.get(':nth-child(2)>:nth-child(3)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(4)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Pending Approval Appointments');\ncy.get(':nth-child(2)>:nth-child(4)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(5)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Awaiting Time Appointments');\ncy.get(':nth-child(2)>:nth-child(5)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(6)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Completed Appointments');\ncy.get(':nth-child(2)>:nth-child(6)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(7)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Cancelled Appointments');\ncy.get(':nth-child(2)>:nth-child(7)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(8)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total Cash Payments');\ncy.get(':nth-child(2)>:nth-child(8)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(9)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total POS Payments');\ncy.get(':nth-child(2)>:nth-child(9)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(10)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total Bill Me Later Payments');\ncy.get(':nth-child(2)>:nth-child(10)>.absolute>div').should('be.visible').should('have.text', 'View all');\ncy.get(':nth-child(2)>:nth-child(11)>.flex>div.flex>div.ml-2.text-sm').should('be.visible').should('have.text', 'Total Payments');\ncy.get(':nth-child(2)>:nth-child(11)>.absolute>div').should('be.visible').should('have.text', 'View all');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.-mx-4>div:nth-child(1)>div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.-mx-4>div:nth-child(1)>div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:108:43)",
+                "diff": null
+              },
+              "uuid": "5962c0b6-7c63-45da-a562-2f93226c23fd",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should navigated to the patients page by clicking on the view all button on the Total number of patients card",
+              "fullTitle": "dashboard testcases As a Admin the user should navigated to the patients page by clicking on the view all button on the Total number of patients card",
+              "timedOut": null,
+              "duration": 15539,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2)>:nth-child(1)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/patients');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(2)>:nth-child(1)>.absolute>div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `:nth-child(2)>:nth-child(1)>.absolute>div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:133:57)",
+                "diff": null
+              },
+              "uuid": "06063161-6fa1-42c2-aa83-57ed35d55ad4",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should navigated to the providers page by clicking on the view all button on the Total number of providers card",
+              "fullTitle": "dashboard testcases As a Admin the user should navigated to the providers page by clicking on the view all button on the Total number of providers card",
+              "timedOut": null,
+              "duration": 15471,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(2)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/providers');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:138:42)",
+                "diff": null
+              },
+              "uuid": "d0338928-0beb-4a8a-886e-3db38ba05fb2",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should navigated to the Appointments page by clicking on the view all button on the Total Appointments page card",
+              "fullTitle": "dashboard testcases As a Admin the user should navigated to the Appointments page by clicking on the view all button on the Total Appointments page card",
+              "timedOut": null,
+              "duration": 15404,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(3)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:145:42)",
+                "diff": null
+              },
+              "uuid": "b0fcb606-78bf-4b27-a174-e152f6574dc1",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see all the Requested Appointments by clicking on the view all button on the Pending Approval Appointments page card",
+              "fullTitle": "dashboard testcases As a Admin the user can see all the Requested Appointments by clicking on the view all button on the Pending Approval Appointments page card",
+              "timedOut": null,
+              "duration": 15438,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(4)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'pending approval');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:152:42)",
+                "diff": null
+              },
+              "uuid": "ed59c443-3ec3-4d24-9776-e32424aac3a0",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see all the Accepted Appointments by clicking on the view all button on the Awaiting Time Appointments page card",
+              "fullTitle": "dashboard testcases As a Admin the user can see all the Accepted Appointments by clicking on the view all button on the Awaiting Time Appointments page card",
+              "timedOut": null,
+              "duration": 15532,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(5)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'awaiting time');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:160:42)",
+                "diff": null
+              },
+              "uuid": "10edd56c-0432-4122-9c98-413f79f97ce4",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see all the Completed Appointments by clicking on the view all button on the completed Appointment page card",
+              "fullTitle": "dashboard testcases As a Admin the user can see all the Completed Appointments by clicking on the view all button on the completed Appointment page card",
+              "timedOut": null,
+              "duration": 15479,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(6)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'completed');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:168:42)",
+                "diff": null
+              },
+              "uuid": "0df84513-39b5-42d7-9bd3-31c28d5cda28",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see all the Cancelled Appointments by clicking on the view all button on the Cancelled Appointments page card",
+              "fullTitle": "dashboard testcases As a Admin the user can see all the Cancelled Appointments by clicking on the view all button on the Cancelled Appointments page card",
+              "timedOut": null,
+              "duration": 15552,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(7)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'cancelled');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:176:42)",
+                "diff": null
+              },
+              "uuid": "36d7dc38-59f4-40db-b0f9-36393fc56bcc",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see the all the amount paid through cash payment by clicking on the view all button on the  Total Cash Payments card",
+              "fullTitle": "dashboard testcases As a Admin the user can see the all the amount paid through cash payment by clicking on the view all button on the  Total Cash Payments card",
+              "timedOut": null,
+              "duration": 15525,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(8)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'CASH');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:184:42)",
+                "diff": null
+              },
+              "uuid": "59094b74-f0be-47c5-a054-e00158a9fff8",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see the all the amount paid through POS payment by clicking on the view all button on the  Total POS Payments card",
+              "fullTitle": "dashboard testcases As a Admin the user can see the all the amount paid through POS payment by clicking on the view all button on the  Total POS Payments card",
+              "timedOut": null,
+              "duration": 15623,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(9)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'POS');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:192:42)",
+                "diff": null
+              },
+              "uuid": "60f940d8-da81-4fe9-9255-bedf2db59ade",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can see the all the amount paid through Bill Me Later payments by clicking on the view all button on the  Total Bill Me Later Payments card",
+              "fullTitle": "dashboard testcases As a Admin the user can see the all the amount paid through Bill Me Later payments by clicking on the view all button on the  Total Bill Me Later Payments card",
+              "timedOut": null,
+              "duration": 15554,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(10)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.get('div.flex.flex-wrap>.flex>div.py-1>span').should('be.visible').should('have.text', 'BML');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:200:42)",
+                "diff": null
+              },
+              "uuid": "b80870b5-6649-416a-a2a2-485d0a47d3a3",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the Appointments page by clicking on the view all button on the Total Payments name card",
+              "fullTitle": "dashboard testcases As a Admin the user should be navigated to the Appointments page by clicking on the view all button on the Total Payments name card",
+              "timedOut": null,
+              "duration": 15507,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.space-y-4 > :nth-child(1)').should('be.visible').should('have.text', 'Dashboard').click();\ncy.wait(3000);\ncy.get(':nth-child(2)>:nth-child(10)>.absolute>div').should('be.visible').should('have.text', 'View all').click();\ncy.wait(3000);\ncy.url().should('contain', '/appointments');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.space-y-4 > :nth-child(1)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\25_admin_dashboard.spec.js:208:42)",
+                "diff": null
+              },
+              "uuid": "1aa9d1e1-fadf-4d62-ba72-825a85cc4053",
+              "parentUUID": "ec822214-9df2-4266-9428-b06f4d6b85dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f7f85f72-81b7-416f-ab36-d039ab8bc70d",
+            "5962c0b6-7c63-45da-a562-2f93226c23fd",
+            "06063161-6fa1-42c2-aa83-57ed35d55ad4",
+            "d0338928-0beb-4a8a-886e-3db38ba05fb2",
+            "b0fcb606-78bf-4b27-a174-e152f6574dc1",
+            "ed59c443-3ec3-4d24-9776-e32424aac3a0",
+            "10edd56c-0432-4122-9c98-413f79f97ce4",
+            "0df84513-39b5-42d7-9bd3-31c28d5cda28",
+            "36d7dc38-59f4-40db-b0f9-36393fc56bcc",
+            "59094b74-f0be-47c5-a054-e00158a9fff8",
+            "60f940d8-da81-4fe9-9255-bedf2db59ade",
+            "b80870b5-6649-416a-a2a2-485d0a47d3a3",
+            "1aa9d1e1-fadf-4d62-ba72-825a85cc4053"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 210976,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

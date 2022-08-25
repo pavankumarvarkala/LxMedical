@@ -10,11 +10,13 @@ import faker from 'faker'
       cy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text','Patients').click()
       cy.url().should('contain','/patients')
       cy.AddPatient()
+      
       cy.readFile('cypress/fixtures/provider.json').then((provider) => {
       cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase())
       cy.get('tr:nth-child(1)>td:nth-child(2)').should('be.visible').should('have.text',provider.email.toLowerCase())
       cy.wait(4000)
       })
+
       cy.get('tr:nth-child(1) > td:nth-child(7) > div>div>img').scrollIntoView().should('be.visible').click()
       cy.url().should('contain','/chat')
 

@@ -29,43 +29,57 @@ const cred=require('../../fixtures/cred.json')
     //Add Service
     it('As a Admin the user should get add service pop up window by clicking on "Add Service" button',()=>{
         cy.get('[textid="add.service"]').should('be.visible').should('have.text','Add Service').click()
-        cy.get('.ReactModal__Content').should('be.visible')
-        cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text','Add Service')
+        cy.xpath('//div[1]/h3/div/div').should('be.visible').should('have.text','Add Service')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
 
 
 
     })
     it('At Add Service pop up window each label and field should have proper label and validations',()=>{
-        cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text','Add Service')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>label').should('be.visible').should('have.text','Service Name')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>label').should('be.visible').should('have.text','Service Rate')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div').should('be.visible') 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div').should('be.visible')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text','Service Type')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text','Service Category')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)').should('be.visible') 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(3)>div>label').should('be.visible').should('have.text','Service Description')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(3)>div>div').should('be.visible') 
-        cy.get('div.hidden>div:nth-child(2)>form>button').should('be.visible').should('contain','Save Details').click()
+        cy.xpath('//div[1]/h3/div/div').should('be.visible').should('have.text','Add Service')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/label').should('be.visible').should('have.text','Service Name')
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/label').should('be.visible').should('have.text','Service Rate')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible') 
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[1]').should('be.visible').should('have.text','Service Type')
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[1]').should('be.visible').should('have.text','Service Category')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[2]').should('be.visible') 
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/label').should('be.visible').should('have.text','Service Description')
+        cy.xpath('//div[1]/form[1]/div[3]/div/div').should('be.visible') 
+
+        cy.xpath('//div[1]/form[1]/button').should('be.visible').should('contain','Save Details').click()
         cy.wait(4000)
-        cy.get(':nth-child(1) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(2) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(2) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(3) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text','Required')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text','Required')
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div[2]').should('have.text','Required')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[3]').should('be.visible').should('have.text','Required')
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[3]').should('be.visible').should('have.text','Required')
 
 
     })
 
     it('After filling Add services form and by clicking save details button the user should able to add the service',()=>{
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div:nth-child(2').should('be.visible').type('Covid Vaccine')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div:nth-child(2').should('be.visible').type('199')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2').should('be.visible').click()
-        cy.get('.css-11unzgr>div:nth-child(1)').click() 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible').click()
-        cy.get('.css-11unzgr>div:nth-child(1)').click() 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(3)>div>div:nth-child(2)').should('be.visible').type('Covid Vaccination Program') 
-        cy.get('div.hidden>div:nth-child(2)>form>button').should('be.visible').should('contain','Save Details').click()
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible').type('Covid Vaccine')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div[1]').should('be.visible').type('199')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[2]').should('be.visible').click()
+        cy.get('.css-11unzgr>div:nth-child(1)').click()
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible').click()
+        cy.get('.css-11unzgr>div:nth-child(1)').click()
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[1]').should('be.visible').type('Covid Vaccination Program')
+
+        cy.xpath('//div[1]/form[1]/button').should('be.visible').should('contain','Save Details').click()
         cy.contains('Service Added successfully')
         cy.wait(4000)
 
@@ -94,7 +108,7 @@ const cred=require('../../fixtures/cred.json')
 //Edit service
     it('As a Admin the user should get Update service pop up window by clicking on edit icon against the particular service',()=>{
         cy.get('tr:nth-child(1) > td:nth-child(7)>div>span').scrollIntoView().should('be.visible').click()
-        cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text','Update Service')
+        cy.xpath('//div[1]/h3/div/div').should('be.visible').should('have.text','Update Service')
 
 
 
@@ -102,29 +116,41 @@ const cred=require('../../fixtures/cred.json')
 
     })
     it('At Update Service pop up window each label and field should have proper label and validations',()=>{
-        cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text','Update Service')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>label').should('be.visible').should('have.text','Service Name')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>label').should('be.visible').should('have.text','Service Rate')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div').should('be.visible') 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div').should('be.visible')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)').should('be.visible').should('have.text','Service Type')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)').should('be.visible').should('have.text','Service Category')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)').should('be.visible') 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(3)>div>label').should('be.visible').should('have.text','Service Description')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(3)>div>div').should('be.visible') 
-        cy.get('div.hidden>div:nth-child(2)>form>button').should('be.visible').should('contain','Save Details')
+        cy.xpath('//div[1]/h3/div/div').should('be.visible').should('have.text','Update Service')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/label').should('be.visible').should('have.text','Service Name')
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/label').should('be.visible').should('have.text','Service Rate')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible') 
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[1]').should('be.visible').should('have.text','Service Type')
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[1]').should('be.visible').should('have.text','Service Category')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[2]').should('be.visible') 
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/label').should('be.visible').should('have.text','Service Description')
+        cy.xpath('//div[1]/form[1]/div[3]/div/div').should('be.visible') 
+
+        cy.xpath('//div[1]/form[1]/button').should('be.visible').should('contain','Save Details')
 
     })
     it('After doing necessary edits on the edit service form and by clicking save details button the user should able to update the service',()=>{
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(1)>div').should('be.visible').clear().type('Covid Vaccine Pfizer')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(1)>div:nth-child(2)>div').should('be.visible').clear().type('299')
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(1)>div:nth-child(2').should('be.visible').click()
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible').clear().type('Covid Vaccine Pfizer')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div').should('be.visible').clear().type('299')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[2]').should('be.visible').click()
         cy.get('.css-11unzgr>div:nth-child(2)').click() 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)').should('be.visible').click()
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible').click()
         cy.get('.css-11unzgr>div:nth-child(3)').click() 
-        cy.get('div.hidden>div:nth-child(2)>form>div:nth-child(3)>div>div').should('be.visible').clear().type('Covid Vaccination Program') 
-        cy.get('div.hidden>div:nth-child(2)>form>button').should('be.visible').should('contain','Save Details').click()
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div').should('be.visible').clear().type('Covid Vaccination Program') 
+
+        cy.xpath('//div[1]/form[1]/button').should('be.visible').should('contain','Save Details').click()
         cy.contains('Service Updated successfully')  
         cy.wait(4000)
 
@@ -148,7 +174,7 @@ const cred=require('../../fixtures/cred.json')
     it('As a Admin the user can disable any service with the help of toggle button against that particular service',()=>{
         cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
+        cy.xpath('//div[1]/div[2]/button[1]').should('be.visible').should('have.text','Confirm').click()
         cy.wait(2000)
         cy.contains('Service Updated successfully')  
         cy.wait(4000)
@@ -159,7 +185,7 @@ const cred=require('../../fixtures/cred.json')
         cy.wait(4000)
         cy.get('tr:nth-child(1) > td:nth-child(1)').should('be.visible').should('have.text','Covid Vaccine Pfizer')
         cy.wait(2000)
-        cy.get('div.flex.flex-wrap:nth-child(1)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.xpath('//div[2]/div[3]/div[1]/*[1]').scrollIntoView().should('be.visible').click()
         cy.wait(4000)
 
     })
@@ -167,11 +193,11 @@ const cred=require('../../fixtures/cred.json')
     it('As a Admin the user should be navigated to the Patient inactive services page by clicking on the "inactive services" button.',()=>{
         cy.get('[textid="inactive.service"]').should('be.visible').should('have.text','Inactive Services').click()
         cy.wait(4000)
-        cy.get('div.flex.flex-wrap:nth-child(1)>div:nth-child(1)>div').should('be.visible').should('have.text','Patient Inactive Services')
+        cy.xpath('//div[contains(text(),"Patient I")]').should('be.visible').should('have.text','Patient Inactive Services')
     })
 
     it('At Patient inactive Services page each label and field should have proper label and validations',()=>{
-        cy.get('div.flex.flex-wrap:nth-child(1)>div:nth-child(1)>div').should('be.visible').should('have.text','Patient Inactive Services')
+        cy.xpath('//div[contains(text(),"Patient I")]').should('be.visible').should('have.text','Patient Inactive Services')
         cy.get('[type=search]').should('be.visible').invoke('attr','placeholder').should('contain','Search Services')
         cy.get('thead > tr > :nth-child(1)').should('be.visible').should('have.text','Service Name')
         cy.get('thead > tr > :nth-child(2)').should('be.visible').should('have.text','Service Description')
@@ -196,15 +222,15 @@ const cred=require('../../fixtures/cred.json')
     it('As a Admin the user can enable any service with the help of toggle button against that particular service',()=>{
         cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
+        cy.xpath('//div[1]/div[2]/button[1]').should('be.visible').should('have.text','Confirm').click()
         cy.wait(2000)
         cy.contains('Service Updated successfully')  
         cy.wait(4000)
-        cy.get('div.flex.flex-wrap:nth-child(1)>div:nth-child(1)>svg').should('be.visible').click()
+        cy.xpath('//div[2]/div[3]/div[1]/*[1]').scrollIntoView().should('be.visible').click()
         cy.wait(4000)
         cy.get('tr:nth-child(1)>td:nth-child(6)>button').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
+        cy.xpath('//div[1]/div[2]/button[1]').should('be.visible').should('have.text','Confirm').click()
         cy.wait(2000)
         cy.contains('Service Updated successfully')  
         cy.wait(4000)
@@ -216,7 +242,7 @@ const cred=require('../../fixtures/cred.json')
     it('As a Admin the user can delete any active service by clicking on the delete icon against that service.',()=>{
         cy.get('tr:nth-child(1)>td:nth-child(7)>div>span').scrollIntoView().should('be.visible').click()
         cy.wait(2000)
-        cy.get('div.hidden>div:nth-child(2)>div:nth-child(2)>button').click()
+        cy.xpath('//div[1]/div[2]/button[1]').click()
         cy.wait(4000)
         cy.logout()
 

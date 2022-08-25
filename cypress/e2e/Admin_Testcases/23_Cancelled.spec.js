@@ -6,8 +6,8 @@ describe('Cancelled Appointment Details Test cases',()=>{
     it('As a Admin the user should be navigated to the Appointment Details page of "Cancelled" appointment by clicking on the eye icon against that appointment',()=>{
         cy.login(cred.email,cred.password)
         cy.url().should('contain','/dashboard')
-        //Click patient tab on the left side tray
 
+        //Click patient tab on the left side tray
         cy.xpath('//nav/div[4]/div[2]').should('be.visible').should('have.text','Appointments').click()
         cy.url().should('contain','/appointments')
         cy.xpath('//div[contains(text(),"Ad")]').should('be.visible').should('have.text','Add Filter').click()
@@ -21,8 +21,8 @@ describe('Cancelled Appointment Details Test cases',()=>{
     })
     it('At "Appointment details" page each label and field should have proper label and validations',()=>{
         cy.xpath('//div[contains(text(),"Appointment D")]').should('be.visible').should('have.text','Appointment Details')
-        cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/*[1]').should('be.visible')
-        cy.xpath('//*[@id="root"]/div[2]/div/div[2]/div/div[2]/div[1]/div').should('be.visible')
+        cy.xpath('//div[2]/div/div[4]/div[1]').should('be.visible')
+        cy.xpath('//div[5]/div[1]/div[1]').should('be.visible')
 
         cy.xpath('//button[@textid="reactivate.appointment"]').should('be.visible').should('have.text','Re-activate')
         cy.xpath('//div[contains(text(),"Requested F")]').should('be.visible').should('have.text','Requested For')
@@ -31,7 +31,8 @@ describe('Cancelled Appointment Details Test cases',()=>{
         cy.xpath('//div[contains(text(),"Service A")]').should('be.visible').should('have.text','Service Address')
         cy.xpath('//div[contains(text(),"Cancellation")]').should('be.visible').should('have.text','Cancellation Reason')
 
-        cy.xpath('//div[2]/div[5]/div[1]').should('be.visible').should('have.text','Patients')
+        cy.xpath('//div[5]/div[5]/div[1]').should('be.visible').should('have.text','Patients')
+
         cy.xpath('//div[contains(text(),"Services R")]').should('be.visible').should('have.text','Services Requested')
         
  
@@ -56,7 +57,7 @@ describe('Cancelled Appointment Details Test cases',()=>{
         cy.url().should('contain','/medical_history')
 
         cy.xpath('//div[2]/div/nav/div[1]/div').should('be.visible').should('have.text','Medical History')
-        cy.xpath('//div[@id="root"]/div[2]/div[1]/div[2]/div[1]/div[1]/*[1]').scrollIntoView().should('be.visible').click()
+        cy.get('.h-6 > path').scrollIntoView().should('be.visible').click()
         cy.wait(4000)
 
         cy.url().should('contain','/appointments')
@@ -73,9 +74,12 @@ describe('Cancelled Appointment Details Test cases',()=>{
     })
     it('As a Admin the user can Re-Activate the appointment by clicking on the "Re-Activate" button.',()=>{
         cy.xpath('//button[@textid="reactivate.appointment"]').should('be.visible').should('have.text','Re-activate').click()
-        // cy.contains('Appointment Reactivated successfully')
-        // cy.wait(3000)
-        // cy.get(':nth-child(3) > .font-semibold > .text-sm').should('be.visible').should('contain','accepted')
+        cy.contains('Appointment Reactivated successfully')
+        cy.wait(5000)
+        cy.wait(3000)
+        cy.xpath('//span[contains(text(),"awa")]').should('be.visible').should('have.text','awaiting time')
+
+        cy.logout()
 
         
 

@@ -5,10 +5,10 @@ module.exports = defineConfig({
   viewportHeight: 768,
   chromeWebSecurity: false,
   projectId: 'o5mcfa',
-  defaultCommandTimeout: 15000,
+  defaultCommandTimeout: 20000,
   execTimeout: 120000,
-  pageLoadTimeout: 150000,
-  requestTimeout: 15000,
+  pageLoadTimeout: 200000,
+  requestTimeout: 20000,
   responseTimeout: 30000,
   reporter: 'mochawesome',
   reporterOptions: {

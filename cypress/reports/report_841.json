@@ -1,0 +1,318 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 0,
+    "pending": 0,
+    "failures": 10,
+    "start": "2022-08-25T05:12:46.483Z",
+    "end": "2022-08-25T05:16:10.690Z",
+    "duration": 204207,
+    "testsRegistered": 10,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3f84e039-94f6-43f4-90bd-145716de8dd4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "21576226-a41d-4d99-b630-298ab3caea72",
+          "title": "Pending Approval Appointment Details Test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the Appointment Details page of \"Pending Approval\" appointment by clicking on the eye icon against that appointment",
+              "fullTitle": "Pending Approval Appointment Details Test cases As a Admin the user should be navigated to the Appointment Details page of \"Pending Approval\" appointment by clicking on the eye icon against that appointment",
+              "timedOut": null,
+              "duration": 51278,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.url().should('contain', '/dashboard');\ncy.xpath('//nav/div[2]/div[2]').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients');\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  cy.xpath('//input[@type=\"search\"]').should('be.visible').type(provider.email.toLowerCase());\n  cy.xpath('//tr[1]/td[2]/div/p').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n});\ncy.bookappointment();\ncy.xpath('//input[@type=\"search\"]').should('be.visible').clear();\ncy.wait(4000);\ncy.xpath('//nav/div[4]/div[2]').should('be.visible').should('have.text', 'Appointments').click();\ncy.url().should('contain', '/appointments');\ncy.xpath('//div[contains(text(),\"Ad\")]').should('be.visible').should('have.text', 'Add Filter').click();\ncy.wait(3000);\ncy.xpath('//div[contains(text(),\"pe\")]').should('be.visible').should('have.text', 'pending approval').click();\ncy.wait(4000);\ncy.xpath('//tr[1]/td[4]/div/p').should('be.visible').should('have.text', 'pending approval');\ncy.xpath('//tr[1]/td[8]/div[1]/*[1]').scrollIntoView().should('be.visible').click();\ncy.wait(4000);\ncy.xpath('//span[contains(text(),\"pendi\")]').should('be.visible').should('have.text', 'pending approval');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button type=\"submit\" textid=\"continue\" class=\"flex justify-center items-center  text-sm font-bold shadow-sm text-white border-2 px-16 py-3 rounded-md hover:font-bold focus:outline-none \n bg-gray-500 cursor-not-allowed hover:border-gray-400 mx-0 w-1/2\" disabled=\"\">...</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button type=\"submit\" textid=\"continue\" class=\"flex justify-center items-center  text-sm font-bold shadow-sm text-white border-2 px-16 py-3 rounded-md hover:font-bold focus:outline-none \n bg-gray-500 cursor-not-allowed hover:border-gray-400 mx-0 w-1/2\" disabled=\"\">...</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureNotDisabled (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:161792:76)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147668:14)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147745:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10286:29)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166930:65)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166385:14\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11129:18)\n    at Promise._fulfill (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11073:18)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:12687:46\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:391:110)",
+                "diff": null
+              },
+              "uuid": "b9898af6-07a3-4bca-8c9a-5e2bd93c16d3",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Appointment details\" page each label and field should have proper label and validations",
+              "fullTitle": "Pending Approval Appointment Details Test cases At \"Appointment details\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15617,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Appointment D\")]').should('be.visible').should('have.text', 'Appointment Details');\ncy.xpath('//div[2]/div/div[4]/div[1]').should('be.visible');\ncy.xpath('//div[5]/div[1]/div[1]').should('be.visible');\ncy.xpath('//div[contains(text(),\"Appointment I\")]').should('have.text', 'Appointment ID');\ncy.xpath('//div[contains(text(),\"Acc\")]').should('be.visible').should('have.text', 'Accept');\ncy.xpath('//div[contains(text(),\"Requested F\")]').should('be.visible').should('have.text', 'Requested For');\ncy.xpath('//div[contains(text(),\"St\")]').should('be.visible').should('have.text', 'Status');\ncy.xpath('//div[contains(text(),\"Service A\")]').should('be.visible').should('have.text', 'Service Address');\ncy.xpath('//div[5]/div[4]/div[1]').should('be.visible').should('have.text', 'Patients');\ncy.xpath('//div[contains(text(),\"Services R\")]').should('be.visible').should('have.text', 'Services Requested');\ncy.xpath('//button[@textid=\"cancel.appointment\"]').should('have.text', 'Cancel Appointment');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Appointment D\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Appointment D\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:150:57)",
+                "diff": null
+              },
+              "uuid": "f5ac028e-18c7-4775-bb06-1060e8217527",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The unique appointment id should be displayed",
+              "fullTitle": "Pending Approval Appointment Details Test cases The unique appointment id should be displayed",
+              "timedOut": null,
+              "duration": 15738,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Appointment I\")]').should('have.text', 'Appointment ID');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Appointment I\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Appointment I\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:163:57)",
+                "diff": null
+              },
+              "uuid": "43f27acd-08d9-4215-9746-7d5a89663fe2",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The date requested by the patient should be displayed",
+              "fullTitle": "Pending Approval Appointment Details Test cases The date requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 15742,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Requested F\")]').should('be.visible').should('have.text', 'Requested For');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Requested F\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Requested F\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:166:55)",
+                "diff": null
+              },
+              "uuid": "aa9b82bc-d330-4135-9d22-47bd42c61bba",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Service Address where the patient requested the service should be displayed",
+              "fullTitle": "Pending Approval Appointment Details Test cases The Service Address where the patient requested the service should be displayed",
+              "timedOut": null,
+              "duration": 15734,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Service A\")]').should('be.visible').should('have.text', 'Service Address');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Service A\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Service A\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:169:53)",
+                "diff": null
+              },
+              "uuid": "09919735-f910-413c-ab85-d1454bae4673",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "fullTitle": "Pending Approval Appointment Details Test cases As a Admin the user should be navigated to the medical history page of particular patient by clicking on the name card of that particular patient",
+              "timedOut": null,
+              "duration": 15655,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/*[2]').should('be.visible').click();\ncy.wait(4000);\ncy.url().should('contain', '/medical_history');\ncy.xpath('//div[2]/div/nav/div[1]/div').should('be.visible').should('have.text', 'Medical History');\ncy.get('.h-6 > path').scrollIntoView().should('be.visible').click();\ncy.wait(4000);\ncy.url().should('contain', '/appointments');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/*[2]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/*[2]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:172:66)",
+                "diff": null
+              },
+              "uuid": "d9758859-c3d8-4443-92f8-d93bfea167f1",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The list of services requested by the patient should be displayed",
+              "fullTitle": "Pending Approval Appointment Details Test cases The list of services requested by the patient should be displayed",
+              "timedOut": null,
+              "duration": 15690,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Services R\")]').should('be.visible').should('have.text', 'Services Requested');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Services R\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Services R\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:181:54)",
+                "diff": null
+              },
+              "uuid": "4dc162ec-e707-4f0d-b13a-2134d5f6c29f",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can accept the Appointment By clicking on the \"Accept\" button",
+              "fullTitle": "Pending Approval Appointment Details Test cases As a Admin the user can accept the Appointment By clicking on the \"Accept\" button",
+              "timedOut": null,
+              "duration": 15702,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Acc\")]').should('be.visible').should('have.text', 'Accept').click();\ncy.wait(5000);\ncy.xpath('//span[contains(text(),\"awa\")]').should('be.visible').should('have.text', 'awaiting time');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Acc\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Acc\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:184:47)",
+                "diff": null
+              },
+              "uuid": "5b95e538-6226-45b5-b91e-d8ea1fe781ae",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can Add \"Comment for Provider\" By clicking on the \"Edit\" icon against it.",
+              "fullTitle": "Pending Approval Appointment Details Test cases As a Admin the user can Add \"Comment for Provider\" By clicking on the \"Edit\" icon against it.",
+              "timedOut": null,
+              "duration": 15705,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Comment for Provider\")]').should('be.visible').should('contain', 'Comment for Provider');\ncy.get('div.flex.items-center.justify-between> svg').should('be.visible').click();\ncy.xpath('//div[@class=\"mt-1.5 relative\"]/textarea').should('be.visible').clear().type('test1');\ncy.xpath('//div[@class=\"mt-1.5 relative\"]/div/button[2]').should('be.visible').should('have.text', 'Cancel');\ncy.xpath('//div[contains(text(),\"Edit\")]').should('be.visible').should('have.text', 'Edit').click();\ncy.wait(5000);\ncy.xpath('//div[contains(text(),\"test1\")]').should('be.visible').should('have.text', 'test1');\ncy.get('div.flex.items-center.justify-between> svg').should('be.visible').click();\ncy.xpath('//div[@class=\"mt-1.5 relative\"]/textarea').should('be.visible').clear().type('Sample1');\ncy.xpath('//div[contains(text(),\"Edit\")]').should('be.visible').should('have.text', 'Edit').click();\ncy.wait(5000);\ncy.xpath('//div[contains(text(),\"Sample1\")]').should('be.visible').should('have.text', 'Sample1');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Comment for Provider\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//div[contains(text(),\"Comment for Provider\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:189:64)",
+                "diff": null
+              },
+              "uuid": "52c44ca9-f8c8-4e82-9995-65c9344ceccf",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can cancel the appointment after entering the cancellation reason by clicking on the cancel button",
+              "fullTitle": "Pending Approval Appointment Details Test cases As a Admin the user can cancel the appointment after entering the cancellation reason by clicking on the cancel button",
+              "timedOut": null,
+              "duration": 15774,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//button[@textid=\"cancel.appointment\"]').scrollIntoView().should('have.text', 'Cancel Appointment').click({\n  force: true\n});\ncy.wait(3000);\ncy.get('div.hidden>h3>div>div').should('be.visible').should('have.text', 'Confirmation');\ncy.get('div.hidden>h3>div>svg').should('be.visible');\ncy.get('div.hidden>div').should('be.visible').should('have.text', 'Are you sure, want to cancel this appointment.');\ncy.xpath('//div[1]/form[1]/div[1]/div[1]/label[1]/div[1]').should('be.visible').should('have.text', 'Reason For Cancellation');\ncy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible').type('Provider not available');\ncy.xpath('//div[1]/form[1]/div[2]/button').should('be.visible').should('have.text', 'Cancel Appointment').click();\ncy.wait(5000);\ncy.xpath('//span[contains(text(),\"can\")]').should('be.visible').should('have.text', 'cancelled');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//button[@textid=\"cancel.appointment\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `//button[@textid=\"cancel.appointment\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\16_Pending_Approval.Spec.js:203:8)",
+                "diff": null
+              },
+              "uuid": "e1af8ee7-2537-4cd2-b7c1-b2662cfc7005",
+              "parentUUID": "21576226-a41d-4d99-b630-298ab3caea72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b9898af6-07a3-4bca-8c9a-5e2bd93c16d3",
+            "f5ac028e-18c7-4775-bb06-1060e8217527",
+            "43f27acd-08d9-4215-9746-7d5a89663fe2",
+            "aa9b82bc-d330-4135-9d22-47bd42c61bba",
+            "09919735-f910-413c-ab85-d1454bae4673",
+            "d9758859-c3d8-4443-92f8-d93bfea167f1",
+            "4dc162ec-e707-4f0d-b13a-2134d5f6c29f",
+            "5b95e538-6226-45b5-b91e-d8ea1fe781ae",
+            "52c44ca9-f8c8-4e82-9995-65c9344ceccf",
+            "e1af8ee7-2537-4cd2-b7c1-b2662cfc7005"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 192635,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

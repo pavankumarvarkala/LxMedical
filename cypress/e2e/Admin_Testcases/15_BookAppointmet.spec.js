@@ -46,7 +46,7 @@ describe('Book Appointment module testcases',()=>{
         cy.xpath('//div[contains(text(),"Sutu")]').should('be.visible').should('have.text','Suture Removal')
         cy.xpath('//div[3]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked')
 
-        cy.xpath('//div[contains(text(),"Blood")]').should('be.visible').should('have.text','Blood draw Covid-19 Antibody ')
+        cy.xpath('//div[contains(text(),"Blood")]').scrollIntoView().should('be.visible').should('have.text','Blood draw Covid-19 Antibody ')
         cy.xpath('//div[4]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked')
         cy.xpath('//div[contains(text(),"Vacc")]').should('be.visible').should('have.text','In-home Vaccination')
         
@@ -62,13 +62,13 @@ describe('Book Appointment module testcases',()=>{
         
         cy.xpath('//input[@type="search"]').should('be.visible').type('Suture')
         cy.wait(4000)
-        cy.xpath('//div[contains(text(),"Sutu")]').should('be.visible').should('have.text','Suture Removal')
+        cy.xpath('//div[contains(text(),"Sutu")]').should('be.visible').should('contain','Suture Removal')
 
         cy.xpath('//div[1]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check()
         cy.xpath('//input[@type="search"]').should('be.visible').clear()
         cy.wait(4000)
 
-        cy.xpath('//div[1]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check()
+        cy.xpath('//div[contains(text(),"Tele")]').scrollIntoView().should('be.visible').click()
         cy.contains('"Telemedicine Visit" service cannot be availed with any other services.')
         
     
@@ -108,7 +108,7 @@ describe('Book Appointment module testcases',()=>{
     it('As a Admin the user should can add another member by clicking on "Add Another Family Member" button on "Select Patient" page.',()=>{
         cy.xpath('//div[contains(text(),"Add A")]').should('be.visible').should('have.text','Add Another Family Member').click()
         cy.wait(4000)
-        cy.xpath('//div[@class="font-bold text-primary"]').should('be.visible').should('have.text','Add Minor & Symptoms')
+        cy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('have.text','Add Minor & Symptoms')
         cy.addfamilymember()
         cy.wait(4000)
 
@@ -199,49 +199,57 @@ describe('Book Appointment module testcases',()=>{
     it('As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address',()=>{
         cy.xpath('//div[contains(text(),"Ed")]').should('be.visible').should('have.text','Edit').click()
         cy.wait(4000)
-        cy.xpath('//div[@class="font-bold text-primary"]').should('be.visible').should('have.text','Edit Address')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Edit Address')
     
     })
     it('As a Admin the user can able to close the Edit service Address window by Clicking on the cross icon',()=>{
-        cy.get('div.hidden>div:nth-child(1)>svg').should('be.visible').click()
+        cy.get('div.hidden>h3>div>svg').should('be.visible').click()
         cy.wait(2000)
         cy.xpath('//div[contains(text(),"Ed")]').should('be.visible').should('have.text','Edit').click()
         cy.wait(4000)
-        cy.xpath('//div[@class="font-bold text-primary"]').should('be.visible').should('have.text','Edit Address')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Edit Address')
     
     })
     it('At "Service Address" Edit window each label and field should have proper label and validations',()=>{
         
-        cy.xpath('//div[@class="font-bold text-primary"]').should('be.visible').should('have.text','Edit Address')
-        cy.get('div.hidden>div:nth-child(1)>svg').should('be.visible')
-        cy.xpath('//div[1]/div[2]/form[1]/div[1]/div[1]/label[1]/div[1]').should('be.visible').should('have.text','Address Line 1')
-
-        cy.xpath('//div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible')
-        cy.xpath('//div[1]/div[2]/form[1]/div[2]/div[1]/label[1]/div[1]').should('be.visible').should('contain','Address Line 2')
-        cy.xpath('//div[1]/div[2]/form[1]/div[2]/div[1]/div[1]/input[1]').should('be.visible')
-
-        cy.xpath('//div[1]/div[2]/form[1]/div[3]/div[1]/label[1]/div[1]').should('be.visible').should('have.text','Postal Code')
-        cy.xpath('//div[1]/div[2]/form/div[3]/div[1]/div/input').should('be.visible')
-        cy.xpath('//div[1]/div[2]/form/div[3]/div[2]/label/div').should('be.visible').should('have.text','City')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Edit Address')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
         
-        cy.xpath('//div[1]/div[2]/form/div[3]/div[2]/div/input').should('be.visible')
-        cy.xpath('//div[1]/div[2]/form/div[4]/div/label/div').should('be.visible').should('have.text','State')
-        cy.xpath('//div[1]/div[2]/form/div[4]/div/div/input').should('be.visible')
+        cy.xpath('//div[1]/form/div[1]/div/label').should('be.visible').should('have.text','Address Line 1')
+
+        cy.xpath('//div[1]/form/div[1]/div/div').should('be.visible')
+
+        cy.xpath('//div[1]/form/div[2]/div/label').should('be.visible').should('contain','Address Line 2')
+        cy.xpath('//div[1]/form/div[2]/div/div').should('be.visible')
+
+        cy.xpath('//div[1]/form/div[3]/div[1]/label').should('be.visible').should('have.text','Postal Code')
+        cy.xpath('//div[1]/form/div[3]/div[1]/div').should('be.visible')
+        cy.xpath('//div[1]/form/div[3]/div[2]/div/div/div[1]').should('be.visible').should('have.text','City')
         
-        cy.xpath('//div[1]/div[2]/form/div[5]/button').should('be.visible').should('contain','Save Address')
+        cy.xpath('//div[1]/form/div[3]/div[2]/div/div/div[2]').should('be.visible')
+        cy.xpath('//div[1]/form/div[4]/div/label').should('be.visible').should('have.text','State')
+        cy.xpath('//div[1]/form/div[4]/div/div').should('be.visible')
+        
+        cy.xpath('//div[1]/form[1]/div[5]').should('be.visible').should('contain','Save Address')
     })
     it('After editing the address and clicking on save address button the user should able to save the service address',()=>{
-        cy.xpath('//div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').clear().type('plot no 75')
-        cy.xpath('//div[1]/div[2]/form/div[3]/div[1]/div/input').should('be.visible').clear().type('54456')
-        cy.xpath('//div[1]/div[2]/form[1]/div[2]/div[1]/div[1]/input[1]').should('be.visible').clear().type('park lane')
+        cy.xpath('//div[1]/form/div[1]/div/div').should('be.visible').clear().type('plot no 75')
+
+        cy.xpath('//div[1]/form/div[3]/div[1]/div').should('be.visible').clear().type('54456')
+
+        cy.xpath('//div[1]/form/div[2]/div/div').should('be.visible').clear().type('park lane')
+        
+        cy.xpath('//div[1]/form/div[3]/div[2]/div/div/div[2]').should('be.visible').click()
+        cy.wait(2000)
+        cy.xpath('//*[@class=" css-yt9ioa-option"][contains(text(),"MUSCODA")]').scrollIntoView().click()
         
         cy.wait(2000)
-        cy.xpath('//div[1]/div[2]/form/div[5]/button').should('be.visible').should('contain','Save Address').click()
+        cy.xpath('//div[1]/form[1]/div[5]').should('be.visible').should('contain','Save Address').click()
         cy.wait(2000)
 
         cy.xpath('//div[2]/span').should('be.visible').should('contain','plot no 75')
         cy.xpath('//div[2]/span').should('be.visible').should('contain','park lane')
-        cy.xpath('//div[2]/span').should('be.visible').should('contain','NEILLSVILLE')
+        cy.xpath('//div[2]/span').should('be.visible').should('contain','MUSCODA')
 
 
     })
@@ -260,12 +268,12 @@ describe('Book Appointment module testcases',()=>{
         cy.xpath('//button[@textid="book.appointment"]').should('be.visible').should('have.text','Book Appointment').click()
         cy.contains('Appointment Added successfully ')
         cy.wait(4000)
-        cy.xpath('//div[@class="font-bold text-primary"]').should('be.visible').should('have.text','Confirmation')
-
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Confirmation')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
     })
 
     it('By clicking on continue button booking confirmation page the user should be navigated to the patients page',()=>{
-        cy.xpath('//div[1]/div[2]/div[3]/button').should('be.visible').should('have.text','Continue').click()
+        cy.xpath('//div[1]/div[3]/button').should('be.visible').should('have.text','Continue').click()
         cy.wait(4000)
         cy.url().should('contain','/patients')
 
@@ -282,9 +290,9 @@ describe('Book Appointment module testcases',()=>{
 
         cy.xpath('//div[4]/div[2]/div[2]/div/div[2]/div[2]').should('be.visible').should('have.text','puking')
         cy.xpath('//div[2]/div[2]/span').should('be.visible').should('contain','MORNING | EVENING')
-        cy.xpath('//div[2]/div/div[2]/div[3]/div/span').should('be.visible').should('contain','plot no 75')
+        cy.xpath('//div[3]/div/div/span').should('be.visible').should('contain','plot no 75')
 
-        cy.xpath('//div[2]/div/div[2]/div[3]/div/span').should('be.visible').should('contain','54456')
+        cy.xpath('//div[3]/div/div/span').should('be.visible').should('contain','54456')
         cy.logout()
 
     })

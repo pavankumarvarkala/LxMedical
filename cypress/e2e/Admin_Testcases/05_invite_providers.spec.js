@@ -29,27 +29,27 @@ describe('Provider module testcases', () => {
 
     it('As a Admin I should be albe to get a pop up window of invite provider by clicking on invite provider button', () => {
         cy.xpath("//button[@textid='provider.invite']").should('have.text','Invite Provider').click()
-        cy.get('div.my-5.text-primary.text-base.font-bold').should('be.visible') 
+        cy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('have.text','Invite Provider')
         
     })
     it('At invited providers pop up window each label and field should have proper label and proper validations', () => {
-        cy.get('.my-5').should('be.visible').should('have.text','Invite Provider')
-        cy.get('.w-5').should('be.visible')
-        cy.get('form>div:nth-child(1)>label').should('be.visible').and('have.text', 'Email')
-        cy.get('form>div:nth-child(1)>div').should('be.visible')
-        cy.get('form>div:nth-child(2)>label').should('be.visible').and('contain', 'Phone Number')
-        cy.get('form>div:nth-child(2)>div').should('be.visible')
-        cy.get('form>div:nth-child(3)>button:nth-child(1)').should('be.visible').and('have.text', 'Cancel')
-        cy.get('form>div:nth-child(3)>button:nth-child(2)').should('be.visible').and('have.text', 'Invite')
-        cy.get('form>div:nth-child(1)>div').clear().type('sdada@dada@asd.com');
+        cy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('have.text','Invite Provider')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+        cy.xpath('//div[1]/form[1]/div[1]/label/div').should('be.visible').and('have.text', 'Email')
+        cy.xpath('//div[1]/form[1]/div[1]/div').should('be.visible')
+        cy.xpath('//div[1]/form[1]/div[2]/label/div').should('be.visible').and('contain', 'Phone Number')
+        cy.xpath('//div[1]/form[1]/div[1]/div').should('be.visible')
+        cy.xpath('//div[1]/form[1]/div[3]/button[1]').should('be.visible').and('have.text', 'Cancel')
+        cy.xpath('//div[1]/form[1]/div[3]/button[2]').should('be.visible').and('have.text', 'Invite')
+        cy.xpath('//div[1]/form[1]/div[1]/div').clear().type('sdada@dada@asd.com');
         cy.get('#update-profile').click();
-        cy.get('.text-red-600').should('be.visible').and('have.text', 'Email is not valid');
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]').should('be.visible').and('have.text', 'Email is not valid');
      })
     it('As a Admin I shoual be able to invite provider', () => {
         const email = faker.name.firstName()+'@mailinator.com';
         const phone = faker.phone.phoneNumber('(###)-###-####');
-        cy.get('form>div:nth-child(1)>div>input').clear().type(email);
-        cy.get('form>div:nth-child(2)>div>input').clear().type(phone); 
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]').clear().type(email);
+        cy.xpath('//div[1]/form[1]/div[2]/div').clear().type(phone); 
         cy.get('#update-profile').click();
         cy.writeFile('cypress/fixtures/provider.json', {
             email: email,

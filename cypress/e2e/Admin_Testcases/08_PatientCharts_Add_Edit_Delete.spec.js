@@ -45,38 +45,59 @@ const cred=require('../../fixtures/cred.json')
     })
 
     it('At add family member page each label and field have proper lable and validations',()=>{
-        cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text','Add Minor')
-        cy.get('.hidden > .justify-between > .w-6').should('be.visible')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text','First Name')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text','Last Name')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('have.text','Date of Birth')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .block').should('be.visible').should('have.text','Relationship')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .block').should('be.visible').should('have.text','Gender')
-        cy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text','Add Minor').click()
-        cy.get(':nth-child(1) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(1) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(2) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(2) > :nth-child(2) > .text-red-600').should('be.visible').should('have.text','Required')
-        cy.get(':nth-child(3) > :nth-child(1) > .text-red-600').should('be.visible').should('have.text','Required')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Add Minor')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/label').should('be.visible').should('have.text','First Name')
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/label').should('be.visible').should('have.text','Last Name')
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/label').should('be.visible').should('have.text','Date of Birth')
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[1]').should('be.visible').should('have.text','Relationship')
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[1]').should('be.visible').should('have.text','Gender')
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[2]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text','Add Minor').click()
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text','Required')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div[2]').should('be.visible').should('have.text','Required')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[2]').should('be.visible').should('have.text','Required')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[3]').should('be.visible').should('have.text','Required')
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[3]').should('be.visible').should('have.text','Required')
 
 
     })
     it('By filling add family member form and cliking on add member button the family member should be added',()=>{
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').type('shiva')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .relative > .appearance-none').should('be.visible').type('Teja')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .relative > .react-datepicker-wrapper > .react-datepicker__input-container > .appearance-none').should('be.visible').click()
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible').type('shiva')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div[1]').should('be.visible').type('Teja')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[1]').should('be.visible').click()
         cy.get('.react-datepicker__year-select').select('1991')
         cy.get('.react-datepicker__day--012').should('be.visible').click()
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .font-bold > .css-yk16xz-control').should('be.visible').click()
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible').click()
         cy.get('.css-11unzgr>div:nth-child(2)').click()
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .font-bold > .css-yk16xz-control > .css-1hwfws3').should('be.visible').click()
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[2]').should('be.visible').click()
         cy.get('.css-11unzgr>div:nth-child(2)').click()
-        cy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text','Add Minor').click()
+
+        cy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text','Add Minor').click()
         cy.contains('Family Member Added successfully')
     })
 
     it('The added family member should refelect under charts section',()=>{
-        cy.get(':nth-child(2) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text','shiva teja')
+        cy.xpath('//span[contains(text(),"shiva")]').should('be.visible').should('have.text','shiva teja')
         cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text','Female')
      })
     //Edit Family Member
@@ -87,26 +108,43 @@ const cred=require('../../fixtures/cred.json')
 
     })
     it('At Edit family member window each label and field have proper lable and validations',()=>{
-        cy.get('.hidden > .justify-between > .font-bold').should('be.visible').should('have.text','Edit Family Member')
-        cy.get('.hidden > .justify-between > .w-6').should('be.visible')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .text-sm > div').should('be.visible').should('have.text','First Name')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .text-sm > div').should('be.visible').should('have.text','Last Name')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .text-sm > div').should('be.visible').should('have.text','Date of Birth')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .block').should('be.visible').should('have.text','Relationship')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .block').should('be.visible').should('have.text','Gender')
-        cy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text','Save Details')
+        cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text','Edit Family Member')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/label').should('be.visible').should('have.text','First Name')
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/label').should('be.visible').should('have.text','Last Name')
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/label').should('be.visible').should('have.text','Date of Birth')
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[1]').should('be.visible').should('have.text','Relationship')
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[1]').should('be.visible').should('have.text','Gender')
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[2]').should('be.visible')
+
+        cy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text','Save Details')
 
     })
     it('After editing the family member details the user can save details by clicking save details button',()=>{
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(1) > .relative > .appearance-none').should('be.visible').clear().type('Nanda')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(1) > :nth-child(2) > .relative > .appearance-none').should('be.visible').clear().type('Kishore')
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > div.w-full > .relative > .react-datepicker-wrapper > .react-datepicker__input-container > .appearance-none').should('be.visible').click()
+        cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible').clear().type('Nanda')
+
+        cy.xpath('//div[1]/form[1]/div[1]/div[2]/div[1]').should('be.visible').clear().type('Kishore')
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[1]/div[1]').should('be.visible').click()
         cy.get('.react-datepicker__day--010').scrollIntoView().should('be.visible').click()
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(2) > :nth-child(2) > .font-bold > .css-yk16xz-control').should('be.visible').click()
+
+        cy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible').click()
         cy.get('.css-11unzgr>div:nth-child(1)').scrollIntoView().click()
-        cy.get('.hidden > .mt-6 > .px-4 > :nth-child(3) > :nth-child(1) > .font-bold > .css-yk16xz-control > .css-1hwfws3').should('be.visible').click()
+
+        cy.xpath('//div[1]/form[1]/div[3]/div/div[2]').should('be.visible').click()
         cy.get('.css-11unzgr>div:nth-child(1)').scrollIntoView().click()
-        cy.get('.hidden > .mt-6 > .px-4 > .pt-4 > .flex').should('be.visible').should('have.text','Save Details').click()
+
+        cy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text','Save Details').click()
+
         cy.contains('Family Member Updated Successfully')
         cy.wait(2000)
     })
@@ -124,20 +162,25 @@ const cred=require('../../fixtures/cred.json')
     })
 
     it('At delete member confirmation window each label and field have proper lable and validations',()=>{
-        cy.get('.mb-4 > .font-bold').should('be.visible').should('have.text','Confirmation')
-        cy.get('.hidden > .mb-4 > .w-6').should('be.visible')
-        cy.get('.hidden > :nth-child(2) > .shadow-corner > .bg-white > .justify-between > .text-primary').should('be.visible').should('have.text','nanda kishore')
-        cy.get('.hidden > :nth-child(2) > .shadow-corner > .bg-white > .justify-between > .flex > .font-medium').should('be.visible').should('have.text','son')
-        cy.get('body > div:nth-child(7)>div>div>div:nth-child(1)>div>div:nth-child(1)>div>div>div:nth-child(1)>div').should('be.visible').should('have.text','Date of Birth')
-        cy.get('body > div:nth-child(7)>div>div>div:nth-child(1)>div>div:nth-child(1)>div>div>div:nth-child(2)>div').should('be.visible').should('have.text','Gender')
-        cy.get('body > div:nth-child(7)>div>div>div:nth-child(1)>div>div:nth-child(1)>div>div>div:nth-child(2)>span:nth-child(2)').should('be.visible').should('have.text','Male')
-        cy.get('.hidden > :nth-child(2) > .items-center.mt-6 > .flex').should('be.visible').should('have.text','Are you sure, you want to remove this member?')
-        cy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text','Remove')
+        cy.xpath('//div[1]/h3/div/div').should('be.visible').should('have.text','Confirmation')
+        cy.get('div.hidden>h3>div>svg').should('be.visible')
+
+        cy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]').should('be.visible').should('have.text','nanda kishore')
+
+        cy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div').should('be.visible').should('have.text','son')
+
+        cy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div').should('be.visible').should('have.text','Date of Birth')
+        cy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div').should('be.visible').should('have.text','Gender')
+
+        cy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span').should('be.visible').should('have.text','Male')
+        cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text','Are you sure, you want to remove this member?')
+
+        cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/button').should('be.visible').should('have.text','Remove')
 
     })
 
     it('By clicking on remove button on confirmation window the family member should be deleted',()=>{
-        cy.get('.hidden > :nth-child(2) > .mb-3 > .flex').should('be.visible').should('have.text','Remove').click()
+        cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/button').should('be.visible').should('have.text','Remove').click()
         cy.contains('Family Member Deleted Successfully')
   
     })

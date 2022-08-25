@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 0,
+    "failures": 3,
+    "start": "2022-08-08T07:41:25.942Z",
+    "end": "2022-08-08T07:42:32.455Z",
+    "duration": 66513,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ae424e2d-d494-49a0-85a9-2ea3786738b3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\30_Notifications.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\30_Notifications.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c7825b7-326a-44a9-90ae-94aa22f3e0e0",
+          "title": "Notifications module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the notifications page by clicking on notifications tab",
+              "fullTitle": "Notifications module testcases As a Admin the user should be navigated to the notifications page by clicking on notifications tab",
+              "timedOut": null,
+              "duration": 26366,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard');\ncy.get('.space-y-4 > :nth-child(8)').should('be.visible').should('have.text', 'Notifications').click();\ncy.url().should('contain', '/notification');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.max-w-xs > img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.max-w-xs > img`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:345:29)",
+                "diff": null
+              },
+              "uuid": "c7f96657-5b20-4892-a8d6-6cdd581f8884",
+              "parentUUID": "6c7825b7-326a-44a9-90ae-94aa22f3e0e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Notifications\" page each label and field should have proper label and validations",
+              "fullTitle": "Notifications module testcases At \"Notifications\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 15579,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('contain', 'Notifications');\ncy.get('.mt-7').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.text-gray-500.text-xs.mb-8.font-bold>, 3 more... ]' to contain 'Notifications'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.text-gray-500.text-xs.mb-8.font-bold>, 3 more... ]' to contain 'Notifications'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\30_Notifications.spec.js:131:47)",
+                "diff": null
+              },
+              "uuid": "efc88e81-bbab-448c-974e-44facc5854d3",
+              "parentUUID": "6c7825b7-326a-44a9-90ae-94aa22f3e0e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The Admin the user can able to see all the notifications under notifications page",
+              "fullTitle": "Notifications module testcases The Admin the user can able to see all the notifications under notifications page",
+              "timedOut": null,
+              "duration": 15433,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.mt-7').should('be.visible');\ncy.get('.mt-7>div:nth-child(1)').should('be.visible');\ncy.get('.mt-7>div:nth-child(2)').should('be.visible');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mt-7`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mt-7`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\30_Notifications.spec.js:135:21)",
+                "diff": null
+              },
+              "uuid": "6a3d1416-0e2b-4e09-8122-f09b5fef8b47",
+              "parentUUID": "6c7825b7-326a-44a9-90ae-94aa22f3e0e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c7f96657-5b20-4892-a8d6-6cdd581f8884",
+            "efc88e81-bbab-448c-974e-44facc5854d3",
+            "6a3d1416-0e2b-4e09-8122-f09b5fef8b47"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 57378,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
