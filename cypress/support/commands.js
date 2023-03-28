@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-file-upload';
+import 'cypress-mailosaur';
 import * as _ from 'lodash';
 Cypress.Commands.add('mailinator', (email,) => {
 

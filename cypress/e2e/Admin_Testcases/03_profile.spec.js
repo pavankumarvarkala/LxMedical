@@ -8,11 +8,20 @@ describe('Profile module testcases', () => {
     const mobile_num = "//input[@name='phone']";
 
     it("As a Admin I should be able to navigate on Admin Profile", () => {
-
+      
+        //Logging into the Application.
         cy.login();
+
+        //Verifying the URL to make sure that user is successfully logged in.
         cy.url().should('contain','/dashboard')
+
+        //clicking on profile icon.
         cy.get('span.hidden').click();
+
+        //Clicking on Profile tab from the dropdown.
         cy.get(".ml-3>div:nth-child(2)>div:nth-child(1)").should('be.visible').should('have.text','Profile').click();
+        
+        //Verifying the URL to make sure that user is navigated to profile page successfully.
         cy.url().should('include', '/admin/profile')
 
     })
@@ -31,7 +40,7 @@ describe('Profile module testcases', () => {
         cy.get('.flex-1').click();
         cy.get('.text-red-600 ').eq(0).contains('First Name is required')
         cy.get('.text-red-600 ').eq(1).contains('Last Name is required')
-        cy.get('.text-red-600 ').eq(2).contains('Phone number required')
+        cy.get('.text-red-600 ').eq(2).contains('Required')
     })
     it("As a Admin I should be able to update my profile details except email", () => {
 

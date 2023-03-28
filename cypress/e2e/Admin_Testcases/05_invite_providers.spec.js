@@ -34,7 +34,7 @@ describe('Provider module testcases', () => {
     })
     it('At invited providers pop up window each label and field should have proper label and proper validations', () => {
         cy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('have.text','Invite Provider')
-        cy.get('div.hidden>h3>div>svg').should('be.visible')
+        cy.xpath('//*[@class="z-50 w-6 h-6 text-primary cursor-pointer"]').should('be.visible')
         cy.xpath('//div[1]/form[1]/div[1]/label/div').should('be.visible').and('have.text', 'Email')
         cy.xpath('//div[1]/form[1]/div[1]/div').should('be.visible')
         cy.xpath('//div[1]/form[1]/div[2]/label/div').should('be.visible').and('contain', 'Phone Number')

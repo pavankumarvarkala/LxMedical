@@ -73,7 +73,7 @@ describe('providers test cases', ()=>{
     it('As a Admin the user should get a pop up of invite provider by Clicking on the "Invite Provider" button.',()=>{
         cy.xpath("//button[@textid='provider.invite']").should('be.visible').should('have.text','Invite Provider').click()
         cy.wait(2000)
-        cy.get('div.hidden>h3>div>svg').should('be.visible').click()
+        cy.xpath('//*[@class="z-50 w-6 h-6 text-primary cursor-pointer"]').should('be.visible').click()
 
     })
 

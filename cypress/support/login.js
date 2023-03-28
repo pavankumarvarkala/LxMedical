@@ -1,12 +1,55 @@
 import faker from 'faker'
 const cred = require('../fixtures/cred.json')
 Cypress.Commands.add('login', () => {
+  //navigate to URL
   cy.visit(cred.qaUrl);
+
+  //Entering valid data into email input field.
   cy.get('input[name=email]').type(cred.email)
+
+  //Entering valid data into Password input field.
   cy.get('input[name=password]').type(cred.password)
+
+  //Clicking on Submit button.
   cy.get('button[type=submit]').click()
-  cy.get('.max-w-xs > img').should('be.visible');
+  cy.wait(3000)
+
+  //Enter valid data into "Enter verification code" page.
+  cy.xpath("//*[@class='my-4']/div[1]").should('be.visible').clear().type('123321')
+
+  //Clicking on "Submit" button.
+  cy.xpath("//*[@textid='submit']").click();
+  cy.wait(3000)
+
+  //verifying that the user is logged in successfully.
+  cy.url().should('include', '/dashboard');
 })
+
+Cypress.Commands.add('suplogin', () => {
+  //navigate to URL
+  cy.visit(cred.qaUrl);
+
+  //Entering valid data into email input field.
+  cy.get('input[name=email]').type(cred.SupEmail)
+
+  //Entering valid data into Password input field.
+  cy.get('input[name=password]').type(cred.SupPassword)
+
+  //Clicking on Submit button.
+  cy.get('button[type=submit]').click()
+  cy.wait(3000)
+
+  //Enter valid data into "Enter verification code" page.
+  cy.xpath("//*[@class='my-4']/div[1]").should('be.visible').clear().type('123321')
+
+  //Clicking on "Submit" button.
+  cy.xpath("//*[@textid='submit']").click();
+  cy.wait(3000)
+
+  //verifying that the user is logged in successfully.
+  cy.url().should('include', '/admin_logs');
+})
+
 Cypress.Commands.add('logout', () => {
   cy.get('#headlessui-menu-button-1').should('be.visible').click();
   cy.wait(4000)
@@ -17,6 +60,18 @@ Cypress.Commands.add('logout', () => {
   cy.wait(5000)
   // cy.xpath("//div[text()='Sign In']").should('be.visible');
 })
+
+Cypress.Commands.add('suplogout', () => {
+  cy.xpath('//span[contains(text(),"Rch Super Admin")]').should('be.visible').click();
+  cy.wait(4000)
+  cy.xpath("//div[@role='menu']//div[text()='Sign Out']").should('be.visible').click();
+  cy.get('.mt-3 > .mt-2 > div').should('have.text', 'Are you sure, you want to sign out?').and('be.visible');
+  cy.get('.border > div').should('be.visible');
+  cy.xpath("//button//div[text()='Confirm']").should('be.visible').click();
+  cy.wait(5000)
+  // cy.xpath("//div[text()='Sign In']").should('be.visible');
+})
+
 Cypress.Commands.add('AddPatient', () => {
   const email = faker.name.firstName()+'@mailinator.com';
   const fname = faker.name.firstName()
