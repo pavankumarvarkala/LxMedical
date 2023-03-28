@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-06T04:55:36.654Z",
+    "end": "2022-09-06T04:56:11.925Z",
+    "duration": 35271,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c5e51dbd-baa7-4b77-b8a2-2706829cc3bf",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\02_Settings.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\02_Settings.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+          "title": "Change password Testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on change password screen",
+              "fullTitle": "Change password Testcases As a Admin I should be able to navigate on change password screen",
+              "timedOut": null,
+              "duration": 10758,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\ncy.xpath(\"//nav//div[text()='Settings']\").should('be.visible').click();\ncy.url().should('include', '/password');",
+              "err": {},
+              "uuid": "4431a0e6-c005-4c05-acfc-0893cc3032ee",
+              "parentUUID": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Chnage Password page each page should have proper labels",
+              "fullTitle": "Change password Testcases At Chnage Password page each page should have proper labels",
+              "timedOut": null,
+              "duration": 269,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-xl').should('be.visible').and('have.text', 'Change Password');\ncy.xpath(\"//label//div\").eq(0).should('be.visible').and('have.text', 'Old Password');\ncy.xpath(\"//label//div\").eq(1).should('be.visible').and('have.text', 'New Password');\ncy.xpath(\"//label//div\").eq(2).should('be.visible').and('have.text', 'Confirm Password');\ncy.xpath(\"//button//div[text()='Update']\").should('be.visible');",
+              "err": {},
+              "uuid": "37f9812c-899a-423f-a0f0-d1ef5ba00940",
+              "parentUUID": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "in empty field proper validation should appear",
+              "fullTitle": "Change password Testcases in empty field proper validation should appear",
+              "timedOut": null,
+              "duration": 251,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//empty case\ncy.xpath(\"//button//div[text()='Update']\").click();\ncy.contains(\"Old Password is required\").should('be.visible');\ncy.contains(\"New Password is required\").should('be.visible');\ncy.contains(\"New Password is required\").should('be.visible');",
+              "err": {},
+              "uuid": "8f0d66fc-505e-402e-ac69-ac9fdc4b73f1",
+              "parentUUID": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "wrong old password case should be handle proper",
+              "fullTitle": "Change password Testcases wrong old password case should be handle proper",
+              "timedOut": null,
+              "duration": 3903,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// wrong old password case \nconst password = _faker.default.name + \"@123456\";\ncy.xpath(old_password).type('123456@1235As');\ncy.xpath(new_password).type(password);\ncy.xpath(confirm_password).type(password);\ncy.xpath(\"//button//div[text()='Update']\").click();\ncy.wait(2000);",
+              "err": {},
+              "uuid": "f0ea5cb2-2581-4806-a134-00d24b3beda9",
+              "parentUUID": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "password lenth validation should be proper",
+              "fullTitle": "Change password Testcases password lenth validation should be proper",
+              "timedOut": null,
+              "duration": 1479,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// password length validations\ncy.xpath(old_password).clear().type('1231');\ncy.xpath(new_password).clear().type('sada');\ncy.xpath(confirm_password).clear().type('d');\ncy.xpath(\"//label//div\").eq(2).click();\ncy.get('.text-red-600').eq(0).should('have.text', 'Password is too short - should be 8 chars minimum').and('be.visible');\ncy.get('.text-red-600').eq(1).should('have.text', 'Password should be atleast 8 characters and should contain combination of uppercase, lowercase & numbers').and('be.visible');\ncy.get('.text-red-600').eq(2).should('have.text', 'Both passwords need to be the same').and('be.visible');",
+              "err": {},
+              "uuid": "05a768c6-a7b8-472c-8a60-9e77f4c53f19",
+              "parentUUID": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin I should be able to change password and admin should be able to login with new password",
+              "fullTitle": "Change password Testcases As a Admin I should be able to change password and admin should be able to login with new password",
+              "timedOut": null,
+              "duration": 8230,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const cred = __webpack_require__(/*! ../../fixtures/cred.json */ \"./cypress/fixtures/cred.json\");\ncy.xpath(old_password).clear().type(cred.password);\ncy.xpath(new_password).clear().type('Passcode@123');\ncy.xpath(confirm_password).clear().type('Passcode@123');\ncy.xpath(\"//button//div[text()='Update']\").click();\ncy.xpath(\"//div[text()='Sign In']\").should('be.visible');\ncy.contains('changed', {\n  matchCase: false\n});\ncy.get(':nth-child(1) > .mt-1 > .appearance-none').type(cred.email);\ncy.get(':nth-child(2) > .mt-1 > .appearance-none').type('Passcode@123');\ncy.get('.mt-3 > .flex').click();\ncy.xpath(\"//nav//div[text()='Settings']\").should('be.visible').click();\ncy.xpath(old_password).clear().type('Passcode@123');\ncy.xpath(new_password).clear().type(cred.password);\ncy.xpath(confirm_password).clear().type(cred.password);\ncy.xpath(\"//button//div[text()='Update']\").click();",
+              "err": {},
+              "uuid": "73689b05-67b6-4882-b51b-c165347a9f5e",
+              "parentUUID": "90f8b27a-9cdc-4761-bc29-35e76a232e60",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4431a0e6-c005-4c05-acfc-0893cc3032ee",
+            "37f9812c-899a-423f-a0f0-d1ef5ba00940",
+            "8f0d66fc-505e-402e-ac69-ac9fdc4b73f1",
+            "f0ea5cb2-2581-4806-a134-00d24b3beda9",
+            "05a768c6-a7b8-472c-8a60-9e77f4c53f19",
+            "73689b05-67b6-4882-b51b-c165347a9f5e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24890,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -23,36 +23,65 @@ Cypress.Commands.add('AddPatient', () => {
   const pname = faker.name.firstName()
   const lname = faker.name.firstName()
   const phone = faker.phone.phoneNumber('(###)-###-####');
-  cy.xpath('//button[@textid="add.patient"]').should('be.visible').should('have.text','Add New Patient').click()
-  cy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('have.text','Add New Patient')
-  cy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').type(fname)
-  cy.xpath('//div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]').should('be.visible').type(lname)
 
-  cy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/input[1]').should('be.visible').type(pname)
-  cy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[2]').click()
+  //Clicking on "Add New Patient" button.
+  cy.xpath('//div[contains(text(),"Add N")]').should('be.visible').should('have.text','Add New Patient').click()
   cy.wait(2000)
+
+  //Verifying header of "Add New Patient" form.
+  cy.xpath('//div[@class="font-bold text-black"]').should('be.visible').should('have.text','Add New Patient')
+
+  cy.xpath('//input[@name="firstName"]').should('be.visible').type(fname)
+
+  cy.xpath('//input[@name="lastName"]').should('be.visible').type(lname)
+
+  // cy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/input[1]').should('be.visible').type(pname)
+
+  //Entering "valid data" into "User ID" input field.
+  cy.xpath('//*[text()="Generate ID"]').scrollIntoView().should('be.visible').should('contain','Generate ID').click()
+  cy.wait(2000)
+
+  //Selecting subscription from dropdown.
+  cy.xpath('//div[1]/div[1]/form[1]/div[3]/div[1]/div').should('be.visible').click()
   cy.get('div.css-11unzgr>div:nth-child(2)').click()
 
-  cy.xpath('//div[1]/div[1]/form[1]/div[4]/div[1]/div[1]/input[1]').should('be.visible').clear().type(phone)
-  cy.xpath('//div[1]/div[1]/form[1]/div[4]/div[2]/div[1]/input[1]').should('be.visible').clear().type(email)
-  cy.xpath('//div[1]/div[1]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').click()
+  //Entering "valid data" into "Phone Number" input field.
+  cy.xpath('//input[@name="phone"]').should('be.visible').clear().type(phone)
+  cy.wait(2000)
+
+
+  //Entering "valid data" into "Email" input field.
+  cy.xpath('//input[@name="email"]').should('be.visible').clear().type(email)
+  cy.wait(2000)
+
+  //Entering "Valid" into "Date of Birth" input field.
+  cy.xpath('//input[@name="dateOfBirth"]').should('be.visible').click()
   cy.get('.react-datepicker__year-select').select('1990')
   cy.wait(1000)
   cy.get('.react-datepicker__day--015').click()
-  cy.xpath('//div[1]/div[1]/form[1]/div[5]/div[2]/div[2]/div[1]').should('be.visible').click()
+
+  //Entering "Valid" into "Gender" input field.
+  cy.xpath('//div[1]/div[1]/form[1]/div[5]/div/div').should('be.visible').click()
   cy.get('div.css-11unzgr>div:nth-child(1)').click()
-  cy.xpath('//div[1]/div[1]/form[1]/div[8]/div[1]/div[1]/input[1]').should('be.visible').type('plot no 92')
-  cy.xpath('//div[1]/div[1]/form[1]/div[9]/div[1]/div[1]/input[1]').should('be.visible').type('544')
-  cy.xpath('//div[1]/div[1]/form[1]/div[8]/div[2]/div[1]/input[1]').should('be.visible').click()
-  cy.wait(4000)
+
+  //Entering "Valid" into "Address-1" input field.
+  cy.xpath('//input[@name="address1"]').should('be.visible').type('plot no 92')
+
+  //Entering "Valid" into "Postal Code" input field.
+  cy.xpath('//input[@name="postalCode"]').should('be.visible').type('544')
+  cy.xpath('//input[@name="address2"]').should('be.visible').click({force:true})
+  cy.wait(3000)
 
   //Changing the "City" from City input field.
-  cy.xpath('//div[1]/div[1]/form[1]/div[9]/div[2]/div/div[2]').should('be.visible').click()
+  cy.xpath('//div[1]/div[1]/form[1]/div[9]/div[2]/div/div').should('be.visible').click()
   cy.wait(2000)
   cy.xpath('//*[@class=" css-yt9ioa-option"][contains(text(),"HILLBURN")]').scrollIntoView().click()
-  
-  cy.xpath('//div[1]/div[1]/form[1]/div[11]/button[1]').should('be.visible').should('have.text','Continue').click()
   cy.wait(2000)
+
+  //Clicking on "Add Patient" button.
+  cy.xpath('//button[@textid="add.patient.details"]').should('be.visible').should('have.text','Add Patient').click()
+  cy.wait(1000)
+  
   cy.contains('Successfully Registered.');
   cy.writeFile('cypress/fixtures/provider.json', {
       email: email,

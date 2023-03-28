@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2022-09-06T06:58:16.442Z",
+    "end": "2022-09-06T07:00:46.880Z",
+    "duration": 150438,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "da6e131e-c4d5-4d37-8a57-b7344bd08f09",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c9d273a2-488d-4bc6-827c-0d606ff2106a",
+          "title": "Patient Notifications module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be \"Patient Notifications\" section of any patient by clicking on \"Notifications\" tab under patients details page.",
+              "fullTitle": "Patient Notifications module testcases As a Admin the user should be \"Patient Notifications\" section of any patient by clicking on \"Notifications\" tab under patients details page.",
+              "timedOut": null,
+              "duration": 72298,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.xpath('//nav/div[2]/div[2]').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.xpath('//input[@type=\"search\"]').should('be.visible').type(provider.email.toLowerCase()); //Checking email is present in the list\n  cy.xpath('//tr[1]/td[2]').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Click on eye icon against patient \ncy.xpath('//tr[1]/td[7]/div[1]/*[1]').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address'); //Click on Notifications tab in patient profile\ncy.xpath('//div[3]/div[1]/nav[1]/div[4]/div[1]').should('be.visible').should('contain', 'Notifications').click();\ncy.url().should('contain', '/notification');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 20050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button type=\"submit\" textid=\"continue\" class=\"flex justify-center items-center  text-sm font-bold shadow-sm text-white border-2 px-16 py-3 rounded-md hover:font-bold focus:outline-none \n bg-gray-500 cursor-not-allowed hover:border-gray-400 mx-0 w-1/2\" disabled=\"\">...</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 20050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button type=\"submit\" textid=\"continue\" class=\"flex justify-center items-center  text-sm font-bold shadow-sm text-white border-2 px-16 py-3 rounded-md hover:font-bold focus:outline-none \n bg-gray-500 cursor-not-allowed hover:border-gray-400 mx-0 w-1/2\" disabled=\"\">...</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureNotDisabled (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:161792:76)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147668:14)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147745:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10286:29)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166930:65)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166385:14\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11129:18)\n    at Promise._fulfill (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11073:18)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:12687:46\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:391:110)",
+                "diff": null
+              },
+              "uuid": "55f0f4d1-42bb-4d48-ab15-d131f2a422d3",
+              "parentUUID": "c9d273a2-488d-4bc6-827c-0d606ff2106a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Patient Notifications\" page each label and field should have proper label and validations",
+              "fullTitle": "Patient Notifications module testcases At \"Patient Notifications\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 21175,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//validating all fields and labels\ncy.xpath('//div[contains(text(),\"E\")]').should('be.visible').should('contain', 'Email Notifications');\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').should('be.enabled');\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('contain', 'Text Notifications');\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').should('be.enabled');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: expected '[ <div>, 12 more... ]' to contain 'Email Notifications'",
+                "estack": "AssertionError: Timed out retrying after 20000ms: expected '[ <div>, 12 more... ]' to contain 'Email Notifications'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js:148:66)",
+                "diff": null
+              },
+              "uuid": "31ffe24f-e382-4276-9304-80c09eecac02",
+              "parentUUID": "c9d273a2-488d-4bc6-827c-0d606ff2106a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can switch ON/OFF the Email Notifications using the toggle button against it.",
+              "fullTitle": "Patient Notifications module testcases As a Admin the user can switch ON/OFF the Email Notifications using the toggle button against it.",
+              "timedOut": null,
+              "duration": 20694,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Validating toggle button against email notifications\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').should('be.enabled').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[1]/button').should('be.visible').should('be.enabled');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[4]/div/div[1]/button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[4]/div/div[1]/button`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js:155:44)",
+                "diff": null
+              },
+              "uuid": "74cf6207-9405-4d2e-a022-583d20e54b16",
+              "parentUUID": "c9d273a2-488d-4bc6-827c-0d606ff2106a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can switch ON/OFF the Text Notifications using the toggle button against it.",
+              "fullTitle": "Patient Notifications module testcases As a Admin the user can switch ON/OFF the Text Notifications using the toggle button against it.",
+              "timedOut": null,
+              "duration": 20671,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Validating toggle button against Text notifications\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').should('be.enabled').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').click();\ncy.contains('Notifications Setting Changed');\ncy.xpath('//div[4]/div/div[2]/button').should('be.visible').should('be.enabled');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[4]/div/div[2]/button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[4]/div/div[2]/button`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\31_Patient_Notifications.spec.js:163:44)",
+                "diff": null
+              },
+              "uuid": "2ae131f3-323a-4c21-bdc2-2297028332ab",
+              "parentUUID": "c9d273a2-488d-4bc6-827c-0d606ff2106a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "55f0f4d1-42bb-4d48-ab15-d131f2a422d3",
+            "31ffe24f-e382-4276-9304-80c09eecac02",
+            "74cf6207-9405-4d2e-a022-583d20e54b16",
+            "2ae131f3-323a-4c21-bdc2-2297028332ab"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 134838,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

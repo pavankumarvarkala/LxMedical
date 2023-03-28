@@ -1,0 +1,249 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 0,
+    "pending": 0,
+    "failures": 7,
+    "start": "2022-09-06T07:01:48.180Z",
+    "end": "2022-09-06T07:04:38.062Z",
+    "duration": 169882,
+    "testsRegistered": 7,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0e69fb1b-9e15-41a0-ac2f-c65f656f4b68",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+          "title": "Manage Cards module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be \"Manage Cards\" section of any patient by clicking on \"Manage Cards\" tab under patients details page.",
+              "fullTitle": "Manage Cards module testcases As a Admin the user should be \"Manage Cards\" section of any patient by clicking on \"Manage Cards\" tab under patients details page.",
+              "timedOut": null,
+              "duration": 37510,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.xpath('//nav/div[2]/div[2]').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.xpath('//input[@type=\"search\"]').should('be.visible').type(provider.email.toLowerCase());\n  cy.wait(4000); //Checking email is present in the list\n  cy.xpath('//tr[1]/td[2]').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Click on eye icon against patient \ncy.xpath('//tr[1]/td[7]/div[1]/*[1]').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address'); //Click on \"Manage Cards\" tab in patient profile\ncy.xpath('//div[text()=\"Manage Cards\"]').should('be.visible').should('contain', 'Manage Cards').click();\ncy.url().should('contain', '/payment-cards');",
+              "err": {
+                "message": "ChunkLoadError: The following error originated from your application code, not from Cypress.\n\n  > Loading chunk 16 failed.\n(error: https://qa.rch.build-release.com/static/js/AdminLogin.6d15e8fb.chunk.js)\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "ChunkLoadError: The following error originated from your application code, not from Cypress.\n\n  > Loading chunk 16 failed.\n(error: https://qa.rch.build-release.com/static/js/AdminLogin.6d15e8fb.chunk.js)\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Function.d.e (https://qa.rch.build-release.com/admin:1:8165)\n    at https://qa.rch.build-release.com/static/js/main.52ca36f0.chunk.js:1:66565\n    at https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:340362\n    at Os (https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:340511)\n    at ml (https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:332455)\n    at hl (https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:332380)\n    at sl (https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:329389)\n    at https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:280760\n    at t.unstable_runWithPriority (https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:356161)\n    at Yo (https://qa.rch.build-release.com/static/js/46.e62dd25a.chunk.js:2:280469)",
+                "diff": null
+              },
+              "uuid": "975258bf-69a4-4de9-b5e3-8ba3a7d9e324",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Manage Cards\" page each label and field should have proper label and validations",
+              "fullTitle": "Manage Cards module testcases At \"Manage Cards\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20426,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//validating all fields and labels\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('contain', 'Total Cards - 0');\ncy.xpath('//div[contains(text(),\"Add P\")]').should('be.visible').should('contain', 'Add Payment Card');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"T\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"T\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js:149:45)",
+                "diff": null
+              },
+              "uuid": "b1020236-ef29-4861-8f6e-648c2f3fce06",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Add Card\" functionality with Blank data.",
+              "fullTitle": "Manage Cards module testcases Validate \"Add Card\" functionality with Blank data.",
+              "timedOut": null,
+              "duration": 20422,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Click on \"Add Payment Card\" button.\ncy.xpath('//div[contains(text(),\"Add P\")]').should('be.visible').should('contain', 'Add Payment Card').click(); //Validate if \"Add Card Details\" modal is present or not.\ncy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('contain', 'Add Card Details'); //Verifying that \"Card image\" is present.\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]').should('be.visible'); //Verifying the label of \"Card Number\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/label[1]/div[1]').should('be.visible').should('contain', 'Card Number'); //Verifying that \"Card Number\" input field is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div').should('be.visible'); //Verifying the label of \"Card Holder Name\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div/label').should('be.visible').should('contain', 'Card Holder'); //Verifying that \"Card Holder Name\" input field is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div/div').should('be.visible').click(); //Verifying the validation message for blank data for \"Card Number\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text', 'Card number is required'); //Verifying the label of \"Expiry Date\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/label[1]/div[1]').should('be.visible').should('contain', 'Expiry Date'); //Verifying that \"Expiry Date\" input field is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div').should('be.visible').click(); //Verifying the validation message for blank data for \"Card Holder Name\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div/div[2]').should('be.visible').should('have.text', 'Card Holder name is required'); //Verifying the label of \"CVV Details\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/label[1]/div[1]').should('be.visible').should('contain', 'CVV Details'); //Verifying that \"CVV Details\" input field is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/div').should('be.visible').click(); //Verifying the validation message for blank data for \"Expiry Date\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[2]').should('be.visible').should('have.text', 'Expiry date is required'); //Verifying that \"Checkbox\" to set card as primary is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[3]/div[1]/div[1]/input[1]').should('be.visible').click(); //Verifying the validation message for blank data for \"CVV Details\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/div[2]').should('be.visible').should('have.text', 'CVV is required'); //Verifying the \"Set as Primary\" text beside checbox.\ncy.xpath('//div[1]/div[1]/form[1]/div[3]/div[1]/div[1]/label[1]/div[1]').should('be.visible').should('contain', 'Set as Primary'); //Verifying the label of \"Add Card\" button.\ncy.xpath('//div[1]/div[1]/form[1]/div[4]/button[1]').should('be.visible').should('contain', 'Add Card'); //Closing \"Add Payment Card\" modal. \ncy.get('div.hidden>h3>div>svg').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js:154:49)",
+                "diff": null
+              },
+              "uuid": "afd82854-7e90-4adf-ba27-26337aa9aa39",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Add Card\" functionality with invalid data.",
+              "fullTitle": "Manage Cards module testcases Validate \"Add Card\" functionality with invalid data.",
+              "timedOut": null,
+              "duration": 20402,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Click on \"Add Payment Card\" button.\ncy.xpath('//div[contains(text(),\"Add P\")]').should('be.visible').should('contain', 'Add Payment Card').click(); //Validate \"Add Card Details\" modal is present or not.\ncy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('contain', 'Add Card Details'); //Validate \"Card Number\" input field for invalid data.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div').should('be.visible').type('1123456789009876534'); //Validate \"Card Holder\" input field for invalid data.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div/div').should('be.visible').type('pavan1234@#$%^&'); //Verifying the validation message for \"invalid data\" for \"Card Number\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text', 'Card number is invalid'); //Validate \"Expiry Date\" input field for invalid data.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div').should('be.visible').type('1121'); //Verifying the validation message for \"invalid data\" for \"Card Holder Name\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div/div[2]').should('be.visible').should('have.text', 'Card Holder name is invalid'); //Validate \"CVV Details\" input field for invalid data.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/div').should('be.visible').type('1234'); //Verifying the validation message for \"invalid data\" for \"Expiry Date\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[2]').should('be.visible').should('have.text', 'Expiry date is invalid'); //Verifying that \"Checkbox\" to set card as primary is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[3]/div[1]/div[1]/input[1]').should('be.visible').click(); //Verifying the validation message for \"invalid data\" for \"CVV Details\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/div[2]').should('be.visible').should('have.text', 'CVV is invalid'); //Closing \"Add Payment Card\" modal. \ncy.get('div.hidden>h3>div>svg').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js:194:49)",
+                "diff": null
+              },
+              "uuid": "8633ee05-2048-4159-814c-ab0748af9b34",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Add Card\" functionality with valid data.",
+              "fullTitle": "Manage Cards module testcases Validate \"Add Card\" functionality with valid data.",
+              "timedOut": null,
+              "duration": 20388,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Click on \"Add Payment Card\" button.\ncy.xpath('//div[contains(text(),\"Add P\")]').should('be.visible').should('contain', 'Add Payment Card').click(); //Validate \"Add Card Details\" modal is present or not.\ncy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('contain', 'Add Card Details'); //Enter Valid data into \"Card Number\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div').should('be.visible').type('4242424242424242'); //Enter Valid data into \"Card Holder\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[1]/div/div').should('be.visible').type('pavan kumar'); //Enter Valid data into \"Expiry Date\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div').should('be.visible').type('1123'); //Enter Valid data into \"CVV Details\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/div').should('be.visible').type('593'); //Clicking on \"Add Card\" button.\ncy.xpath('//div[1]/div[1]/form[1]/div[4]/button[1]').should('be.visible').should('contain', 'Add Card').click();\ncy.contains('A New Card Has Been Added'); //Verifying that the card added successfuuly.\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('contain', 'Total Cards - 1');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js:220:49)",
+                "diff": null
+              },
+              "uuid": "997c355e-aabb-48ab-979a-c5b1eb851d43",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Set As Primary Card\" functionality.",
+              "fullTitle": "Manage Cards module testcases Validate \"Set As Primary Card\" functionality.",
+              "timedOut": null,
+              "duration": 20581,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Adding one more card\ncy.addcard();\ncy.wait(3000); //Verifying that the card added successfuuly.\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('contain', 'Total Cards - 2');\ncy.xpath('//input[1]').should('be.visible').click();\ncy.contains('Card has been set as Primary Card');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add P\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:500:47)",
+                "diff": null
+              },
+              "uuid": "92239a10-d89a-4570-baee-36b26d630319",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Delete Card\" functionality.",
+              "fullTitle": "Manage Cards module testcases Validate \"Delete Card\" functionality.",
+              "timedOut": null,
+              "duration": 20477,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Click on Delete icon on second card.\ncy.xpath('//span[1]/*[1]').should('be.visible').click();\ncy.wait(3000); //Verifying that the \"Delete Confirmation\" modal is present.\ncy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('contain', 'Confirmation'); //validating all fields and labels on confirmation modal.\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]').should('be.visible').should('contain', 'Are you sure, you want to remove this Card?');\ncy.xpath('//div[1]/div[1]/div[2]/div[1]/span[1]').should('be.visible').should('contain', 'pavan kumar');\ncy.xpath('//div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]').should('be.visible').should('contain', 'Card Number :');\ncy.xpath('//div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]').should('be.visible').should('contain', 'Expiry Date :');\ncy.xpath('//div[1]/div[1]/div[2]/button[1]').should('be.visible').should('contain', 'Remove').click();\ncy.contains('Card Deleted');\ncy.wait(5000); //Verifying that the card is Deleted successfuuly.\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('contain', 'Total Cards - 1');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//span[1]/*[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//span[1]/*[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\32_Manage_Cards.spec.js:248:32)",
+                "diff": null
+              },
+              "uuid": "2014bc96-62f2-4b2c-87a3-f170df1e6d10",
+              "parentUUID": "8757dfc1-ff53-4ab1-97eb-b15b35b22182",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "975258bf-69a4-4de9-b5e3-8ba3a7d9e324",
+            "b1020236-ef29-4861-8f6e-648c2f3fce06",
+            "afd82854-7e90-4adf-ba27-26337aa9aa39",
+            "8633ee05-2048-4159-814c-ab0748af9b34",
+            "997c355e-aabb-48ab-979a-c5b1eb851d43",
+            "92239a10-d89a-4570-baee-36b26d630319",
+            "2014bc96-62f2-4b2c-87a3-f170df1e6d10"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 160206,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

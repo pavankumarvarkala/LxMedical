@@ -26,14 +26,16 @@ describe('Forgot password module testcases', () => {
     it("OTP shouldn't send on invalid email", () => {
         cy.xpath('//input[@name="email"]').should('be.visible').clear().type('abc@gmail.com');
         cy.xpath('//button[@type="submit"]').should('be.visible').should('have.text','Continue').click();
-        cy.contains('User not found with this email');
+        cy.wait(2000);
+        cy.contains('User not found with this information');
     })
 
     it("OTP should sent on Valid registerd email", () => {
         const emailId = cred.email;
         cy.xpath('//input[@name="email"]').should('be.visible').clear().type(emailId);
         cy.xpath('//button[@type="submit"]').should('be.visible').should('have.text','Continue').click();
-        cy.contains('OTP send to ' + emailId);
+        cy.wait(2000);
+        cy.contains("OTP send to user's email/phone");
     })
     // vefication screen testcases
     it("Verify each and evey label and title on varification screen",() => {
@@ -65,7 +67,8 @@ describe('Forgot password module testcases', () => {
 
         cy.xpath('//div[contains(text(),"R")]').should('be.visible').and('have.text',"Resend Code").click();
         const emailId = cred.email;
-        cy.contains('OTP send to ' + emailId);
+        cy.wait(2000);
+        cy.contains("OTP send to user's email/phone");
         
     })
 

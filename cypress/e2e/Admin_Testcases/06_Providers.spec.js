@@ -1,5 +1,5 @@
 ///<reference types='cypress'/>
-describe('providers module test case', ()=>{
+describe('providers test cases', ()=>{
 
     it('As a admin the user should be navigated to the provides page by clicking on providers tab', ()=>{
         cy.login() 

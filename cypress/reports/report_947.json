@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-19T13:04:24.539Z",
+    "end": "2022-09-19T13:07:24.187Z",
+    "duration": 179648,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a5cb01a1-fc71-4663-9b5d-8dc4f12ab90f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\10_PatientCharts_Reports.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\10_PatientCharts_Reports.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b36e48f7-14e7-4750-9ce1-58d4a9a431d8",
+          "title": "Reports module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should navigated to the Reports page by clicking on \"Reports\" tab",
+              "fullTitle": "Reports module testcases As a Admin the user should navigated to the Reports page by clicking on \"Reports\" tab",
+              "timedOut": null,
+              "duration": 157245,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase()); //Checking email is present in the list\n  cy.get('tr:nth-child(1)>td:nth-child(2)').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Click on eye icon against patient \ncy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address'); //Click on charts tab in patient profile\ncy.get('nav.flex.flex-wrap>div:nth-child(2)>div').should('be.visible').should('contain', 'Charts').click();\ncy.url().should('contain', '/charts'); //Click on Add Another member button\ncy.get('.flex-wrap > .flex').should('be.visible').should('have.text', 'Add Another Member').click();\ncy.addfamilymembercharts(); //Click on the name card of family member added\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.url().should('contain', '/medical_history');\ncy.get('div.py-4.pb-0>div>div:nth-child(2)>div>nav>div:nth-child(2)>').should('be.visible').should('contain', 'Reports').click();\ncy.url().should('contain', '/reports');",
+              "err": {},
+              "uuid": "70f7df07-d40c-4eda-a422-cc06deccf88c",
+              "parentUUID": "b36e48f7-14e7-4750-9ce1-58d4a9a431d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Reports\" page each label and field should have proper label and validations",
+              "fullTitle": "Reports module testcases At \"Reports\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 435,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('contain', 'Showing 0 Reports');\ncy.get('div.flex.items-center > div > div:nth-child(1) > div > input').should('be.visible').invoke('attr', 'placeholder').should('contain', 'Filter by Date Range..');",
+              "err": {},
+              "uuid": "1f5a5365-37c8-4239-aedf-eb115c051a2e",
+              "parentUUID": "b36e48f7-14e7-4750-9ce1-58d4a9a431d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should able to see all the reports uploaded by him for the particular patient",
+              "fullTitle": "Reports module testcases As a Admin the user should able to see all the reports uploaded by him for the particular patient",
+              "timedOut": null,
+              "duration": 53,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get(':nth-child(1) > a > .justify-between').should('be.visible')\n    // cy.get(':nth-child(2) > a > .justify-between').should('be.visible')\n    // cy.get(':nth-child(3) > a > .justify-between').should('be.visible')",
+              "err": {},
+              "uuid": "3995956e-d4a6-449f-955f-70de655cd753",
+              "parentUUID": "b36e48f7-14e7-4750-9ce1-58d4a9a431d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user able view any report by clicking on that report",
+              "fullTitle": "Reports module testcases The user able view any report by clicking on that report",
+              "timedOut": null,
+              "duration": 10029,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get(':nth-child(1) > a > .justify-between').should('be.visible').click()\n//  cy.get(':nth-child(2) > a > .justify-between').should('be.visible').click()\n// cy.get(':nth-child(3) > a > .justify-between').should('be.visible').click()\ncy.logout();",
+              "err": {},
+              "uuid": "c33ee38c-cf7c-4d58-b4b5-156cd0ef71dd",
+              "parentUUID": "b36e48f7-14e7-4750-9ce1-58d4a9a431d8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "70f7df07-d40c-4eda-a422-cc06deccf88c",
+            "1f5a5365-37c8-4239-aedf-eb115c051a2e",
+            "3995956e-d4a6-449f-955f-70de655cd753",
+            "c33ee38c-cf7c-4d58-b4b5-156cd0ef71dd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 167762,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

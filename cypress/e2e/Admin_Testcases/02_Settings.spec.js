@@ -46,7 +46,7 @@ describe("Change password Testcases", () => {
         cy.xpath("//label//div").eq(2).click();
         cy.get('.text-red-600').eq(0).should('have.text', 'Password is too short - should be 8 chars minimum').and('be.visible');
         cy.get('.text-red-600').eq(1).should('have.text', 'Password should be atleast 8 characters and should contain combination of uppercase, lowercase & numbers').and('be.visible');
-        cy.get('.text-red-600').eq(2).should('have.text', 'Both passwords need to be the same').and('be.visible');
+        cy.get('.text-red-600').eq(2).should('have.text', 'Password should be atleast 8 characters and should contain combination of uppercase, lowercase & numbers').and('be.visible');
     })
 
     it("As a Admin I should be able to change password and admin should be able to login with new password", () => {
