@@ -16,7 +16,12 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './login'
-import './Mailinator'
+import '../support/mailinator';
+
+import '@shelex/cypress-allure-plugin';
+
+import 'cypress-downloadfile/lib/downloadFileCommand';
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 import "cypress-real-events/support";

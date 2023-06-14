@@ -1,0 +1,36 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=30778
+END=70701
+title=Change password Testcases As a Admin I should be able to navigate on change password screen
+[CHAPTER]
+TIMEBASE=1/1000
+START=90226
+END=110774
+title=Change password Testcases At Chnage Password page each page should have proper labels
+[CHAPTER]
+TIMEBASE=1/1000
+START=110825
+END=131342
+title=Change password Testcases Validate "Change Password" section with Blank Data.
+[CHAPTER]
+TIMEBASE=1/1000
+START=131297
+END=151876
+title=Change password Testcases Validate "Change Password" section with invalid Data.
+[CHAPTER]
+TIMEBASE=1/1000
+START=151453
+END=172500
+title=Change password Testcases Validate 'Change Password' section with Minimum Characters.
+[CHAPTER]
+TIMEBASE=1/1000
+START=172344
+END=193612
+title=Change password Testcases Validate 'Change Password' section if both old, New Passwords are same also when both New and confirm password are not matching.
+[CHAPTER]
+TIMEBASE=1/1000
+START=193767
+END=214895
+title=Change password Testcases As a Admin I should be able to change password and admin should be able to login with new password

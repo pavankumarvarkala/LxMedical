@@ -1,0 +1,177 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2023-04-04T17:47:30.667Z",
+    "end": "2023-04-04T17:49:10.787Z",
+    "duration": 100120,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cac28b45-4c39-4aef-97ea-7c8f2f17d8c5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\10_PatientCharts_Reports.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\10_PatientCharts_Reports.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8bdc88d2-8236-430c-8301-62abe4364425",
+          "title": "Reports module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should navigated to the Reports page by clicking on \"Reports\" tab",
+              "fullTitle": "Reports module testcases As a Admin the user should navigated to the Reports page by clicking on \"Reports\" tab",
+              "timedOut": null,
+              "duration": 39975,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.get('.space-y-4 > :nth-child(2)').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase()); //Checking email is present in the list\n  cy.get('tr:nth-child(1)>td:nth-child(2)').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Click on eye icon against patient \ncy.get('tr:nth-child(1) > td:nth-child(7) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address'); //Click on charts tab in patient profile\ncy.get('nav.flex.flex-wrap>div:nth-child(2)>div').should('be.visible').should('contain', 'Charts').click();\ncy.url().should('contain', '/charts'); //Click on Add Another member button\ncy.get('.flex-wrap > .flex').should('be.visible').should('have.text', 'Add Another Member').click();\ncy.addfamilymembercharts(); //Click on the name card of family member added\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible').click();\ncy.url().should('contain', '/medical_history');\ncy.get('div.py-4.pb-0>div>div:nth-child(2)>div>nav>div:nth-child(2)>').should('be.visible').should('contain', 'Reports').click();\ncy.url().should('contain', '/reports');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:2598:41)",
+                "diff": null
+              },
+              "uuid": "c46cd882-8f64-4f40-b03c-4cc13e9e5556",
+              "parentUUID": "8bdc88d2-8236-430c-8301-62abe4364425",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Reports\" page each label and field should have proper label and validations",
+              "fullTitle": "Reports module testcases At \"Reports\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20661,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.font-bold').should('be.visible').should('contain', 'Showing 0 Reports');\ncy.get('div.flex.items-center > div > div:nth-child(1) > div > input').should('be.visible').invoke('attr', 'placeholder').should('contain', 'Filter by Date Range..');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: expected '[ <div.text-gray-500.text-xs.mb-8.font-bold>, 3 more... ]' to contain 'Showing 0 Reports'",
+                "estack": "AssertionError: Timed out retrying after 20000ms: expected '[ <div.text-gray-500.text-xs.mb-8.font-bold>, 3 more... ]' to contain 'Showing 0 Reports'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\10_PatientCharts_Reports.spec.js:155:47)",
+                "diff": null
+              },
+              "uuid": "9b5a06df-7c25-4597-97ac-dd18b6e68a1f",
+              "parentUUID": "8bdc88d2-8236-430c-8301-62abe4364425",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should able to see all the reports uploaded by him for the particular patient",
+              "fullTitle": "Reports module testcases As a Admin the user should able to see all the reports uploaded by him for the particular patient",
+              "timedOut": null,
+              "duration": 89,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get(':nth-child(1) > a > .justify-between').should('be.visible')\n    // cy.get(':nth-child(2) > a > .justify-between').should('be.visible')\n    // cy.get(':nth-child(3) > a > .justify-between').should('be.visible')",
+              "err": {},
+              "uuid": "d095c2b9-e53c-446c-936e-d8aad82a61ed",
+              "parentUUID": "8bdc88d2-8236-430c-8301-62abe4364425",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The user able view any report by clicking on that report",
+              "fullTitle": "Reports module testcases The user able view any report by clicking on that report",
+              "timedOut": null,
+              "duration": 20592,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get(':nth-child(1) > a > .justify-between').should('be.visible').click()\n//  cy.get(':nth-child(2) > a > .justify-between').should('be.visible').click()\n// cy.get(':nth-child(3) > a > .justify-between').should('be.visible').click()\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `#headlessui-menu-button-1`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `#headlessui-menu-button-1`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:2624:39)",
+                "diff": null
+              },
+              "uuid": "5e9aaacf-073e-4388-a3e1-2d9ee565eadc",
+              "parentUUID": "8bdc88d2-8236-430c-8301-62abe4364425",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d095c2b9-e53c-446c-936e-d8aad82a61ed"
+          ],
+          "failures": [
+            "c46cd882-8f64-4f40-b03c-4cc13e9e5556",
+            "9b5a06df-7c25-4597-97ac-dd18b6e68a1f",
+            "5e9aaacf-073e-4388-a3e1-2d9ee565eadc"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 81317,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

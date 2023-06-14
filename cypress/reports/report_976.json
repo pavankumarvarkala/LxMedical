@@ -1,0 +1,502 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 18,
+    "passes": 0,
+    "pending": 0,
+    "failures": 18,
+    "start": "2023-04-04T18:25:41.712Z",
+    "end": "2023-04-04T18:32:15.294Z",
+    "duration": 393582,
+    "testsRegistered": 18,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "26cc5786-a29f-4360-a006-dcf9b6ce8eb3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "889f686f-2cf6-453a-a130-c28be13ad0be",
+          "title": "Book Appointment module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the user should be navigated to the \"Select Service\" page of Book appointment section by clicking on \"Book\" button against the paticular patient.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should be navigated to the \"Select Service\" page of Book appointment section by clicking on \"Book\" button against the paticular patient.",
+              "timedOut": null,
+              "duration": 35965,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.xpath('//nav/div[2]/div[2]').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase()); //Checking email is present in the list\n  cy.get('tr:nth-child(1)>td:nth-child(2)').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Click On Book Button against patient\ncy.xpath('//tr[1]/td[5]/div[1]/div[1]').should('be.visible').should('have.text', 'Book').click();\ncy.url().should('contain', '/book_appointment');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:2598:41)",
+                "diff": null
+              },
+              "uuid": "f7998439-a7c1-453a-bba4-3437efadb172",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Select Service\" page each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Select Service\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20295,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Book\")]').should('be.visible').should('have.text', 'Book Appointment');\ncy.get('.cursor-pointer > .w-8').should('be.visible');\ncy.xpath('//div[contains(text(),\"Select Service\")]').should('be.visible').should('have.text', 'Select Service');\ncy.xpath('//div[contains(text(),\"Members\")]').should('be.visible').should('have.text', 'Members receive 15% discount & $100 travel fee waived on invoice.');\ncy.xpath('//form[1]/div[1]/div[2]/div[1]/*[1]').should('be.visible');\ncy.xpath('//input[@type=\"search\"]').should('be.visible').invoke('attr', 'placeholder').should('contain', 'Search a service...');\ncy.xpath('//div[contains(text(),\"Tele\")]').should('be.visible').should('have.text', 'Telemedicine Service');\ncy.xpath('//div[1]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked');\ncy.xpath('//div[contains(text(),\"Vital\")]').should('be.visible').should('have.text', 'Vital Checkup');\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked');\ncy.xpath('//div[contains(text(),\"Sutu\")]').should('be.visible').should('have.text', 'Suture Removal');\ncy.xpath('//div[3]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked');\ncy.xpath('//div[contains(text(),\"Blood\")]').scrollIntoView().should('be.visible').should('have.text', 'Blood draw Covid-19 Antibody ');\ncy.xpath('//div[4]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked');\ncy.xpath('//div[contains(text(),\"Vacc\")]').should('be.visible').should('have.text', 'In-home Vaccination');\ncy.xpath('//div[5]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked');\ncy.xpath('//div[contains(text(),\"well\")]').should('be.visible').should('have.text', 'In-Home health/wellness infusion');\ncy.xpath('//div[6]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked');\ncy.xpath('//div[contains(text(),\"Con\")]').should('be.visible').should('have.text', 'Continue').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Book\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Book\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:144:48)",
+                "diff": null
+              },
+              "uuid": "c5aeffae-2351-4823-ad49-d2bb82531544",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can search any service from the search bar using the service name of that particular service",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can search any service from the search bar using the service name of that particular service",
+              "timedOut": null,
+              "duration": 20262,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//input[@type=\"search\"]').should('be.visible').type('Suture');\ncy.wait(4000);\ncy.xpath('//div[contains(text(),\"Sutu\")]').should('be.visible').should('contain', 'Suture Removal');\ncy.xpath('//div[1]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check();\ncy.xpath('//input[@type=\"search\"]').should('be.visible').clear();\ncy.wait(4000);\ncy.xpath('//div[contains(text(),\"Tele\")]').scrollIntoView().should('be.visible').click();\ncy.contains('\"Telemedicine Visit\" service cannot be availed with any other services.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@type=\"search\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@type=\"search\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:165:41)",
+                "diff": null
+              },
+              "uuid": "98af29fc-1299-47eb-8a02-d6ad9d0bd510",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After selcecting the required service/services and clicking on Clicking on \"Continue\" button, user should be navigated to the \"Select Patient\" page.",
+              "fullTitle": "Book Appointment module testcases After selcecting the required service/services and clicking on Clicking on \"Continue\" button, user should be navigated to the \"Select Patient\" page.",
+              "timedOut": null,
+              "duration": 20253,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[4]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check({\n  force: true\n});\ncy.xpath('//div[5]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check({\n  force: true\n});\ncy.wait(2000);\ncy.xpath('//div[contains(text(),\"Con\")]').should('be.visible').should('have.text', 'Continue').click();\ncy.wait(4000);\ncy.xpath('//span[contains(text(),\"self\")]').should('be.visible').should('have.text', 'self');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[4]/div[1]/div[1]/div[1]/div[1]/input[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[4]/div[1]/div[1]/div[1]/div[1]/input[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:175:63)",
+                "diff": null
+              },
+              "uuid": "535bae9b-5de0-4824-89c1-bda9f5cdcf92",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Select Patient\" page each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Select Patient\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20269,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//span[contains(text(),\"self\")]').should('be.visible').should('have.text', 'self');\ncy.xpath('//div[contains(text(),\"Date\")]').should('be.visible').should('have.text', 'Date of Birth');\ncy.xpath('//div[contains(text(),\"Gender\")]').should('be.visible').should('have.text', 'Gender');\ncy.xpath('//div[contains(text(),\"Please\")]').should('be.visible').should('have.text', 'Please describe your primary symptoms…');\ncy.xpath('//textarea[@label=\"primary.symptoms\"]').should('be.visible'); // cy.xpath('//input[@name=\"patients[0].image1\"]').should('be.visible')\n// cy.xpath('//input[@name=\"patients[0].image2\"]').should('be.visible')\ncy.xpath('//div[contains(text(),\"Add A\")]').should('be.visible').should('have.text', 'Add Another Family Member');\ncy.xpath('//div[contains(text(),\"Con\")]').should('be.visible').should('have.text', 'Continue').click();\ncy.wait(2000);\ncy.xpath('//span[contains(text(),\"required\")]').should('be.visible').should('have.text', 'Primary Symptoms are required');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//span[contains(text(),\"self\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//span[contains(text(),\"self\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:187:49)",
+                "diff": null
+              },
+              "uuid": "3f847039-aee4-4019-b546-38db93b0241b",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should can add another member by clicking on \"Add Another Family Member\" button on \"Select Patient\" page.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should can add another member by clicking on \"Add Another Family Member\" button on \"Select Patient\" page.",
+              "timedOut": null,
+              "duration": 20291,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Add A\")]').should('be.visible').should('have.text', 'Add Another Family Member').click();\ncy.wait(4000);\ncy.xpath('//div[1]/h3[1]/div[1]/div[1]').should('be.visible').should('have.text', 'Add Minor & Symptoms');\ncy.addfamilymember();\ncy.wait(4000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add A\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Add A\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:200:49)",
+                "diff": null
+              },
+              "uuid": "31473d31-627d-4782-90e9-8936bba4c6d8",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After Selecting patients,adding primary symptoms and clicking on \"Continue\" button, the user should be navigated to the \"Date&Time\" page.",
+              "fullTitle": "Book Appointment module testcases After Selecting patients,adding primary symptoms and clicking on \"Continue\" button, the user should be navigated to the \"Date&Time\" page.",
+              "timedOut": null,
+              "duration": 20283,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//form[1]/div[1]/div[2]/div[1]/div[1]').should('be.visible').click();\ncy.contains('You have selected Single Type of Service');\ncy.get('.cursor-pointer > .w-8').should('be.visible').click();\ncy.wait(4000);\ncy.xpath('//input[@type=\"search\"]').should('be.visible').type('In-home covid');\ncy.wait(4000);\ncy.xpath('//div[1]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check();\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/input[1]').should('be.visible').should('not.be.checked').check();\ncy.xpath('//div[contains(text(),\"Con\")]').should('be.visible').should('have.text', 'Continue').click();\ncy.wait(4000);\ncy.xpath('//div[1]/div[1]/div[2]/div[2]/div/div/div/textarea').should('be.visible').type('Fever');\ncy.xpath('//input[@name=\"patients[0].image1\"]').attachFile('image1.jpg');\ncy.wait(2000);\ncy.xpath('//input[@name=\"patients[0].image2\"]').attachFile('image2.jpg');\ncy.wait(2000); // cy.xpath('//form[1]/div[1]/div[2]/div[1]/div[1]').should('be.visible').click()\ncy.xpath('//div[2]/div[1]/div[2]/div[2]/div/div/div/textarea').should('be.visible').clear().type('puking');\ncy.xpath('//input[@name=\"patients[1].image1\"]').attachFile('image3.jpg');\ncy.wait(2000);\ncy.xpath('//input[@name=\"patients[1].image2\"]').attachFile('image4.jpg');\ncy.wait(2000);\ncy.xpath('//div[contains(text(),\"Con\")]').should('be.visible').should('have.text', 'Continue').click();\ncy.wait(4000);\ncy.xpath('//div[contains(text(),\"Preferred A\")]').should('be.visible').should('have.text', 'Preferred Appointment Date');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//form[1]/div[1]/div[2]/div[1]/div[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//form[1]/div[1]/div[2]/div[1]/div[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:207:55)",
+                "diff": null
+              },
+              "uuid": "b1edf378-4176-452a-875f-24c567115d9b",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Date&Time\" page each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Date&Time\" page each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20394,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Preferred A\")]').should('be.visible').should('have.text', 'Preferred Appointment Date');\ncy.xpath('//input[@type=\"text\"]').should('be.visible');\ncy.xpath('//div[contains(text(),\"T\")]').should('be.visible').should('have.text', 'Preferred Time Slot');\ncy.xpath('//input[@name=\"MORNING\"]').should('be.visible').should('not.be.checked');\ncy.xpath('//label[@for=\"MORNING\"]').should('be.visible').should('have.text', 'Morning');\ncy.xpath('//input[@name=\"AFTERNOON\"]').should('be.visible').should('not.be.checked');\ncy.xpath('//label[@for=\"AFTERNOON\"]').should('be.visible').should('have.text', 'Afternoon');\ncy.xpath('//input[@name=\"EVENING\"]').should('be.visible').should('not.be.checked');\ncy.xpath('//label[@for=\"EVENING\"]').should('be.visible').should('have.text', 'Evening');\ncy.xpath('//input[@name=\"ASAP\"]').should('be.visible').should('not.be.checked');\ncy.xpath('//label[@for=\"ASAP\"]').should('be.visible').should('have.text', 'ASAP');\ncy.xpath('//div[contains(text(),\"Service A\")]').should('be.visible').should('have.text', 'Service Address');\ncy.xpath('//div[2]/div[2]/div[1]/div[2]/*[1]').should('be.visible');\ncy.xpath('//div[contains(text(),\"Ed\")]').should('be.visible').should('have.text', 'Edit');\ncy.xpath('//button[@textid=\"book.appointment\"]').should('be.visible').should('have.text', 'Book Appointment').click();\ncy.contains('Preferred Appointment Date is required.');\ncy.contains('Preferred Time Slot is required.');\ncy.xpath('//input[@name=\"ASAP\"]').should('be.visible').should('not.be.checked').check();\ncy.wait(2000);\ncy.xpath('//input[@name=\"MORNING\"]').should('be.visible').should('not.be.checked').should('be.disabled');\ncy.xpath('//input[@name=\"AFTERNOON\"]').should('be.visible').should('not.be.checked').should('be.disabled');\ncy.xpath('//input[@name=\"EVENING\"]').should('be.visible').should('not.be.checked').should('be.disabled');\ncy.xpath('//input[@name=\"ASAP\"]').should('be.visible').uncheck();\ncy.wait(2000);\ncy.xpath('//input[@name=\"AFTERNOON\"]').should('be.visible').should('not.be.checked').check();\ncy.xpath('//input[@name=\"EVENING\"]').should('be.visible').should('not.be.checked').check();\ncy.xpath('//input[@name=\"MORNING\"]').should('be.visible').should('not.be.checked').should('be.disabled');\ncy.xpath('//input[@name=\"ASAP\"]').should('be.visible').should('not.be.checked').check();\ncy.wait(2000);\ncy.xpath('//input[@name=\"ASAP\"]').should('be.visible').uncheck();\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Preferred A\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Preferred A\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:233:55)",
+                "diff": null
+              },
+              "uuid": "8483ae1f-b965-4bd5-bcc7-948b7e1760b5",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address",
+              "fullTitle": "Book Appointment module testcases As a Admin the user should be navigated to the service address edit page by clicking on edit symbol against the service address",
+              "timedOut": null,
+              "duration": 20276,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Ed\")]').should('be.visible').should('have.text', 'Edit').click();\ncy.wait(4000);\ncy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text', 'Edit Address');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Ed\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Ed\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:266:46)",
+                "diff": null
+              },
+              "uuid": "0b56ae75-f2e3-4d17-a110-29d75e229e03",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to close the Edit service Address window by Clicking on the cross icon",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able to close the Edit service Address window by Clicking on the cross icon",
+              "timedOut": null,
+              "duration": 20326,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.hidden>h3>div>svg').should('be.visible').click();\ncy.wait(2000);\ncy.xpath('//div[contains(text(),\"Ed\")]').should('be.visible').should('have.text', 'Edit').click();\ncy.wait(4000);\ncy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text', 'Edit Address');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `div.hidden>h3>div>svg`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `div.hidden>h3>div>svg`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:271:37)",
+                "diff": null
+              },
+              "uuid": "33a798dd-ba07-43b3-bdcf-2e1c2c635548",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Service Address\" Edit window each label and field should have proper label and validations",
+              "fullTitle": "Book Appointment module testcases At \"Service Address\" Edit window each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20272,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text', 'Edit Address');\ncy.get('div.hidden>h3>div>svg').should('be.visible');\ncy.xpath('//div[1]/form/div[1]/div/label').should('be.visible').should('have.text', 'Address Line 1');\ncy.xpath('//div[1]/form/div[1]/div/div').should('be.visible');\ncy.xpath('//div[1]/form/div[2]/div/label').should('be.visible').should('contain', 'Address Line 2');\ncy.xpath('//div[1]/form/div[2]/div/div').should('be.visible');\ncy.xpath('//div[1]/form/div[3]/div[1]/label').should('be.visible').should('have.text', 'Postal Code');\ncy.xpath('//div[1]/form/div[3]/div[1]/div').should('be.visible');\ncy.xpath('//div[1]/form/div[3]/div[2]/div/div/div[1]').should('be.visible').should('have.text', 'City');\ncy.xpath('//div[1]/form/div[3]/div[2]/div/div/div[2]').should('be.visible');\ncy.xpath('//div[1]/form/div[4]/div/label').should('be.visible').should('have.text', 'State');\ncy.xpath('//div[1]/form/div[4]/div/div').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[5]').should('be.visible').should('contain', 'Save Address');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/h3[1]/div[1]/div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/h3[1]/div[1]/div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:278:43)",
+                "diff": null
+              },
+              "uuid": "156f9efa-db1b-4ae6-8659-24bb5cf2575e",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After editing the address and clicking on save address button the user should able to save the service address",
+              "fullTitle": "Book Appointment module testcases After editing the address and clicking on save address button the user should able to save the service address",
+              "timedOut": null,
+              "duration": 20505,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/form/div[1]/div/div').should('be.visible').clear().type('plot no 75');\ncy.xpath('//div[1]/form/div[3]/div[1]/div').should('be.visible').clear().type('54456');\ncy.xpath('//div[1]/form/div[2]/div/div').should('be.visible').clear().type('park lane');\ncy.xpath('//div[1]/form/div[3]/div[2]/div/div/div[2]').should('be.visible').click();\ncy.wait(2000);\ncy.xpath('//*[@class=\" css-yt9ioa-option\"][contains(text(),\"MUSCODA\")]').scrollIntoView().click();\ncy.wait(2000);\ncy.xpath('//div[1]/form[1]/div[5]').should('be.visible').should('contain', 'Save Address').click();\ncy.wait(2000);\ncy.xpath('//div[2]/span').should('be.visible').should('contain', 'plot no 75');\ncy.xpath('//div[2]/span').should('be.visible').should('contain', 'park lane');\ncy.xpath('//div[2]/span').should('be.visible').should('contain', 'MUSCODA');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 20000ms: `cy.clear()` failed because it requires a valid clearable element.\n\nThe element cleared was:\n\n  > `<div class=\"absolute inset-y-0 right-0 pr-3 flex items-center\"></div>`\n\nA clearable element matches one of the following selectors:\n  'a[href]'\n  'area[href]'\n  'input'\n  'select'\n  'textarea'\n  'button'\n  'iframe'\n  '[tabindex]'\n  '[contenteditable]'\n\nhttps://on.cypress.io/clear",
+                "estack": "CypressError: Timed out retrying after 20000ms: `cy.clear()` failed because it requires a valid clearable element.\n\nThe element cleared was:\n\n  > `<div class=\"absolute inset-y-0 right-0 pr-3 flex items-center\"></div>`\n\nA clearable element matches one of the following selectors:\n  'a[href]'\n  'area[href]'\n  'input'\n  'select'\n  'textarea'\n  'button'\n  'iframe'\n  '[tabindex]'\n  '[contenteditable]'\n\nhttps://on.cypress.io/clear\n    at throwError (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:152361:78)\n    at onReady (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:152388:15)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147736:14)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147745:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10286:29)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166930:65)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166385:14\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11129:18)\n    at Promise._fulfill (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11073:18)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:12687:46\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:293:67)",
+                "diff": null
+              },
+              "uuid": "f3dec789-4227-40db-81f0-7a506bbb07ca",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able select the appointment date by clicking on calendar icon against the preferred appointment date field.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able select the appointment date by clicking on calendar icon against the preferred appointment date field.",
+              "timedOut": null,
+              "duration": 20407,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//input[@type=\"text\"]').should('be.visible').click();\ncy.get('.react-datepicker__day--today').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@type=\"text\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@type=\"text\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:307:39)",
+                "diff": null
+              },
+              "uuid": "a9a61c7e-c7a0-47d3-9776-5b24ed8a4202",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to select the appointment time by checking the check boxes in preferred time slot.",
+              "fullTitle": "Book Appointment module testcases As a Admin the user can able to select the appointment time by checking the check boxes in preferred time slot.",
+              "timedOut": null,
+              "duration": 20276,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//input[@name=\"EVENING\"]').should('be.visible').should('not.be.checked').check();\ncy.xpath('//input[@name=\"MORNING\"]').should('be.visible').should('not.be.checked').check();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@name=\"EVENING\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@name=\"EVENING\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:311:42)",
+                "diff": null
+              },
+              "uuid": "0100b60d-3624-4fcc-943d-6c9f900a9f46",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After selecting \"Preferred Date\", \"Preferred Time\" and clicking on \"Book Appointment\" button the user should get the booking confirmation",
+              "fullTitle": "Book Appointment module testcases After selecting \"Preferred Date\", \"Preferred Time\" and clicking on \"Book Appointment\" button the user should get the booking confirmation",
+              "timedOut": null,
+              "duration": 20345,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//button[@textid=\"book.appointment\"]').should('be.visible').should('have.text', 'Book Appointment').click();\ncy.contains('Appointment Added successfully ');\ncy.wait(4000);\ncy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text', 'Confirmation');\ncy.get('div.hidden>h3>div>svg').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//button[@textid=\"book.appointment\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//button[@textid=\"book.appointment\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:315:54)",
+                "diff": null
+              },
+              "uuid": "1db06ac0-d4db-4e58-b293-62a3c2506deb",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on continue button booking confirmation page the user should be navigated to the patients page",
+              "fullTitle": "Book Appointment module testcases By clicking on continue button booking confirmation page the user should be navigated to the patients page",
+              "timedOut": null,
+              "duration": 20320,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/div[3]/button').should('be.visible').should('have.text', 'Continue').click();\ncy.wait(4000);\ncy.url().should('contain', '/patients');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/div[3]/button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/div[3]/button`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:322:40)",
+                "diff": null
+              },
+              "uuid": "7099ac9c-4e2e-493b-b49e-5a14c787173b",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The booked appointment should refelect instantly under apointment page and also on patient side",
+              "fullTitle": "Book Appointment module testcases The booked appointment should refelect instantly under apointment page and also on patient side",
+              "timedOut": null,
+              "duration": 20338,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[contains(text(),\"Appointments\")]').should('be.visible').should('have.text', 'Appointments').click();\ncy.wait(4000);\ncy.xpath('//tr[1]/td[4]/div/p').should('be.visible').should('have.text', 'pending approval');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Appointments\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[contains(text(),\"Appointments\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:327:56)",
+                "diff": null
+              },
+              "uuid": "69f477e9-9d7e-4857-ba70-8e8c7564652c",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The primary symptoms and Service Address added by the patient should reflect on the appointment name card",
+              "fullTitle": "Book Appointment module testcases The primary symptoms and Service Address added by the patient should reflect on the appointment name card",
+              "timedOut": null,
+              "duration": 20341,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//tr[1]/td[8]/div[1]/*[1]').scrollIntoView().should('be.visible').click();\ncy.wait(4000);\ncy.xpath('//div[4]/div[2]/div[1]/div/div[2]/div[2]').should('be.visible').should('have.text', 'Fever');\ncy.xpath('//div[4]/div[2]/div[2]/div/div[2]/div[2]').should('be.visible').should('have.text', 'puking');\ncy.xpath('//div[2]/div[2]/span').should('be.visible').should('contain', 'MORNING | EVENING');\ncy.xpath('//div[3]/div/div/span').should('be.visible').should('contain', 'plot no 75');\ncy.xpath('//div[3]/div/div/span').should('be.visible').should('contain', '54456');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//tr[1]/td[8]/div[1]/*[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//tr[1]/td[8]/div[1]/*[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\15_BookAppointmet.spec.js:332:8)",
+                "diff": null
+              },
+              "uuid": "a2a56e96-e482-4631-ba26-25dadec83681",
+              "parentUUID": "889f686f-2cf6-453a-a130-c28be13ad0be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f7998439-a7c1-453a-bba4-3437efadb172",
+            "c5aeffae-2351-4823-ad49-d2bb82531544",
+            "98af29fc-1299-47eb-8a02-d6ad9d0bd510",
+            "535bae9b-5de0-4824-89c1-bda9f5cdcf92",
+            "3f847039-aee4-4019-b546-38db93b0241b",
+            "31473d31-627d-4782-90e9-8936bba4c6d8",
+            "b1edf378-4176-452a-875f-24c567115d9b",
+            "8483ae1f-b965-4bd5-bcc7-948b7e1760b5",
+            "0b56ae75-f2e3-4d17-a110-29d75e229e03",
+            "33a798dd-ba07-43b3-bdcf-2e1c2c635548",
+            "156f9efa-db1b-4ae6-8659-24bb5cf2575e",
+            "f3dec789-4227-40db-81f0-7a506bbb07ca",
+            "a9a61c7e-c7a0-47d3-9776-5b24ed8a4202",
+            "0100b60d-3624-4fcc-943d-6c9f900a9f46",
+            "1db06ac0-d4db-4e58-b293-62a3c2506deb",
+            "7099ac9c-4e2e-493b-b49e-5a14c787173b",
+            "69f477e9-9d7e-4857-ba70-8e8c7564652c",
+            "a2a56e96-e482-4631-ba26-25dadec83681"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 381418,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

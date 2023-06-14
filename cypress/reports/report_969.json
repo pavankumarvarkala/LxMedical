@@ -1,0 +1,456 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 16,
+    "passes": 0,
+    "pending": 0,
+    "failures": 16,
+    "start": "2023-04-04T17:20:07.436Z",
+    "end": "2023-04-04T17:25:54.930Z",
+    "duration": 347494,
+    "testsRegistered": 16,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "35a85df0-d868-4bf7-b0e3-03c93320414d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+          "title": "Testcases for \"Household\" tab in \"Patient Details\" page.",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin the should be navigated to the \"Household\" section of a particular by clicking on \"Household\" tab on patient Details page of that particular patient.",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. As a Admin the should be navigated to the \"Household\" section of a particular by clicking on \"Household\" tab on patient Details page of that particular patient.",
+              "timedOut": null,
+              "duration": 35515,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(cred.email, cred.password);\ncy.url().should('contain', '/dashboard'); //Click patient tab on the left side tray\ncy.xpath('//*[text()=\"Patients\"]').should('be.visible').should('have.text', 'Patients').click();\ncy.url().should('contain', '/patients'); //Add new patient custom command\ncy.AddPatient();\ncy.readFile('cypress/fixtures/provider.json').then(provider => {\n  //search added patient    \n  cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase()); //Checking email is present in the list\n  cy.get('tr:nth-child(1)>td:nth-child(3)').should('be.visible').should('have.text', provider.email.toLowerCase());\n  cy.wait(4000);\n}); //Clicking on eye icon against patient \ncy.get('tr:nth-child(1) > td:nth-child(8) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click();\ncy.url().should('contain', '/address'); //Click on Household tab in patient profile\ncy.xpath('//*[text()=\"Household\"]').should('be.visible').should('contain', 'Household').click();\ncy.url().should('contain', '/household');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\support\\e2e.js:2598:41)",
+                "diff": null
+              },
+              "uuid": "3fbeda3b-a98b-428e-8fd6-c0ad7517f73a",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Household tab each label and field should have proper label and validations",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. At Household tab each label and field should have proper label and validations",
+              "timedOut": null,
+              "duration": 20397,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Verifing the label of \"Add Famil Member\" button.\ncy.xpath('//*[@textid=\"charts.addmember\"]').should('be.visible').should('have.text', 'Add Family Member'); //Verfing number of Household present.\ncy.xpath('//*[@class=\"font-medium\"]').should('be.visible').should('have.text', '1 Members'); //Verfying that the self card is present.\ncy.xpath('//*[@class=\"col-span-4 sm:col-span-2\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"charts.addmember\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"charts.addmember\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:148:49)",
+                "diff": null
+              },
+              "uuid": "caac2075-0882-41cb-ab61-d75ba63e58b0",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should able to get a pop up window of \"Add family member\" by clicking on \"Add Family Member\" button on Household page",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. As a Admin the user should able to get a pop up window of \"Add family member\" by clicking on \"Add Family Member\" button on Household page",
+              "timedOut": null,
+              "duration": 20429,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Click on \"Add Family Member\" button.\ncy.xpath('//*[@textid=\"charts.addmember\"]').should('be.visible').should('have.text', 'Add Family Member').click(); //Verifying that the \"Add Family Member\" window is visible.\ncy.xpath('//div[@class=\"font-bold text-black\"]').should('be.visible').should('have.text', 'Add Family Member');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"charts.addmember\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"charts.addmember\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:157:49)",
+                "diff": null
+              },
+              "uuid": "65363cdc-5e00-4cfa-9dff-7c7b5b0a5cab",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Add family member\" window each label and field have proper lable and validations",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. At \"Add family member\" window each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 20454,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Verfying the label of \"Add New Member\" button.\ncy.xpath('//*[@textid=\"add.new.member\"]').should('be.visible').should('have.text', 'Add New Member'); //Verfying the label of \"Add Existing Member\" button.\ncy.xpath('//*[textid=\"add.existing.member\"]').should('be.visible').should('have.text', 'Add Existing Member'); //Verifing that the cross icon is visible.\ncy.xpath('//*[@class=\"w-6 h-6 text-primary cursor-pointer\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"add.new.member\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"add.new.member\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:163:47)",
+                "diff": null
+              },
+              "uuid": "4e9447f9-0d91-4958-aa95-f06f7af21b3e",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user should be navigated to the \"Add New Member\" form by clicking on \"Add New Member\" button on \"Add Family Member\" pop up window.",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. As a Admin the user should be navigated to the \"Add New Member\" form by clicking on \"Add New Member\" button on \"Add Family Member\" pop up window.",
+              "timedOut": null,
+              "duration": 20437,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Clicking on \"Add New Member\" button.\ncy.xpath('//*[@textid=\"add.new.member\"]').should('be.visible').should('have.text', 'Add New Member'); //Verifying that the \"Add New Member\" window is visible.\ncy.xpath('//div[@class=\"font-bold text-black\"]').should('be.visible').should('have.text', 'Add Family Member');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"add.new.member\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid=\"add.new.member\"]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:171:47)",
+                "diff": null
+              },
+              "uuid": "e430c570-279b-4809-9880-2cc33a4356c3",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Add New member\" window each label and field have proper lable and validations",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. At \"Add New member\" window each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 20558,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Verfying if the cross icon is present.\ncy.get('h3>div>svg').should('be.visible'); //verifying the label of \"First Name\" input field.\ncy.xpath('//label[@for=\"firstName\"]').should('be.visible').should('contain', 'First Name'); //verifying that the \"First Name\" input field is present.\ncy.xpath('//input[@name=\"firstName\"]').should('be.visible').click(); //verifying the label of \"Last Name\" input field.\ncy.xpath('//label[@for=\"lastName\"]').should('be.visible').should('contain', 'Last Name'); //verifying that the \"Last Name\" input field is present.\ncy.xpath('//input[@name=\"lastName\"]').should('be.visible').click();\ncy.wait(3000); //Verifying the validation message for blank data for \"First Name\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text', 'Required');\ncy.wait(1000); //verifying the label of \"User ID\" input field.\ncy.xpath('//label[@for=\"userId\"]').scrollIntoView().should('be.visible').should('contain', 'User ID'); //verifying the label of \"Generate ID\" Link in \"User ID\" input field.\ncy.xpath('//*[contains(text(),\"Gene\")]').should('be.visible').should('contain', 'Generate ID'); //verifying that the \"User ID\" input field is present.\ncy.xpath('//input[@name=\"userId\"]').should('be.visible').click();\ncy.wait(3000); //Verifying the validation message for blank data for \"Last Name\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[1]/div[2]/div[2]').should('be.visible').should('have.text', 'Required');\ncy.wait(1000); //verifying the label of \"Relationship\" Dropdown.\ncy.xpath('//label[@for=\"relationship\"]').scrollIntoView().should('be.visible').should('contain', 'Subscription'); //verifying that the \"Relationship\" Dropdown is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div').should('be.visible'); //verifying the label of \"Date of Birth\" input field.\ncy.xpath('//label[@for=\"dateOfBirth\"]').should('be.visible').should('contain', 'Date of Birth'); //verifying that the \"Date of Birth\" input field is present.\ncy.xpath('//input[@name=\"dateOfBirth\"]').should('be.visible'); //verifying the label of \"Gender\" Dropdown.\ncy.xpath('//label[@for=\"gender\"]').should('be.visible').should('contain', 'Gender'); //verifying that the \"Gender\" Dropdown is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[3]/div[2]/div/div').should('be.visible'); //verifying the label of \"Phone Number\" input field.\ncy.xpath('//label[@for=\"phone\"]').should('be.visible').should('have.text', 'Phone Number'); //verifying that the \"Phone Number\" input field is present.\ncy.xpath('//input[@name=\"phone\"]').should('be.visible').click();\ncy.wait(3000); //verifying the label of \"Email\" input field.\ncy.xpath('//label[@for=\"email\"]').should('be.visible').should('have.text', 'Email'); //verifying that the \"Email\" input field is present.\ncy.xpath('//input[@name=\"email\"]').should('be.visible').click(); //Verifying the validation message for blank data for \"Phone Number\" input field.\ncy.xpath('//div[contains(text(),\"At\")]').should('be.visible').should('have.text', 'At least one field is required(Email or Phone)');\ncy.wait(1000); //verifing the label of \"Same as Account Address\" checkbox.\ncy.xpath('//*[contains(text(),\"Sa\")]').should('be.visible').should('have.text', 'Same as account address');\ncy.wait(1000); //verifying that the \"Same as Account Address\" checkbox is present and is not checked.\ncy.get('//*[@name=\"sameAddress\"]').should('be.visible').should('not.be.checked'); //verifing the label of \"Carry Account Subscription\" checkbox.\ncy.xpath('//*[contains(text(),\"Carr\")]').should('be.visible').should('have.text', 'Carry Account Subscription');\ncy.wait(1000); //verifying that the \"Same as Account Address\" checkbox is present and is not checked.\ncy.get('//*[@name=\"sameSubscription\"]').should('be.visible').should('not.be.checked'); //Verifying the Header of \"Address\" section.\ncy.xpath('//div[@class=\"font-medium\"][contains(text(),\"A\")]').scrollIntoView().should('be.visible').should('have.text', 'Address'); //verifying the label of \"Address Line 1\" input field.\ncy.xpath('//label[@for=\"address1\"]').scrollIntoView().should('be.visible').should('contain', 'Address Line 1'); //verifying that the \"Address Line 1\" input field is present.\ncy.xpath('//input[@name=\"address1\"]').should('be.visible').click();\ncy.wait(3000); //Verifying the validation message for blank data for \"Email\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[4]/div[2]/div[2]').should('be.visible').should('have.text', 'At least one field is required(Email or Phone)');\ncy.wait(1000); //verifying the label of \"Address Line 2\" input field.\ncy.xpath('//label[@for=\"address2\"]').should('be.visible').should('contain', 'Address Line 2'); //verifying that the \"Address Line 2\" input field is present.\ncy.xpath('//input[@name=\"address2\"]').should('be.visible').click({\n  force: true\n});\ncy.wait(3000); //Verifying the validation message for blank data for \"Address Line 1\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[8]/div[1]/div[2]').should('be.visible').should('have.text', 'Required');\ncy.wait(1000); //verifying the label of \"Postal Code\" input field.\ncy.xpath('//label[@for=\"postalCode\"]').should('be.visible').should('contain', 'Postal Code'); //verifying that the \"Postal Code\" input field is present.\ncy.xpath('//input[@name=\"postalCode\"]').should('be.visible').click(); //Clicking on \"Add Family Member\" button.\ncy.xpath('//button[@textid=\"add.minor\"]').should('be.visible').should('have.text', 'Add Family Member').click();\ncy.wait(1000); //Verifying the validation message for blank data for \"Postal Code\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[9]/div[1]/div[2]').should('be.visible').should('have.text', 'Required');\ncy.wait(1000); //Verifying the validation message for blank data for \"City\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[9]/div[2]/div/div[2]').should('be.visible').should('have.text', 'Required');\ncy.wait(1000); //Verifying the validation message for blank data for \"State\" input field.\ncy.xpath('//div[1]/div[1]/form[1]/div[10]/div[1]/div[2]').should('be.visible').should('have.text', 'Required');\ncy.wait(1000); //verifying the label of \"City\" input field.\ncy.xpath('//label[@for=\"city\"]').should('be.visible').should('contain', 'City'); //verifying that the \"City\" input field is present.\ncy.xpath('//div[1]/div[1]/form[1]/div[9]/div[2]/div/div').should('be.visible'); //verifying the label of \"State\" input field.\ncy.xpath('//label[@for=\"state\"]').should('be.visible').should('contain', 'State'); //verifying that the \"State\" input field is present.\ncy.xpath('//*[@name=\"state\"]').should('be.visible'); //verifying the label of \"Add Family Member\" button.\ncy.xpath('//button[@textid=\"add.minor\"]').should('be.visible').should('have.text', 'Add Family Member'); //Closing \"Add New Member\" form.\ncy.xpath('//*[@class=\"w-6 h-6 text-primary cursor-pointer\"]').should('be.visible').click({\n  force: true\n});\ncy.wait(3000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `h3>div>svg`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `h3>div>svg`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:177:26)",
+                "diff": null
+              },
+              "uuid": "80e28b19-931f-4637-929a-e29932a4c229",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By filling add family member form and cliking on add member button the family member should be added",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. By filling add family member form and cliking on add member button the family member should be added",
+              "timedOut": null,
+              "duration": 899,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const fname = _faker.default.name.firstname();\nconst lname = _faker.default.name.firstName();\nconst phone = _faker.default.phone.phoneNumber('(###)-###-####');\nconst email = _faker.default.name.firstName() + '@yopmail.com'; //Clicking on Back arrow on \"Patient Details\" page.\ncy.xpath('//*[@class=\"h-6 w-6 cursor-pointer\"]').should('be.visible').click();\ncy.wait(3000); //Clearing search box on the patient page.    \ncy.get('[type=search]').should('be.visible').clear(); //Getting an Existing \"User ID\" from patient list and saving into variable.\ncy.xpath('//tr[1]/td[2]/div/p').invoke('text').then(text1 => {\n  cy.readFile('cypress/fixtures/provider.json').then(provider => {\n    //search added patient    \n    cy.get('[type=search]').should('be.visible').type(provider.email.toLowerCase());\n    cy.wait(3000); //Checking email is present in the list\n    cy.get('tr:nth-child(1)>td:nth-child(3)').should('be.visible').should('have.text', provider.email.toLowerCase());\n    cy.wait(4000);\n  }); //Clicking on eye icon against patient \n  cy.get('tr:nth-child(1) > td:nth-child(8) > div > svg:nth-child(1) > path:nth-child(1)').scrollIntoView().should('be.visible').click();\n  cy.wait(3000);\n  cy.url().should('contain', '/address'); //Getting Email from Patient profile and saving into variable.\n  cy.xpath('//div[2]/div[2]/div[1]/div[2]/div[1]/div').invoke('text').then(text3 => {\n    //Getting Phone Number from Patient profile and saving into variable.\n    cy.xpath('//div[2]/div[2]/div[1]/div[2]/div[2]/div').invoke('text').then(text2 => {\n      //Click on Household tab in patient profile\n      cy.xpath('//*[text()=\"Household\"]').should('be.visible').should('contain', 'Household').click();\n      cy.wait(3000);\n      cy.url().should('contain', '/household'); //Click on \"Add Family Member\" button.\n      cy.xpath('//*[@textid=\"charts.addmember\"]').should('be.visible').should('have.text', 'Add Family Member').click();\n      cy.wait(3000); //Verifying that the \"Add Family Member\" window is visible.\n      cy.xpath('//div[@class=\"font-bold text-black\"]').should('be.visible').should('have.text', 'Add Family Member'); //Clicking on \"Add New Member\" button.\n      cy.xpath('//*[@textid=\"add.new.member\"]').should('be.visible').should('have.text', 'Add New Member');\n      cy.wait(3000); //Verifying that the \"Add New Member\" window is visible.\n      cy.xpath('//div[@class=\"font-bold text-black\"]').should('be.visible').should('have.text', 'Add Family Member'); //Validate \"First Name\" input field for \"Minimum Characters\".\n      cy.xpath('//input[@name=\"firstName\"]').should('be.visible').type('a'); //Clicking inside the \"Last Name\" input field.\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').click();\n      cy.wait(3000); //Verifying the validation error for \"Minimum Characters\" for \"First Name\" input field.\n      cy.xpath('//*[contains(text(),\"First Name must\")]').should('be.visible').should('have.text', 'First Name must be between 2 to 32 characters');\n      cy.wait(3000); //Validate \"First Name\" input field for \"Maximum Characters\".\n      cy.xpath('//input[@name=\"firstName\"]').should('be.visible').clear().type('absghjnbghjnbvghjnbghjhgghh');\n      cy.wait(2000); //Verifying the validation error for \"Maximum Characters\" for \"First Name\" input field.\n      cy.xpath('//*[contains(text(),\"Max\")]').should('be.visible').should('have.text', 'Max Limit is 25 Characters');\n      cy.wait(2000); //Validate \"First Name\" input field for \"invalid data(Numbers)\".\n      cy.xpath('//input[@name=\"firstName\"]').should('be.visible').clear().type('1234');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(Numbers)\" for \"First Name\" input field.\n      cy.xpath('//*[contains(text(),\"not \")]').should('be.visible').should('have.text', 'First Name is not valid');\n      cy.wait(2000); //Validate \"First Name\" input field for \"invalid data(Special Characters)\".\n      cy.xpath('//input[@name=\"firstName\"]').should('be.visible').clear().type('@#$%^');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(Special Characters)\" for \"First Name\" input field.\n      cy.xpath('//*[contains(text(),\"not \")]').should('be.visible').should('have.text', 'First Name is not valid');\n      cy.wait(2000); //Entering Valid Data into \"First Name\" input field.\n      cy.xpath('//input[@name=\"firstName\"]').should('be.visible').clear().type(fname);\n      cy.wait(2000); //Validate \"Last Name\" input field for \"Minimum Characters\".\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').type('a');\n      cy.wait(2000); //Verifying the validation error for \"Minimum Characters\" for \"Last Name\" input field.\n      cy.xpath('//*[contains(text(),\"Last Name must\")]').should('be.visible').should('have.text', 'Last Name must be between 2 to 32 characters');\n      cy.wait(3000); //Validate \"Last Name\" input field for \"Maximum Characters\".\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').clear().type('absghjnbghjnbvghjnbghjhgghh');\n      cy.wait(2000); //Verifying the validation error for \"Maximum Characters\" for \"Last Name\" input field.\n      cy.xpath('//*[contains(text(),\"Max\")]').should('be.visible').should('have.text', 'Max Limit is 25 Characters');\n      cy.wait(2000); //Validate \"Last Name\" input field for \"invalid data(Numbers)\".\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').clear().type('1234');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(Numbers)\" for \"Last Name\" input field.\n      cy.xpath('//*[contains(text(),\"not \")]').should('be.visible').should('have.text', 'Last Name is not valid');\n      cy.wait(2000); //Validate \"Last Name\" input field for \"invalid data(Special Characters)\".\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').clear().type('@#$%^');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(Special Characters)\" for \"Last Name\" input field.\n      cy.xpath('//*[contains(text(),\"not \")]').should('be.visible').should('have.text', 'Last Name is not valid');\n      cy.wait(2000); //Entering Valid Data into \"Last Name\" input field.\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').clear().type(lname);\n      cy.wait(2000); //Validate \"User ID\" input field for \"Minimum Characters\".\n      cy.xpath('//input[@name=\"userId\"]').should('be.visible').type('a');\n      cy.wait(2000); //Clicking inside the \"Last Name\" input field.\n      cy.xpath('//input[@name=\"lastName\"]').should('be.visible').click();\n      cy.wait(2000); //Verifying the validation error for \"Minimum Characters\" for \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"Minimum \")]').should('be.visible').should('have.text', 'Minimum 5 character are required');\n      cy.wait(3000); //Validate \"User ID\" input field for \"Maximum Characters\".\n      cy.xpath('//input[@name=\"userId\"]').should('be.visible').clear().type('asdfghgfdfghjhgfdfghhhhhhhhhhhjng');\n      cy.wait(2000); //Verifying the validation error for \"Maximum Characters\" for \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"Maximum \")]').should('be.visible').should('have.text', 'Maximum 30 character are allowed');\n      cy.wait(3000); //Validate \"User ID\" input field for \"invalid data(Starting with Numbers)\".\n      cy.xpath('//input[@name=\"userId\"]').should('be.visible').clear().type('1');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(Starting with Numbers)\" for \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"Can\")]').should('be.visible').should('have.text', 'Can not start with numbers & special characters');\n      cy.wait(3000); //Validate \"User ID\" input field for \"invalid data(Starting with Special Characters)\".\n      cy.xpath('//input[@name=\"userId\"]').should('be.visible').clear().type('-');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(Starting with Special Characters)\" for \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"Can\")]').should('be.visible').should('have.text', 'Can not start with numbers & special characters');\n      cy.wait(3000); //Validate \"User ID\" input field for \"invalid data(invalid Special Characters allowed)\".\n      cy.xpath('//input[@name=\"userId\"]').should('be.visible').clear().type('pavan@#%');\n      cy.wait(2000); //Verifying the validation error for \"invalid data(invalid Special Characters allowed)\" for \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"Inva\")]').should('be.visible').should('have.text', 'Invalid. Only hyphen(-) and underscore(_) is allowed');\n      cy.wait(3000); //Validate \"User ID\" input field for \"Existing Data\".\n      cy.xpath('//input[@name=\"userId\"]').should('be.visible').clear().type(text1);\n      cy.wait(2000); //Verifying the validation error for \"Existing Data\" for \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"alread\")]').should('be.visible').should('have.text', 'UserId already is in use');\n      cy.wait(3000); //Clicking on \"Generate ID\" Link in \"User ID\" input field.\n      cy.xpath('//*[contains(text(),\"Gene\")]').should('be.visible').should('contain', 'Generate ID').click({\n        force: true\n      });\n      cy.wait(2000); //Clicking on \"Relationship\" Dropdown.\n      cy.xpath('//div[1]/div[1]/form[1]/div[2]/div[2]/div').should('be.visible').click();\n      cy.wait(2000); //Clicking on \"Parent\" Relationship from the Dropdown.\n      cy.get('.css-11unzgr>div:nth-child(1)').should('have.text', 'Parent').click(); //Clicking on \"Date of Birth\" input field.\n      cy.xpath('//input[@name=\"dateOfBirth\"]').should('be.visible').click(); //Selecting Year 1991 from calendar.\n      cy.get('.react-datepicker__year-select').select('1991'); //Selecting Date 12 from the calendar\n      cy.get('.react-datepicker__day--012').should('be.visible').click(); //Clicking on \"Gender\" Dropdown.\n      cy.xpath('//div[1]/div[1]/form[1]/div[3]/div[2]/div/div').should('be.visible').click(); //Click on Female Tab from the Dropdown.\n      cy.get('.css-11unzgr>div:nth-child(2)').should('have.text', 'Female').click(); //Entering Existing Data into \"Phone Number\" input field.\n      cy.xpath('//input[@name=\"phone\"]').should('be.visible').type(text2);\n      cy.wait(3000); //Clicking inside \"Email\" input field.\n      cy.xpath('//input[@name=\"email\"]').should('be.visible').click();\n      cy.wait(3000); //Verifying the \"Warning Message\" for \"Existing Data\" for \"Phone Number\" input field.\n      cy.xpath('//*[contains(text(),\"alread\")]').should('be.visible').should('have.text', 'Phone number already exist');\n      cy.wait(3000); //Entering Existing Data into \"Email\" input field.\n      cy.xpath('//input[@name=\"email\"]').should('be.visible').type(text3); //Verifying the \"Warning Message\" for \"Existing Data\" for \"Email\" input field.\n      cy.xpath('//*[contains(text(),\"Email already exist\")]').should('be.visible').should('have.text', 'Email already exist');\n      cy.wait(3000);\n    });\n  });\n}); //Checking \"Same as Account Address\" checkbox.\ncy.get('//*[@name=\"sameAddress\"]').should('be.visible').should('not.be.checked').check();\ncy.wait(3000); //Checking \"Same as Account Address\" checkbox.\ncy.get('//*[@name=\"sameSubscription\"]').should('be.visible').should('not.be.checked').check();\ncy.wait(1000);\ncy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text', 'Add Minor').click();\ncy.contains('Family Member Added successfully');",
+              "err": {
+                "message": "TypeError: _faker.default.name.firstname is not a function",
+                "estack": "TypeError: _faker.default.name.firstname is not a function\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:287:39)",
+                "diff": null
+              },
+              "uuid": "662a573b-bdb4-411a-89da-fb0838e66401",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The added family member should refelect under charts section",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. The added family member should refelect under charts section",
+              "timedOut": null,
+              "duration": 20607,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//span[contains(text(),\"shiva\")]').should('be.visible').should('have.text', 'shiva teja');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text', 'Female');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//span[contains(text(),\"shiva\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//span[contains(text(),\"shiva\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:473:50)",
+                "diff": null
+              },
+              "uuid": "e0a0677e-2d7d-4e92-9370-c508609c5af7",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can edit the details of the family member by clicking on edit icon against the particular member",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. As a Admin the user can edit the details of the family member by clicking on edit icon against the particular member",
+              "timedOut": null,
+              "duration": 20798,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible');\ncy.get(':nth-child(2) > .bg-white > .justify-between > .flex > :nth-child(3)').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.h-screen>div:nth-child(2)>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.h-screen>div:nth-child(2)>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:478:59)",
+                "diff": null
+              },
+              "uuid": "2e11e910-2a38-4d38-997d-3470f2234c73",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At Edit family member window each label and field have proper lable and validations",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. At Edit family member window each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 20421,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/h3[1]/div[1]/div').should('be.visible').should('have.text', 'Edit Family Member');\ncy.get('div.hidden>h3>div>svg').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[1]/div[1]/label').should('be.visible').should('have.text', 'First Name');\ncy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[1]/div[2]/label').should('be.visible').should('have.text', 'Last Name');\ncy.xpath('//div[1]/form[1]/div[1]/div[2]/div').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[2]/div[1]/label').should('be.visible').should('have.text', 'Date of Birth');\ncy.xpath('//div[1]/form[1]/div[2]/div[1]/div').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[2]/div[2]/div[1]').should('be.visible').should('have.text', 'Relationship');\ncy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[3]/div/div[1]').should('be.visible').should('have.text', 'Gender');\ncy.xpath('//div[1]/form[1]/div[3]/div/div[2]').should('be.visible');\ncy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text', 'Save Details');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/h3[1]/div[1]/div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/h3[1]/div[1]/div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:482:43)",
+                "diff": null
+              },
+              "uuid": "9c739e89-1feb-4519-9ef2-9ca00fd91875",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After editing the family member details the user can save details by clicking save details button",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. After editing the family member details the user can save details by clicking save details button",
+              "timedOut": null,
+              "duration": 20751,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/form[1]/div[1]/div[1]/div[1]').should('be.visible').clear().type('Nanda');\ncy.xpath('//div[1]/form[1]/div[1]/div[2]/div[1]').should('be.visible').clear().type('Kishore');\ncy.xpath('//div[1]/form[1]/div[2]/div[1]/div[1]').should('be.visible').click();\ncy.get('.react-datepicker__day--010').scrollIntoView().should('be.visible').click();\ncy.xpath('//div[1]/form[1]/div[2]/div[2]/div[2]').should('be.visible').click();\ncy.get('.css-11unzgr>div:nth-child(1)').scrollIntoView().click();\ncy.xpath('//div[1]/form[1]/div[3]/div/div[2]').should('be.visible').click();\ncy.get('.css-11unzgr>div:nth-child(1)').scrollIntoView().click();\ncy.xpath('//div[1]/form[1]/div[4]/button').should('be.visible').should('have.text', 'Save Details').click();\ncy.contains('Family Member Updated Successfully');\ncy.wait(2000);",
+              "err": {
+                "message": "CypressError: Timed out retrying after 20000ms: `cy.clear()` failed because it requires a valid clearable element.\n\nThe element cleared was:\n\n  > `<div class=\"absolute inset-y-0 right-0 pr-3 flex items-center\"></div>`\n\nA clearable element matches one of the following selectors:\n  'a[href]'\n  'area[href]'\n  'input'\n  'select'\n  'textarea'\n  'button'\n  'iframe'\n  '[tabindex]'\n  '[contenteditable]'\n\nhttps://on.cypress.io/clear",
+                "estack": "CypressError: Timed out retrying after 20000ms: `cy.clear()` failed because it requires a valid clearable element.\n\nThe element cleared was:\n\n  > `<div class=\"absolute inset-y-0 right-0 pr-3 flex items-center\"></div>`\n\nA clearable element matches one of the following selectors:\n  'a[href]'\n  'area[href]'\n  'input'\n  'select'\n  'textarea'\n  'button'\n  'iframe'\n  '[tabindex]'\n  '[contenteditable]'\n\nhttps://on.cypress.io/clear\n    at throwError (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:152361:78)\n    at onReady (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:152388:15)\n    at runAllChecks (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147736:14)\n    at retryActionability (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:147745:16)\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Function.Promise.attempt.Promise.try (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10286:29)\n    at whenStable (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166930:65)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:166385:14\n    at tryCatcher (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11129:18)\n    at Promise._fulfill (https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:11073:18)\n    at https://qa.rch.build-release.com/__cypress/runner/cypress_runner.js:12687:46\nFrom Your Spec Code:\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:497:76)",
+                "diff": null
+              },
+              "uuid": "c9348db4-51f4-4e9c-b0ee-21a8765243f3",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The edited details should be refelected under charts section",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. The edited details should be refelected under charts section",
+              "timedOut": null,
+              "duration": 20655,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2) > .bg-white > .justify-between > .text-base').should('be.visible').should('have.text', 'nanda kishore');\ncy.get('.h-screen>div:nth-child(2)>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>span').should('be.visible').should('have.text', 'Male');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `:nth-child(2) > .bg-white > .justify-between > .text-base`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `:nth-child(2) > .bg-white > .justify-between > .text-base`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:510:73)",
+                "diff": null
+              },
+              "uuid": "851ead8c-d0b4-4dc3-840d-a1256ddc256e",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "As a Admin the user can able to delete a family member by clicking on delete icon on particular member",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. As a Admin the user can able to delete a family member by clicking on delete icon on particular member",
+              "timedOut": null,
+              "duration": 20876,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.h-screen>div:nth-child(2)>div:nth-child(2)').should('be.visible');\ncy.get(':nth-child(2) > .bg-white > .justify-between > .flex > :nth-child(2)').should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.h-screen>div:nth-child(2)>div:nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.h-screen>div:nth-child(2)>div:nth-child(2)`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:515:59)",
+                "diff": null
+              },
+              "uuid": "05e56e4f-c2d6-46df-ab43-bff20016d4f8",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At delete member confirmation window each label and field have proper lable and validations",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. At delete member confirmation window each label and field have proper lable and validations",
+              "timedOut": null,
+              "duration": 20794,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/h3/div/div').should('be.visible').should('have.text', 'Confirmation');\ncy.get('div.hidden>h3>div>svg').should('be.visible');\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]').should('be.visible').should('have.text', 'nanda kishore');\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div').should('be.visible').should('have.text', 'son');\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div').should('be.visible').should('have.text', 'Date of Birth');\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div').should('be.visible').should('have.text', 'Gender');\ncy.xpath('//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span').should('be.visible').should('have.text', 'Male');\ncy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[2]').should('be.visible').should('have.text', 'Are you sure, you want to remove this member?');\ncy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/button').should('be.visible').should('have.text', 'Remove');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/h3/div/div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/h3/div/div`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:519:37)",
+                "diff": null
+              },
+              "uuid": "c7076165-0691-4784-a25b-73b5ebadc4a1",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "By clicking on remove button on confirmation window the family member should be deleted",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. By clicking on remove button on confirmation window the family member should be deleted",
+              "timedOut": null,
+              "duration": 20762,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.xpath('//div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/button').should('be.visible').should('have.text', 'Remove').click();\ncy.contains('Family Member Deleted Successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/button`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:530:68)",
+                "diff": null
+              },
+              "uuid": "fed94fc1-2761-4a2f-86d1-015133b3a718",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The deleted member should not reflect under charts section",
+              "fullTitle": "Testcases for \"Household\" tab in \"Patient Details\" page. The deleted member should not reflect under charts section",
+              "timedOut": null,
+              "duration": 20930,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex-wrap > .font-medium').should('be.visible').should('have.text', '1 Members');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.flex-wrap > .font-medium`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.flex-wrap > .font-medium`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\08_PatientDetails_Household.spec.js:534:41)",
+                "diff": null
+              },
+              "uuid": "4dfebca4-10d6-4b42-a84f-9829e1224ac4",
+              "parentUUID": "fe5d3f5f-0f9e-46c3-b7e8-df0efb708bd6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3fbeda3b-a98b-428e-8fd6-c0ad7517f73a",
+            "caac2075-0882-41cb-ab61-d75ba63e58b0",
+            "65363cdc-5e00-4cfa-9dff-7c7b5b0a5cab",
+            "4e9447f9-0d91-4958-aa95-f06f7af21b3e",
+            "e430c570-279b-4809-9880-2cc33a4356c3",
+            "80e28b19-931f-4637-929a-e29932a4c229",
+            "662a573b-bdb4-411a-89da-fb0838e66401",
+            "e0a0677e-2d7d-4e92-9370-c508609c5af7",
+            "2e11e910-2a38-4d38-997d-3470f2234c73",
+            "9c739e89-1feb-4519-9ef2-9ca00fd91875",
+            "c9348db4-51f4-4e9c-b0ee-21a8765243f3",
+            "851ead8c-d0b4-4dc3-840d-a1256ddc256e",
+            "05e56e4f-c2d6-46df-ab43-bff20016d4f8",
+            "c7076165-0691-4784-a25b-73b5ebadc4a1",
+            "fed94fc1-2761-4a2f-86d1-015133b3a718",
+            "4dfebca4-10d6-4b42-a84f-9829e1224ac4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 325283,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

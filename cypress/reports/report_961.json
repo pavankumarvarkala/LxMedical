@@ -1,0 +1,326 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 11,
+    "passes": 4,
+    "pending": 0,
+    "failures": 7,
+    "start": "2023-04-04T16:39:33.555Z",
+    "end": "2023-04-04T16:42:30.114Z",
+    "duration": 176559,
+    "testsRegistered": 11,
+    "passPercent": 36.36363636363637,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e78062c9-f9e5-4d8a-956b-804d9e82fe98",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Admin_Testcases\\01_login.spec.js",
+      "file": "cypress\\e2e\\Admin_Testcases\\01_login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+          "title": "Login module testcases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "As a Admin I should be able to navigate on login page",
+              "fullTitle": "Login module testcases As a Admin I should be able to navigate on login page",
+              "timedOut": null,
+              "duration": 10018,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Launch URL.\ncy.visit(cred.qaUrl); //Verifying that the login page is visible.\ncy.xpath(\"//*[text()='Sign In']\").should('have.text', 'Sign In').and('be.visible');",
+              "err": {},
+              "uuid": "f7e23d32-de5e-4c21-87f0-5ce90ca8500f",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen each label and link should be proper",
+              "fullTitle": "Login module testcases At login screen each label and link should be proper",
+              "timedOut": null,
+              "duration": 191,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//verifing the \"Please enter your credentials to sign in.\" text on sign in page.\ncy.get('.text-gray-500').should('have.text', 'Please enter your credentials to sign in.'); //Verifying that the logo on the sign in page is visible.\ncy.get('[alt=\"logo\"]').invoke('attr', 'src').should('eq', '/static/media/Favicon-Light-20211230.aab62f3c.png'); //Verifying the label \"Email\" input field.\ncy.xpath(\"//label\").eq(0).should('have.text', 'Email'); //Verifying that the \"Email\" input field is present.\ncy.xpath(\"//*[@name='email']\").should('be.visible'); //Verifying the label \"Password\" input field.\ncy.xpath(\"//label\").eq(1).should('have.text', 'Password'); //Verifying that the \"Password\" input field is present.\ncy.xpath(\"//*[@name='password']\").should('be.visible'); //Verifying the label of \"Submit\" button.\ncy.xpath(\"//button[@textid='submit']\").should('be.visible'); //Verifying the \"Forgot Password\" Link.\ncy.get('a').should('have.text', 'Forgot Password?');",
+              "err": {},
+              "uuid": "5f780f52-6479-4457-917a-49625e9292c6",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen Email input field should have proper validation",
+              "fullTitle": "Login module testcases At login screen Email input field should have proper validation",
+              "timedOut": null,
+              "duration": 980,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Clicking inside \"Email\" input field.\ncy.xpath(\"//input[@name='email']\").should('be.visible').clear(); //Clicking outside Email input box.\ncy.get('.py-20').click(); //Verifying validation error for \"Blank data\".\ncy.xpath('//form/div[1]/div[2]').eq(0).should('have.text', 'Required').and('be.visible'); //Entering invalid data into \"Email\" input field.\ncy.xpath(\"//input[@name='email']\").should('be.visible').type('dasd@ asda@'); //Verifying validation error for \"invalid data\".\ncy.xpath('//div[contains(text(),\"val\")]').eq(0).should('have.text', 'Please enter valid email').and('be.visible'); //Clearing data in the \"Email\" input field.\ncy.xpath(\"//input[@name='email']\").clear();",
+              "err": {},
+              "uuid": "62a97bb8-90d7-48d7-b1f5-0033d12692e2",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen password input field should have proper validation",
+              "fullTitle": "Login module testcases At login screen password input field should have proper validation",
+              "timedOut": null,
+              "duration": 2169,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Clicking inside Password input box.\ncy.xpath(\"//*[@name='password']\").should('be.visible').clear(); //Clicking outside Password input box.\ncy.get('.py-20').click(); //Verifying validation error for \"Blank data\".\ncy.xpath('//form/div[2]/div[2]').eq(0).should('have.text', 'Required').and('be.visible'); //Enter Lessthan 8 Characters into \"Password\" input field.\ncy.xpath(\"//*[@name='password']\").should('be.visible').type(\"vsdvd11\"); //Clicking outside Password input box.\ncy.get('.py-20').click(); //Verifying validation error for \"Minimum Characters\".\ncy.xpath('//div[contains(text(),\"8\")]').eq(0).should('have.text', 'Password should have min. 8 characters').and('be.visible'); //Clearing data in the \"Password\" input field.\ncy.xpath(\"//*[@name='password']\").should('be.visible').clear(); //Entering Data with \"Space\" into \"Password\" input field.\ncy.xpath(\"//input[@name='password']\").should('be.visible').clear().type('a b'); //Verifying validation error for \"Space entered into password input field\".\ncy.xpath('//div[contains(text(),\"Sp\")]').should('have.text', 'Space not allowed').and('be.visible');",
+              "err": {},
+              "uuid": "bdb84017-9e4e-4f68-a876-ed52b98e81f6",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At login screen forgot password link text should be visible",
+              "fullTitle": "Login module testcases At login screen forgot password link text should be visible",
+              "timedOut": null,
+              "duration": 20536,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Clicking on \"Forgot Password\" link.\ncy.get('a').should('be.visible').click(); //Verifying that \"Forgot Password\" page is visible.\ncy.get('.text-gray-900').should('have.text', 'Forgot Password? ').and('be.visible'); //Clicking on Back Arrow on \"Forgot Password\" page.\ncy.get('a > .text-primary').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.text-gray-900`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.text-gray-900`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:164:30)",
+                "diff": null
+              },
+              "uuid": "5730a861-1373-4e96-8506-00b71fccdd70",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be unable to login with invalid credential",
+              "fullTitle": "Login module testcases I should be unable to login with invalid credential",
+              "timedOut": null,
+              "duration": 20970,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Entering invalid data into \"Email\" input feld.\ncy.xpath(\"//input[@name='email']\").type('alpha@gmail.com'); //Entering invalid data into \"Password\" input feld.\ncy.xpath(\"//input[@name='password']\").type('Password@321'); //Checking that the \"Submit\" button is Enabled and Clicking on it.\ncy.xpath(\"//button[@textid='submit']\").should('be.enabled').and('be.visible').click(); //Verifying the validation error for invalid Credentials.\ncy.contains('Incorrect email or password');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@name='password']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@name='password']`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:172:8)",
+                "diff": null
+              },
+              "uuid": "9f6d0518-0b48-485f-b148-87a28d552d0b",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to navigate to Enter Verification code page after login with the valid credeantials",
+              "fullTitle": "Login module testcases I should be able to navigate to Enter Verification code page after login with the valid credeantials",
+              "timedOut": null,
+              "duration": 20928,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Entering Valid data into \"Email\" input feld.\ncy.xpath(\"//input[@name='email']\").clear().type(cred.email); //Entering Valid data into \"Password\" input feld.\ncy.xpath(\"//input[@name='password']\").clear().type(cred.password); //Clicking on \"Submit\" button.\ncy.xpath(\"//button[@textid='submit']\").click();\ncy.wait(3000); //Verifying that the \"OTP Verification\" page is visible after login.\ncy.xpath('//div[contains(text(),\"E\")]').should('be.visible').should('have.text', 'Enter Verification Code');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@name='password']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//input[@name='password']`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:182:8)",
+                "diff": null
+              },
+              "uuid": "e0cd6353-10dd-4db2-8f5c-145bd36a9437",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "At \"Enter Verification Code\" page each label and link should be proper ",
+              "fullTitle": "Login module testcases At \"Enter Verification Code\" page each label and link should be proper ",
+              "timedOut": null,
+              "duration": 20314,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Verify the text of \"Enter Verification\" code header.\ncy.xpath('//*[contains(text(),\"En\")]').should('be.visible').should('have.text', 'Enter Verification Code'); //Verifiying that the back arrow button is visible.\ncy.xpath('//*[@fill=\"currentColor\"]').should('be.visible'); //Verifiying that the \"inbox image\" is visible.\ncy.xpath('//*[@alt=\"EmailIcon\"]').should('be.visible'); //Verify the text below \"inbox image\" is visible and correct.\ncy.xpath('//div[contains(text(),\"6 digit\")]').should('be.visible').should('contain.text', 'A 6 digit verification code has been sent to '); //verifing that the OTP input fields are present.\ncy.xpath(\"//*[@class='my-4']/div[1]\").should('be.visible'); //Verifing that the \"Haven't received OTP\" text is present.\ncy.xpath('//*[contains(text(),\"Hav\")]').should('be.visible').should('have.text', \"Haven't received the OTP?\"); //Verifing the label of \"Resend OTP\" Link.\ncy.xpath('//*[contains(text(),\"Res\")]').should('be.visible').should('have.text', \"Resend OTP\"); //verifying the label of \"submit\" button.\ncy.xpath('//*[@textid=\"submit\"]').should('be.visible').should('have.text', \"Submit\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[contains(text(),\"En\")]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[contains(text(),\"En\")]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:191:44)",
+                "diff": null
+              },
+              "uuid": "20903061-fbf6-49da-a704-18254978c41a",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Enter Verification Code\" page with Blank Data.",
+              "fullTitle": "Login module testcases Validate \"Enter Verification Code\" page with Blank Data.",
+              "timedOut": null,
+              "duration": 20420,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Clicking on \"Submit\" button with Blank data.\ncy.xpath(\"//*[@textid='submit']\").click(); //Verifiying validation error for blank data.\ncy.xpath('//*[contains(text(),\"valid\")]').should('be.visible').should('have.text', 'Verfication Code is not valid, please re-enter or resend Verfication code');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid='submit']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@textid='submit']`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:209:8)",
+                "diff": null
+              },
+              "uuid": "26f67ffa-a955-4211-89c6-e830be9400e8",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate \"Enter Verification Code\" page with invalid Data.",
+              "fullTitle": "Login module testcases Validate \"Enter Verification Code\" page with invalid Data.",
+              "timedOut": null,
+              "duration": 20240,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Enter invalid data into \"Enter verification code\" page.\ncy.xpath(\"//*[@class='my-4']/div[1]\").should('be.visible').type('123456'); //Clicking on \"Submit\" button.\ncy.xpath(\"//*[@textid='submit']\").click();\ncy.wait(2000); //Verifiying validation error for blank data.\ncy.contains('Invalid otp');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `//*[@class='my-4']/div[1]`, but never found it.\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:215:43)",
+                "diff": null
+              },
+              "uuid": "bf37dfc3-601f-446c-bedc-0afbb2798263",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "After Entering valid OTP and Clicking on Submit button user should be logged in successfully.",
+              "fullTitle": "Login module testcases After Entering valid OTP and Clicking on Submit button user should be logged in successfully.",
+              "timedOut": null,
+              "duration": 29698,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Clicking on \"Back arrow\" icon.\ncy.xpath('//*[@fill=\"currentColor\"]').should('be.visible').click();\ncy.wait(4000); //Entering Valid data into \"Email\" input feld.\ncy.xpath(\"//input[@name='email']\").clear().type(cred.email); //Entering Valid data into \"Password\" input feld.\ncy.xpath(\"//input[@name='password']\").clear().type(cred.password); //Clicking on \"Submit\" button.\ncy.xpath(\"//button[@textid='submit']\").click();\ncy.wait(3000); //Verifying that the \"OTP Verification\" page is visible after login.\ncy.xpath('//div[contains(text(),\"E\")]').should('be.visible').should('have.text', 'Enter Verification Code'); //Enter valid data into \"Enter verification code\" page.\ncy.xpath(\"//*[@class='my-4']/div[1]\").should('be.visible').clear().type('123321'); //Clicking on \"Submit\" button.\ncy.xpath(\"//*[@textid='submit']\").click(); //verifying that the user is logged in successfully.\ncy.url().should('include', '/dashboard');\ncy.logout();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: expected '<div>' to have text 'Enter Verification Code', but the text was 'Email'",
+                "estack": "AssertionError: Timed out retrying after 20000ms: expected '<div>' to have text 'Enter Verification Code', but the text was 'Email'\n    at Context.eval (https://qa.rch.build-release.com/__cypress/tests?p=cypress\\e2e\\Admin_Testcases\\01_login.spec.js:234:66)",
+                "diff": "- 'Email'\n+ 'Enter Verification Code'\n"
+              },
+              "uuid": "4bbb1b0b-c718-40bf-8264-d4e389992830",
+              "parentUUID": "687a6abb-2947-4196-8d53-e48c8a6cb40c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f7e23d32-de5e-4c21-87f0-5ce90ca8500f",
+            "5f780f52-6479-4457-917a-49625e9292c6",
+            "62a97bb8-90d7-48d7-b1f5-0033d12692e2",
+            "bdb84017-9e4e-4f68-a876-ed52b98e81f6"
+          ],
+          "failures": [
+            "5730a861-1373-4e96-8506-00b71fccdd70",
+            "9f6d0518-0b48-485f-b148-87a28d552d0b",
+            "e0cd6353-10dd-4db2-8f5c-145bd36a9437",
+            "20903061-fbf6-49da-a704-18254978c41a",
+            "26f67ffa-a955-4211-89c6-e830be9400e8",
+            "bf37dfc3-601f-446c-bedc-0afbb2798263",
+            "4bbb1b0b-c718-40bf-8264-d4e389992830"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 166464,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
